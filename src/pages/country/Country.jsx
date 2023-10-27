@@ -21,10 +21,12 @@ const temporaryTours = [
 
 export default function Country() {
   return (
-    <section className="country">
-      <article className="country_content">
-        <header className="country_header container"></header>
-      </article>
-    </section>
+    <>
+      <section className="country">
+        <article className="country_content">
+          <header className="country_header container"></header>
+        </article>
+      </section>
+    </>
   );
 }

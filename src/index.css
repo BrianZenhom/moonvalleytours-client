@@ -146,12 +146,11 @@ small {
   color: gray;
 }
 html {
-  overflow-x: hidden;
   scroll-padding-top: var(--scroll-padding, 70px);
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
+  max-width: 100vw;
   background-color: #e1ecff;
 }
 .a-heavy {

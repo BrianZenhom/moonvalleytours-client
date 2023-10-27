@@ -1,5 +1,6 @@
 .navbar {
-  position: fixed;
+  position: sticky;
+  top: 0;
   background: var(--dark-color);
   backdrop-filter: blur(10px);
   align-items: stretch;

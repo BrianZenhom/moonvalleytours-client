@@ -4,10 +4,12 @@ import TopTours from './sections/toptours/TopTours';
 
 export default function Home() {
   return (
-    <main className="main">
-      <Hero />
-      <MainDestinations />
-      <TopTours />
-    </main>
+    <>
+      <main className="main">
+        <Hero />
+        <MainDestinations />
+        <TopTours />
+      </main>
+    </>
   );
 }

@@ -2,30 +2,25 @@ import img1 from './../../assets/images/image(3).webp';
 import img2 from './../../assets/images/image(4).webp';
 import img3 from './../../assets/images/image(1).webp';
 import './tour.css';
+import {
+  AccessibilityIcon,
+  DurationIcon,
+  HelpIcon,
+  IncluidedIcon,
+  LanguageIcon,
+  NotIncluidedIcon,
+  PetIcon,
+  ProviderIcon,
+  VoucherIcon,
+  WhenToBookIcon,
+} from '../../assets/icons/TourIcons';
 
 import Slider from '../../components/slider/Slider';
-import { useRef } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import Help from '../../assets/icons/Help';
 
 const images = [img1, img2, img3];
 
 export default function Tour() {
-  const containerRef = useRef(null);
-  const [sticky, setSticky] = useState(false);
-
-  useEffect(() => {
-    const observerCallback = (entries) => {
-      const [entry] = entries;
-    };
-
-    const observer = new IntersectionObserver(observerCallback, {
-      threshold: 1,
-    });
-
-    observer.observe(containerRef.current);
-  }, []);
-
   return (
     <>
       <section className="tour">
@@ -60,15 +55,15 @@ export default function Tour() {
             </div>
             {/* <div className={sticky ? '' : 'here'}></div> */}
             {/* <div className={sticky ? 'tour-nav' : 'tour-nav  sticky'}> */}
-            <div className="tour-nav">
-              <div className="tour-nav-wrapper container">
-                <ul>
-                  <li>Description</li>
-                  <li>Prices</li>
-                  <li>Details</li>
-                  <li>Cancellations</li>
-                </ul>
-              </div>
+          </div>
+          <div className="tour-nav ">
+            <div className="tour-nav-wrapper container">
+              <ul>
+                <li>Description</li>
+                <li>Prices</li>
+                <li>Details</li>
+                <li>Cancellations</li>
+              </ul>
             </div>
           </div>
           <div className="singletour-data container">
@@ -131,18 +126,27 @@ export default function Tour() {
                 <h2>More Info</h2>
 
                 <div className="more-info">
-                  <strong>Duration</strong>
+                  <strong>
+                    <DurationIcon />
+                    Duration
+                  </strong>
                   <span>5 hours 30 minutes</span>
                 </div>
-                <div ref={containerRef} className="more-info">
-                  <strong>Language</strong>
+                <div className="more-info">
+                  <strong>
+                    <LanguageIcon />
+                    Language
+                  </strong>
                   <span>
                     Tour is in Spanish, English or Turkish. <br /> Make sure to
                     select the language on checkout.
                   </span>
                 </div>
                 <div className="more-info">
-                  <strong>Incluided</strong>
+                  <strong>
+                    <IncluidedIcon />
+                    Incluided
+                  </strong>
                   <ul>
                     <li>Speaking Spanish, English or Turkish Guide</li>
                     <li>Driver</li>
@@ -150,48 +154,62 @@ export default function Tour() {
                   </ul>
                 </div>
                 <div className="more-info">
-                  <strong>Not Incluided</strong>
+                  <strong>
+                    <NotIncluidedIcon />
+                    Not Incluided
+                  </strong>
                   <ul>
                     <li>Food or drinks</li>
                     <li>Tips</li>
                   </ul>
                 </div>
                 <div className="more-info">
-                  <strong>When to book?</strong>
+                  <strong>
+                    <WhenToBookIcon />
+                    When to book?
+                  </strong>
                   <span>
                     You can book up to the start time, as long as there are
                     places remaining. <br /> Book now to guarantee your spot.
                   </span>
                 </div>
                 <div className="more-info">
-                  <strong>Type of voucher</strong>
+                  <strong>
+                    <VoucherIcon />
+                    Type of voucher
+                  </strong>
                   <span>
                     We will send you an email with your booking confirmation and
                     voucher.
                   </span>
                 </div>
                 <div className="more-info">
-                  <strong>Accesibility</strong>
+                  <strong>
+                    <AccessibilityIcon />
+                    Accesibility
+                  </strong>
                   <span>Not wheelchair accessible.</span>
                 </div>
                 <div className="more-info">
-                  <strong>Sustainability</strong>
-                  <span>
-                    All services published on MoonValleyTours are carried out{' '}
-                    <br /> in accordance with our Sustainability Code
-                  </span>
-                </div>
-                <div className="more-info">
-                  <strong>Provider</strong>
+                  <strong>
+                    <ProviderIcon />
+                    Provider
+                  </strong>
                   <span>Moon Valley Tours</span>
                 </div>
                 <div className="more-info">
-                  <strong>Pets</strong>
+                  <strong>
+                    <PetIcon />
+                    Pets
+                  </strong>
                   <span>Not Allowed</span>
                 </div>
-                <div className="more-info">
-                  <strong>Frecuently Asked Questions</strong>
-                  <div className="">
+                <div className="more-info stack">
+                  <strong>
+                    <HelpIcon />
+                    Faqs
+                  </strong>
+                  <div className="qa">
                     <span>
                       <strong>Q -</strong> How to book?
                     </span>
@@ -221,9 +239,9 @@ export default function Tour() {
                 </span>
               </div>
             </div>
-            {/* <div className="date-selector">
-              <div className={sticky ? 'content stickycal' : ''}>hello</div>
-            </div> */}
+            <div className="contentBox">
+              <div className="stickybox"></div>
+            </div>
           </div>
           <div className="tourscustomer-reviews">
             <div className="hrblacklast container"></div>
