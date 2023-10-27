@@ -1,0 +1,327 @@
+.navbar {
+  position: fixed;
+  background: var(--dark-color);
+  backdrop-filter: blur(10px);
+  align-items: stretch;
+  color: white;
+  width: 100%;
+  z-index: 100;
+  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  translate: 0 -80px;
+}
+.navbar.visible {
+  translate: 0;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: auto;
+  gap: 2rem;
+}
+.navbar-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.iconsvg {
+  fill: white;
+}
+.iconsvgCurrency {
+  fill: gray;
+}
+.navbar-links li:hover a {
+  background-color: #050b14d2;
+}
+.navbar-links li.active a {
+  background-color: white;
+  color: var(--dark-color);
+}
+.navbar-links li.active .iconsvgmore {
+  fill: var(--dark-color);
+}
+.navbar-links li.active .iconsvg {
+  fill: var(--dark-color);
+}
+.navbar-links a {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-weight: 600;
+  height: 100%;
+}
+
+.iconsvgmore {
+  fill: white;
+}
+.logonav {
+  width: 130px;
+  fill: white;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease-in-out;
+}
+.logonav:hover {
+  transform: scale(1.1);
+}
+/* language dropdown */
+
+.language-selector {
+  position: relative;
+}
+
+.dropdown-content-language {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: white;
+  color: var(--dark-color);
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+  padding: 3rem;
+  right: 0;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.1s ease-in-out;
+  min-width: 18.75rem;
+}
+.language-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-content-language span {
+  font-weight: 500;
+  cursor: pointer;
+}
+.dropdown-content-language span:hover {
+  color: var(--main-color);
+}
+.language-selector a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/* Currency dropdown */
+.currency-selector {
+  position: relative;
+}
+.dropdown-content-currency {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  gap: 2rem;
+  background-color: white;
+  color: var(--dark-color);
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+  padding: 3rem;
+  right: 0;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.1s ease-in-out;
+}
+.visible-currency {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-content-currency span {
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.dropdown-content-currency span:hover small {
+  color: var(--dark-color) 86;
+}
+.dropdown-content-currency small {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--dark-color);
+  display: inline-block;
+  width: max-content;
+}
+.usd,
+.euro,
+.argpeso {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.usd:hover small {
+  opacity: 0.5;
+}
+.euro:hover small {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.argpeso:hover small {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* Login dropdown */
+.login {
+  position: relative;
+}
+.dropdown-login {
+  position: absolute;
+  display: flex;
+  background-color: white;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  min-width: 800px;
+  color: var(--dark-color);
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+  box-shadow: var(--shadow-elevation-medium);
+}
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.login-tab {
+  width: 50%;
+  padding: 2rem;
+}
+.login-tab h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: 3rem;
+}
+.login-form input {
+  border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: Montserrat;
+  width: 100%;
+  padding: 10px;
+}
+.login-form input:focus {
+  outline: none;
+  outline: 1px solid var(--main-color);
+  border: 1px solid var(--main-color);
+}
+
+.remember-me {
+  width: 100%;
+}
+.loginBtn {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.loginBtn button {
+  padding: 7px 42px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+  background: none;
+  background-color: var(--dark-color);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.loginBtn button:hover {
+  background-color: var(--main-color);
+  border: 1px solid var(--dark-color);
+}
+.hr {
+  width: 100%;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, var(--dark-color));
+}
+.login-methods {
+  width: 100%;
+}
+.login-method-socials {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  width: 100%;
+}
+.registerBtn {
+  width: 100%;
+}
+/* Booking Tab */
+.booking-tab {
+  width: 50%;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+}
+.booking-tab h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  margin-top: 3rem;
+}
+.booking-form input {
+  border-radius: 5px;
+  border: none;
+  border: 1px solid rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: Montserrat;
+  width: 100%;
+  padding: 10px;
+}
+.booking-form input:focus {
+  outline: none;
+  outline: 1px solid var(--main-color);
+  border: 1px solid var(--main-color);
+}
+.reference {
+  width: 100%;
+}
+.bookingBtn {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.bookingBtn button {
+  padding: 7px 42px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+  background: none;
+  background-color: var(--dark-color);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.bookingBtn button:hover {
+  background-color: var(--main-color);
+  border: 1px solid var(--dark-color);
+}
+@media (width <= 1024px) {
+  .dropdown-login {
+    min-width: 780px;
+  }
+}

@@ -1,0 +1,11 @@
+.country {
+  min-height: 700px;
+  height: 25vh;
+}
+.country_content {
+  background: url(/header-bg.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60%;
+}
