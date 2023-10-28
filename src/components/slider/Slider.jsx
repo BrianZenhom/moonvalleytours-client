@@ -1,21 +1,26 @@
 import React from 'react';
-import { IconLeft, IconRight } from '../../assets/icons/SliderIcons';
+import {
+  FilledIconDot,
+  IconDot,
+  IconLeft,
+  IconRight,
+} from '../../assets/icons/SliderIcons';
 import './slider.css';
 import PropTypes from 'prop-types';
 
-export default function Slider({ imageUrls }) {
+export default function Slider({ images }) {
   const [imageIndex, setImageIndex] = React.useState(1);
 
   function showNextImage() {
     setImageIndex((index) => {
-      if (index === imageUrls.length - 1) return 0;
+      if (index === images.length - 1) return 0;
       return index + 1;
     });
   }
 
   function showPrevImage() {
     setImageIndex((index) => {
-      if (index === 0) return imageUrls.length - 1;
+      if (index === 0) return images.length - 1;
       return index - 1;
     });
   }
@@ -30,10 +35,11 @@ export default function Slider({ imageUrls }) {
           overflow: 'hidden',
         }}
       >
-        {imageUrls.map((url) => (
+        {images.map(({ url, alt }) => (
           <img
             key={url}
             src={url}
+            alt={alt}
             className="img-slider-img"
             style={{
               translate: `${-100 * imageIndex}%`,
@@ -41,16 +47,45 @@ export default function Slider({ imageUrls }) {
           />
         ))}
       </div>
-      <button onClick={showPrevImage} className="img-slider-btn left">
+      <button
+        onClick={showPrevImage}
+        className="img-slider-btn left"
+        aria-label="View Previous Image"
+      >
         <IconLeft />
       </button>
-      <button onClick={showNextImage} className="img-slider-btn right">
+      <button
+        onClick={showNextImage}
+        className="img-slider-btn right"
+        aria-label="View Next Image"
+      >
         <IconRight />
       </button>
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '0.5rem',
+          left: '50%',
+          translate: '-50%',
+          display: 'flex',
+          gap: '0.25rem',
+        }}
+      >
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className="img-slider-dot-btn"
+            onClick={() => setImageIndex(index)}
+            aria-label={`View Image number ${index + 1}`}
+          >
+            {index === imageIndex ? <FilledIconDot /> : <IconDot />}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
 
 Slider.propTypes = {
-  imageUrls: PropTypes.arrayOf(PropTypes.string).isRequired,
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

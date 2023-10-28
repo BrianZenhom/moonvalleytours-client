@@ -17,7 +17,11 @@ import {
 
 import Slider from '../../components/slider/Slider';
 
-const images = [img1, img2, img3];
+const images = [
+  { url: img1, alt: 'Camel Ride' },
+  { url: img2, alt: 'Image of the Pyramids' },
+  { url: img3, alt: 'Sunset with a person riding a camel in the giza desert' },
+];
 
 export default function Tour() {
   return (
@@ -50,7 +54,7 @@ export default function Tour() {
           </header>
           <div className="tour-image_slider">
             <div className="slider_wrapper">
-              <Slider imageUrls={images} />
+              <Slider images={images} />
             </div>
           </div>
           <div className="tour-nav ">
@@ -83,7 +87,7 @@ export default function Tour() {
                 <h2>Price</h2>
                 <div className="tour-price-wrapper-one">
                   <span className="tour-main-detail">
-                    Tour from <br /> the Sheraton Hotel
+                    Tour from the Sheraton Hotel
                   </span>
                   <div className="exact-price">
                     <small>Adults</small>
@@ -105,7 +109,7 @@ export default function Tour() {
                 <div className="hr"></div>
                 <div className="tour-price-wrapper-two">
                   <span className="tour-main-detail">
-                    Tour from <br /> the airport
+                    Tour from the airport
                   </span>
                   <div className="exact-price">
                     <span>&euro; 60</span>
@@ -135,8 +139,8 @@ export default function Tour() {
                     Language
                   </strong>
                   <span>
-                    Tour is in Spanish, English or Turkish. <br /> Make sure to
-                    select the language on checkout.
+                    Tour is in Spanish, English or Turkish. Make sure to select
+                    the language on checkout.
                   </span>
                 </div>
                 <div className="more-info">
@@ -167,7 +171,7 @@ export default function Tour() {
                   </strong>
                   <span>
                     You can book up to the start time, as long as there are
-                    places remaining. <br /> Book now to guarantee your spot.
+                    places remaining. Book now to guarantee your spot.
                   </span>
                 </div>
                 <div className="more-info">
@@ -201,20 +205,19 @@ export default function Tour() {
                   </strong>
                   <span>Not Allowed</span>
                 </div>
-                <div className="more-info stack">
+                <div className="more-info">
                   <strong>
                     <HelpIcon />
                     Faqs
                   </strong>
                   <div className="qa">
                     <span>
-                      <strong>Q -</strong> How to book?
+                      <strong>Q </strong> - How to book?
                     </span>
-                    <br />
                     <span>
-                      <strong>A -</strong> To reserve the activity, choose the
-                      date and complete <br /> the form on this page. You will
-                      receive your confirmation immediately.
+                      <strong>A</strong> - To reserve the activity, choose the
+                      date and complete the form on this page. You will receive
+                      your confirmation immediately.
                     </span>
                   </div>
                 </div>
