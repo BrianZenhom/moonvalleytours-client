@@ -53,8 +53,6 @@ export default function Tour() {
             <div className="slider_wrapper">
               <Slider imageUrls={images} />
             </div>
-            {/* <div className={sticky ? '' : 'here'}></div> */}
-            {/* <div className={sticky ? 'tour-nav' : 'tour-nav  sticky'}> */}
           </div>
           <div className="tour-nav ">
             <div className="tour-nav-wrapper container">
