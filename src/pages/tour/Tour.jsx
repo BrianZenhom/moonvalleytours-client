@@ -16,7 +16,6 @@ import {
 } from '../../assets/icons/TourIcons';
 
 import Slider from '../../components/slider/Slider';
-import Help from '../../assets/icons/Help';
 
 const images = [img1, img2, img3];
 

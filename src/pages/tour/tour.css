@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: space-between;
-  min-height: 250px;
+  min-height: 180px;
   width: 100%;
 }
 .tour-full-data h1 {
