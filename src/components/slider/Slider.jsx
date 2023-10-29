@@ -78,7 +78,11 @@ export default function Slider({ images }) {
             onClick={() => setImageIndex(index)}
             aria-label={`View Image number ${index + 1}`}
           >
-            {index === imageIndex ? <FilledIconDot /> : <IconDot />}
+            {index === imageIndex ? (
+              <FilledIconDot aria-hidden />
+            ) : (
+              <IconDot aria-hidden />
+            )}
           </button>
         ))}
       </div>

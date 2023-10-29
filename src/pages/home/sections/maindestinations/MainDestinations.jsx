@@ -9,7 +9,7 @@ const maindestinations = [
     title: 'Madrid',
     img: img3,
     tours: 46,
-    travellers: '304,980',
+    travellers: 304980,
     reviews: 52,
     rating: 9.2,
   },
@@ -18,7 +18,7 @@ const maindestinations = [
     title: 'Cairo',
     img: img2,
     tours: 20,
-    travellers: '2,125,283',
+    travellers: 2125283,
     reviews: 225,
     rating: 8.7,
   },
@@ -27,7 +27,7 @@ const maindestinations = [
     title: 'Barcelona',
     img: img,
     tours: 63,
-    travellers: '204,680',
+    travellers: 204680,
     reviews: 55,
     rating: 9.4,
   },
@@ -36,7 +36,7 @@ const maindestinations = [
     title: 'Istambul',
     img: img,
     tours: 33,
-    travellers: '2,774,323',
+    travellers: 2774323,
     reviews: 195,
     rating: 9.4,
   },
@@ -45,7 +45,7 @@ const maindestinations = [
     title: 'Buenos Aires',
     img: img,
     tours: 86,
-    travellers: '3,676,633',
+    travellers: 3676633,
     reviews: 292,
     rating: 9.4,
   },
@@ -54,7 +54,7 @@ const maindestinations = [
     title: 'New York',
     img: img,
     tours: 53,
-    travellers: '524,468',
+    travellers: 524468,
     reviews: 495,
     rating: 8.2,
   },
@@ -83,7 +83,7 @@ export default function MainDestinations() {
                         <small>tours</small>
                       </div>
                       <div className="travellers">
-                        <h3>{dest.travellers}</h3>
+                        <h3>{dest.travellers.toLocaleString('en-EN')}</h3>
                         <small>travellers</small>
                       </div>
                     </div>
