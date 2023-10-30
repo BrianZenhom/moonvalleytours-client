@@ -99,7 +99,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://instagram.com/moonvalleytours">
+              <a
+                href="https://instagram.com/moonvalleytours"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Instagram />
               </a>
             </li>

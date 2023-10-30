@@ -31,11 +31,11 @@ const router = createBrowserRouter([
         element: <Country />,
       },
       {
-        path: '/:city',
+        path: '/:country/:city',
         element: <City />,
       },
       {
-        path: '/:city/:tour',
+        path: '/:country/:city/:tour',
         element: <Tour />,
       },
     ],

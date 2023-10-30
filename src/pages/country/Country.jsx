@@ -5,7 +5,7 @@ import { DestGrid } from '../../components/destgrid/DestGrid';
 const egyptdestinations = [
   {
     id: 1,
-    title: 'Cairo',
+    city: 'Cairo',
     img: img1,
     tours: 46,
     travellers: 304980,
@@ -14,7 +14,7 @@ const egyptdestinations = [
   },
   {
     id: 2,
-    title: 'Alexandria',
+    city: 'Alexandria',
     img: img1,
     tours: 20,
     travellers: 2125283,
@@ -23,7 +23,7 @@ const egyptdestinations = [
   },
   {
     id: 3,
-    title: 'Luxor',
+    city: 'Luxor',
     img: img1,
     tours: 63,
     travellers: 204680,
@@ -32,7 +32,7 @@ const egyptdestinations = [
   },
   {
     id: 4,
-    title: 'Aswan',
+    city: 'Aswan',
     img: img1,
     tours: 33,
     travellers: 2774323,
@@ -41,7 +41,7 @@ const egyptdestinations = [
   },
   {
     id: 5,
-    title: 'Sharm El Sheikh',
+    city: 'Sharm El Sheikh',
     img: img1,
     tours: 86,
     travellers: 3676633,
@@ -50,7 +50,7 @@ const egyptdestinations = [
   },
   {
     id: 6,
-    title: 'Hurghada',
+    city: 'Hurghada',
     img: img1,
     tours: 53,
     travellers: 524468,
@@ -63,7 +63,7 @@ export default function Country() {
   return (
     <section className="country">
       <article className="country_header_main">
-        <article className="country_header_content">
+        <div className="country_header_content">
           <img src={img1} alt="" className="headerImg" />
           <div className="country_blackoverlay"></div>
           <header className="country_header container">
@@ -93,7 +93,7 @@ export default function Country() {
             <h2>Main destinations in Egypt</h2>
             <DestGrid whichdestinations={egyptdestinations} />
           </div>
-        </article>
+        </div>
       </article>
     </section>
   );

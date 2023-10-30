@@ -164,7 +164,7 @@ export default function Hero() {
                 {Suggestions.map((loc) => {
                   return (
                     <li key={loc.city} title={loc.city}>
-                      <a href={`/${loc.city}`}>
+                      <a href={`${loc.country}/${loc.city}`}>
                         <span className="a-heavy">{loc.city}</span>
                       </a>
                       <a href={`${loc.country}`}>

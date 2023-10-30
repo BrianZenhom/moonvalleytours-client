@@ -7,7 +7,8 @@ import { DestGrid } from '../../../../components/destgrid/DestGrid';
 const maindestinations = [
   {
     id: 1,
-    title: 'Madrid',
+    city: 'Madrid',
+    country: 'Spain',
     img: img3,
     tours: 46,
     travellers: 304980,
@@ -16,7 +17,8 @@ const maindestinations = [
   },
   {
     id: 2,
-    title: 'Cairo',
+    city: 'Cairo',
+    country: 'Egypt',
     img: img2,
     tours: 20,
     travellers: 2125283,
@@ -25,7 +27,8 @@ const maindestinations = [
   },
   {
     id: 3,
-    title: 'Barcelona',
+    city: 'Barcelona',
+    country: 'Spain',
     img: img,
     tours: 63,
     travellers: 204680,
@@ -34,7 +37,8 @@ const maindestinations = [
   },
   {
     id: 4,
-    title: 'Istambul',
+    city: 'Istambul',
+    country: 'Turkey',
     img: img,
     tours: 33,
     travellers: 2774323,
@@ -43,7 +47,8 @@ const maindestinations = [
   },
   {
     id: 5,
-    title: 'Buenos Aires',
+    city: 'Buenos Aires',
+    country: 'Argentina',
     img: img,
     tours: 86,
     travellers: 3676633,
@@ -52,7 +57,8 @@ const maindestinations = [
   },
   {
     id: 6,
-    title: 'New York',
+    city: 'New York',
+    country: 'USA',
     img: img,
     tours: 53,
     travellers: 524468,
