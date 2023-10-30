@@ -2,6 +2,7 @@ import './maindestinations.css';
 import img from './../../../../assets/images/image(1).webp';
 import img2 from './../../../../assets/images/image(4).webp';
 import img3 from './../../../../assets/images/image(3).webp';
+import { DestGrid } from '../../../../components/destgrid/DestGrid';
 
 const maindestinations = [
   {
@@ -67,42 +68,7 @@ export default function MainDestinations() {
         <header className="maindestinations_header">
           <h2>Main Destinations</h2>
         </header>
-        <div className="maindestinations_grid">
-          {maindestinations.map((dest) => {
-            return (
-              <div key={dest.id} className="list_card-item">
-                <div className="maindestinations_card">
-                  <img src={dest.img} alt="" />
-                  <div className="maindestination_title">
-                    <h3>{dest.title}</h3>
-                  </div>
-                  <div className="maindestination_details">
-                    <div className="left">
-                      <div className="tours">
-                        <h3>{dest.tours}</h3>
-                        <small>tours</small>
-                      </div>
-                      <div className="travellers">
-                        <h3>{dest.travellers.toLocaleString('en-EN')}</h3>
-                        <small>travellers</small>
-                      </div>
-                    </div>
-                    <div className="right">
-                      <div className="reviews">
-                        <h3>{dest.reviews}</h3>
-                        <small>reviews</small>
-                      </div>
-                      <div className="rating">
-                        <h3>{dest.rating}</h3>
-                        <small>rating</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <DestGrid whichdestinations={maindestinations} />
         <div className="showmore_button">
           <button>show more</button>
         </div>
