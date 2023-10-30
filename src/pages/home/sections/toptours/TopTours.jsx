@@ -1,5 +1,6 @@
 import './toptours.css';
 import img from './../../../../assets/images/image(1).webp';
+import { Link } from 'react-router-dom';
 
 export default function TopTours() {
   return (
@@ -102,7 +103,7 @@ export default function TopTours() {
             </div>
           </div>
           <div className="toptours_card-item">
-            <a href="/city/tour">
+            <Link to="/city/tour/123">
               <div className="toptours_card">
                 <img src={img} alt="" />
                 <footer className="toptours_card_details">
@@ -147,7 +148,7 @@ export default function TopTours() {
                   </div>
                 </footer>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </article>

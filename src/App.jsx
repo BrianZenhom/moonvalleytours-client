@@ -6,10 +6,12 @@ import Home from './pages/home/Home';
 import Country from './pages/country/Country';
 import Tour from './pages/tour/Tour';
 import City from './pages/city/City';
+import ScrollToTop from './hooks/scrollToTop';
 
 const Layout = () => {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Outlet />
       <Footer />
