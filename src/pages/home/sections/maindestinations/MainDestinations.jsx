@@ -80,9 +80,6 @@ export default function MainDestinations({ type }) {
             <DestCard key={dest.id} dest={dest} />
           ))}
         </div>
-        <div className="showmore_button">
-          <button>show more</button>
-        </div>
       </article>
     </section>
   );

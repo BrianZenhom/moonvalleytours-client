@@ -8,6 +8,9 @@ export default function Home() {
       <main className="main">
         <Hero />
         <MainDestinations type="Top Destinations" />
+        <div className="showmore_button">
+          <button>show more</button>
+        </div>
         <TopTours />
       </main>
     </>
