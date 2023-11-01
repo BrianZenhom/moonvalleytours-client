@@ -147,7 +147,6 @@ small {
 }
 html {
   scroll-padding-top: var(--scroll-padding, 70px);
-  scroll-behavior: smooth;
   overflow-x: clip;
 }
 body {

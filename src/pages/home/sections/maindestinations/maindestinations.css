@@ -17,19 +17,30 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 2rem;
-  gap: 0.4rem;
+  gap: 1rem;
 }
-.list_card-item {
+.maindestinations_grid > * {
+  flex: 1 1 30%;
+}
+/* .list_card-item {
   flex-basis: 30%;
   flex-grow: 1;
   max-width: 350px;
+} */
+.list_card-item {
+  min-width: 140px;
+  min-height: 180px;
+  max-height: 230px;
 }
 .maindestinations_card {
   background-color: var(--dark-color);
   border-radius: 5px;
   overflow: hidden;
+  height: 100%;
   color: white;
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -40,9 +51,9 @@
 .maindestination_title h3 {
   font-family: 'montserrat', sans-serif;
   font-weight: 800;
-  font-size: clamp(1rem, 5vw, 1.9rem);
+  font-size: clamp(1rem, 2vw, 1.9rem);
   position: absolute;
-  bottom: 30px;
+  bottom: 10px;
 }
 .maindestinations_card img {
   width: 100%;
@@ -64,32 +75,25 @@
 
 .maindestination_details {
   display: flex;
-  padding: 15px 20px;
-  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
   transform: translateY(200px);
 }
 .maindestination_details h3 {
-  font-size: clamp(1rem, 5vw, 1.9rem);
+  font-size: clamp(1rem, 2vw, 1.9rem);
   font-weight: 800;
   font-family: 'montserrat', sans-serif;
 }
 .left {
   padding-right: 10px;
   flex: 1 1 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: start;
 }
 .right {
   flex: 1 1 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: end;
 }
 .maindestinations_card:hover .maindestination_details {
-  transform: translateY(5px);
+  transform: translateY(50px);
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -122,5 +126,10 @@
   .maindestinations_content {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+@media (width > 1000px) {
+  .maindestinations_card {
+    height: 230px;
   }
 }

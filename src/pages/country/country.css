@@ -1,69 +1,44 @@
-.country {
-  min-height: 1000px;
-}
-
-.country_header_main {
-  min-height: 600px;
-  height: 25vh;
-}
-.country_header_content {
-  height: 60%;
+.country_header {
+  min-height: 30vh;
   position: relative;
 }
 .headerImg {
-  width: 100%;
-  height: 360px;
   object-fit: cover;
+  object-position: center;
   position: absolute;
-  z-index: -1;
-}
-.country_header {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-}
-.country_header-title {
-  padding-top: 4rem;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  z-index: 2;
-}
-.country_header footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  height: 30%;
-  width: 100%;
-  padding-bottom: 0.5rem;
+  top: 0;
+  left: 0;
+  z-index: -10;
 }
 
-.country_header h1 {
+.country_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.country_title {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.country_title h1 {
   font-size: 80px;
   color: white;
-  text-shadow: rgba(0, 0, 0, 0.648) 2px 2px 7px;
+  text-shadow: rgba(0, 0, 0, 0.541) 2px 2px 10px;
 }
-.country_header h2 {
-  font-size: 42px;
-  font-weight: 800;
+.country_details {
+  display: flex;
+  justify-content: space-between;
   color: white;
+  padding-bottom: 1rem;
+  z-index: 1;
 }
-.country_content h2 {
-  font-weight: 300;
-  font-size: 40px;
+.country_details h2 {
+  font-weight: 800;
+  font-size: 2.5rem;
 }
 .country_content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 2rem;
-}
-.country_header span {
-  color: white;
+  min-height: 100%;
+  padding-bottom: 2rem;
 }
 .country_blackoverlay {
   background-image: linear-gradient(
@@ -73,8 +48,7 @@
   );
   content: '';
   position: absolute;
-  top: 0;
   height: 100%;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }

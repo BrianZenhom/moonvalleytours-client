@@ -1,6 +1,6 @@
 import './country.css';
 import img1 from '../../assets/images/image(4).webp';
-import { DestGrid } from '../../components/destgrid/DestGrid';
+import MainDestinations from '../home/sections/maindestinations/MainDestinations';
 
 const egyptdestinations = [
   {
@@ -62,39 +62,36 @@ const egyptdestinations = [
 export default function Country() {
   return (
     <section className="country">
-      <article className="country_header_main">
-        <div className="country_header_content">
-          <img src={img1} alt="" className="headerImg" />
-          <div className="country_blackoverlay"></div>
-          <header className="country_header container">
-            <div className="country_header-title">
-              <h1>Egypt</h1>
-            </div>
-            <footer>
-              <div className="country_destinations-amount">
-                <h2>9</h2>
-                <span>destinations</span>
-              </div>
-              <div className="country_destinations-amount">
-                <h2>118</h2>
-                <span>tours and activities</span>
-              </div>
-              <div className="country_destinations-amount">
-                <h2>96,642</h2>
-                <span>travellers have enjoyed tours here</span>
-              </div>
-              <div className="country_destinations-amount">
-                <h2>7.54/10</h2>
-                <span>7,935 reviews</span>
-              </div>
-            </footer>
-          </header>
-          <div className="country_content container">
-            <h2>Main destinations in Egypt</h2>
-            <DestGrid whichdestinations={egyptdestinations} />
+      <article className="country_header">
+        <div className="country_blackoverlay"></div>
+        <img src={img1} alt="" className="headerImg" />
+        <header className="country_intro container">
+          <div className="country_title">
+            <h1>Egypt</h1>
           </div>
-        </div>
+          <div className="country_details">
+            <div className="destinations">
+              <h2>9</h2>
+              <span>destinations</span>
+            </div>
+            <div className="destinations">
+              <h2>118</h2>
+              <span>tours & activities</span>
+            </div>
+            <div className="destinations">
+              <h2>96,706</h2>
+              <span>travellers have enjoyed tours here</span>
+            </div>
+            <div className="destinations">
+              <h2>7.53 / 10</h2>
+              <span>7,949 reviews</span>
+            </div>
+          </div>
+        </header>
       </article>
+      <div className="country_content container">
+        <MainDestinations type={`Main destinations in Egypt`} />
+      </div>
     </section>
   );
 }

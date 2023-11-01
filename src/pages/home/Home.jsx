@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <main className="main">
         <Hero />
-        <MainDestinations />
+        <MainDestinations type="Top Destinations" />
         <TopTours />
       </main>
     </>

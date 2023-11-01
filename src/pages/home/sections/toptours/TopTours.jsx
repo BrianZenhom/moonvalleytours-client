@@ -103,7 +103,7 @@ export default function TopTours() {
             </div>
           </div>
           <div className="toptours_card-item">
-            <Link to="/city/tour/123">
+            <Link to="/country/city/123">
               <div className="toptours_card">
                 <img src={img} alt="" />
                 <footer className="toptours_card_details">
