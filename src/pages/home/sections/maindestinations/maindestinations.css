@@ -94,14 +94,17 @@
 }
 .maindestinations_card:hover .maindestination_details {
   transform: translateY(50px);
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
 }
 
 .showmore_button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  padding-top: 1rem;
 }
 
 .showmore_button button {

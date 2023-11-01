@@ -34,11 +34,14 @@
   overflow: hidden;
   color: white;
   position: relative;
-  transition: 0.5s ease;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
   cursor: pointer;
 }
 .toptours_card:hover {
   background-color: var(--dark-color);
+  transition: 1s ease;
 }
 .toptours_card:hover img {
   opacity: 0;
@@ -51,7 +54,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: 0.5s ease;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 .toptours_card_details {
@@ -63,7 +68,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition: 0.1 ease;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 .toptours_details-previous.bg {
   background-color: white;
@@ -100,7 +107,9 @@
   transform: translateY(200px);
   padding: 20px;
   opacity: 0;
-  transition: 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 .opacity {
   opacity: 0.5;

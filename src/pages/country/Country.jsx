@@ -64,7 +64,7 @@ export default function Country() {
     <section className="country">
       <article className="country_header">
         <div className="country_blackoverlay"></div>
-        <img src={img1} alt="" className="headerImg" />
+        <img src={img1} alt="" className="header-Img" />
         <header className="country_intro container">
           <div className="country_title">
             <h1>Egypt</h1>

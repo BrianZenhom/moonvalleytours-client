@@ -59,7 +59,7 @@
   fill: white;
 }
 .logonav {
-  width: 130px;
+  width: 100px;
   fill: white;
   padding: 0.5rem 0;
   transition: all 0.2s ease-in-out;
@@ -266,7 +266,7 @@
 .booking-tab {
   width: 50%;
   padding: 2rem;
-  background-color: #f0f0f0;
+  background-color: var(--warning-color);
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
 }
