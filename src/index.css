@@ -125,7 +125,8 @@ h2 {
 }
 h3 {
   font-family: 'Montserrat';
-  font-weight: 300;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.4rem);
 }
 p {
   font-family: 'Montserrat';

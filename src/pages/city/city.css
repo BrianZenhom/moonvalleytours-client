@@ -1,7 +1,8 @@
 .city_header {
-  min-height: 35vh;
+  min-height: auto;
   position: relative;
 }
+
 .header-Img {
   object-fit: cover;
   object-position: top;
@@ -26,7 +27,11 @@
 .city_title {
   padding-top: 5rem;
   padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
 .city_title h1 {
   font-size: 80px;
   color: white;
@@ -45,7 +50,6 @@
   font-size: 2.5rem;
 }
 .city_content {
-  min-height: 100%;
   padding-bottom: 2rem;
 }
 .city_blackoverlay {
@@ -58,16 +62,119 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
   min-height: 35vh;
 }
 .tags small {
+  z-index: 9999;
   background-color: white;
   border-radius: 5px;
   padding: 5px 22px;
   color: black;
 }
-.city_content {
-  height: 100vh;
+.tags {
+  z-index: 9999;
+}
+.city_content-desc {
   padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.city_content-cards {
+  display: flex;
+  flex-direction: column;
+}
+.city_content {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: start;
+  gap: 2rem;
+}
+.city_content-sidebar {
+  width: 25%;
+  height: 600px;
+  background-color: white;
+  border-radius: 5px;
+}
+.city_content-cards {
+  width: 75%;
+}
+.city_card {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: var(--shadow-elevation-medium);
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.city_card-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.city_card img {
+  width: 30%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.city_card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.city_card-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+}
+.city_card-title h3 {
+  color: var(--dark-color);
+}
+.city_card-title strong {
+  color: var(--dark-color);
+}
+.city_card-desc {
+  text-wrap: balance;
+}
+.city_card-quality-tags {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+.city_card-tag {
+  display: flex;
+  gap: 1rem;
+}
+.city_card-tag small {
+  padding: 0.2rem 0.5rem;
+  background-color: var(--warning-color);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.city_card-price {
+  background-image: linear-gradient(
+    30deg,
+    var(--dark-color),
+    var(--main-color)
+  );
+  color: white;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  border-start-start-radius: 200px;
+  border-start-end-radius: 0px;
+  border-end-start-radius: 0px;
+}
+.country_name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
