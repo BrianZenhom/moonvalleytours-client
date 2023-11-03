@@ -9,84 +9,37 @@ import Flights from '../../../../assets/icons/Flights';
 
 export const Suggestions = [
   {
-    country: 'Italy',
-    city: 'Rome',
-  },
-  {
-    country: 'Spain',
-    city: 'Madrid',
+    country: 'Egypt',
+    city: 'Cairo',
   },
   {
     country: 'Egypt',
-    city: 'Cairo',
+    city: 'Alexandria',
+  },
+  {
+    country: 'Egypt',
+    city: 'Luxor',
   },
   {
     country: 'Turkiye',
     city: 'Istambul',
   },
   {
-    country: 'Spain',
-    city: 'Barcelona',
+    country: 'Turkiye',
+    city: 'Fethiye',
+  },
+
+  {
+    country: 'Turkiye',
+    city: 'Istambul',
   },
   {
     country: 'United Arab Emirates',
     city: 'Dubai',
   },
   {
-    country: 'The United States',
-    city: 'New York',
-  },
-  {
-    country: 'France',
-    city: 'Paris',
-  },
-  {
-    country: 'United Kingdom',
-    city: 'London',
-  },
-  {
-    country: 'Thailand',
-    city: 'Bangkok',
-  },
-  {
-    country: 'India',
-    city: 'Agra',
-  },
-  {
-    country: 'China',
-    city: 'Hong Kong',
-  },
-  {
-    country: 'Colombia',
-    city: 'Medellin',
-  },
-  {
-    country: 'Indonesia',
-    city: 'Bali',
-  },
-  {
-    country: 'Japan',
-    city: 'Tokyo',
-  },
-  {
-    country: 'Italy',
-    city: 'Venice',
-  },
-  {
-    country: 'Netherlands',
-    city: 'Amsterdam',
-  },
-  {
-    country: 'Greece',
-    city: 'Athens',
-  },
-  {
-    country: 'Italy',
-    city: 'Florence',
-  },
-  {
-    country: 'Portugal',
-    city: 'Lisbon',
+    country: 'United Arab Emirates',
+    city: 'Abu Dhabi',
   },
 ];
 
