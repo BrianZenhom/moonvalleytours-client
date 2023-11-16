@@ -8,7 +8,7 @@ export default function DestCard({ dest }) {
     <Link to={`/${dest.country}/${dest.city}`}>
       <div className="list_card-item">
         <div className="maindestinations_card">
-          <img src={img} alt="" />
+          <img src={dest.city_image} alt="" />
           <div className="maindestination_title">
             <h3>{dest.city}</h3>
           </div>

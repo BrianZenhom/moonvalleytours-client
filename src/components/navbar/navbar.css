@@ -113,6 +113,7 @@
 .dropdown-content-currency {
   position: absolute;
   opacity: 0;
+  translate: 0 -10px;
   visibility: hidden;
   display: flex;
   gap: 2rem;
@@ -123,9 +124,11 @@
   padding: 3rem;
   right: 0;
   box-shadow: var(--shadow-elevation-medium);
-  transition: all 0.1s ease-in-out;
+  transition-property: opacity;
+  transition: 0.2s ease-out;
 }
 .visible-currency {
+  translate: 0;
   opacity: 1;
   visibility: visible;
 }
@@ -176,6 +179,7 @@
   position: absolute;
   display: flex;
   background-color: white;
+  translate: 0 -10px;
   right: 0;
   opacity: 0;
   visibility: hidden;
@@ -184,8 +188,11 @@
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
   box-shadow: var(--shadow-elevation-medium);
+  transition-property: opacity;
+  transition: 0.2s ease-out;
 }
 .visible {
+  translate: 0;
   opacity: 1;
   visibility: visible;
 }

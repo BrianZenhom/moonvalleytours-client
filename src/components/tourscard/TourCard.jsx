@@ -37,11 +37,7 @@ export default function TourCard() {
                   <span>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Praesentium aperiam quibusdam consequuntur, iure itaque
-                    quisquam impedit enim suscipit vitae optio voluptatum eos
-                    odit architecto quos reprehenderit! Quaerat unde voluptate
-                    dicta quos saepe nostrum eos nisi nulla praesentium
-                    doloremque illo quod ex nesciunt incidunt et aspernatur,
-                    exercitationem reiciendis commodi maiores voluptatibus.
+                    quisquam impedit
                   </span>
                 </div>
               </div>

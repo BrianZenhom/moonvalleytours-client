@@ -4,6 +4,7 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport';
 import HiddenFees from '../../../../assets/icons/HiddenFees';
 import Accommodation from '../../../../assets/icons/Accommodation';
 import Flights from '../../../../assets/icons/Flights';
+import { fetchCities } from '../../../../services/api';
 
 // Temporary suggestions list
 
@@ -28,7 +29,14 @@ export const Suggestions = [
     country: 'Turkiye',
     city: 'Fethiye',
   },
-
+  {
+    country: 'Turkiye',
+    city: 'Antalya',
+  },
+  {
+    country: 'Turkiye',
+    city: 'Capadoccia',
+  },
   {
     country: 'Turkiye',
     city: 'Istambul',
@@ -46,6 +54,16 @@ export const Suggestions = [
 export default function Hero() {
   const searchSuggestionsRef = useRef(null);
   const [openSuggestion, setOpenSuggestion] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await fetchCities();
+      setData(data);
+    };
+
+    getData();
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -114,7 +132,7 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {Suggestions.map((loc) => {
+                {data.map((loc) => {
                   return (
                     <li key={loc.city} title={loc.city}>
                       <a href={`${loc.country}/${loc.city}`}>
