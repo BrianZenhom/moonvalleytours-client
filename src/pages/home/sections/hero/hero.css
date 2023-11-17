@@ -90,7 +90,7 @@
   border: 1px solid transparent;
   font-family: inherit;
   font-weight: 500;
-  font-size: 18px;
+  font-size: clamp(14px, 2vw, 17px);
   background: none;
   padding: 10px 20px;
   color: var(--dark-color);
