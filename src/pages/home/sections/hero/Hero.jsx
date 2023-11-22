@@ -4,7 +4,6 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport';
 import HiddenFees from '../../../../assets/icons/HiddenFees';
 import Accommodation from '../../../../assets/icons/Accommodation';
 import Flights from '../../../../assets/icons/Flights';
-import { useFetch } from '../../../../hooks/useFetch';
 // import { fetchCities } from '../../../../services/api';
 
 // Temporary suggestions list
@@ -55,10 +54,6 @@ export const Suggestions = [
 export default function Hero() {
   const searchSuggestionsRef = useRef(null);
   const [openSuggestion, setOpenSuggestion] = useState(false);
-
-  const { data, loading, error } = useFetch(
-    'https://moonvalleytours-api.1.ie-1.fl0.io/cities'
-  );
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -127,7 +122,7 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {loading
+                {/* {loading
                   ? 'Loading'
                   : data.map((loc) => {
                       return (
@@ -140,7 +135,7 @@ export default function Hero() {
                           </a>
                         </li>
                       );
-                    })}
+                    })} */}
               </ul>
               <div className="showmore_button_suggestion">
                 <button>Show all destinations</button>
