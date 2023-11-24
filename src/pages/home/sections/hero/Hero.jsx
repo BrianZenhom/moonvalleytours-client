@@ -4,54 +4,16 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport';
 import HiddenFees from '../../../../assets/icons/HiddenFees';
 import Accommodation from '../../../../assets/icons/Accommodation';
 import Flights from '../../../../assets/icons/Flights';
-// import { fetchCities } from '../../../../services/api';
-
-// Temporary suggestions list
-
-export const Suggestions = [
-  {
-    country: 'Egypt',
-    city: 'Cairo',
-  },
-  {
-    country: 'Egypt',
-    city: 'Alexandria',
-  },
-  {
-    country: 'Egypt',
-    city: 'Luxor',
-  },
-  {
-    country: 'Turkiye',
-    city: 'Istambul',
-  },
-  {
-    country: 'Turkiye',
-    city: 'Fethiye',
-  },
-  {
-    country: 'Turkiye',
-    city: 'Antalya',
-  },
-  {
-    country: 'Turkiye',
-    city: 'Capadoccia',
-  },
-  {
-    country: 'Turkiye',
-    city: 'Istambul',
-  },
-  {
-    country: 'United Arab Emirates',
-    city: 'Dubai',
-  },
-  {
-    country: 'United Arab Emirates',
-    city: 'Abu Dhabi',
-  },
-];
 
 export default function Hero() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://moonvalleytours-api.1.ie-1.fl0.io/cities')
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
   const searchSuggestionsRef = useRef(null);
   const [openSuggestion, setOpenSuggestion] = useState(false);
 
@@ -122,20 +84,16 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {/* {loading
-                  ? 'Loading'
-                  : data.map((loc) => {
-                      return (
-                        <li key={loc.city} title={loc.city}>
-                          <a href={`${loc.country}/${loc.city}`}>
-                            <span className="a-heavy">{loc.city}</span>
-                          </a>
-                          <a href={`${loc.country}`}>
-                            <span className="a-light">{loc.country}</span>
-                          </a>
-                        </li>
-                      );
-                    })} */}
+                {data.map((loc) => (
+                  <li key={loc.city} title={loc.city}>
+                    <a href={`${loc.country}/${loc.city}`}>
+                      <span className="a-heavy">{loc.city}</span>
+                    </a>
+                    <a href={`${loc.country}`}>
+                      <span className="a-light">{loc.country}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
               <div className="showmore_button_suggestion">
                 <button>Show all destinations</button>
