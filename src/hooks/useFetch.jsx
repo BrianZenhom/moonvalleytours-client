@@ -9,15 +9,18 @@ export const useFetch = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const response = await fetch(url);
         const data = await response.json();
         setData(data);
       } catch (err) {
+        setError(true);
         console.log(err);
       }
     };
     fetchData();
-  });
+    setLoading(false);
+  }, [url]);
 
   return { data, loading, error };
 };

@@ -84,16 +84,18 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {data.map((loc) => (
-                  <li key={loc.city} title={loc.city}>
-                    <a href={`${loc.country}/${loc.city}`}>
-                      <span className="a-heavy">{loc.city}</span>
-                    </a>
-                    <a href={`${loc.country}`}>
-                      <span className="a-light">{loc.country}</span>
-                    </a>
-                  </li>
-                ))}
+                {data.map((loc) => {
+                  return (
+                    <li key={loc.city} title={loc.city}>
+                      <a href={`${loc.country}/${loc.city}`}>
+                        <span className="a-heavy">{loc.city}</span>
+                      </a>
+                      <a href={`${loc.country}`}>
+                        <span className="a-light">{loc.country}</span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
               <div className="showmore_button_suggestion">
                 <button>Show all destinations</button>

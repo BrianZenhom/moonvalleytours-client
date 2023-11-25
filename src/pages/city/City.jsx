@@ -1,7 +1,7 @@
 import './city.css';
 import { Link } from 'react-router-dom';
 import CityCards from '../../components/citycards/CityCards';
-import { useFetch } from '../../hooks/useFetch';
+import { useFetch, useFetchCountry } from '../../hooks/useFetch';
 import { useParams } from 'react-router-dom';
 
 export default function City() {
@@ -9,6 +9,10 @@ export default function City() {
 
   const { data, loading, error } = useFetch(
     `https://moonvalleytours-api.1.ie-1.fl0.io/${city.country}/${city.city}`
+  );
+
+  const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
+    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${city.city}`
   );
 
   return (
@@ -61,12 +65,35 @@ export default function City() {
           <div className="city_content-desc">
             <span>0 of 0 activities and tours in Cairo</span>
           </div>
-          {
-            // data.map((item) => (
-            //   <CityCards key={item.tour} item={item} />
-          }
-          <CityCards />
-          <CityCards />
+          {errorCountry
+            ? 'Something went wrong!'
+            : loadingCountry
+            ? 'Loading'
+            : dataCountry.map((item) => {
+                let cityWithHyphens = item.city
+                  .replace(/\s/g, '-')
+                  .toLowerCase();
+                let tourWithHyphens = item.tour
+                  .replace(/\s/g, '-')
+                  .toLowerCase();
+                return (
+                  <>
+                    <Link
+                      key={item.city}
+                      to={`/tours/${cityWithHyphens}/${tourWithHyphens} `}
+                    >
+                      <CityCards
+                        title={item.tour}
+                        desc={item.tour_description}
+                        price={item.tour_price}
+                        img={item.tour_image}
+                        key={item.tour}
+                        item={item}
+                      />
+                    </Link>
+                  </>
+                );
+              })}
         </div>
       </article>
     </section>

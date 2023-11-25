@@ -1,25 +1,21 @@
 import { BusIcon, LanguageIcon } from './../../assets/icons/TourIcons';
-import img from './../../assets/images/image(4).webp';
+import PropTypes from 'prop-types';
 
-export default function CityCards() {
+export default function CityCards({ title, desc, price, img }) {
   return (
     <div className="city_card">
       <div className="city_card-wrapper">
         <img src={img} alt="" />
         <div className="city_card-content">
           <div className="city_card-title">
-            <h3>Cairo Camel Ride</h3>
+            <h3>{title}</h3>
             <div className="city_card-details">
               <strong>9.40/10</strong>
               <small>7 reviews | 70 travellers</small>
               <strong>Free cancellation</strong>
             </div>
           </div>
-          <div className="city_card-desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-            unde tempora voluptates, ullam suscipit excepturi! Doloremque dolore
-            eveniet laborum repellat.
-          </div>
+          <div className="city_card-desc">{desc}</div>
         </div>
       </div>
       <div className="city_card-quality-tags">
@@ -33,9 +29,17 @@ export default function CityCards() {
           </small>
         </div>
         <div className="city_card-price">
-          <h3>&euro; 1,796</h3>
+          <h3>&euro; {price}</h3>
         </div>
       </div>
     </div>
   );
 }
+
+// props validation
+CityCards.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+};

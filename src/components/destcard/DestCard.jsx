@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './destcard.css';
-import img from './../../assets/images/image(4).webp';
+
 import { Link } from 'react-router-dom';
 
 export default function DestCard({ dest }) {
