@@ -39,10 +39,7 @@ export default function Hero() {
   };
 
   const handleSearchClick = () => {
-    searchSuggestionsRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    });
+    searchSuggestionsRef.current.scrollIntoView();
     setOpenSuggestion(true);
   };
 

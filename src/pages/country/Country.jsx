@@ -27,7 +27,7 @@ export default function Country() {
           </div>
           <div className="country_details">
             <div className="destinations">
-              <h2>0</h2>
+              <h2>{loadingCountry ? '' : dataCountry?.length}</h2>
               <span>destinations</span>
             </div>
             <div className="destinations">

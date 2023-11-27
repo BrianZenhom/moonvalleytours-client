@@ -162,7 +162,7 @@ small {
   color: gray;
 }
 html {
-  scroll-padding-top: var(--scroll-padding, 70px);
+  scroll-padding-top: var(--scroll-padding, 80px);
   overflow-x: clip;
 }
 body {
