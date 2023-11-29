@@ -39,7 +39,7 @@ export default function City() {
           </div>
           <div className="city_details">
             <div className="reviews">
-              <h2>0</h2>
+              <h2>{dataCountry.length}</h2>
               <span>tours</span>
             </div>
             <div className="reviews">
@@ -87,7 +87,6 @@ export default function City() {
                         desc={item.tour_description}
                         price={item.tour_price}
                         img={item.tour_image}
-                        key={item.tour}
                         item={item}
                       />
                     </Link>

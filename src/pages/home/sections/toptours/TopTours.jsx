@@ -18,6 +18,7 @@ export default function TopTours() {
             return (
               <>
                 <TourCard
+                  key={tour.tour}
                   tourLink={tourWithHyphens}
                   tourName={tour.tour}
                   city={cityWithHyphens}

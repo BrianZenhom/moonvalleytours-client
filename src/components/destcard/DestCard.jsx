@@ -2,8 +2,13 @@ import PropTypes from 'prop-types';
 import './destcard.css';
 
 import { Link } from 'react-router-dom';
+import { useFetch } from '../../hooks/useFetch';
 
 export default function DestCard({ dest }) {
+  const { data, loading, error } = useFetch(
+    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${dest.city}`
+  );
+
   return (
     <Link to={`/${dest.country}/${dest.city}`}>
       <div className="list_card-item">
@@ -16,7 +21,7 @@ export default function DestCard({ dest }) {
             <div className="maindestination_details">
               <div className="left">
                 <div className="tours">
-                  <h3>5</h3>
+                  <h3>{error ? '?' : loading ? '' : data.length}</h3>
                   <small>tours</small>
                 </div>
                 <div className="travellers">
