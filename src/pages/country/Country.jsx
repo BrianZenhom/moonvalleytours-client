@@ -11,8 +11,10 @@ export default function Country() {
   );
 
   const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/cities/${country.country}`
+    `https://moonvalleytours-api.1.ie-1.fl0.io/cities/united-arab-emirates`
   );
+
+  console.log(dataCountry);
 
   return (
     <section className="country">

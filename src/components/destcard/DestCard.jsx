@@ -9,8 +9,11 @@ export default function DestCard({ dest }) {
     `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${dest.city}`
   );
 
+  let cityWithHyphens = dest.city.replace(/\s/g, '-').toLowerCase();
+  let countryWithHyphens = dest.country.replace(/\s/g, '-').toLowerCase();
+
   return (
-    <Link to={`/${dest.country}/${dest.city}`}>
+    <Link to={`/${countryWithHyphens}/${cityWithHyphens}`}>
       <div className="list_card-item">
         <div className="maindestinations_card">
           <img src={dest.city_image} alt="" />
@@ -21,7 +24,7 @@ export default function DestCard({ dest }) {
             <div className="maindestination_details">
               <div className="left">
                 <div className="tours">
-                  <h3>{error ? '?' : loading ? '' : data.length}</h3>
+                  <h3>{error ? '?' : loading ? '' : data?.length}</h3>
                   <small>tours</small>
                 </div>
                 <div className="travellers">

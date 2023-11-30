@@ -47,7 +47,6 @@ export default function Tour() {
               <div className="tour-details">
                 <div className="tour-tags">
                   <small>Egipto</small>
-                  <small>Africa / Asia</small>
                   <small>{data[0]?.city}</small>
                 </div>
                 <div className="tour-share">

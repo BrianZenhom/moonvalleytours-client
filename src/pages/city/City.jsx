@@ -12,8 +12,10 @@ export default function City() {
   );
 
   const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${city.city}`
+    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${data[0]?.city}`
   );
+
+  console.log(data);
 
   return (
     <section className="city">
@@ -33,9 +35,9 @@ export default function City() {
         <header className="city_intro container">
           <div className="city_title">
             <Link to={'/' + city.country}>
-              <small className="country_name">{city.country}</small>
+              <small className="country_name">{data[0]?.country}</small>
             </Link>
-            <h1>{city.city}</h1>
+            <h1>{data[0]?.city}</h1>
           </div>
           <div className="city_details">
             <div className="reviews">
