@@ -1,27 +1,27 @@
-import './city.css';
-import { Link } from 'react-router-dom';
-import CityCards from '../../components/citycards/CityCards';
-import { useFetch, useFetchCountry } from '../../hooks/useFetch';
-import { useParams } from 'react-router-dom';
+import './city.css'
+import { Link } from 'react-router-dom'
+import CityCards from '../../components/citycards/CityCards'
+// import { useFetch, useFetchCountry } from '../../hooks/useFetch';
+// import { useParams } from 'react-router-dom';
 
 export default function City() {
-  const city = useParams();
+  // const city = useParams();
 
-  const { data, loading, error } = useFetch(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/${city.country}/${city.city}`
-  );
+  // const { data, loading, error } = useFetch(
+  //   `https://moonvalleytours-api.1.ie-1.fl0.io/${city.country}/${city.city}`
+  // );
 
-  const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${data[0]?.city}`
-  );
+  // const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
+  //   `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${data[0]?.city}`
+  // );
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="city">
       <article className="city_header">
         <div className="city_blackoverlay"></div>
-        {error ? (
+        {/* {error ? (
           'Something went wrong!'
         ) : loading ? (
           ' loading'
@@ -31,15 +31,15 @@ export default function City() {
             alt=""
             className="header-Img"
           />
-        )}
+        )} */}
         <header className="city_intro container">
-          <div className="city_title">
+          {/* <div className="city_title">
             <Link to={'/' + city.country}>
               <small className="country_name">{data[0]?.country}</small>
             </Link>
             <h1>{data[0]?.city}</h1>
-          </div>
-          <div className="city_details">
+          </div> */}
+          {/* <div className="city_details">
             <div className="reviews">
               <h2>{dataCountry.length}</h2>
               <span>tours</span>
@@ -56,7 +56,7 @@ export default function City() {
               <h2>0</h2>
               <span>This is how they rate us</span>
             </div>
-          </div>
+          </div> */}
         </header>
       </article>
       <article className="city_content container">
@@ -67,17 +67,17 @@ export default function City() {
           <div className="city_content-desc">
             <span>0 of 0 activities and tours in Cairo</span>
           </div>
-          {errorCountry
+          {/* {errorCountry
             ? 'Something went wrong!'
             : loadingCountry
             ? 'Loading'
-            : dataCountry.map((item) => {
+            : dataCountry.map(item => {
                 let cityWithHyphens = item.city
                   .replace(/\s/g, '-')
-                  .toLowerCase();
+                  .toLowerCase()
                 let tourWithHyphens = item.tour
                   .replace(/\s/g, '-')
-                  .toLowerCase();
+                  .toLowerCase()
                 return (
                   <>
                     <Link
@@ -93,10 +93,10 @@ export default function City() {
                       />
                     </Link>
                   </>
-                );
-              })}
+                )
+              })} */}
         </div>
       </article>
     </section>
-  );
+  )
 }

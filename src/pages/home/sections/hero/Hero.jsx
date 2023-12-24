@@ -1,47 +1,47 @@
-import { useState, useRef, useEffect } from 'react';
-import './hero.css';
-import CustomerSupport from '../../../../assets/icons/CustomerSupport';
-import HiddenFees from '../../../../assets/icons/HiddenFees';
-import Accommodation from '../../../../assets/icons/Accommodation';
-import Flights from '../../../../assets/icons/Flights';
+import { useState, useRef, useEffect } from 'react'
+import './hero.css'
+import CustomerSupport from '../../../../assets/icons/CustomerSupport'
+import HiddenFees from '../../../../assets/icons/HiddenFees'
+import Accommodation from '../../../../assets/icons/Accommodation'
+import Flights from '../../../../assets/icons/Flights'
 
 export default function Hero() {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('https://moonvalleytours-api.1.ie-1.fl0.io/cities')
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data));
+  // }, []);
+
+  const searchSuggestionsRef = useRef(null)
+  const [openSuggestion, setOpenSuggestion] = useState(false)
 
   useEffect(() => {
-    fetch('https://moonvalleytours-api.1.ie-1.fl0.io/cities')
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
-
-  const searchSuggestionsRef = useRef(null);
-  const [openSuggestion, setOpenSuggestion] = useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (
         searchSuggestionsRef.current &&
         !searchSuggestionsRef.current.contains(event.target)
       ) {
-        setOpenSuggestion(false);
+        setOpenSuggestion(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [searchSuggestionsRef]);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [searchSuggestionsRef])
 
   const handleOpenSuggestion = () => {
-    setOpenSuggestion(true);
-  };
+    setOpenSuggestion(true)
+  }
 
   const handleSearchClick = () => {
-    searchSuggestionsRef.current.scrollIntoView();
-    setOpenSuggestion(true);
-  };
+    searchSuggestionsRef.current.scrollIntoView()
+    setOpenSuggestion(true)
+  }
 
   return (
     <section className="hero">
@@ -66,6 +66,10 @@ export default function Hero() {
                 onClick={handleSearchClick}
                 ref={searchSuggestionsRef}
                 onFocus={handleOpenSuggestion}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
               />
               <button aria-label="submit search">Search</button>
             </div>
@@ -81,7 +85,7 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {data.map((loc) => {
+                {/* {data.map((loc) => {
                   return (
                     <li key={loc.city} title={loc.city}>
                       <a href={`${loc.country}/${loc.city}`}>
@@ -92,7 +96,7 @@ export default function Hero() {
                       </a>
                     </li>
                   );
-                })}
+                })} */}
               </ul>
               <div className="showmore_button_suggestion">
                 <button>Show all destinations</button>
@@ -122,5 +126,5 @@ export default function Hero() {
         </aside>
       </article>
     </section>
-  );
+  )
 }

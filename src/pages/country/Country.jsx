@@ -1,36 +1,36 @@
-import './country.css';
-import { useFetch, useFetchCountry } from '../../hooks/useFetch';
-import { useParams } from 'react-router-dom';
-import DestCard from '../../components/destcard/DestCard';
+import './country.css'
+// import { useFetch, useFetchCountry } from '../../hooks/useFetch';
+// import { useParams } from 'react-router-dom';
+// import DestCard from '../../components/destcard/DestCard'
 
 export default function Country() {
-  const country = useParams();
+  // const country = useParams();
 
-  const { data, loading, error } = useFetch(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/${country.country}`
-  );
+  // const { data, loading, error } = useFetch(
+  //   `https://moonvalleytours-api.1.ie-1.fl0.io/${country.country}`
+  // );
 
-  const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/cities/united-arab-emirates`
-  );
+  // const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
+  //   `https://moonvalleytours-api.1.ie-1.fl0.io/cities/united-arab-emirates`
+  // );
 
-  console.log(dataCountry);
+  // console.log(dataCountry);
 
   return (
     <section className="country">
       <article className="country_header">
         <div className="country_blackoverlay"></div>
-        <img src={data.country_image} alt="" className="header-Img" />
+        {/* <img src={data.country_image} alt="" className="header-Img" /> */}
         <header className="country_intro container">
           <div className="country_title">
             <h1>
-              {error ? 'Something went wrong!' : loading ? '' : data.country}
+              {/* {error ? 'Something went wrong!' : loading ? '' : data.country} */}
             </h1>
           </div>
           <div className="country_details">
             <div className="destinations">
-              <h2>{loadingCountry ? '' : dataCountry?.length}</h2>
-              <span>destinations</span>
+              {/* <h2>{loadingCountry ? '' : dataCountry?.length}</h2>
+              <span>destinations</span> */}
             </div>
             <div className="destinations">
               <h2>0</h2>
@@ -51,20 +51,20 @@ export default function Country() {
         <section className="maindestinations">
           <article className="maindestinations_content container">
             <header className="maindestinations_header">
-              <h2>Main destinations in {data.country}</h2>
+              {/* <h2>Main destinations in {data.country}</h2> */}
             </header>
             <div className="maindestinations_grid">
-              {errorCountry
+              {/* {errorCountry
                 ? 'Something went wrong!'
                 : loadingCountry
                 ? 'loading'
-                : dataCountry.map((dest) => (
+                : dataCountry.map(dest => (
                     <DestCard key={dest.city} dest={dest} />
-                  ))}
+                  ))} */}
             </div>
           </article>
         </section>
       </div>
     </section>
-  );
+  )
 }

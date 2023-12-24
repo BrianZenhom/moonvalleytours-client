@@ -1,7 +1,7 @@
-import img1 from './../../assets/images/image(3).webp';
-import img2 from './../../assets/images/image(4).webp';
-import img3 from './../../assets/images/image(1).webp';
-import './tour.css';
+import img1 from './../../assets/images/image(3).webp'
+import img2 from './../../assets/images/image(4).webp'
+import img3 from './../../assets/images/image(1).webp'
+import './tour.css'
 import {
   AccessibilityIcon,
   DurationIcon,
@@ -13,30 +13,30 @@ import {
   ProviderIcon,
   VoucherIcon,
   WhenToBookIcon,
-} from '../../assets/icons/TourIcons';
-import Slider from '../../components/slider/Slider';
-import { useParams } from 'react-router-dom';
-import { useFetch } from '../../hooks/useFetch';
+} from '../../assets/icons/TourIcons'
+import Slider from '../../components/slider/Slider'
+import { useParams } from 'react-router-dom'
+// import { useFetch } from '../../hooks/useFetch';
 
 const images = [
   { url: img1, alt: 'Camel Ride' },
   { url: img2, alt: 'Image of the Pyramids' },
   { url: img3, alt: 'Sunset with a person riding a camel in the giza desert' },
-];
+]
 
 export default function Tour() {
-  const city = useParams().city;
-  const tour = useParams().tour;
+  // const city = useParams().city;
+  // const tour = useParams().tour;
 
-  const { data, loading, error } = useFetch(
-    `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${city}/${tour}`
-  );
+  // // const { data, loading, error } = useFetch(
+  // //   `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${city}/${tour}`
+  // // );
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
-      {error ? (
+      {/* {error ? (
         'Something went wrong!'
       ) : loading ? (
         'loading '
@@ -291,7 +291,7 @@ export default function Tour() {
             </div>
           </article>
         </section>
-      )}
+      )} */}
     </>
-  );
+  )
 }

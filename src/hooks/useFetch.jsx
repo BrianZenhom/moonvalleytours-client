@@ -1,49 +1,36 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
-export const useFetch = (url) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-        const data = await response.json();
-        setData(data);
-      } catch (err) {
-        setError(true);
-        console.log(err);
-      }
-    };
-    fetchData();
-    setLoading(false);
-  }, [url]);
-
-  return { data, loading, error };
-};
-
-export const useFetchCountry = (url) => {
-  const [dataCountry, setDataCountry] = useState([]);
-  const [loadingCountry, setLoadingCountry] = useState(false);
-  const [errorCountry, setErrorCountry] = useState(false);
+const useFetch = url => {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
       try {
-        setLoadingCountry(true);
-        const response = await fetch(url);
-        const dataCountry = await response.json();
-        setDataCountry(dataCountry);
-      } catch (err) {
-        setErrorCountry(true);
+        const res = await axios.get(url)
+        setData(res.data)
+      } catch (error) {
+        setError(error)
       }
-      setLoadingCountry(false);
-    };
-    fetchData();
-  }, [url]);
+      setLoading(false)
+    }
+    fetchData()
+  }, [url])
 
-  return { dataCountry, loadingCountry, errorCountry };
-};
+  const reFetch = async () => {
+    setLoading(true)
+    try {
+      const res = await axios.get(url)
+      setData(res.data)
+    } catch (err) {
+      setError(err)
+    }
+  }
+
+  return { data, loading, error, reFetch }
+}
+
+export default useFetch

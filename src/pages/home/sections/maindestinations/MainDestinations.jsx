@@ -1,13 +1,12 @@
-import PropTypes from 'prop-types';
-import './maindestinations.css';
-import DestCard from './../../../../components/destcard/DestCard';
-
-import { useFetch } from '../../../../hooks/useFetch';
+import PropTypes from 'prop-types'
+import './maindestinations.css'
+import useFetch from './../../../../hooks/useFetch'
+import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = useFetch(
-    'https://moonvalleytours-api.1.ie-1.fl0.io/cities'
-  );
+    'http://localhost:3000/api/v1/countries/cities?limit=6'
+  )
 
   return (
     <section className="maindestinations">
@@ -20,13 +19,20 @@ export default function MainDestinations({ type }) {
             ? 'Something went wrong!'
             : loading
             ? 'Loading...'
-            : data.map((dest) => <DestCard key={dest.city} dest={dest} />)}
+            : data?.data?.cities?.map(dest => (
+                <DestCard
+                  key={dest.city}
+                  dest={dest}
+                  loading={loading}
+                  error={error}
+                />
+              ))}
         </div>
       </article>
     </section>
-  );
+  )
 }
 
 MainDestinations.propTypes = {
   type: PropTypes.string.isRequired,
-};
+}
