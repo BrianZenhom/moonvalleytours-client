@@ -4,15 +4,10 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport'
 import HiddenFees from '../../../../assets/icons/HiddenFees'
 import Accommodation from '../../../../assets/icons/Accommodation'
 import Flights from '../../../../assets/icons/Flights'
+import useFetch from '../../../../hooks/useFetch'
 
 export default function Hero() {
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch('https://moonvalleytours-api.1.ie-1.fl0.io/cities')
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
+  const { data } = useFetch('http://localhost:3000/api/cities')
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
@@ -85,9 +80,9 @@ export default function Hero() {
                 <h1>Top destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {/* {data.map((loc) => {
+                {data.map(loc => {
                   return (
-                    <li key={loc.city} title={loc.city}>
+                    <li key={loc.id} title={loc.country}>
                       <a href={`${loc.country}/${loc.city}`}>
                         <span className="a-heavy">{loc.city}</span>
                       </a>
@@ -95,8 +90,8 @@ export default function Hero() {
                         <span className="a-light">{loc.country}</span>
                       </a>
                     </li>
-                  );
-                })} */}
+                  )
+                })}
               </ul>
               <div className="showmore_button_suggestion">
                 <button>Show all destinations</button>

@@ -1,7 +1,10 @@
-// import TourCard from '../../../../components/tourscard/TourCard'
+import TourCard from '../../../../components/tourscard/TourCard'
+import useFetch from './../../../../hooks/useFetch'
 import './toptours.css'
 
 export default function TopTours() {
+  const { data, loading, error } = useFetch('http://localhost:3000/api/tours')
+  console.log(data)
   return (
     <section className="toptours">
       <article className="toptours_content container">
@@ -9,31 +12,25 @@ export default function TopTours() {
           <h2>Top Tours</h2>
         </div>
         <div className="toptours_grid">
-          {/* {error
+          {error
             ? 'something went wrong!'
             : loading
             ? 'loading'
             : data.map(tour => {
-                let cityWithHyphens = tour.city
-                  .replace(/\s/g, '-')
-                  .toLowerCase()
-                let tourWithHyphens = tour.tour
-                  .replace(/\s/g, '-')
-                  .toLowerCase()
                 return (
                   <>
                     <TourCard
-                      key={tour.tour}
-                      tourLink={tourWithHyphens}
-                      tourName={tour.tour}
-                      city={cityWithHyphens}
-                      tourPrice={tour.tour_price}
-                      tourImage={tour.tour_image}
-                      tourDescription={tour.tour_description}
+                      key={tour?.id}
+                      tourName={tour.title}
+                      tourPrice={tour.price}
+                      tourImage={tour.tourThumbnail}
+                      tourDescription={tour.desc}
+                      tourReviews={tour.ratingsAverage}
+                      tourRating={tour.ratingsQuantity}
                     />
                   </>
                 )
-              })} */}
+              })}
         </div>
       </article>
     </section>

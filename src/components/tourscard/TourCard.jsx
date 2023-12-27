@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 // import img from '../../assets/images/image(1).webp';
 
 export default function TourCard({
@@ -9,6 +9,8 @@ export default function TourCard({
   tourLink,
   tourImage,
   tourDescription,
+  tourReviews,
+  tourRating,
 }) {
   return (
     <div className="toptours_card-item">
@@ -20,7 +22,8 @@ export default function TourCard({
               <div className="toptours_details">
                 <h3>{tourName}</h3>
                 <span>
-                  <strong>8.9/10</strong> 1.649 reviews
+                  <strong>{tourReviews}</strong>
+                  {tourRating} reviews
                 </span>
               </div>
               <div className="toptours_tourprice">
@@ -32,13 +35,13 @@ export default function TourCard({
                 <h3>{tourName}</h3>
                 <div className="toptours_description_details">
                   <div className="rating-tours">
-                    <strong>4.9</strong>
+                    <strong>{tourReviews}</strong>
                     <span className="toptours_description_rating">
                       <div className="stars">
                         <strong>****</strong>
                         <strong className="opacity">*</strong>
                       </div>
-                      1.649 reviews
+                      {tourRating} reviews
                     </span>
                   </div>
                   <br />
@@ -50,7 +53,7 @@ export default function TourCard({
         </div>
       </Link>
     </div>
-  );
+  )
 }
 
 // prop validations
@@ -61,4 +64,6 @@ TourCard.propTypes = {
   tourLink: PropTypes.string.isRequired,
   tourImage: PropTypes.string.isRequired,
   tourDescription: PropTypes.string.isRequired,
-};
+  tourReviews: PropTypes.number.isRequired,
+  tourRating: PropTypes.number.isRequired,
+}
