@@ -1,9 +1,9 @@
 import TourCard from '../../../../components/tourscard/TourCard'
-import useFetch from './../../../../hooks/useFetch'
+import Hooks from './../../../../hooks/useFetch'
 import './toptours.css'
 
 export default function TopTours() {
-  const { data, loading, error } = useFetch(
+  const { data, loading, error } = Hooks.useFetch(
     'http://localhost:8080/api/tours?limit=6'
   )
   return (

@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import './maindestinations.css'
-import useFetch from './../../../../hooks/useFetch'
+import Hooks from './../../../../hooks/useFetch'
 import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
-  const { data, loading, error } = useFetch(
-    'http://localhost:8080/api/cities?limit=6'
+  const { data, loading, error } = Hooks.useFetch(
+    `http://localhost:8080/api/cities`
   )
 
   return (

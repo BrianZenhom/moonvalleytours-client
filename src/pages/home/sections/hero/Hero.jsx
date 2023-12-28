@@ -4,10 +4,11 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport'
 import HiddenFees from '../../../../assets/icons/HiddenFees'
 import Accommodation from '../../../../assets/icons/Accommodation'
 import Flights from '../../../../assets/icons/Flights'
-import useFetch from '../../../../hooks/useFetch'
+import Hooks from '../../../../hooks/useFetch'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
-  const { data } = useFetch('http://localhost:3000/api/cities?featured=true')
+  const { data } = Hooks.useFetch('http://localhost:8080/api/cities')
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
@@ -85,13 +86,13 @@ export default function Hero() {
               <ul className="hero_search_list">
                 {data.map(loc => {
                   return (
-                    <li key={loc.id} title={loc.country}>
-                      <a href={`${loc.country}/${loc.city}`}>
-                        <span className="a-heavy">{loc.city}</span>
-                      </a>
-                      <a href={`${loc.country}`}>
-                        <span className="a-light">{loc.country}</span>
-                      </a>
+                    <li key={loc?._id} title={loc?.country}>
+                      <Link to={`${loc?.country}/${loc?.city}`}>
+                        <span className="a-heavy">{loc?.city}</span>
+                      </Link>
+                      <Link to={`${loc?.country}`}>
+                        <span className="a-light">{loc?.country}</span>
+                      </Link>
                     </li>
                   )
                 })}

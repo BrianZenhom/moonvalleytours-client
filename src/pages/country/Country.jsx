@@ -1,20 +1,18 @@
 import './country.css'
-// import { useFetch, useFetchCountry } from '../../hooks/useFetch';
-// import { useParams } from 'react-router-dom';
-// import DestCard from '../../components/destcard/DestCard'
+import Hooks from '../../hooks/useFetch'
+import { useLocation } from 'react-router-dom'
+import DestCard from '../../components/destcard/DestCard'
 
 export default function Country() {
-  // const country = useParams();
+  const location = useLocation()
 
-  // const { data, loading, error } = useFetch(
-  //   `https://moonvalleytours-api.1.ie-1.fl0.io/${country.country}`
-  // );
+  const { data, loading, error } = Hooks.useFetch(
+    `http://localhost:8080/api/countries${location.pathname}`
+  )
 
-  // const { dataCountry, loadingCountry, errorCountry } = useFetchCountry(
-  //   `https://moonvalleytours-api.1.ie-1.fl0.io/cities/united-arab-emirates`
-  // );
-
-  // console.log(dataCountry);
+  const { dataCity } = Hooks.useCityFetch(
+    `http://localhost:8080/api/cities/in${location.pathname}`
+  )
 
   return (
     <section className="country">
@@ -24,16 +22,16 @@ export default function Country() {
         <header className="country_intro container">
           <div className="country_title">
             <h1>
-              {/* {error ? 'Something went wrong!' : loading ? '' : data.country} */}
+              {error ? 'Something went wrong!' : loading ? '' : data.country}
             </h1>
           </div>
           <div className="country_details">
             <div className="destinations">
-              {/* <h2>{loadingCountry ? '' : dataCountry?.length}</h2>
-              <span>destinations</span> */}
+              <h2>{loading ? '' : data.cities?.length}</h2>
+              <span>destinations</span>
             </div>
             <div className="destinations">
-              <h2>0</h2>
+              <h2>{loading ? '' : dataCity[0]?.tours?.length}</h2>
               <span>tours & activities</span>
             </div>
             <div className="destinations">
@@ -51,16 +49,12 @@ export default function Country() {
         <section className="maindestinations">
           <article className="maindestinations_content container">
             <header className="maindestinations_header">
-              {/* <h2>Main destinations in {data.country}</h2> */}
+              <h2>Main destinations in {data.country}</h2>
             </header>
             <div className="maindestinations_grid">
-              {/* {errorCountry
-                ? 'Something went wrong!'
-                : loadingCountry
-                ? 'loading'
-                : dataCountry.map(dest => (
-                    <DestCard key={dest.city} dest={dest} />
-                  ))} */}
+              {dataCity.map(dest => {
+                return <DestCard key={dest?._id} dest={dest} />
+              })}
             </div>
           </article>
         </section>

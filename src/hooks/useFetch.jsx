@@ -33,4 +33,26 @@ const useFetch = url => {
   return { data, loading, error, reFetch }
 }
 
-export default useFetch
+const useCityFetch = url => {
+  const [dataCity, setDataCity] = useState([])
+  const [loadingCity, setLoadingCity] = useState(false)
+  const [errorCity, setErrorCity] = useState(false)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoadingCity(true)
+      try {
+        const res = await axios.get(url)
+        setDataCity(res.data)
+      } catch (error) {
+        setErrorCity(error)
+      }
+      setLoadingCity(false)
+    }
+    fetchData()
+  }, [url])
+
+  return { dataCity, loadingCity, errorCity }
+}
+
+export default { useFetch, useCityFetch }
