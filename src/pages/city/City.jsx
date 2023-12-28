@@ -1,6 +1,6 @@
 import './city.css'
 import { Link } from 'react-router-dom'
-// import CityCards from '../../components/citycards/CityCards'
+import CityCards from '../../components/citycards/CityCards'
 import Hooks from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 
@@ -8,6 +8,10 @@ export default function City() {
   const country = useParams()
   const { data } = Hooks.useFetch(
     `http://localhost:8080/api/cities/${country.city}`
+  )
+
+  const { dataCity, loadingCity, errorCity } = Hooks.useCityFetch(
+    `http://localhost:8080/api/tours/in/${country.city}`
   )
 
   return (
@@ -38,15 +42,15 @@ export default function City() {
               <span>tours</span>
             </div>
             <div className="reviews">
-              <h2>0</h2>
+              <h2>{data.travellers}</h2>
               <span>travellers have enjoyed tours here</span>
             </div>
             <div className="reviews">
-              <h2>0</h2>
+              <h2>{data.ratingsQuantity}</h2>
               <span>real reviews</span>
             </div>
             <div className="reviews">
-              <h2>0</h2>
+              <h2>{data.ratingsAverage}</h2>
               <span>This is how they rate us</span>
             </div>
           </div>
@@ -58,25 +62,29 @@ export default function City() {
         </aside>
         <div className="city_content-cards">
           <div className="city_content-desc">
-            <span>0 of 0 activities and tours in Cairo</span>
+            <span>0 of 0 activities and tours in {data.city}</span>
           </div>
-          {/* {error
+          {errorCity
             ? 'Something went wrong!'
-            : loading
+            : loadingCity
             ? 'Loading'
-            : data.map(item => {
+            : dataCity.map(item => {
                 return (
                   <>
                     <CityCards
-                      title={item.tour}
-                      desc={item.tour_description}
-                      price={item.tour_price}
-                      img={item.tour_image}
+                      title={item.title}
+                      desc={item.desc}
+                      price={item.price}
+                      img={item.tourThumbnail}
                       item={item}
+                      language={item.language}
+                      rating={item.ratingsAverage}
+                      reviews={item.ratingsQuantity}
+                      travellers={item.travellers}
                     />
                   </>
                 )
-              })} */}
+              })}
         </div>
       </article>
     </section>

@@ -1,7 +1,16 @@
-import { BusIcon, LanguageIcon } from './../../assets/icons/TourIcons';
-import PropTypes from 'prop-types';
+import { BusIcon, LanguageIcon } from './../../assets/icons/TourIcons'
+import PropTypes from 'prop-types'
 
-export default function CityCards({ title, desc, price, img }) {
+export default function CityCards({
+  title,
+  desc,
+  price,
+  img,
+  language,
+  reviews,
+  rating,
+  travellers,
+}) {
   return (
     <div className="city_card">
       <div className="city_card-wrapper">
@@ -10,8 +19,10 @@ export default function CityCards({ title, desc, price, img }) {
           <div className="city_card-title">
             <h3>{title}</h3>
             <div className="city_card-details">
-              <strong>9.40/10</strong>
-              <small>7 reviews | 70 travellers</small>
+              <strong>{rating}/5</strong>
+              <small>
+                {reviews} reviews | {travellers} travellers
+              </small>
               <strong>Free cancellation</strong>
             </div>
           </div>
@@ -21,7 +32,7 @@ export default function CityCards({ title, desc, price, img }) {
       <div className="city_card-quality-tags">
         <div className="city_card-tag">
           <small>
-            <LanguageIcon /> English
+            <LanguageIcon /> {language}
           </small>
           <small>
             <BusIcon />
@@ -33,7 +44,7 @@ export default function CityCards({ title, desc, price, img }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // props validation
@@ -42,4 +53,8 @@ CityCards.propTypes = {
   desc: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
-};
+  language: PropTypes.string.isRequired,
+  reviews: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
+  travellers: PropTypes.number.isRequired,
+}
