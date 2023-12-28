@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 export default function City() {
   const country = useParams()
-  const { data } = Hooks.useFetch(
+  const { data, loading, error } = Hooks.useFetch(
     `http://localhost:8080/api/cities/${country.city}`
   )
 
@@ -32,9 +32,9 @@ export default function City() {
             </Link>
             <h1>{data.city}</h1>
           </div>
-          {/* <div className="city_details">
+          <div className="city_details">
             <div className="reviews">
-              <h2>{dataCountry.length}</h2>
+              <h2>{data?.tours?.length}</h2>
               <span>tours</span>
             </div>
             <div className="reviews">
@@ -49,7 +49,7 @@ export default function City() {
               <h2>0</h2>
               <span>This is how they rate us</span>
             </div>
-          </div> */}
+          </div>
         </header>
       </article>
       <article className="city_content container">
@@ -60,31 +60,20 @@ export default function City() {
           <div className="city_content-desc">
             <span>0 of 0 activities and tours in Cairo</span>
           </div>
-          {/* {errorCountry
+          {/* {error
             ? 'Something went wrong!'
-            : loadingCountry
+            : loading
             ? 'Loading'
-            : dataCountry.map(item => {
-                let cityWithHyphens = item.city
-                  .replace(/\s/g, '-')
-                  .toLowerCase()
-                let tourWithHyphens = item.tour
-                  .replace(/\s/g, '-')
-                  .toLowerCase()
+            : data.map(item => {
                 return (
                   <>
-                    <Link
-                      key={item.city}
-                      to={`/tours/${cityWithHyphens}/${tourWithHyphens} `}
-                    >
-                      <CityCards
-                        title={item.tour}
-                        desc={item.tour_description}
-                        price={item.tour_price}
-                        img={item.tour_image}
-                        item={item}
-                      />
-                    </Link>
+                    <CityCards
+                      title={item.tour}
+                      desc={item.tour_description}
+                      price={item.tour_price}
+                      img={item.tour_image}
+                      item={item}
+                    />
                   </>
                 )
               })} */}
