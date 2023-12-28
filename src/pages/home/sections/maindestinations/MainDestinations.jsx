@@ -5,7 +5,7 @@ import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:8080/api/cities`
+    `http://localhost:8080/api/cities?limit=6`
   )
 
   return (
