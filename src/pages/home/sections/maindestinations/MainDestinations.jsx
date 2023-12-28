@@ -5,7 +5,7 @@ import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = useFetch(
-    'http://localhost:3000/api/cities?limit=6'
+    'http://localhost:8080/api/cities?limit=6'
   )
 
   return (
@@ -22,7 +22,7 @@ export default function MainDestinations({ type }) {
             : data.map(dest => (
                 <>
                   <DestCard
-                    key={dest?.id}
+                    key={dest?._id}
                     dest={dest}
                     loading={loading}
                     error={error}

@@ -3,8 +3,9 @@ import useFetch from './../../../../hooks/useFetch'
 import './toptours.css'
 
 export default function TopTours() {
-  const { data, loading, error } = useFetch('http://localhost:3000/api/tours')
-  console.log(data)
+  const { data, loading, error } = useFetch(
+    'http://localhost:8080/api/tours?limit=6'
+  )
   return (
     <section className="toptours">
       <article className="toptours_content container">
@@ -15,12 +16,12 @@ export default function TopTours() {
           {error
             ? 'something went wrong!'
             : loading
-            ? 'loading'
+            ? 'Loading...'
             : data.map(tour => {
                 return (
                   <>
                     <TourCard
-                      key={tour?.id}
+                      key={tour?._id}
                       tourName={tour.title}
                       tourPrice={tour.price}
                       tourImage={tour.tourThumbnail}

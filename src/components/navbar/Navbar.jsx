@@ -1,107 +1,108 @@
-import Logo from '../../assets/logos/Logo';
-import './navbar.css';
-import User from './../../assets/icons/User';
-import Cart from '../../assets/icons/Cart';
-import More from '../../assets/icons/More';
-import { useState, useRef, useEffect } from 'react';
+import Logo from '../../assets/logos/Logo'
+import './navbar.css'
+import User from './../../assets/icons/User'
+import Cart from '../../assets/icons/Cart'
+import More from '../../assets/icons/More'
+import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
-  const [activeLanguage, setActiveLanguage] = useState('English');
-  const [activeCurrency, setActiveCurrency] = useState('US$');
-  const [open, setOpen] = useState(false);
-  const [openLanguage, setOpenLanguage] = useState(false);
-  const [openCurrency, setOpenCurrency] = useState(false);
-  const [scroll, setScroll] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState('English')
+  const [activeCurrency, setActiveCurrency] = useState('US$')
+  const [open, setOpen] = useState(false)
+  const [openLanguage, setOpenLanguage] = useState(false)
+  const [openCurrency, setOpenCurrency] = useState(false)
+  const [scroll, setScroll] = useState(false)
 
-  const dropdownLanguageRef = useRef(null);
-  const dropdownCurrencyRef = useRef(null);
-  const dropdownLoginRef = useRef(null);
+  const dropdownLanguageRef = useRef(null)
+  const dropdownCurrencyRef = useRef(null)
+  const dropdownLoginRef = useRef(null)
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (
         dropdownLanguageRef.current &&
         !dropdownLanguageRef.current.contains(event.target)
       ) {
-        setOpenLanguage(false);
+        setOpenLanguage(false)
       }
       if (
         dropdownCurrencyRef.current &&
         !dropdownCurrencyRef.current.contains(event.target)
       ) {
-        setOpenCurrency(false);
+        setOpenCurrency(false)
       }
       if (
         dropdownLoginRef.current &&
         !dropdownLoginRef.current.contains(event.target)
       ) {
-        setOpen(false);
+        setOpen(false)
       }
-    };
+    }
 
-    window.addEventListener('click', handleClickOutside);
+    window.addEventListener('click', handleClickOutside)
 
     return () => {
-      window.removeEventListener('click', handleClickOutside);
-    };
-  }, [dropdownLanguageRef, dropdownCurrencyRef, dropdownLoginRef]);
+      window.removeEventListener('click', handleClickOutside)
+    }
+  }, [dropdownLanguageRef, dropdownCurrencyRef, dropdownLoginRef])
 
-  const handleOpenCurrency = (e) => {
-    e.preventDefault();
-    e.target.classList.add('active');
-    setOpenCurrency(!openCurrency);
-    setOpenLanguage(false);
-    setOpen(false);
-  };
+  const handleOpenCurrency = e => {
+    e.preventDefault()
+    e.target.classList.add('active')
+    setOpenCurrency(!openCurrency)
+    setOpenLanguage(false)
+    setOpen(false)
+  }
 
-  const handleOpenLanguage = (e) => {
-    e.preventDefault();
-    setOpenLanguage(!openLanguage);
-    setOpenCurrency(false);
-    setOpen(false);
-  };
+  const handleOpenLanguage = e => {
+    e.preventDefault()
+    setOpenLanguage(!openLanguage)
+    setOpenCurrency(false)
+    setOpen(false)
+  }
 
   useEffect(() => {
-    let lastScrollTop = 0;
+    let lastScrollTop = 0
     const handleScroll = () => {
-      const { scrollTop } = document.documentElement;
+      const { scrollTop } = document.documentElement
       if (scrollTop > lastScrollTop) {
-        setScroll(true);
+        setScroll(true)
       } else if (scrollTop < lastScrollTop) {
-        setScroll(false);
+        setScroll(false)
       }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    };
-    window.addEventListener('scroll', handleScroll);
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
+    }
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleOpen = () => {
-    setOpen(!open);
-    setOpenCurrency(false);
-    setOpenLanguage(false);
-  };
+    setOpen(!open)
+    setOpenCurrency(false)
+    setOpenLanguage(false)
+  }
 
-  const handleActive = (e) => {
-    setActiveLanguage(e.target.innerText);
-  };
+  const handleActive = e => {
+    setActiveLanguage(e.target.innerText)
+  }
 
-  const handleActiveCurrency = (e) => {
-    setActiveCurrency(e.target.dataset.value);
-  };
+  const handleActiveCurrency = e => {
+    setActiveCurrency(e.target.dataset.value)
+  }
 
   return (
     <nav className={scroll ? 'navbar' : 'navbar  visible'}>
       <div className="navbar-content container">
         <div className="logo">
-          <a
+          <Link
             aria-label="Click this logo to go to the top of the website"
-            href="/"
+            to="/"
           >
             <Logo type="logonav" />
-          </a>
+          </Link>
         </div>
         <ul className="navbar-links">
           <li>
@@ -252,5 +253,5 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>
-  );
+  )
 }

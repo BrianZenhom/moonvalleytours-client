@@ -21,10 +21,12 @@ export default function TourCard({
             <div className="toptours_details-previous bg">
               <div className="toptours_details">
                 <h3>{tourName}</h3>
-                <span>
-                  <strong>{tourReviews}</strong>
-                  {tourRating} reviews
-                </span>
+                {tourReviews && tourRating && (
+                  <span>
+                    <strong>{tourReviews}</strong>
+                    {tourRating} reviews
+                  </span>
+                )}
               </div>
               <div className="toptours_tourprice">
                 <h4>&euro; {tourPrice}</h4>

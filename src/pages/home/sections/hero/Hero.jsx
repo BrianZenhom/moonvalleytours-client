@@ -7,7 +7,7 @@ import Flights from '../../../../assets/icons/Flights'
 import useFetch from '../../../../hooks/useFetch'
 
 export default function Hero() {
-  const { data } = useFetch('http://localhost:3000/api/cities')
+  const { data } = useFetch('http://localhost:3000/api/cities?featured=true')
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
@@ -34,7 +34,10 @@ export default function Hero() {
   }
 
   const handleSearchClick = () => {
-    searchSuggestionsRef.current.scrollIntoView()
+    searchSuggestionsRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
     setOpenSuggestion(true)
   }
 
