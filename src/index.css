@@ -44,67 +44,61 @@
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-ExtraLight.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-200-normal.woff2) format('woff2');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Light.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-300-normal.woff2) format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Regular.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-400-normal.woff2) format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Italic.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-100-normal.woff2) format('woff2');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Medium.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-600-normal.woff2) format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-SemiBold.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-700-normal.woff2) format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Bold.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-800-normal.woff2) format('woff2');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-ExtraBold.woff2) format('woff2');
+  src: url(./assets/fonts/onest-latin-900-normal.woff2) format('woff2');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Montserrat';
-  src: url(./assets/fonts/Montserrat-Black.woff2) format('woff2');
-  font-weight: 1000;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 *,
 *::before,
@@ -136,6 +130,7 @@ h3 {
     sans-serif;
   font-weight: 800;
   font-size: clamp(1rem, 2vw, 1.4rem);
+  letter-spacing: 1.1px;
 }
 p {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
@@ -143,18 +138,19 @@ p {
     sans-serif;
   font-weight: 400;
   font-size: clamp(0.8rem, 5vw, 1rem);
+  letter-spacing: .7px;
 }
 span {
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat';
   font-weight: 400;
+  letter-spacing: .7px;
 }
 strong {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
   font-weight: 900;
+  letter-spacing: .7px;
 }
 small {
   font-size: 13px;
