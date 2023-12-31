@@ -1,0 +1,139 @@
+.maindestinations {
+  min-height: auto;
+}
+.maindestinations_content {
+  height: auto;
+  padding-top: 4rem;
+}
+.maindestinations_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.maindestinations_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  gap: 1rem;
+}
+.maindestinations_grid > * {
+  flex: 0 0 32%;
+}
+/* .list_card-item {
+  flex-basis: 30%;
+  flex-grow: 1;
+  max-width: 350px;
+} */
+.list_card-item {
+  min-width: 140px;
+  max-height: 230px;
+}
+.maindestinations_card {
+  background-color: var(--dark-color);
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.maindestination_title {
+  padding: 20px;
+  text-shadow: black 1px 1px 3px;
+}
+.maindestination_title h3 {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.9rem);
+  position: absolute;
+  bottom: 10px;
+}
+.maindestinations_card > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+
+.maindestinations_card:hover .maindestination_title h3 {
+  top: 30px;
+}
+/* hide my maindestinations_card image with a background color on hover*/
+.maindestinations_card:hover img {
+  opacity: 0;
+}
+
+.maindestination_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
+  transform: translateY(200px);
+}
+.maindestination_details h3 {
+  font-size: clamp(1rem, 2vw, 1.9rem);
+  font-weight: 800;
+  font-family: 'montserrat', sans-serif;
+}
+.left {
+  padding-right: 10px;
+  flex: 1 1 60%;
+}
+.right {
+  flex: 1 1 40%;
+}
+.maindestinations_card:hover .maindestination_details {
+  transform: translateY(50px);
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+.showmore_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.showmore_button button {
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  height: 50px;
+  border: 2px solid transparent;
+  color: var(--dark-color);
+  border: 1px solid var(--dark-color);
+  border-radius: 4px;
+  width: 200px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.showmore_button button:hover {
+  background-color: var(--dark-color);
+  color: white;
+}
+@media (width < 500px) {
+  .maindestinations_content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (width > 1000px) {
+  .maindestinations_card {
+    height: 230px;
+  }
+}

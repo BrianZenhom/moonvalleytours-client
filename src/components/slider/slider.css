@@ -1,0 +1,90 @@
+.slider_images {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.img-slider-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 5px;
+  transition: translate 300ms ease-in-out;
+}
+
+.img-slider-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+.img-slider-btn:hover,
+.img-slider-btn:focus-visible {
+  background-color: rgb(0 0 0 / 10%);
+  backdrop-filter: blur(2px);
+}
+
+.img-slider-btn > *,
+.img-slider-btn:focus-visible > * {
+  border-radius: 50%;
+  background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(2px);
+  fill: white;
+}
+
+.img-slider-btn:hover > * {
+  animation: squish 200ms ease-in-out;
+}
+
+.arrows {
+  width: 2rem;
+  padding: 5px;
+  color: white;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.dots {
+  width: 1rem;
+  color: white;
+}
+.img-slider-dot-btn {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  transition: 100ms ease-in-out;
+}
+.img-slider-dot-btn > * {
+  color: white;
+  background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(2px);
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+.img-slider-dot-btn:hover,
+.img-slider-dot-btn:focus-visible {
+  scale: 1.2;
+}
+
+.img-slider-dot-btn:focus-visible,
+.img-slider-btn:focus-visible {
+  outline: auto;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}

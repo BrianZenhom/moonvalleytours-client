@@ -1,0 +1,148 @@
+.toptours {
+  min-height: 80vh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.toptours_content {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toptours_header {
+  padding-top: 2rem;
+}
+.toptours_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+.toptours_card-item {
+  flex-basis: 340px;
+  min-height: 400px;
+}
+.toptours_card {
+  background-color: white;
+  flex: 1;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  color: white;
+  position: relative;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+  cursor: pointer;
+}
+.toptours_card:hover {
+  background-color: var(--dark-color);
+}
+.toptours_card:hover img {
+  opacity: 0;
+}
+.toptours_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+
+.toptours_card_details {
+  color: var(--dark-color);
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
+}
+.toptours_details-previous.bg {
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  transition: 0.2s;
+}
+.toptours_details {
+  display: flex;
+  flex-direction: column;
+}
+.toptours_details h3 {
+  font-size: 18px;
+  font-weight: 900;
+}
+.toptours_details span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.toptours_details strong {
+  margin-right: 5px;
+  font-weight: 900;
+}
+.toptours_tourprice h4 {
+  font-size: 32px;
+  font-weight: 900;
+}
+.toptours_description {
+  position: absolute;
+  color: white;
+  transform: translateY(200px);
+  padding: 20px;
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}
+.opacity {
+  opacity: 0.5;
+}
+.toptours_card:hover .toptours_description {
+  transform: translateY(-170px);
+  opacity: 1;
+}
+.toptours_card:hover .toptours_details-previous {
+  opacity: 0;
+  translate: translateY(-100px);
+}
+.toptours_description h3 {
+  font-size: 18px;
+  font-weight: 900;
+}
+.toptours_description_details strong {
+  font-size: 42px;
+}
+.toptours_description_rating {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.rating-tours {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.stars {
+  height: 25px;
+}
+@media (width < 1270px) {
+  .toptours_grid {
+    justify-content: center;
+  }
+}
