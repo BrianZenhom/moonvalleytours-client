@@ -13,7 +13,7 @@
 .tour-details {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 .tour-share button {
@@ -22,9 +22,16 @@
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
 }
 .tour-share button:hover {
   color: var(--main-color);
+  background-color: white;
+}
+.tags{
+  display: flex;
+  align-items: center;
 }
 .tour-tags {
   display: flex;

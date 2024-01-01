@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 // import img from '../../assets/images/image(1).webp';
 
 export default function TourCard({
-  city,
   tourName,
   tourPrice,
   tourLink,
@@ -11,10 +10,12 @@ export default function TourCard({
   tourDescription,
   tourReviews,
   tourRating,
+  city,
+  country,
 }) {
   return (
     <div className="toptours_card-item">
-      <Link to={`/tour/${city}/${tourLink}`}>
+      <Link to={`/${country}/${city}/${tourLink}`}>
         <div className="toptours_card">
           <img src={tourImage} alt={tourName} />
           <footer className="toptours_card_details">
@@ -68,4 +69,5 @@ TourCard.propTypes = {
   tourDescription: PropTypes.string.isRequired,
   tourReviews: PropTypes.number.isRequired,
   tourRating: PropTypes.number.isRequired,
+  country: PropTypes.string.isRequired,
 }

@@ -1,6 +1,6 @@
 import './country.css'
 import Hooks from '../../hooks/useFetch'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import DestCard from '../../components/destcard/DestCard'
 
 export default function Country() {
@@ -53,7 +53,13 @@ export default function Country() {
             </header>
             <div className="maindestinations_grid">
               {dataCity.map(dest => {
-                return <DestCard key={dest?._id} dest={dest} />
+                return (
+                  <>
+                    <Link to={`${location.pathname}/${dest.city}`}>
+                      <DestCard key={dest?._id} dest={dest} />
+                    </Link>
+                  </>
+                )
               })}
             </div>
           </article>
