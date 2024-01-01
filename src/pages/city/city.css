@@ -134,6 +134,7 @@
   color: var(--dark-color);
 }
 .city_card-desc {
+  color: var(--dark-color);
   text-wrap: balance;
 }
 .city_card-quality-tags {

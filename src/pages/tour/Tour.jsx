@@ -1,36 +1,37 @@
-// import img1 from './../../assets/images/image(3).webp'
-// import img2 from './../../assets/images/image(4).webp'
-// import img3 from './../../assets/images/image(1).webp'
+import img1 from './../../assets/images/image(3).webp'
+import img2 from './../../assets/images/image(4).webp'
+import img3 from './../../assets/images/image(1).webp'
+import { Link, useParams } from 'react-router-dom'
 import './tour.css'
-// import {
-//   AccessibilityIcon,
-//   DurationIcon,
-//   HelpIcon,
-//   IncluidedIcon,
-//   LanguageIcon,
-//   NotIncluidedIcon,
-//   PetIcon,
-//   ProviderIcon,
-//   VoucherIcon,
-//   WhenToBookIcon,
-// } from '../../assets/icons/TourIcons'
-// import Slider from '../../components/slider/Slider'
-// import { useParams } from 'react-router-dom'
-// import { useFetch } from '../../hooks/useFetch';
+import {
+  AccessibilityIcon,
+  DurationIcon,
+  HelpIcon,
+  IncluidedIcon,
+  LanguageIcon,
+  NotIncluidedIcon,
+  PetIcon,
+  ProviderIcon,
+  VoucherIcon,
+  WhenToBookIcon,
+} from '../../assets/icons/TourIcons'
+import Slider from '../../components/slider/Slider'
+import Hooks from '../../hooks/useFetch'
 
 export default function Tour() {
-  // const city = useParams().city;
-  // const tour = useParams().tour;
+  const location = useParams().tour
 
-  // // const { data, loading, error } = useFetch(
-  // //   `https://moonvalleytours-api.1.ie-1.fl0.io/tours/${city}/${tour}`
-  // // );
+  const { data, loading, error } = Hooks.useFetch(
+    `http://localhost:8080/api/tours/${location}`
+  )
 
-  // console.log(data);
+  console.log(data)
+
+  const images = [img1, img2, img3]
 
   return (
     <>
-      {/* {error ? (
+      {error ? (
         'Something went wrong!'
       ) : loading ? (
         'loading '
@@ -38,10 +39,18 @@ export default function Tour() {
         <section className="tour">
           <article className="tour-container">
             <header className="tour-header container">
-              <div className="tour-details">
-                <div className="tour-tags">
-                  <small>Egipto</small>
-                  <small>{data[0]?.city}</small>
+              <div className="tags">
+                <div className="tour-details">
+                  <Link to={`/${data?.country}`}>
+                    <div className="tour-tags">
+                      <small>Egipto</small>
+                    </div>
+                  </Link>
+                  <Link to={`/${data?.country}/${data?.city}`}>
+                    <div className="tour-tags">
+                      <small>{data?.city}</small>
+                    </div>
+                  </Link>
                 </div>
                 <div className="tour-share">
                   <button>share</button>
@@ -49,13 +58,14 @@ export default function Tour() {
               </div>
               <div className="tour-info">
                 <div className="tour-title">
-                  <h1>{data[0]?.tour}</h1>
+                  <h1>{data?.title}</h1>
                   <span>
-                    <strong>9.10/10</strong> 115 reviews
+                    <strong>{data?.ratingsAverage}/5</strong>{' '}
+                    {data?.ratingsQuantity} reviews
                   </span>
                 </div>
                 <div className="tour-price">
-                  <h1>&euro; 60</h1>
+                  <h1>&euro; {data?.price}</h1>
                   <button>check availability</button>
                 </div>
               </div>
@@ -78,7 +88,7 @@ export default function Tour() {
             <div className="singletour-data container">
               <div className="tour-desc-price-details-cancelation">
                 <div className="tour-desc">
-                  <p>{data[0]?.tour_description}</p>
+                  <p>{data?.desc}</p>
                   <br />
                   <span>View complete description</span>
                   <br />
@@ -114,7 +124,7 @@ export default function Tour() {
                       Tour from the airport
                     </span>
                     <div className="exact-price">
-                      <span>&euro; {data[0]?.tour_price}</span>
+                      <span>&euro; {data?.price}</span>
                     </div>
                     <div className="exact-price">
                       <span>&euro; 50</span>
@@ -133,14 +143,14 @@ export default function Tour() {
                       <DurationIcon />
                       Duration
                     </strong>
-                    <span>5 hours 30 minutes</span>
+                    <span>{data?.duration}</span>
                   </div>
                   <div className="more-info">
                     <strong>
                       <LanguageIcon />
                       Language
                     </strong>
-                    <span>{data[0]?.tour_language}</span>
+                    <span>{data?.language}</span>
                   </div>
                   <div className="more-info">
                     <strong>
@@ -148,9 +158,9 @@ export default function Tour() {
                       Incluided
                     </strong>
                     <ul>
-                      <li>Speaking Spanish, English or Turkish Guide</li>
-                      <li>Driver</li>
-                      <li>Transport by air conditioned vehicle</li>
+                      {data?.included?.map(li => (
+                        <li key={li}>{li}</li>
+                      ))}
                     </ul>
                   </div>
                   <div className="more-info">
@@ -159,8 +169,9 @@ export default function Tour() {
                       Not Incluided
                     </strong>
                     <ul>
-                      <li>Food or drinks</li>
-                      <li>Tips</li>
+                      {data?.notIncluded?.map(li => (
+                        <li key={li}>{li}</li>
+                      ))}
                     </ul>
                   </div>
                   <div className="more-info">
@@ -224,18 +235,14 @@ export default function Tour() {
                 <div className="hrblack"></div>
                 <div className="tour-cancellation">
                   <h2>Cancellation</h2>
-                  <span>
-                    Not refundable. This activity does not permit modifications
-                    nor cancelations.
-                  </span>
-                </div>
-                <div className="hrblack"></div>
-                <div className="tour-meetingpoint">
-                  <h2>Meeting point</h2>
-                  <span>
-                    Bateaux Parisiens. Port de la Bourdonnais, 75007, Paris,
-                    France.
-                  </span>
+                  {data?.cancellation ? (
+                    <span>Free cancellation 72hrs before the tour</span>
+                  ) : (
+                    <span>
+                      Not refundable. This activity does not permit
+                      modifications nor cancelations.
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="contentBox">
@@ -253,8 +260,11 @@ export default function Tour() {
                   <small>5 out of 25 reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
-                  <h1>9.40/10 *****</h1>
-                  <span>25 reviews | 330 travellers</span>
+                  <h1>{data?.ratingsAverage}/5 *****</h1>
+                  <span>
+                    {data?.ratingsQuantity} reviews | {data?.travellers}{' '}
+                    travellers
+                  </span>
                 </div>
               </div>
               <div className="tour-reviews-customers container">
@@ -285,7 +295,7 @@ export default function Tour() {
             </div>
           </article>
         </section>
-      )} */}
+      )}
     </>
   )
 }
