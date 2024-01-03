@@ -17,6 +17,7 @@ import {
 } from '../../assets/icons/TourIcons'
 import Slider from '../../components/slider/Slider'
 import Hooks from '../../hooks/useFetch'
+const images = [img1, img2, img3]
 
 export default function Tour() {
   const location = useParams().tour
@@ -24,8 +25,6 @@ export default function Tour() {
   const { data, loading, error } = Hooks.useFetch(
     `http://localhost:8080/api/tours/${location}`
   )
-
-  const images = [img1, img2, img3]
 
   return (
     <>
