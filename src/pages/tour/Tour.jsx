@@ -21,6 +21,8 @@ import Hooks from '../../hooks/useFetch'
 export default function Tour() {
   const location = useParams().tour
 
+  // is this working
+
   const { data, loading, error } = Hooks.useFetch(
     `http://localhost:8080/api/tours/${location}`
   )
