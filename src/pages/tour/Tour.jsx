@@ -25,8 +25,6 @@ export default function Tour() {
     `http://localhost:8080/api/tours/${location}`
   )
 
-  console.log(data)
-
   const images = [img1, img2, img3]
 
   return (
@@ -39,7 +37,7 @@ export default function Tour() {
         <section className="tour">
           <article className="tour-container">
             <header className="tour-header container">
-              <div className="tags">
+              <div className="tour-tags">
                 <div className="tour-details">
                   <Link to={`/${data?.country}`}>
                     <div className="tour-tags">

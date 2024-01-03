@@ -29,7 +29,7 @@
   color: var(--main-color);
   background-color: white;
 }
-.tags{
+.tour-tags{
   display: flex;
   align-items: center;
 }

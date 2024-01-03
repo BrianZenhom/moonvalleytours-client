@@ -14,6 +14,10 @@ export default function Country() {
     `http://localhost:8080/api/cities/in${location.pathname}`
   )
 
+  const toursLength = dataCity
+    ?.flatMap(city => city.tours.length)
+    .reduce((a, b) => a + b, 0)
+
   return (
     <section className="country">
       <article className="country_header">
@@ -31,7 +35,7 @@ export default function Country() {
               <span>destinations</span>
             </div>
             <div className="destinations">
-              <h2>{loading ? '' : dataCity[0]?.tours?.length}</h2>
+              <h2>{loading ? '' : toursLength}</h2>
               <span>tours & activities</span>
             </div>
             <div className="destinations">
