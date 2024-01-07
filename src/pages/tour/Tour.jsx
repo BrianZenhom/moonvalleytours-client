@@ -94,39 +94,25 @@ export default function Tour() {
                 <div className="hrblack"></div>
                 <div className="tour-prices">
                   <h2>Price</h2>
+                  <div className="hr"></div>
                   <div className="tour-price-wrapper-one">
                     <span className="tour-main-detail">
-                      Tour from the Sheraton Hotel
+                      Tour from the airport
                     </span>
                     <div className="exact-price">
                       <small>Adults</small>
-                      <span>&euro; {data[0]?.tour_price}</span>
+                      <span>&euro; {data?.price}</span>
                     </div>
                     <div className="exact-price">
                       <small>
                         Children <br /> 3-10 years old
                       </small>
-                      <span>&euro; 50</span>
+                      <span>&euro; {data?.price / 2}</span>
                     </div>
                     <div className="exact-price">
                       <small>
                         Children under <br /> 3 years old
                       </small>
-                      <span>free</span>
-                    </div>
-                  </div>
-                  <div className="hr"></div>
-                  <div className="tour-price-wrapper-two">
-                    <span className="tour-main-detail">
-                      Tour from the airport
-                    </span>
-                    <div className="exact-price">
-                      <span>&euro; {data?.price}</span>
-                    </div>
-                    <div className="exact-price">
-                      <span>&euro; 50</span>
-                    </div>
-                    <div className="exact-price">
                       <span>free</span>
                     </div>
                   </div>
@@ -147,7 +133,10 @@ export default function Tour() {
                       <LanguageIcon />
                       Language
                     </strong>
-                    <span>{data?.language}</span>
+                    <span>
+                      The activity takes place with a guide that speaks{' '}
+                      {data?.language}
+                    </span>
                   </div>
                   <div className="more-info">
                     <strong>

@@ -72,17 +72,7 @@ export default function City() {
                 return (
                   <>
                     <Link to={`/${country}/${item.city}/${item._id}`}>
-                      <CityCards
-                        title={item.title}
-                        desc={item.desc}
-                        price={item.price}
-                        img={item.tourThumbnail}
-                        item={item}
-                        language={item.language}
-                        rating={item.ratingsAverage}
-                        reviews={item.ratingsQuantity}
-                        travellers={item.travellers}
-                      />
+                      <CityCards item={item} />
                     </Link>
                   </>
                 )
