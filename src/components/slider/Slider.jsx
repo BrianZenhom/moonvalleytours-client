@@ -1,28 +1,28 @@
-import React from 'react';
+import React from 'react'
 import {
   FilledIconDot,
   IconDot,
   IconLeft,
   IconRight,
-} from '../../assets/icons/SliderIcons';
-import './slider.css';
-import PropTypes from 'prop-types';
+} from '../../assets/icons/SliderIcons'
+import './slider.css'
+import PropTypes from 'prop-types'
 
 export default function Slider({ images }) {
-  const [imageIndex, setImageIndex] = React.useState(1);
+  const [imageIndex, setImageIndex] = React.useState(1)
 
   function showNextImage() {
-    setImageIndex((index) => {
-      if (index === images.length - 1) return 0;
-      return index + 1;
-    });
+    setImageIndex(index => {
+      if (index === images.length - 1) return 0
+      return index + 1
+    })
   }
 
   function showPrevImage() {
-    setImageIndex((index) => {
-      if (index === 0) return images.length - 1;
-      return index - 1;
-    });
+    setImageIndex(index => {
+      if (index === 0) return images.length - 1
+      return index - 1
+    })
   }
 
   return (
@@ -87,9 +87,14 @@ export default function Slider({ images }) {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
 Slider.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+}

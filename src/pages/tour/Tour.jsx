@@ -6,7 +6,6 @@ import './tour.css'
 import {
   AccessibilityIcon,
   DurationIcon,
-  HelpIcon,
   IncluidedIcon,
   LanguageIcon,
   NotIncluidedIcon,
@@ -17,7 +16,21 @@ import {
 } from '../../assets/icons/TourIcons'
 import Slider from '../../components/slider/Slider'
 import Hooks from '../../hooks/useFetch'
-const images = [img1, img2, img3]
+
+const images = [
+  {
+    url: img1,
+    alt: 'img1',
+  },
+  {
+    url: img2,
+    alt: 'img2',
+  },
+  {
+    url: img3,
+    alt: 'img3',
+  },
+]
 
 export default function Tour() {
   const location = useParams().tour
@@ -86,10 +99,9 @@ export default function Tour() {
               <div className="tour-desc-price-details-cancelation">
                 <div className="tour-desc">
                   <p>{data?.desc}</p>
-                  <br />
-                  <span>View complete description</span>
-                  <br />
-                  <br />
+                  <p>
+                    <span>View complete description</span>
+                  </p>
                 </div>
                 <div className="hrblack"></div>
                 <div className="tour-prices">
@@ -201,22 +213,6 @@ export default function Tour() {
                     </strong>
                     <span>Not Allowed</span>
                   </div>
-                  <div className="more-info">
-                    <strong>
-                      <HelpIcon />
-                      Faqs
-                    </strong>
-                    <div className="qa">
-                      <span>
-                        <strong>Q </strong> - How to book?
-                      </span>
-                      <span>
-                        <strong>A</strong> - To reserve the activity, choose the
-                        date and complete the form on this page. You will
-                        receive your confirmation immediately.
-                      </span>
-                    </div>
-                  </div>
                 </div>
                 <div className="hrblack"></div>
                 <div className="tour-cancellation">
@@ -243,7 +239,7 @@ export default function Tour() {
                   <span>
                     These are genuine reviews written by our customers.
                   </span>
-                  <small>5 out of 25 reviews</small>
+                  <small>0 out of 0 reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
                   <h1>{data?.ratingsAverage}/5 *****</h1>

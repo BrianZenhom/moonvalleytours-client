@@ -58,7 +58,78 @@ export default function City() {
       </article>
       <article className="city_content container">
         <aside className="city_content-sidebar">
-          <span>Filter goes here</span>
+          <div className="category">
+            <h4>Categories</h4>
+            <div className="category_list">
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="Nature" />
+                  Nature
+                </label>
+              </div>
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="Food" />
+                  Food
+                </label>
+              </div>
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="Culture" />
+                  Culture
+                </label>
+              </div>
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="History" />
+                  History
+                </label>
+              </div>
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="Adventure" />
+                  Adventure
+                </label>
+              </div>
+              <div className="category_list-item">
+                <label>
+                  <input type="checkbox" name="Relax" />
+                  Relax
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="features">
+            <h4>Features</h4>
+            <div className="features_list">
+              <div className="features_list-item">
+                <label>
+                  <input type="checkbox" name="English only" />
+                  English only
+                </label>
+              </div>
+              <div className="features_list-item">
+                <label>
+                  <input type="checkbox" name="Free cancellation" />
+                  Free cancellation
+                </label>
+              </div>
+              <div className="features_list-item">
+                <label>
+                  <input type="checkbox" name="Wheelchair accessible" />
+                  Wheelchair accessible
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="price">
+            <h4>Price</h4>
+            <input type="range" min="0" max="6000" value="30" />
+            <div className="slider-thumb">
+              <div className="tooltip"></div>
+            </div>
+            <div className="progress"></div>
+          </div>
         </aside>
         <div className="city_content-cards">
           <div className="city_content-desc">
