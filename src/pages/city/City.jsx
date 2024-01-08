@@ -124,11 +124,19 @@ export default function City() {
           </div>
           <div className="price">
             <h4>Price</h4>
-            <input type="range" min="0" max="6000" value="30" />
-            <div className="slider-thumb">
-              <div className="tooltip"></div>
+            <div className="range-slider">
+              <input
+                className="slider"
+                type="range"
+                min="0"
+                max="6000"
+                value="30"
+              />
+              <div className="slider-thumb">
+                <div className="tooltip"></div>
+              </div>
+              <div className="progress"></div>
             </div>
-            <div className="progress"></div>
           </div>
         </aside>
         <div className="city_content-cards">

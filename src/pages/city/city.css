@@ -210,10 +210,70 @@
 .price h4{ 
   margin-bottom: 0.5rem;
 }
-.price input{
-  width: 100%;
+
+.range-slider{
+  max-width: 30em;
+  position: relative;
+  display: flex;
 }
-.price input{
-  color: red;
-  background-color: red;
+.range-slider .slider {
+  appearance: none;
+  width: 100%;
+  height: 0.4em;
+  outline: none;
+  border-radius: 2px;
+  background-color: var(--secondary-color);
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.range-slider .slider::-webkit-slider-thumb{
+  appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  position: relative;
+}
+.range-slider .slider-thumb{
+  position: absolute;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: var(--dark-color);
+  border-radius:  50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: var(--shadow-elevation-medium);
+  cursor: pointer;
+}
+.range-slider .slider-thumb::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: .5em;
+  height: .5em;
+  border-radius:  50%;;
+  transition: .3s;
+}
+.range-slider:hover .slider-thumb::before{
+  background-color: var(--main-color);
+}
+.range-slider .tooltip{
+  position: absolute;
+  width: 2.8em;
+  height: 2em;
+  top: -2em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--dark-color);
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: var(--shadow-elevation-medium), inset 0px 1px 2px var(--main-color);
 }
