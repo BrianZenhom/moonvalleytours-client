@@ -218,7 +218,7 @@ export default function Tour() {
                 <div className="tour-cancellation">
                   <h2>Cancellation</h2>
                   {data?.cancellation ? (
-                    <span>Free cancellation 72hrs before the tour</span>
+                    <span>Free cancellation 72 hours before the tour</span>
                   ) : (
                     <span>
                       Not refundable. This activity does not permit

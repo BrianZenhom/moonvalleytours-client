@@ -315,6 +315,7 @@
   height: 200px;
   position: sticky;
   top: 100px;
+  padding: 1rem;
 }
 
 .more-info strong {
