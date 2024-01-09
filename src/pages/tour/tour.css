@@ -349,3 +349,17 @@
 .more-info span {
   text-wrap: balance;
 }
+
+#daypicker .rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+  background-color: var(--dark-color);
+}
+#daypicker button:hover{
+  color: var(--dark-color);
+}
+#daypicker .rdp-button[disabled]{
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+#daypicker button:hover .rdp-button[disabled] {
+  background-color: none;
+}

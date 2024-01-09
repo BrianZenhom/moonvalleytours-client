@@ -3,8 +3,10 @@ import './navbar.css'
 import User from './../../assets/icons/User'
 import Cart from '../../assets/icons/Cart'
 import More from '../../assets/icons/More'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthContext'
+import axios from 'axios'
 
 export default function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState('English')
@@ -13,6 +15,13 @@ export default function Navbar() {
   const [openLanguage, setOpenLanguage] = useState(false)
   const [openCurrency, setOpenCurrency] = useState(false)
   const [scroll, setScroll] = useState(false)
+
+  const [credentials, setCredentials] = useState({
+    username: undefined,
+    password: undefined,
+  })
+
+  const { user, loading, error, dispatch } = useContext(AuthContext)
 
   const dropdownLanguageRef = useRef(null)
   const dropdownCurrencyRef = useRef(null)
@@ -93,6 +102,27 @@ export default function Navbar() {
     setActiveCurrency(e.target.dataset.value)
   }
 
+  const handleChange = e => {
+    setCredentials(prev => ({ ...prev, [e.target.id]: e.target.value }))
+  }
+
+  const handleClick = async e => {
+    e.preventDefault()
+    dispatch({ type: 'LOGIN_START' })
+    try {
+      const res = await axios.post(
+        'http://localhost:8080/api/auth/login',
+        credentials
+      )
+      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
+      setOpen(false)
+    } catch (err) {
+      dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
+    }
+  }
+
+  console.log(user)
+
   return (
     <nav className={scroll ? 'navbar' : 'navbar  visible'}>
       <div className="navbar-content container">
@@ -113,73 +143,91 @@ export default function Navbar() {
               <Cart />
             </a>
           </li>
-          <li
-            className={open ? 'login active' : 'login'}
-            ref={dropdownLoginRef}
-          >
-            <a
-              onClick={handleOpen}
-              aria-label="log in here with your email or username information"
-              href="#"
-            >
+          {user ? (
+            <span className="loggedInUser">
               <User />
-            </a>
-            <div className={open ? 'dropdown-login visible' : 'dropdown-login'}>
-              <div className="booking-tab">
-                <h4>My Bookings</h4>
-                <span>
-                  Don&apos;t want to register? <br /> Access your booking
-                  without registering
-                </span>
-                <form className="booking-form">
-                  <input type="text" placeholder="Email" />
-                  <input type="text" placeholder="Booking reference" />
-                  <div className="reference">
-                    <small>Can&apos;t find your booking reference?</small>
-                  </div>
-                  <div className="bookingBtn">
-                    <button>Find my booking</button>
-                  </div>
-                </form>
-              </div>
-              <div className="login-tab">
-                <h4>My Account</h4>
-                <span>
-                  Do you have a customer account? <br /> Access your account
-                </span>
-                <form className="login-form">
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder="User name or Email"
-                  />
-                  <input type="password" placeholder="Password" />
-                  <div className="remember-me">
-                    <small>Remember me</small>
-                  </div>
-                  <div className="loginBtn">
-                    <button>Login</button>
-                  </div>
-                  <div className="hr"></div>
-                  <div className="login-methods">
-                    or login with
-                    <div className="login-method-socials">
-                      <h3>Facebook </h3>
-                      <h3>Google </h3>
-                      <h3>Apple </h3>
+              {user.name}
+            </span>
+          ) : (
+            <li
+              className={open ? 'login active' : 'login'}
+              ref={dropdownLoginRef}
+            >
+              <a
+                onClick={handleOpen}
+                aria-label="log in here with your email or username information"
+                href="#"
+              >
+                <User />
+              </a>
+              <div
+                className={open ? 'dropdown-login visible' : 'dropdown-login'}
+              >
+                <div className="booking-tab">
+                  <h4>My Bookings</h4>
+                  <span>
+                    Don&apos;t want to register? <br /> Access your booking
+                    without registering
+                  </span>
+                  <form className="booking-form">
+                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Booking reference" />
+                    <div className="reference">
+                      <small>Can&apos;t find your booking reference?</small>
                     </div>
-                  </div>
-                  <div className="registerBtn">
-                    Dont have an account?
-                    <span>
-                      <a href="/register">Signup</a>
-                    </span>
-                  </div>
-                </form>
+                    <div className="bookingBtn">
+                      <button>Find my booking</button>
+                    </div>
+                  </form>
+                </div>
+                <div className="login-tab">
+                  <h4>My Account</h4>
+                  <span>
+                    Do you have a customer account? <br /> Access your account
+                  </span>
+                  <form className="login-form">
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      onChange={handleChange}
+                    />
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Password"
+                      onChange={handleChange}
+                    />
+                    <div className="remember-me">
+                      <small>Remember me</small>
+                    </div>
+                    <div className="loginBtn">
+                      {error && <span>{error.message}</span>}
+                      <button onClick={handleClick} className="lButton">
+                        Login
+                      </button>
+                    </div>
+                    <div className="hr"></div>
+                    <div className="login-methods">
+                      or login with
+                      <div className="login-method-socials">
+                        <h3>Facebook </h3>
+                        <h3>Google </h3>
+                        <h3>Apple </h3>
+                      </div>
+                    </div>
+                    <div className="registerBtn">
+                      Dont have an account?
+                      <span>
+                        <a href="/register">Signup</a>
+                      </span>
+                    </div>
+                  </form>
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          )}
           <li
             className={
               openLanguage ? 'language-selector active' : 'language-selector'

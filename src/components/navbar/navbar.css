@@ -330,6 +330,22 @@
   background-color: var(--main-color);
   border: 1px solid var(--dark-color);
 }
+
+.loggedInUser{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.loggedInUser:hover{
+  background-color: #050b14d2;
+  border-radius: 5px;
+}
+
 @media (width <= 1024px) {
   .dropdown-login {
     min-width: 780px;

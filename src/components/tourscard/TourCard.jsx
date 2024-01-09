@@ -2,53 +2,43 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 // import img from '../../assets/images/image(1).webp';
 
-export default function TourCard({
-  tourName,
-  tourPrice,
-  tourLink,
-  tourImage,
-  tourDescription,
-  tourReviews,
-  tourRating,
-  city,
-  country,
-}) {
+export default function TourCard({ tour, country }) {
   return (
     <div className="toptours_card-item">
-      <Link to={`/${country}/${city}/${tourLink}`}>
+      <Link to={`/${country}/${tour.city}/${tour._id}`}>
         <div className="toptours_card">
-          <img src={tourImage} alt={tourName} />
+          <img src={tour.image} alt={tour.title} />
           <footer className="toptours_card_details">
             <div className="toptours_details-previous bg">
               <div className="toptours_details">
-                <h3>{tourName}</h3>
-                {tourReviews && tourRating && (
+                <h3>{tour.title}</h3>
+                {tour.reviewsRating && tour.reviewsQuantity && (
                   <span>
-                    <strong>{tourReviews}</strong>
-                    {tourRating} reviews
+                    <strong>{tour.reviewsRating}</strong>
+                    {tour.reviewsQuantity} reviews
                   </span>
                 )}
               </div>
               <div className="toptours_tourprice">
-                <h4>&euro; {tourPrice}</h4>
+                <h4>&euro; {tour.price}</h4>
               </div>
             </div>
             <div className="toptours_description">
               <div className="toptours_description_title">
-                <h3>{tourName}</h3>
+                <h3>{tour.title}</h3>
                 <div className="toptours_description_details">
                   <div className="rating-tours">
-                    <strong>{tourReviews}</strong>
+                    <strong>{tour.reviewsRating}</strong>
                     <span className="toptours_description_rating">
                       <div className="stars">
                         <strong>****</strong>
                         <strong className="opacity">*</strong>
                       </div>
-                      {tourRating} reviews
+                      {tour.reviewsQuantity} reviews
                     </span>
                   </div>
                   <br />
-                  <span>{tourDescription}</span>
+                  <span>{tour.desc}</span>
                 </div>
               </div>
             </div>
@@ -61,13 +51,6 @@ export default function TourCard({
 
 // prop validations
 TourCard.propTypes = {
-  city: PropTypes.string.isRequired,
-  tourName: PropTypes.string.isRequired,
-  tourPrice: PropTypes.number.isRequired,
-  tourLink: PropTypes.string.isRequired,
-  tourImage: PropTypes.string.isRequired,
-  tourDescription: PropTypes.string.isRequired,
-  tourReviews: PropTypes.number.isRequired,
-  tourRating: PropTypes.number.isRequired,
+  tour: PropTypes.object.isRequired,
   country: PropTypes.string.isRequired,
 }

@@ -6,7 +6,6 @@ export default function TopTours() {
   const { data, loading, error } = Hooks.useFetch(
     'http://localhost:8080/api/tours'
   )
-  console.log(data)
   return (
     <section className="toptours">
       <article className="toptours_content container">
@@ -22,16 +21,9 @@ export default function TopTours() {
                 return (
                   <>
                     <TourCard
-                      key={tour?._id}
-                      city={tour.city}
+                      key={tour._id}
+                      tour={tour}
                       country={tour.country}
-                      tourName={tour.title}
-                      tourPrice={tour.price}
-                      tourImage={tour.tourThumbnail}
-                      tourDescription={tour.desc}
-                      tourReviews={tour.ratingsAverage}
-                      tourRating={tour.ratingsQuantity}
-                      tourLink={tour._id}
                     />
                   </>
                 )

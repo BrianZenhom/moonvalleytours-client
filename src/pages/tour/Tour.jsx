@@ -42,12 +42,14 @@ export default function Tour() {
 
   let footer = <p></p>
   if (selected) {
-    footer = <p>{format(selected, 'PP')}.</p>
+    footer = <p>{format(selected, 'EEEE, dd MMMM yyyy')}.</p>
   }
 
   const { data, loading, error } = Hooks.useFetch(
     `http://localhost:8080/api/tours/${location}`
   )
+
+  const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
   return (
     <>
@@ -63,7 +65,7 @@ export default function Tour() {
                 <div className="tour-details">
                   <Link to={`/${data?.country}`}>
                     <div className="tour-tags">
-                      <small>Egipto</small>
+                      <small>{data?.country}</small>
                     </div>
                   </Link>
                   <Link to={`/${data?.country}/${data?.city}`}>
@@ -207,7 +209,11 @@ export default function Tour() {
                       <AccessibilityIcon />
                       Accesibility
                     </strong>
-                    <span>Not wheelchair accessible.</span>
+                    {data.accessibility ? (
+                      <span>Not wheelchair accessible.</span>
+                    ) : (
+                      <span>Wheelchair accessible.</span>
+                    )}
                   </div>
                   <div className="more-info">
                     <strong>
@@ -244,9 +250,11 @@ export default function Tour() {
                   <form action="">
                     <p>{footer}</p>
                     <DayPicker
+                      id="daypicker"
                       mode="single"
                       selected={selected}
                       onSelect={setSelected}
+                      disabled={disabledDays}
                     />
                   </form>
                 </div>

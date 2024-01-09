@@ -139,7 +139,7 @@
 }
 .city_card-desc {
   color: var(--dark-color);
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 .city_card-quality-tags {
   display: flex;
@@ -276,4 +276,13 @@
   color: #fff;
   border-radius: 3px;
   box-shadow: var(--shadow-elevation-medium), inset 0px 1px 2px var(--main-color);
+}
+
+.free{
+  color: var(--main-color);
+  font-weight: 700;
+}
+.non{
+  color: var(--secondary-color);
+  font-weight: 700;
 }

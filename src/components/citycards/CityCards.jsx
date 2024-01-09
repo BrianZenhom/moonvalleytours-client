@@ -16,7 +16,11 @@ export default function CityCards({ item }) {
               <small>
                 {item.ratingsQuantity} reviews | {item.travellers} travellers
               </small>
-              <strong>Free cancellation</strong>
+              {item.cancellation ? (
+                <span className="free">Free cancellation</span>
+              ) : (
+                <span className="non">Non refundable</span>
+              )}
             </div>
           </div>
           <div className="city_card-desc">{item.desc}</div>

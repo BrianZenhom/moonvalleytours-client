@@ -150,7 +150,7 @@ export default function City() {
             : dataCity.map(item => {
                 return (
                   <>
-                    <Link to={`/${country}/${item.city}/${item._id}`}>
+                    <Link to={`/${item.country}/${item.city}/${item._id}`}>
                       <CityCards item={item} />
                     </Link>
                   </>
