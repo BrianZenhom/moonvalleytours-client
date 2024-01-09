@@ -94,6 +94,7 @@
 
   width: 100%;
   padding: 1rem 0;
+  z-index: 1;
 }
 .tour-nav-wrapper ul {
   display: flex;
@@ -306,13 +307,13 @@
 /* Date picker */
 .contentBox {
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 .stickybox {
   background-color: white;
   border-radius: 5px;
   min-width: 350px;
-  height: 200px;
+  min-height: 200px;
   position: sticky;
   top: 100px;
   padding: 1rem;

@@ -1,3 +1,4 @@
+import React from 'react'
 import img1 from './../../assets/images/image(3).webp'
 import img2 from './../../assets/images/image(4).webp'
 import img3 from './../../assets/images/image(1).webp'
@@ -16,6 +17,9 @@ import {
 } from '../../assets/icons/TourIcons'
 import Slider from '../../components/slider/Slider'
 import Hooks from '../../hooks/useFetch'
+import { format } from 'date-fns'
+import { DayPicker } from 'react-day-picker'
+import 'react-day-picker/dist/style.css'
 
 const images = [
   {
@@ -34,6 +38,12 @@ const images = [
 
 export default function Tour() {
   const location = useParams().tour
+  const [selected, setSelected] = React.useState()
+
+  let footer = <p></p>
+  if (selected) {
+    footer = <p>{format(selected, 'PP')}.</p>
+  }
 
   const { data, loading, error } = Hooks.useFetch(
     `http://localhost:8080/api/tours/${location}`
@@ -218,7 +228,9 @@ export default function Tour() {
                 <div className="tour-cancellation">
                   <h2>Cancellation</h2>
                   {data?.cancellation ? (
-                    <span>Free cancellation 72 hours before the tour</span>
+                    <span>
+                      Free cancellation <b> 72 hours </b> before the tour
+                    </span>
                   ) : (
                     <span>
                       Not refundable. This activity does not permit
@@ -228,7 +240,16 @@ export default function Tour() {
                 </div>
               </div>
               <div className="contentBox">
-                <div className="stickybox"></div>
+                <div className="stickybox">
+                  <form action="">
+                    <p>{footer}</p>
+                    <DayPicker
+                      mode="single"
+                      selected={selected}
+                      onSelect={setSelected}
+                    />
+                  </form>
+                </div>
               </div>
             </div>
             <div className="tourscustomer-reviews">
