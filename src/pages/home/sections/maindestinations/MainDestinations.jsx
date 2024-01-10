@@ -24,7 +24,7 @@ export default function MainDestinations({ type }) {
                 <>
                   <Link to={`${dest.country}/${dest.city}`}>
                     <DestCard
-                      key={dest?._id}
+                      key={dest._id}
                       dest={dest}
                       loading={loading}
                       error={error}

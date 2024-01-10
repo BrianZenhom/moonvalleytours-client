@@ -140,9 +140,6 @@ export default function City() {
           </div>
         </aside>
         <div className="city_content-cards">
-          <div className="city_content-desc">
-            <span>0 of 0 activities and tours in {data.city}</span>
-          </div>
           {errorCity
             ? 'Something went wrong!'
             : loadingCity

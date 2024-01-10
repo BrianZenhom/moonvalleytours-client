@@ -4,7 +4,7 @@ import User from './../../assets/icons/User'
 import Cart from '../../assets/icons/Cart'
 import More from '../../assets/icons/More'
 import { useState, useRef, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState('English')
   const [activeCurrency, setActiveCurrency] = useState('US$')
   const [open, setOpen] = useState(false)
+  const [openCart, setOpenCart] = useState(false)
   const [openLanguage, setOpenLanguage] = useState(false)
   const [openCurrency, setOpenCurrency] = useState(false)
   const [scroll, setScroll] = useState(false)
@@ -26,6 +27,8 @@ export default function Navbar() {
   const dropdownLanguageRef = useRef(null)
   const dropdownCurrencyRef = useRef(null)
   const dropdownLoginRef = useRef(null)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleClickOutside = event => {
@@ -71,6 +74,14 @@ export default function Navbar() {
     setOpen(false)
   }
 
+  const handleOpenCart = e => {
+    e.preventDefault()
+    setOpenCart(!openCart)
+    setOpenLanguage(false)
+    setOpenCurrency(false)
+    setOpen(false)
+  }
+
   useEffect(() => {
     let lastScrollTop = 0
     const handleScroll = () => {
@@ -92,6 +103,7 @@ export default function Navbar() {
     setOpen(!open)
     setOpenCurrency(false)
     setOpenLanguage(false)
+    setOpenCart(false)
   }
 
   const handleActive = e => {
@@ -115,13 +127,11 @@ export default function Navbar() {
         credentials
       )
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
-      setOpen(false)
+      navigate('/')
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
   }
-
-  console.log(user)
 
   return (
     <nav className={scroll ? 'navbar' : 'navbar  visible'}>
@@ -135,7 +145,7 @@ export default function Navbar() {
           </Link>
         </div>
         <ul className="navbar-links">
-          <li>
+          <li onClick={handleOpenCart}>
             <a
               href="#cart"
               aria-label="check your products in the cart and proceed to checkout"
@@ -210,7 +220,11 @@ export default function Navbar() {
                       <small>Remember me</small>
                     </div>
                     <div className="loginBtn">
-                      <button onClick={handleClick} className="lButton">
+                      <button
+                        disabled={loading}
+                        onClick={handleClick}
+                        className="lButton"
+                      >
                         Login
                       </button>
                     </div>
