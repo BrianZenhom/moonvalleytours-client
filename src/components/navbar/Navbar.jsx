@@ -27,6 +27,7 @@ export default function Navbar() {
   const dropdownLanguageRef = useRef(null)
   const dropdownCurrencyRef = useRef(null)
   const dropdownLoginRef = useRef(null)
+  const dropdownCartRef = useRef(null)
 
   const navigate = useNavigate()
 
@@ -49,6 +50,11 @@ export default function Navbar() {
         !dropdownLoginRef.current.contains(event.target)
       ) {
         setOpen(false)
+      } else if (
+        dropdownCartRef.current &&
+        !dropdownCartRef.current.contains(event.target)
+      ) {
+        setOpenCart(false)
       }
     }
 
@@ -65,6 +71,7 @@ export default function Navbar() {
     setOpenCurrency(!openCurrency)
     setOpenLanguage(false)
     setOpen(false)
+    setOpenCart(false)
   }
 
   const handleOpenLanguage = e => {
@@ -72,14 +79,21 @@ export default function Navbar() {
     setOpenLanguage(!openLanguage)
     setOpenCurrency(false)
     setOpen(false)
+    setOpenCart(false)
   }
 
-  const handleOpenCart = e => {
-    e.preventDefault()
+  const handleOpenCart = () => {
     setOpenCart(!openCart)
     setOpenLanguage(false)
     setOpenCurrency(false)
     setOpen(false)
+  }
+
+  const handleOpen = () => {
+    setOpen(!open)
+    setOpenCurrency(false)
+    setOpenLanguage(false)
+    setOpenCart(false)
   }
 
   useEffect(() => {
@@ -98,13 +112,6 @@ export default function Navbar() {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-
-  const handleOpen = () => {
-    setOpen(!open)
-    setOpenCurrency(false)
-    setOpenLanguage(false)
-    setOpenCart(false)
-  }
 
   const handleActive = e => {
     setActiveLanguage(e.target.innerText)
@@ -145,13 +152,24 @@ export default function Navbar() {
           </Link>
         </div>
         <ul className="navbar-links">
-          <li onClick={handleOpenCart}>
+          <li
+            className={openCart ? 'cart active' : 'cart'}
+            ref={dropdownCartRef}
+          >
             <a
+              onClick={handleOpenCart}
               href="#cart"
               aria-label="check your products in the cart and proceed to checkout"
             >
               <Cart />
             </a>
+            <div
+              className={
+                openCart ? 'dropdown-cart visible-cart' : 'dropdown-cart'
+              }
+            >
+              <span>Your cart is emty</span>
+            </div>
           </li>
           {loading ? (
             <dialog>Loading</dialog>

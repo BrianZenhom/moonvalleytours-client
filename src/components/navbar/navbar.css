@@ -271,6 +271,37 @@
 .registerBtn {
   width: 100%;
 }
+
+/* cart tab */
+.cart{
+  position: relative;
+}
+.dropdown-cart {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: white;
+  color: var(--dark-color);
+  border-end-end-radius: 5px;
+  border-end-start-radius: 5px;
+  padding: 3rem;
+  right: 0;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.1s ease-in-out;
+  min-width: 18.75rem;
+}
+.visible-cart{
+  translate: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+
 /* Booking Tab */
 .booking-tab {
   width: 50%;
