@@ -15,6 +15,7 @@ export default function Navbar() {
   const [openCart, setOpenCart] = useState(false)
   const [openLanguage, setOpenLanguage] = useState(false)
   const [openCurrency, setOpenCurrency] = useState(false)
+  const [openUserMenu, setOpenUserMenu] = useState(false)
   const [scroll, setScroll] = useState(false)
 
   const [credentials, setCredentials] = useState({
@@ -28,6 +29,7 @@ export default function Navbar() {
   const dropdownCurrencyRef = useRef(null)
   const dropdownLoginRef = useRef(null)
   const dropdownCartRef = useRef(null)
+  const dropdownUserMenuRef = useRef(null)
 
   const navigate = useNavigate()
 
@@ -50,11 +52,18 @@ export default function Navbar() {
         !dropdownLoginRef.current.contains(event.target)
       ) {
         setOpen(false)
-      } else if (
+      }
+      if (
         dropdownCartRef.current &&
         !dropdownCartRef.current.contains(event.target)
       ) {
         setOpenCart(false)
+      }
+      if (
+        dropdownUserMenuRef.current &&
+        !dropdownUserMenuRef.current.contains(event.target)
+      ) {
+        setOpenUserMenu(false)
       }
     }
 
@@ -63,7 +72,13 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('click', handleClickOutside)
     }
-  }, [dropdownLanguageRef, dropdownCurrencyRef, dropdownLoginRef])
+  }, [
+    dropdownLanguageRef,
+    dropdownCurrencyRef,
+    dropdownLoginRef,
+    dropdownCartRef,
+    dropdownUserMenuRef,
+  ])
 
   const handleOpenCurrency = e => {
     e.preventDefault()
@@ -91,6 +106,14 @@ export default function Navbar() {
 
   const handleOpen = () => {
     setOpen(!open)
+    setOpenCurrency(false)
+    setOpenLanguage(false)
+    setOpenCart(false)
+  }
+
+  const handleOpenUserMenu = () => {
+    setOpenUserMenu(!openUserMenu)
+    setOpen(false)
     setOpenCurrency(false)
     setOpenLanguage(false)
     setOpenCart(false)
@@ -174,10 +197,44 @@ export default function Navbar() {
           {loading ? (
             <dialog>Loading</dialog>
           ) : user ? (
-            <span className="loggedInUser">
-              <User />
-              {user.name}
-            </span>
+            <li
+              className={openUserMenu ? 'userMenu active' : 'userMenu'}
+              ref={dropdownUserMenuRef}
+            >
+              <a onClick={handleOpenUserMenu} href="#">
+                <span className="loggedInUser">
+                  <User />
+                  {user.name}
+                </span>
+              </a>
+              <div
+                className={
+                  openUserMenu
+                    ? 'dropdown-userMenu visible'
+                    : 'dropdown-userMenu'
+                }
+              >
+                <div className="userMenu-content">
+                  <div className="userMenu-header">
+                    <div className="userbuttons">
+                      <div className="bookings">
+                        <span>Bookings</span>
+                      </div>
+                      <div className="favorites">
+                        <span>Favourites</span>
+                      </div>
+                      <div className="myaccount">
+                        <span>My account</span>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div className="logoutBtn">
+                    <button className="lButton">logout</button>
+                  </div>
+                </div>
+              </div>
+            </li>
           ) : (
             <li
               className={open ? 'login active' : 'login'}
