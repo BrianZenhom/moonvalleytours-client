@@ -73,9 +73,9 @@
   background: conic-gradient(
     from var(--gradient-angle),
     var(--main-color),
-    var(--warning-color),
+  var(--opaque-color),
     #ffffff,
-    var(--warning-color),
+    var(--opaque-color),
     var(--main-color)
   );
   animation: rotation 10s linear infinite;
@@ -89,7 +89,7 @@
   border-radius: 5px;
   border: 1px solid transparent;
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(14px, 2vw, 17px);
   background: none;
   padding: 10px 20px;

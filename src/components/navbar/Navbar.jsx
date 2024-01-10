@@ -143,7 +143,9 @@ export default function Navbar() {
               <Cart />
             </a>
           </li>
-          {user ? (
+          {loading ? (
+            <dialog>Loading</dialog>
+          ) : user ? (
             <span className="loggedInUser">
               <User />
               {user.name}
@@ -181,6 +183,11 @@ export default function Navbar() {
                   </form>
                 </div>
                 <div className="login-tab">
+                  {error && (
+                    <div className="error-message-wrapper">
+                      <span className="errormessage">{error.message}</span>
+                    </div>
+                  )}
                   <h4>My Account</h4>
                   <span>
                     Do you have a customer account? <br /> Access your account
@@ -203,11 +210,11 @@ export default function Navbar() {
                       <small>Remember me</small>
                     </div>
                     <div className="loginBtn">
-                      {error && <span>{error.message}</span>}
                       <button onClick={handleClick} className="lButton">
                         Login
                       </button>
                     </div>
+
                     <div className="hr"></div>
                     <div className="login-methods">
                       or login with
