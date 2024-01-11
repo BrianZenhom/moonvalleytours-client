@@ -11,11 +11,13 @@ import axios from 'axios'
 export default function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState('English')
   const [activeCurrency, setActiveCurrency] = useState('US$')
+
   const [open, setOpen] = useState(false)
   const [openCart, setOpenCart] = useState(false)
   const [openLanguage, setOpenLanguage] = useState(false)
   const [openCurrency, setOpenCurrency] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState(false)
+
   const [scroll, setScroll] = useState(false)
 
   const [credentials, setCredentials] = useState({
@@ -81,7 +83,6 @@ export default function Navbar() {
   ])
 
   const handleOpenCurrency = e => {
-    e.preventDefault()
     e.target.classList.add('active')
     setOpenCurrency(!openCurrency)
     setOpenLanguage(false)
@@ -89,8 +90,7 @@ export default function Navbar() {
     setOpenCart(false)
   }
 
-  const handleOpenLanguage = e => {
-    e.preventDefault()
+  const handleOpenLanguage = () => {
     setOpenLanguage(!openLanguage)
     setOpenCurrency(false)
     setOpen(false)
@@ -163,8 +163,8 @@ export default function Navbar() {
     }
   }
 
-  const handleLogout = async e => {
-    e.preventDefault()
+  const handleLogout = () => {
+    navigate('/')
     dispatch({ type: 'LOGOUT' })
   }
 
@@ -342,7 +342,8 @@ export default function Navbar() {
               aria-label="Select the language for the page, English, Spanish or Turkish"
               href="#"
             >
-              {activeLanguage} <More />
+              {activeLanguage}
+              <More />
             </a>
             <div
               className={

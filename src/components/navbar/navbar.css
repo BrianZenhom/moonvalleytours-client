@@ -357,7 +357,7 @@
   padding: 3rem;
   right: 0;
   box-shadow: var(--shadow-elevation-medium);
-  transition: all 0.1s ease-in-out;
+  transition: 0.1s ease-in;
   min-width: 18.75rem;
 }
 .visible-cart{
