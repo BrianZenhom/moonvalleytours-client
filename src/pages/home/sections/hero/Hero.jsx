@@ -81,7 +81,7 @@ export default function Hero() {
               ref={searchSuggestionsRef}
             >
               <div className="hero_search_suggestion_title">
-                <h1>Top destinations</h1>
+                <h1>Popular destinations</h1>
               </div>
               <ul className="hero_search_list">
                 {data.map(loc => {
@@ -107,7 +107,7 @@ export default function Hero() {
           <div className="benefits">
             <span>
               <CustomerSupport />
-              Best Customer Service
+              Distinctive Support
             </span>
             <span>
               <HiddenFees />
@@ -115,11 +115,11 @@ export default function Hero() {
             </span>
             <span>
               <Accommodation />
-              Exclusive Accommodations
+              Best Accommodations
             </span>
             <span>
               <Flights />
-              Selected Flights
+              Handpicked Flights
             </span>
           </div>
         </aside>

@@ -10,7 +10,7 @@ export default function TopTours() {
     <section className="toptours">
       <article className="toptours_content container">
         <div className="toptours_header">
-          <h2>Top Tours</h2>
+          <h2>Popular tours</h2>
         </div>
         <div className="toptours_grid">
           {error

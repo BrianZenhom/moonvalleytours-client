@@ -1,5 +1,5 @@
-import Logo from './../../assets/logos/Logo';
-import './footer.css';
+import Logo from './../../assets/logos/Logo'
+import './footer.css'
 import {
   Visa,
   Mastercard,
@@ -9,8 +9,8 @@ import {
   ApplePay,
   GooglePay,
   Klarna,
-} from './../../assets/icons/PaymentMethods';
-import { Facebook, Instagram } from './../../assets/icons/Socials';
+} from './../../assets/icons/PaymentMethods'
+import { Facebook, Instagram } from './../../assets/icons/Socials'
 
 export default function Footer() {
   return (
@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="footer_section_title">
             <h1>Reviews</h1>
           </div>
-          <span>Clients and associates opinions about us</span>
+          <span>Clients opinion about us</span>
         </div>
         <div className="footer_block">
           <div className="footer_section_title">
@@ -129,5 +129,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-import Hero from './sections/hero/Hero';
-import MainDestinations from './sections/maindestinations/MainDestinations';
-import TopTours from './sections/toptours/TopTours';
+import Hero from './sections/hero/Hero'
+import MainDestinations from './sections/maindestinations/MainDestinations'
+import TopTours from './sections/toptours/TopTours'
 
 export default function Home() {
   return (
@@ -9,10 +9,10 @@ export default function Home() {
         <Hero />
         <MainDestinations type="Top Destinations" />
         <div className="showmore_button">
-          <button>show more</button>
+          <button>Other destinations</button>
         </div>
         <TopTours />
       </main>
     </>
-  );
+  )
 }

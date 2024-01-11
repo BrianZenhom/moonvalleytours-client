@@ -11,7 +11,11 @@
   align-items: center;
 }
 .toptours_header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   padding-top: 2rem;
+  width: 100%;
 }
 .toptours_grid {
   display: flex;

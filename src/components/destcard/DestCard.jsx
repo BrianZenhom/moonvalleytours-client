@@ -18,24 +18,20 @@ export default function DestCard({ dest, loading, error }) {
             <div className="maindestination_hover">
               <div className="maindestination_details">
                 <div className="left">
-                  <div className="tours">
+                  <div className="detail">
                     <h3>{dest?.tours?.length}</h3>
-                    <small>tours</small>
+                    <span>Tours</span>
                   </div>
-                  <div className="travellers">
+                  <hr />
+                  <div className="detail">
                     <h3>{dest?.travellers}</h3>
-                    <small>travellers</small>
+                    <span>Travellers</span>
                   </div>
                 </div>
-                <div className="right">
-                  <div className="reviews">
-                    <h3>{dest?.ratingsQuantity}</h3>
-                    <small>reviews</small>
-                  </div>
-                  <div className="rating">
-                    <h3>{dest?.ratingsAverage}</h3>
-                    <small>rating</small>
-                  </div>
+                <hr />
+                <div className="detail">
+                  <h3>{dest?.ratingsAverage} / 5</h3>
+                  <span>rating</span>
                 </div>
               </div>
             </div>

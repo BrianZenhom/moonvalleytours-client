@@ -141,7 +141,7 @@ export default function Tour() {
                     </div>
                   </div>
                 </div>
-                <div className="hrblack" />
+                <div className="hrblack"></div>
                 <div className="tour-more-info">
                   <h2>More Info</h2>
 

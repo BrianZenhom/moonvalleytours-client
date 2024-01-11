@@ -7,9 +7,7 @@
 }
 .maindestinations_header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: start;
 }
 
 .maindestinations_grid {
@@ -17,8 +15,8 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 2rem;
-  padding-bottom: 5rem;
-  gap: 1rem;
+  padding-bottom: 10rem;
+  gap: 10rem 1rem;
 }
 .maindestinations_grid > * {
   flex: 0 0 32%;
@@ -63,42 +61,54 @@
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
-  transition: 0.5s ease;
 }
 
-.maindestinations_card:hover .maindestination_title h3 {
-  top: 30px;
-}
+
 /* hide my maindestinations_card image with a background color on hover*/
 .maindestinations_card:hover img {
   opacity: 0;
 }
+.maindestination_details hr{
+  opacity: 0;
+  transition: 3s ease-in;
+  animation-delay: 9000ms;
+}
+.maindestinations_card:hover .maindestination_details hr{
+  opacity: 1;
+}
 
 .maindestination_details {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
   padding: 0 20px;
-  transform: translateY(200px);
+  transform: translatex(100px);
+  opacity: 0;
 }
+.detail{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 .maindestination_details h3 {
   font-size: clamp(1rem, 2vw, 1.9rem);
   font-weight: 800;
   font-family: 'montserrat', sans-serif;
 }
 .left {
-  padding-right: 10px;
   flex: 1 1 60%;
 }
-.right {
-  flex: 1 1 40%;
-}
+
 .maindestinations_card:hover .maindestination_details {
-  transform: translateY(50px);
+  transform: translateY(0px);
   transition-duration: 0.5s;
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: all;
+  opacity: 1;
 }
 
 .showmore_button {
@@ -134,6 +144,6 @@
 }
 @media (width > 1000px) {
   .maindestinations_card {
-    height: 230px;
+    height: 375px;
   }
 }
