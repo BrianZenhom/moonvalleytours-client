@@ -163,6 +163,11 @@ export default function Navbar() {
     }
   }
 
+  const handleLogout = async e => {
+    e.preventDefault()
+    dispatch({ type: 'LOGOUT' })
+  }
+
   return (
     <nav className={scroll ? 'navbar' : 'navbar  visible'}>
       <div className="navbar-content container">
@@ -181,7 +186,7 @@ export default function Navbar() {
           >
             <a
               onClick={handleOpenCart}
-              href="#cart"
+              href="#"
               aria-label="check your products in the cart and proceed to checkout"
             >
               <Cart />
@@ -230,7 +235,9 @@ export default function Navbar() {
                   </div>
                   <hr />
                   <div className="logoutBtn">
-                    <button className="lButton">logout</button>
+                    <button onClick={handleLogout} className="lButton">
+                      logout
+                    </button>
                   </div>
                 </div>
               </div>
@@ -333,14 +340,14 @@ export default function Navbar() {
             <a
               onClick={handleOpenLanguage}
               aria-label="Select the language for the page, English, Spanish or Turkish"
-              href="#lang"
+              href="#"
             >
               {activeLanguage} <More />
             </a>
             <div
               className={
                 openLanguage
-                  ? 'dropdown-content-language language-visible'
+                  ? 'dropdown-content-language visible'
                   : 'dropdown-content-language'
               }
             >
@@ -364,7 +371,7 @@ export default function Navbar() {
             <div
               className={
                 openCurrency
-                  ? 'dropdown-content-currency visible-currency'
+                  ? 'dropdown-content-currency visible'
                   : 'dropdown-content-currency'
               }
             >
