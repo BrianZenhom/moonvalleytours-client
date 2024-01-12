@@ -129,7 +129,7 @@
   align-items: center;
   background-color: white;
   box-shadow: var(--shadow-elevation-medium);
-  top: 35px;
+  top: 40px;
   opacity: 0;
   visibility: hidden;
   border-radius: 5px;
@@ -138,11 +138,16 @@
   padding: 0 2rem;
   z-index: 1;
   padding-bottom: 1.5625rem;
+  transform: translateY(-300px);
+  scale: 0;
+  transition: 0.1s ease-in-out;
 }
 .hero_search_suggestions span:hover {
   color: var(--main-color);
 }
 .suggestions_visible {
+  transform: translateY(0);
+  scale: 1;
   opacity: 1;
   visibility: visible;
 }
@@ -164,7 +169,7 @@
 .hero_search_suggestion_title {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   color: var(--dark-color);
   padding: 30px 20px;
 }

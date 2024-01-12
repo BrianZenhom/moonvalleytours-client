@@ -272,7 +272,14 @@
 }
 
 .remember-me {
+  display: flex;
+  align-items: center;
   width: 100%;
+}
+.remember-me input {
+  width: 15px;
+  height: 15px;
+  margin-left: 1rem;
 }
 .loginBtn {
   display: flex;
@@ -329,12 +336,17 @@
 }
 .login-method-socials {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 1rem;
   width: 100%;
+  cursor: pointer;
+}
+.login-method-socials h3:hover {
+  color: var(--main-color);
 }
 .registerBtn {
   width: 100%;
+  display: flex;
 }
 
 /* cart tab */

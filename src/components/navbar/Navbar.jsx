@@ -258,16 +258,16 @@ export default function Navbar() {
                 className={open ? 'dropdown-login visible' : 'dropdown-login'}
               >
                 <div className="booking-tab">
-                  <h4>My Bookings</h4>
+                  <h4>Bookings</h4>
                   <span>
-                    Don&apos;t want to register? <br /> Access your booking
+                    Don&apos;t want to register? <br /> Check your booking
                     without registering
                   </span>
                   <form className="booking-form">
                     <input type="text" placeholder="Email" />
                     <input type="text" placeholder="Booking reference" />
                     <div className="reference">
-                      <small>Can&apos;t find your booking reference?</small>
+                      <small>Don&apos;t know your booking reference?</small>
                     </div>
                     <div className="bookingBtn">
                       <button>Find my booking</button>
@@ -280,9 +280,9 @@ export default function Navbar() {
                       <span className="errormessage">{error.message}</span>
                     </div>
                   )}
-                  <h4>My Account</h4>
+                  <h4>Account</h4>
                   <span>
-                    Do you have a customer account? <br /> Access your account
+                    Do you have an account? <br /> Log into your account
                   </span>
                   <form className="login-form">
                     <input
@@ -300,6 +300,7 @@ export default function Navbar() {
                     />
                     <div className="remember-me">
                       <small>Remember me</small>
+                      <input type="checkbox" />
                     </div>
                     <div className="loginBtn">
                       <button
