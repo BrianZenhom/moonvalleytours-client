@@ -4,7 +4,7 @@ import './toptours.css'
 
 export default function TopTours() {
   const { data, loading, error } = Hooks.useFetch(
-    'http://localhost:8080/api/tours'
+    'http://localhost:1234/api/tours'
   )
   return (
     <section className="toptours">

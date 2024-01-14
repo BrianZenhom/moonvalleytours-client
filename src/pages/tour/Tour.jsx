@@ -46,7 +46,7 @@ export default function Tour() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:8080/api/tours/${location}`
+    `http://localhost:1234/api/tours/${location}`
   )
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]

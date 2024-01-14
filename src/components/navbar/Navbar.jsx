@@ -153,7 +153,7 @@ export default function Navbar() {
     dispatch({ type: 'LOGIN_START' })
     try {
       const res = await axios.post(
-        'http://localhost:8080/api/auth/login',
+        'http://localhost:1234/api/auth/login',
         credentials
       )
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })

@@ -8,7 +8,7 @@ import Hooks from '../../../../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
 export default function Hero() {
-  const { data } = Hooks.useFetch('http://localhost:8080/api/cities')
+  const { data } = Hooks.useFetch('http://localhost:1234/api/cities')
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)

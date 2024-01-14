@@ -7,11 +7,11 @@ import { useParams } from 'react-router-dom'
 export default function City() {
   const country = useParams()
   const { data } = Hooks.useFetch(
-    `http://localhost:8080/api/cities/${country.city}`
+    `http://localhost:1234/api/cities/${country.city}`
   )
 
   const { dataCity, loadingCity, errorCity } = Hooks.useCityFetch(
-    `http://localhost:8080/api/tours/in/${country.city}`
+    `http://localhost:1234/api/tours/in/${country.city}`
   )
 
   return (
