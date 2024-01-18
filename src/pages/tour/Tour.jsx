@@ -5,7 +5,6 @@ import img3 from './../../assets/images/image(1).webp'
 import { Link, useParams } from 'react-router-dom'
 import './tour.css'
 import {
-  AccessibilityIcon,
   DurationIcon,
   IncluidedIcon,
   LanguageIcon,
@@ -203,17 +202,6 @@ export default function Tour() {
                       We will send you an email with your booking confirmation
                       and voucher.
                     </span>
-                  </div>
-                  <div className="more-info">
-                    <strong>
-                      <AccessibilityIcon />
-                      Accesibility
-                    </strong>
-                    {data.accessibility ? (
-                      <span>Not wheelchair accessible.</span>
-                    ) : (
-                      <span>Wheelchair accessible.</span>
-                    )}
                   </div>
                   <div className="more-info">
                     <strong>
