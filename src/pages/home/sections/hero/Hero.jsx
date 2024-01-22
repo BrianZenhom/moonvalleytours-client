@@ -84,7 +84,7 @@ export default function Hero() {
                 <h1>Popular destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {data.map(loc => {
+                {data?.cities?.map(loc => {
                   return (
                     <li key={loc?._id} title={loc?.country}>
                       <Link to={`${loc?.country}/${loc?.city}`}>

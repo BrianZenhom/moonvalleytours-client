@@ -17,15 +17,9 @@ export default function TopTours() {
             ? 'something went wrong!'
             : loading
             ? 'Loading...'
-            : data.map(tour => {
+            : data?.tours?.map(tour => {
                 return (
-                  <>
-                    <TourCard
-                      key={tour._id}
-                      tour={tour}
-                      country={tour.country}
-                    />
-                  </>
+                  <TourCard key={tour._id} tour={tour} country={tour.country} />
                 )
               })}
         </div>

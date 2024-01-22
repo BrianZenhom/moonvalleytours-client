@@ -20,17 +20,10 @@ export default function MainDestinations({ type }) {
             ? 'Something went wrong!'
             : loading
             ? 'Loading...'
-            : data.map(dest => (
-                <>
-                  <Link to={`${dest.country}/${dest.city}`}>
-                    <DestCard
-                      key={dest._id}
-                      dest={dest}
-                      loading={loading}
-                      error={error}
-                    />
-                  </Link>
-                </>
+            : data?.cities?.map(dest => (
+                <Link key={dest._id} to={`${dest.country}/${dest.city}`}>
+                  <DestCard dest={dest} loading={loading} error={error} />
+                </Link>
               ))}
         </div>
       </article>
