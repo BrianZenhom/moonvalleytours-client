@@ -11,8 +11,10 @@ export default function City() {
   )
 
   const { dataCity, loadingCity, errorCity } = Hooks.useCityFetch(
-    `http://localhost:1234/api/tours/in/${country.city}`
+    `http://localhost:1234/api/tours/in/Antalya`
   )
+
+  // We need to use the ID of the tour and the name of its CITY to send the DELETE METHOD.
 
   return (
     <section className="city">
@@ -31,10 +33,10 @@ export default function City() {
         )} */}
         <header className="city_intro container">
           <div className="city_title">
-            <Link to={'/' + data.country}>
-              <small className="country_name">{data.country}</small>
+            <Link to={'/' + data?.country}>
+              <small className="country_name">{data?.country}</small>
             </Link>
-            <h1>{data.city}</h1>
+            <h1>{data?.city}</h1>
           </div>
           <div className="city_details">
             <div className="reviews">
@@ -42,15 +44,15 @@ export default function City() {
               <span>tours</span>
             </div>
             <div className="reviews">
-              <h2>{data.travellers}</h2>
+              <h2>{data?.travellers}</h2>
               <span>travellers have enjoyed tours here</span>
             </div>
             <div className="reviews">
-              <h2>{data.ratingsQuantity}</h2>
+              <h2>{data?.ratingsQuantity}</h2>
               <span>real reviews</span>
             </div>
             <div className="reviews">
-              <h2>{data.ratingsAverage}</h2>
+              <h2>{data?.ratingsAverage}</h2>
               <span>This is how they rate us</span>
             </div>
           </div>
@@ -146,11 +148,12 @@ export default function City() {
             ? 'Loading'
             : dataCity.map(item => {
                 return (
-                  <>
-                    <Link to={`/${item.country}/${item.city}/${item._id}`}>
-                      <CityCards item={item} />
-                    </Link>
-                  </>
+                  <Link
+                    key={item._id}
+                    to={`/${item.country}/${item.city}/${item._id}`}
+                  >
+                    <CityCards item={item} />
+                  </Link>
                 )
               })}
         </div>
