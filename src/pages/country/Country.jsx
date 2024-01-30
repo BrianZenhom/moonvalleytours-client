@@ -22,7 +22,11 @@ export default function Country() {
     <section className="country">
       <article className="country_header">
         <div className="country_blackoverlay"></div>
-        {/* <img src={data.country_image} alt="" className="header-Img" /> */}
+        <img
+          src={data?.countryCover}
+          alt={data?.country}
+          className="header-Img"
+        />
         <header className="country_intro container">
           <div className="country_title">
             <h1>

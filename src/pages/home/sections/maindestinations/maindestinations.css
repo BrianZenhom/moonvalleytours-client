@@ -51,8 +51,9 @@
   font-weight: 800;
   font-size: clamp(1rem, 2vw, 1.9rem);
   position: absolute;
-  bottom: 10px;
+  top: 10px;
 }
+
 .maindestinations_card > img {
   position: absolute;
   top: 0;
@@ -63,28 +64,34 @@
   border-radius: 5px;
 }
 
-
 /* hide my maindestinations_card image with a background color on hover*/
 .maindestinations_card:hover img {
-  opacity: 0;
+  filter: blur(5px);
+  scale: 1.1;
+  opacity: 0.8;
+  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.maindestination_details hr{
+.maindestination_details hr {
   opacity: 0;
   transition: 3s ease-in;
   animation-delay: 9000ms;
 }
-.maindestinations_card:hover .maindestination_details hr{
+.maindestinations_card:hover .maindestination_details hr {
   opacity: 1;
+}
+.maindestinations_card:hover h3 {
+  top: 330px;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .maindestination_details {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
-  transform: translatex(100px);
+  transform: translatey(-100px);
   opacity: 0;
 }
-.detail{
+.detail {
   display: flex;
   gap: 1rem;
   align-items: center;

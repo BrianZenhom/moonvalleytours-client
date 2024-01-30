@@ -156,7 +156,7 @@ export default function Navbar() {
         'http://localhost:1234/api/auth/login',
         credentials
       )
-      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
+      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data.details })
       navigate('/')
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
