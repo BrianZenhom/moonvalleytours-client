@@ -12,7 +12,7 @@
 }
 .toptours_header {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   padding-top: 2rem;
   width: 100%;
