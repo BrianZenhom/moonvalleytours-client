@@ -73,7 +73,7 @@
   background: conic-gradient(
     from var(--gradient-angle),
     var(--main-color),
-  var(--opaque-color),
+    var(--opaque-color),
     #ffffff,
     var(--opaque-color),
     var(--main-color)
@@ -169,7 +169,7 @@
 .hero_search_suggestion_title {
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   color: var(--dark-color);
   padding: 30px 20px;
 }
