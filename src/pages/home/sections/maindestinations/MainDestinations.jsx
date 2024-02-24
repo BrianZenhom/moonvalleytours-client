@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/cities?limit=6`
+    `http://localhost:1234/api/cities?featured=true&limit=6`
   )
 
   return (
