@@ -7,7 +7,7 @@
 }
 .maindestinations_header {
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 
 .maindestinations_grid {
