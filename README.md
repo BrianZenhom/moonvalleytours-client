@@ -18,7 +18,7 @@
 
 # 📌 Overview
 
-moonvalleytours-client is a project that utilizes prop-types, react, react-dom, react-router-dom, types/react, types/react-dom, vitejs/plugin-react-swc, eslint, eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-react-refresh, and vite.
+moonvalleytours-client is a project that utilizes react, stripe and mongoDB. Built with a Robust, scalable and easy to maintain RESTful API.
 
 ## 🔍 Table of Contents
 
