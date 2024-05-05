@@ -138,6 +138,9 @@
   color: var(--dark-color);
 }
 .city_card-desc {
+  height: 70px;
+  overflow: hidden;
+  text-overflow: clip;
   color: var(--dark-color);
   text-wrap: pretty;
 }
@@ -183,35 +186,35 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
-.category_list-item{
+.category_list-item {
   display: flex;
   gap: 5px;
 }
-.category_list-item label{
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-  user-select: none;
-}
-.features_list-item label{
+.category_list-item label {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
   user-select: none;
 }
-.category h4{
+.features_list-item label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+.category h4 {
   margin-bottom: 0.5rem;
 }
-.features h4{ 
+.features h4 {
   margin-bottom: 0.5rem;
 }
-.price h4{ 
+.price h4 {
   margin-bottom: 0.5rem;
 }
 
-.range-slider{
+.range-slider {
   max-width: 30em;
   position: relative;
   display: flex;
@@ -226,7 +229,7 @@
   box-shadow: var(--shadow-elevation-medium);
 }
 
-.range-slider .slider::-webkit-slider-thumb{
+.range-slider .slider::-webkit-slider-thumb {
   appearance: none;
   width: 1.2em;
   height: 1.2em;
@@ -235,12 +238,12 @@
   z-index: 3;
   position: relative;
 }
-.range-slider .slider-thumb{
+.range-slider .slider-thumb {
   position: absolute;
   width: 1.2em;
   height: 1.2em;
   background-color: var(--dark-color);
-  border-radius:  50%;
+  border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -248,22 +251,22 @@
   box-shadow: var(--shadow-elevation-medium);
   cursor: pointer;
 }
-.range-slider .slider-thumb::before{
+.range-slider .slider-thumb::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
-  width: .5em;
-  height: .5em;
-  border-radius:  50%;;
-  transition: .3s;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  transition: 0.3s;
 }
-.range-slider:hover .slider-thumb::before{
+.range-slider:hover .slider-thumb::before {
   background-color: var(--main-color);
 }
-.range-slider .tooltip{
+.range-slider .tooltip {
   position: absolute;
   width: 2.8em;
   height: 2em;
@@ -275,14 +278,15 @@
   line-height: 35px;
   color: #fff;
   border-radius: 3px;
-  box-shadow: var(--shadow-elevation-medium), inset 0px 1px 2px var(--main-color);
+  box-shadow: var(--shadow-elevation-medium),
+    inset 0px 1px 2px var(--main-color);
 }
 
-.free{
+.free {
   color: var(--main-color);
   font-weight: 700;
 }
-.non{
+.non {
   color: var(--secondary-color);
   font-weight: 700;
 }

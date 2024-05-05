@@ -6,12 +6,8 @@ import { useParams } from 'react-router-dom'
 
 export default function City() {
   const country = useParams()
-  const { data } = Hooks.useFetch(
-    `http://localhost:1234/api/cities/${country.city}`
-  )
-
-  const { dataCity, loadingCity, errorCity } = Hooks.useCityFetch(
-    `http://localhost:1234/api/tours/in/Antalya`
+  const { data, error, loading } = Hooks.useFetch(
+    `https://moonvalleytours-api-1.onrender.com/api/v1/cities/${country.city}`
   )
 
   // We need to use the ID of the tour and the name of its CITY to send the DELETE METHOD.
@@ -20,39 +16,37 @@ export default function City() {
     <section className="city">
       <article className="city_header">
         <div className="city_blackoverlay"></div>
-        {/* {error ? (
+        {error ? (
           'Something went wrong!'
         ) : loading ? (
           ' loading'
         ) : (
-          <img
-            src={data && data[0] ? data[0].city_header_image : ' '}
-            alt=""
-            className="header-Img"
-          />
-        )} */}
+          <img src={data?.data?.cityCover} alt="" className="header-Img" />
+        )}
         <header className="city_intro container">
           <div className="city_title">
             <Link to={'/' + data?.country}>
-              <small className="country_name">{data?.country}</small>
+              <small className="country_name">
+                {data?.data?.country?.country}
+              </small>
             </Link>
-            <h1>{data?.city}</h1>
+            <h1>{data?.data?.city}</h1>
           </div>
           <div className="city_details">
             <div className="reviews">
-              <h2>{data?.tours?.length}</h2>
+              <h2>{data?.data?.tours?.length}</h2>
               <span>tours</span>
             </div>
             <div className="reviews">
-              <h2>{data?.travellers}</h2>
+              <h2>{data?.data?.travellers}</h2>
               <span>travellers have enjoyed tours here</span>
             </div>
             <div className="reviews">
-              <h2>{data?.ratingsQuantity}</h2>
+              <h2>{data?.data?.ratingsQuantity}</h2>
               <span>real reviews</span>
             </div>
             <div className="reviews">
-              <h2>{data?.ratingsAverage}</h2>
+              <h2>{data?.data?.ratingsAverage}</h2>
               <span>This is how they rate us</span>
             </div>
           </div>
@@ -142,11 +136,11 @@ export default function City() {
           </div>
         </aside>
         <div className="city_content-cards">
-          {errorCity
+          {error
             ? 'Something went wrong!'
-            : loadingCity
+            : loading
             ? 'Loading'
-            : dataCity.map(item => {
+            : data?.data?.tours?.map(item => {
                 return (
                   <Link
                     key={item._id}
