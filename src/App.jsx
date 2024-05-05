@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar/Navbar'
+import NavbarMobile from './components/navbarMobile/navbarMobile'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import Country from './pages/country/Country'
@@ -12,6 +13,7 @@ const Layout = () => {
   return (
     <>
       <ScrollToTop />
+      <NavbarMobile />
       <Navbar />
       <Outlet />
       <Footer />
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
         element: <City />,
       },
       {
-        path: '/:country/:city/:tour',
+        path: '/:country/:city/:slug',
         element: <Tour />,
       },
     ],
