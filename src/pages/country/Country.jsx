@@ -7,48 +7,44 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/countries${location.pathname}`
+    `https://moonvalleytours-api-1.onrender.com/api/v1/countries${location.pathname}`
   )
-
-  const { dataCity } = Hooks.useCityFetch(
-    `http://localhost:1234/api/cities/in${location.pathname}`
-  )
-
-  const toursLength = dataCity
-    ?.flatMap(city => city.tours.length)
-    .reduce((a, b) => a + b, 0)
 
   return (
     <section className="country">
       <article className="country_header">
         <div className="country_blackoverlay"></div>
         <img
-          src={data?.countryCover}
+          src={data?.data?.countryCover}
           alt={data?.country}
           className="header-Img"
         />
         <header className="country_intro container">
           <div className="country_title">
             <h1>
-              {error ? 'Something went wrong!' : loading ? '' : data.country}
+              {error
+                ? 'Something went wrong!'
+                : loading
+                ? ''
+                : data?.data?.country}
             </h1>
           </div>
           <div className="country_details">
             <div className="destinations">
-              <h2>{loading ? '' : data.cities?.length}</h2>
+              <h2>{loading ? '' : data?.data?.cities?.length}</h2>
               <span>destinations</span>
             </div>
+
             <div className="destinations">
-              <h2>{loading ? '' : toursLength}</h2>
-              <span>tours & activities</span>
-            </div>
-            <div className="destinations">
-              <h2>{data.travellers}</h2>
+              <h2>{data?.data?.travellers}</h2>
               <span>travellers have enjoyed tours here</span>
             </div>
             <div className="destinations">
-              <h2>{data.ratingsAverage}/5</h2>
-              <span>{data.ratingsQuantity} reviews</span>
+              <h2>
+                {data.ratingsAverage}
+                {data?.data?.ratingsAverage}/5
+              </h2>
+              <span>{data?.data?.ratingsQuantity} reviews</span>
             </div>
           </div>
         </header>
@@ -57,13 +53,16 @@ export default function Country() {
         <section className="maindestinations">
           <article className="maindestinations_content container">
             <header className="maindestinations_header">
-              <h2>Main destinations in {data.country}</h2>
+              <h2>Main destinations in {data?.data?.country}</h2>
             </header>
             <div className="maindestinations_grid">
-              {dataCity.map(dest => {
+              {data?.data?.cities?.map(dest => {
                 return (
                   <>
-                    <Link to={`${location.pathname}/${dest.city}`}>
+                    <Link
+                      key={dest._id}
+                      to={`${location.pathname}/${dest.city}`}
+                    >
                       <DestCard key={dest?._id} dest={dest} />
                     </Link>
                   </>

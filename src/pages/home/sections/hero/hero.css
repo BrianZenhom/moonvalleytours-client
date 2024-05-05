@@ -9,7 +9,7 @@
   height: 50vh;
 }
 .hero_content {
-  background: linear-gradient(rgba(0, 0, 0, 0.151) 68%, var(--dark-color)),
+  background: linear-gradient(rgba(0, 0, 0, 0) 68%, #00000069),
     url(/header-bg.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -58,7 +58,7 @@
   border-radius: 6px;
   z-index: 1;
   outline: 1px solid rgb(255, 255, 255);
-  width: 100%;
+  width: 110%;
   position: absolute;
   border-radius: 4px;
 }
@@ -90,7 +90,7 @@
   border: 1px solid transparent;
   font-family: inherit;
   font-weight: 600;
-  font-size: clamp(14px, 2vw, 17px);
+  font-size: 16px;
   background: none;
   padding: 10px 20px;
   color: var(--dark-color);
@@ -233,6 +233,17 @@
   }
   .hero_search_list {
     width: 70%;
+  }
+  .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+  }
+  .benefits span {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 170px;
   }
 }
 
