@@ -18,7 +18,7 @@
 
 # 📌 Overview
 
-moonvalleytours-client is a project that utilizes prop-types, react, react-dom, react-router-dom, types/react, types/react-dom, vitejs/plugin-react-swc, eslint, eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-react-refresh, and vite.
+moonvalleytours-client is a project that utilizes react, stripe and mongoDB. Built with a Robust, scalable and easy to maintain RESTful API.
 
 ## 🔍 Table of Contents
 
@@ -160,13 +160,7 @@ moonvalleytours-client is a project that utilizes prop-types, react, react-dom, 
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks): ESLint rules for React hooks.
 - [vite](https://vitejs.dev/): Next-generation frontend build tool.
 
-## ⚙️ Setting Up
 
-#### Your Environment Variable
-
-- Step 1
-
-- Step 2
 
 ## 🚀 Run Locally
 1.Clone the moonvalleytours-client repository:
@@ -175,17 +169,11 @@ git clone https://github.com/BrianZenhom/moonvalleytours-client
 ```
 2.Install the dependencies with one of the package managers listed below:
 ```bash
-pnpm install
-bun install
-npm install
-yarn install
+lnpm install
 ```
 3.Start the development mode:
 ```bash
-pnpm dev
-bun dev
 npm run dev
-yarn dev
 ```
 
 ## 🙌 Contributors
@@ -195,10 +183,10 @@ yarn dev
 
 ## ☁️ Deploy
 
-`[Application name](Your App URL)`
+[Moon Valley Tours](https://moonvalleytours.com)
 
 ## 📄 License
 
-[**Add Your License**](https://choosealicense.com)
+COPYRIGHT 2024 by BRIANZENHOM
 
 
