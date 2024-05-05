@@ -11,7 +11,7 @@ export default function DestCard({ dest, loading, error }) {
       ) : (
         <div className="list_card-item">
           <div className="maindestinations_card">
-            <img src={dest?.CityThumbnail} alt="" />
+            <img src={dest?.cityThumbnail} alt="" />
             <div className="maindestination_title">
               <h3>{dest?.city}</h3>
             </div>

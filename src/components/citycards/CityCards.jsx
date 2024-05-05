@@ -29,7 +29,8 @@ export default function CityCards({ item }) {
       <div className="city_card-quality-tags">
         <div className="city_card-tag">
           <small>
-            <LanguageIcon /> {item.language}
+            <LanguageIcon />
+            {item.language}
           </small>
           <small>
             <BusIcon />
