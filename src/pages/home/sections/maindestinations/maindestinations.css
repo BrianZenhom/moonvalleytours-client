@@ -153,7 +153,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 2rem;
-    padding-bottom: 10rem;
+    padding-bottom: 2rem;
     gap: 1rem 1rem;
   }
   .maindestinations_grid > * {

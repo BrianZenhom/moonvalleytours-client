@@ -153,6 +153,11 @@
   height: 25px;
 }
 @media (width <= 500px) {
+  .toptours {
+    min-height: auto;
+    padding-top: 2rem;
+    padding-bottom: 7rem;
+  }
   .toptours_details h3 {
     font-size: 14px;
     font-weight: 900;
