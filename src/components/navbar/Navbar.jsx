@@ -180,7 +180,7 @@ export default function Navbar() {
           </Link>
         </div>
         <ul className="navbar-links">
-          <li
+          {/* <li
             className={openCart ? 'cart active' : 'cart'}
             ref={dropdownCartRef}
           >
@@ -198,7 +198,7 @@ export default function Navbar() {
             >
               <span>Your cart is emty</span>
             </div>
-          </li>
+          </li> */}
           {loading ? (
             <dialog>Loading</dialog>
           ) : user ? (
@@ -313,14 +313,14 @@ export default function Navbar() {
                     </div>
 
                     <div className="hr"></div>
-                    <div className="login-methods">
+                    {/* <div className="login-methods">
                       or login with
                       <div className="login-method-socials">
                         <h3>Facebook </h3>
                         <h3>Google </h3>
                         <h3>Apple </h3>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="registerBtn">
                       Dont have an account?
                       <span>
@@ -332,7 +332,7 @@ export default function Navbar() {
               </div>
             </li>
           )}
-          <li
+          {/* <li
             className={
               openLanguage ? 'language-selector active' : 'language-selector'
             }
@@ -403,7 +403,7 @@ export default function Navbar() {
                 <small data-value="ARS">Argentine Peso</small>
               </div>
             </div>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>

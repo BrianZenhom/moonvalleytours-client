@@ -1,0 +1,82 @@
+.navbarmobile {
+  display: none;
+}
+
+@media (width <= 500px) {
+  .logonav {
+    z-index: 99999;
+  }
+  .logonavLeft {
+    transform: translateX(-140%);
+  }
+  .iconsvg {
+    color: white;
+  }
+
+  .navbarmobile {
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--dark-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    z-index: 90;
+  }
+  .navbarmobile {
+    display: flex;
+    justify-content: center;
+  }
+  .navbarmobile button {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 29px;
+    z-index: 99999;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .button {
+    transform: translate(90px, 7px);
+    z-index: 99999;
+    bottom: 0;
+  }
+  .wholescreen {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color: var(--main-color);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    color: black;
+    visibility: hidden;
+    transform: translateX(-600px);
+    transition: 0.3s ease-out;
+  }
+  .visible {
+    visibility: visible;
+    transform: translateX(0px);
+  }
+  .mobilenav {
+    width: 100%;
+    margin-top: 5rem;
+  }
+  .mobilenav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .mobilenav li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    color: white;
+    background-color: var(--main-color);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.274);
+  }
+  .mobilenav span {
+    font-size: 16px;
+  }
+}
