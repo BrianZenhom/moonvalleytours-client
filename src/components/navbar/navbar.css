@@ -468,6 +468,12 @@
   text-align: center;
 }
 
+@media (width < 500px) {
+  .navbar {
+    display: none;
+  }
+}
+
 @media (width <= 1024px) {
   .dropdown-login {
     min-width: 780px;

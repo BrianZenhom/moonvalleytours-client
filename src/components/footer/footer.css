@@ -137,3 +137,9 @@
   display: flex;
   gap: 30px;
 }
+
+@media (width <= 500px) {
+  .footer_moonvalley_grid {
+    display: block;
+  }
+}
