@@ -1,19 +1,23 @@
 .navbarmobile {
   display: none;
+  visibility: hidden;
 }
 
 @media (width <= 500px) {
   .logonav {
     z-index: 99999;
   }
+
   .logonavLeft {
     transform: translateX(-140%);
   }
+
   .iconsvg {
     color: white;
   }
 
   .navbarmobile {
+    visibility: visible;
     display: block;
     position: sticky;
     top: 0;
@@ -23,10 +27,12 @@
     padding: 0.5rem 1.5rem;
     z-index: 90;
   }
+
   .navbarmobile {
     display: flex;
     justify-content: center;
   }
+
   .navbarmobile button {
     position: absolute;
     left: 1.5rem;
@@ -36,16 +42,18 @@
     outline: none;
     background: transparent;
   }
+
   .button {
     transform: translate(90px, 7px);
     z-index: 99999;
     bottom: 0;
   }
-  .wholescreen {
-    height: 100vh;
-    width: 100vw;
+
+  .navbarbg {
+    height: 100%;
+    width: 82.5vw;
     position: fixed;
-    background-color: var(--main-color);
+    background-color: var(--dark-color);
     top: 0;
     bottom: 0;
     left: 0;
@@ -54,29 +62,59 @@
     transform: translateX(-600px);
     transition: 0.3s ease-out;
   }
+
   .visible {
     visibility: visible;
     transform: translateX(0px);
   }
+
   .mobilenav {
     width: 100%;
     margin-top: 5rem;
+    display: block;
+    position: fixed;
+    top: 0;
+    transition: left 0.3s, width 0.3s;
+    width: 82.5vw;
+    height: 100%;
   }
+
   .mobilenav ul {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 100%;
   }
+
   .mobilenav li {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
     color: white;
-    background-color: var(--main-color);
     border-bottom: 1px dashed rgba(255, 255, 255, 0.274);
+    cursor: pointer;
   }
+
+  .mobilenav li:hover {
+    background-color: var(--main-color);
+    color: var(--opaque-color);
+  }
+
+  li:hover .iconsvg {
+    color: var(--opaque-color);
+  }
+
   .mobilenav span {
     font-size: 16px;
+  }
+
+  .lidropdown {
+    flex-grow: 2;
+    background-color: var(--main-color);
+  }
+
+  .dropdown-dark {
+    background-color: var(--main-color);
   }
 }
