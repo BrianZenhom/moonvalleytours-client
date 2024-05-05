@@ -7,7 +7,7 @@ export default function TourCard({ tour, country }) {
     <div className="toptours_card-item">
       <Link to={`/${country}/${tour.city}/${tour._id}`}>
         <div className="toptours_card">
-          <img src={tour.image} alt={tour.title} />
+          <img src={tour.tourThumbnail} alt={tour.title} />
           <footer className="toptours_card_details">
             <div className="toptours_details-previous bg">
               <div className="toptours_details">
@@ -20,7 +20,8 @@ export default function TourCard({ tour, country }) {
                 )}
               </div>
               <div className="toptours_tourprice">
-                <h4>&euro; {tour.price}</h4>
+                <span>&euro;</span>
+                <h4> {tour.price}</h4>
               </div>
             </div>
             <div className="toptours_description">
@@ -28,13 +29,14 @@ export default function TourCard({ tour, country }) {
                 <h3>{tour.title}</h3>
                 <div className="toptours_description_details">
                   <div className="rating-tours">
-                    <strong>{tour.reviewsRating}</strong>
+                    <strong>{tour.reviewsRating}Hard</strong>
                     <span className="toptours_description_rating">
                       <div className="stars">
-                        <strong>****</strong>
+                        <strong>***</strong>
                         <strong className="opacity">*</strong>
+                        <strong>*</strong>
                       </div>
-                      {tour.reviewsQuantity} reviews
+                      {tour.reviewsQuantity} Difficulty
                     </span>
                   </div>
                   <br />
