@@ -27,8 +27,8 @@
   width: 100%;
 }
 .toptours_card-item {
-  flex-basis: 340px;
-  min-height: 400px;
+  flex-basis: 300px;
+  min-height: 360px;
 }
 .toptours_card {
   background-color: white;
@@ -87,9 +87,11 @@
 .toptours_details {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .toptours_details h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 900;
 }
 .toptours_details span {
@@ -100,8 +102,13 @@
   margin-right: 5px;
   font-weight: 900;
 }
+.toptours_tourprice {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .toptours_tourprice h4 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
 }
 .toptours_description {
@@ -144,6 +151,29 @@
 }
 .stars {
   height: 25px;
+}
+@media (width <= 500px) {
+  .toptours_details h3 {
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .toptours_details span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .toptours_details strong {
+    margin-right: 5px;
+    font-weight: 900;
+  }
+  .toptours_tourprice {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .toptours_tourprice h4 {
+    font-size: 24px;
+    font-weight: 900;
+  }
 }
 @media (width < 1270px) {
   .toptours_grid {

@@ -4,8 +4,9 @@ import './toptours.css'
 
 export default function TopTours() {
   const { data, loading, error } = Hooks.useFetch(
-    'http://localhost:1234/api/tours'
+    'https://moonvalleytours-api-1.onrender.com/api/v1/tours/top-7-cheapest'
   )
+
   return (
     <section className="toptours">
       <article className="toptours_content container">
@@ -17,7 +18,7 @@ export default function TopTours() {
             ? 'something went wrong!'
             : loading
             ? 'Loading...'
-            : data?.tours?.map(tour => {
+            : data?.data?.doc?.map(tour => {
                 return (
                   <TourCard key={tour._id} tour={tour} country={tour.country} />
                 )

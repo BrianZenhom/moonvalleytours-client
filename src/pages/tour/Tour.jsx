@@ -36,7 +36,7 @@ const images = [
 ]
 
 export default function Tour() {
-  const location = useParams().tour
+  const location = useParams()
   const [selected, setSelected] = React.useState()
 
   let footer = <p></p>
@@ -45,7 +45,7 @@ export default function Tour() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/tours/${location}`
+    `https://moonvalleytours-api-1.onrender.com/api/v1/tours/${location.slug}`
   )
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
@@ -64,12 +64,12 @@ export default function Tour() {
                 <div className="tour-details">
                   <Link to={`/${data?.country}`}>
                     <div className="tour-tags">
-                      <small>{data?.country}</small>
+                      <small>{data?.data?.country}</small>
                     </div>
                   </Link>
                   <Link to={`/${data?.country}/${data?.city}`}>
                     <div className="tour-tags">
-                      <small>{data?.city}</small>
+                      <small>{data?.data?.city}</small>
                     </div>
                   </Link>
                 </div>
@@ -79,14 +79,14 @@ export default function Tour() {
               </div>
               <div className="tour-info">
                 <div className="tour-title">
-                  <h1>{data?.title}</h1>
+                  <h1>{data?.data?.title}</h1>
                   <span>
-                    <strong>{data?.ratingsAverage}/5</strong>{' '}
-                    {data?.ratingsQuantity} reviews
+                    <strong>{data?.data?.ratingsAverage}/5</strong>{' '}
+                    {data?.data?.ratingsQuantity} reviews
                   </span>
                 </div>
                 <div className="tour-price">
-                  <h1>&euro; {data?.price}</h1>
+                  <h1>&euro; {data?.data?.price}</h1>
                   <button>check availability</button>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function Tour() {
             <div className="singletour-data container">
               <div className="tour-desc-price-details-cancelation">
                 <div className="tour-desc">
-                  <p>{data?.desc}</p>
+                  <p>{data?.data?.desc}</p>
                   <p>
                     <span>View complete description</span>
                   </p>
@@ -124,13 +124,13 @@ export default function Tour() {
                     </span>
                     <div className="exact-price">
                       <small>Adults</small>
-                      <span>&euro; {data?.price}</span>
+                      <span>&euro; {data?.data?.price}</span>
                     </div>
                     <div className="exact-price">
                       <small>
                         Children <br /> 3-10 years old
                       </small>
-                      <span>&euro; {data?.price / 2}</span>
+                      <span>&euro; {data?.data?.price / 2}</span>
                     </div>
                     <div className="exact-price">
                       <small>
@@ -149,7 +149,7 @@ export default function Tour() {
                       <DurationIcon />
                       Duration
                     </strong>
-                    <span>{data?.duration}</span>
+                    <span>{data?.data?.duration} Hours</span>
                   </div>
                   <div className="more-info">
                     <strong>
@@ -158,7 +158,7 @@ export default function Tour() {
                     </strong>
                     <span>
                       The activity takes place with a guide that speaks{' '}
-                      {data?.language}
+                      {data?.data?.language}
                     </span>
                   </div>
                   <div className="more-info">
@@ -167,7 +167,7 @@ export default function Tour() {
                       Incluided
                     </strong>
                     <ul>
-                      {data?.included?.map(li => (
+                      {data?.data?.included?.map(li => (
                         <li key={li}>{li}</li>
                       ))}
                     </ul>
@@ -178,7 +178,7 @@ export default function Tour() {
                       Not Incluided
                     </strong>
                     <ul>
-                      {data?.notIncluded?.map(li => (
+                      {data?.data?.notIncluded?.map(li => (
                         <li key={li}>{li}</li>
                       ))}
                     </ul>
@@ -261,7 +261,7 @@ export default function Tour() {
                 <div className="tour-reviewnumbers">
                   <h1>{data?.ratingsAverage}/5 *****</h1>
                   <span>
-                    {data?.ratingsQuantity} reviews | {data?.travellers}{' '}
+                    {data?.ratingsQuantity} reviews | {data?.data?.travellers}{' '}
                     travellers
                   </span>
                 </div>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/cities?featured=true&limit=6`
+    `https://moonvalleytours-api-1.onrender.com/api/v1/cities`
   )
 
   return (
@@ -21,7 +21,7 @@ export default function MainDestinations({ type }) {
             : loading
             ? 'Loading...'
             : data?.cities?.map(dest => (
-                <Link key={dest._id} to={`${dest.country}/${dest.city}`}>
+                <Link key={dest._id} to={`${dest.country}/${dest._id}`}>
                   <DestCard dest={dest} loading={loading} error={error} />
                 </Link>
               ))}
