@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 export default function City() {
   const country = useParams()
   const { data, error, loading } = Hooks.useFetch(
-    `https://moonvalleytours-api-1.onrender.com/api/v1/cities/${country.city}`
+    `http://localhost:1234/api/v1/cities/${country.city}`
   )
 
   // We need to use the ID of the tour and the name of its CITY to send the DELETE METHOD.

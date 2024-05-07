@@ -7,7 +7,7 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `https://moonvalleytours-api-1.onrender.com/api/v1/countries${location.pathname}`
+    `http://localhost:1234/api/v1/countries${location.pathname}`
   )
 
   return (
@@ -16,7 +16,7 @@ export default function Country() {
         <div className="country_blackoverlay"></div>
         <img
           src={data?.data?.countryCover}
-          alt={data?.country}
+          alt={data?.data?.country}
           className="header-Img"
         />
         <header className="country_intro container">

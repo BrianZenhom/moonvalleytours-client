@@ -49,10 +49,12 @@ export default function Hero() {
       <article className="hero_content">
         <header className="hero_header container">
           <div className="hero_title_header">
-            <h1>
-              Travel & Tour, <br />
-              around the world.
-            </h1>
+            {
+              <h1>
+                Travel & Tour, <br />
+                around the world.
+              </h1>
+            }
             <p>
               Allow us to make your <strong>dream trip</strong>, perfect.
             </p>
