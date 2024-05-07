@@ -33,7 +33,7 @@
 .toptours_card {
   background-color: white;
   flex: 1;
-  height: 100%;
+  height: 360px;
   border-radius: 5px;
   overflow: hidden;
   color: white;

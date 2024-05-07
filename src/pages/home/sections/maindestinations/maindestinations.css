@@ -21,11 +21,11 @@
 .maindestinations_grid > * {
   flex: 0 0 32%;
 }
-/* .list_card-item {
+.list_card-item {
   flex-basis: 30%;
   flex-grow: 1;
   max-width: 350px;
-} */
+}
 .list_card-item {
   min-width: 140px;
   max-height: 230px;
