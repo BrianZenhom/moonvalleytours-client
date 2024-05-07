@@ -142,6 +142,12 @@
   display: none;
   height: 0px;
 }
+.footers_footer_mobile {
+  opacity: 0;
+  visibility: hidden;
+  height: 0px;
+  display: none;
+}
 
 @media (width <= 500px) {
   .footer_moonvalley_grid {
@@ -157,8 +163,13 @@
     align-items: center;
     padding: 1rem;
   }
+  .footer_block {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
   .footer_logo {
     display: flex;
+    width: 120px;
   }
   .footers_footer {
     visibility: hidden;
@@ -166,16 +177,28 @@
   }
   .footers_footer_mobile {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #0a0b0b;
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
   }
 
-  .footers_footer_mobile ul,
-  a {
-    display: flex;
-    gap: 1rem;
+  .opinions {
+    padding-left: 1.5rem;
+  }
+
+  .footers_footer_mobile ul a {
+    font-size: 12px;
     color: rgb(146, 146, 146);
+  }
+  .footer_block_mobile {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
   }
 
   .footer_moonvalley_grid_mobile {
@@ -186,9 +209,12 @@
     color: #acacac;
     height: 100%;
   }
-
+  .terms {
+    display: flex;
+    gap: 2rem;
+  }
   .accordeon_tab {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
   }
   .accordeon_header {
     display: flex;
@@ -215,5 +241,26 @@
   .icon {
     transition: 0.2s ease;
     transform: rotate(-180deg);
+  }
+  .footer_block_socials {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .socialIcon {
+    width: 35px;
+    color: var(--main-color);
+  }
+  .socialIcon:hover {
+    color: var(--opaque-color);
+  }
+  .payment ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer_block .about {
+    font-size: 18px;
   }
 }

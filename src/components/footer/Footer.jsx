@@ -182,70 +182,65 @@ export default function Footer() {
               </form>
             </div>
           </AccordeonItem>
-          <AccordeonItem value="4" trigger="Reviews">
-            <div className="footer_block">
-              <span>Clients opinion about us</span>
+
+          <div className="footer_block">
+            <div className="opinions">
+              <h1>TBD</h1>
+              <span>MoonValley&apos;s Opinions</span>
             </div>
-          </AccordeonItem>
-          <AccordeonItem value="5" trigger="Payment Method">
-            <div className="footer_block">
-              <ul className="payment flex">
-                <Visa />
-                <Mastercard />
-                <Paypal />
-                <DinersClub />
-              </ul>
-              <ul className="payment flex">
-                <Discover />
-                <ApplePay />
-                <GooglePay />
-                <Klarna />
-              </ul>
-            </div>
-          </AccordeonItem>
-        </Accordeon>
-        <div className="footer_block_mobile socials">
-          <div className="footer_section_title">
-            <h1>Follow Us</h1>
           </div>
-          <ul>
-            <li>
-              <a
-                href="https://facebook.com/moonvalleytours"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Facebook />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com/moonvalleytours"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Instagram />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footers_footer_mobile">
-          <div className="footers_footer_mobile container">
-            <a href="#">
-              <Logo type="footer_logo" />
-            </a>
+          <div className="footer_block_mobile socials">
             <ul>
               <li>
-                <a href="">Terms & Conditions</a>
+                <a
+                  href="https://facebook.com/moonvalleytours"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Facebook />
+                </a>
               </li>
               <li>
-                <a href="">Privacy</a>
-              </li>
-              <li>
-                <a href="">Cookies</a>
+                <a
+                  href="https://instagram.com/moonvalleytours"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Instagram />
+                </a>
               </li>
             </ul>
           </div>
+          <div className="footer_block_socials">
+            <ul className="payment flex">
+              <Visa />
+              <Mastercard />
+              <Paypal />
+              <DinersClub />
+              <Discover />
+              <ApplePay />
+              <GooglePay />
+              <Klarna />
+            </ul>
+          </div>
+        </Accordeon>
+      </div>
+      <div className="footers_footer_mobile">
+        <div className="footers_footer_mobile container">
+          <a href="#">
+            <Logo type="footer_logo" />
+          </a>
+          <ul className="terms">
+            <li>
+              <a href="">Terms & Conditions</a>
+            </li>
+            <li>
+              <a href="">Privacy</a>
+            </li>
+            <li>
+              <a href="">Cookies</a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>
