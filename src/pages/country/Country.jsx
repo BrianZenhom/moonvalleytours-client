@@ -7,7 +7,7 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/countries${location.pathname}`
+    `https://moonvalleytours-api-1.onrender.com/api/v1/countries${location.pathname}`
   )
 
   return (

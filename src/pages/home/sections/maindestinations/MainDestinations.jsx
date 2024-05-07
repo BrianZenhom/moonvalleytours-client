@@ -5,7 +5,7 @@ import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/cities`
+    `https://moonvalleytours-api-1.onrender.com/api/v1/cities`
   )
 
   return (

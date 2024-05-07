@@ -73,9 +73,9 @@
   background: conic-gradient(
     from var(--gradient-angle),
     var(--main-color),
-    var(--opaque-color),
+    var(--secondary-color),
     #ffffff,
-    var(--opaque-color),
+    var(--secondary-color),
     var(--main-color)
   );
   animation: rotation 10s linear infinite;
