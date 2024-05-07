@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types'
 import './destcard.css'
+import { Link } from 'react-router-dom'
 
-export default function DestCard({ dest, loading, error }) {
+export default function DestCard({ dest }) {
   return (
     <>
-      {error ? (
-        'Something went wrong!'
-      ) : loading ? (
-        'Loading...'
-      ) : (
+      <Link to={`${dest.country}/${dest._id}`}>
         <div className="list_card-item">
           <div className="maindestinations_card">
             <img src={dest?.cityThumbnail} alt="" />
@@ -37,7 +34,7 @@ export default function DestCard({ dest, loading, error }) {
             </div>
           </div>
         </div>
-      )}
+      </Link>
     </>
   )
 }
