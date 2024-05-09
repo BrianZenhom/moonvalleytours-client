@@ -149,7 +149,7 @@
   display: none;
 }
 
-@media (width <= 500px) {
+@media (width <= 766px) {
   .footer_moonvalley_grid {
     visibility: hidden;
     display: none;

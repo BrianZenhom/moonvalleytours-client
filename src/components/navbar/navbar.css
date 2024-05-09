@@ -468,7 +468,7 @@
   text-align: center;
 }
 
-@media (width < 500px) {
+@media (width <= 766px) {
   .navbar {
     display: none;
   }

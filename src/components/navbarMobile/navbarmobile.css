@@ -7,7 +7,7 @@
   visibility: hidden;
 }
 
-@media (width <= 500px) {
+@media (width <= 766px) {
   .logonav {
     z-index: 99999;
   }

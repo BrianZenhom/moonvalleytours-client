@@ -14,7 +14,7 @@ const Cart = () => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
