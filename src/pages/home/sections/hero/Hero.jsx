@@ -94,7 +94,7 @@ export default function Hero() {
                       <Link to={`${loc?.country}/${loc?._id}`}>
                         <span className="a-heavy">{loc?.city}</span>
                       </Link>
-                      <Link to={`${loc?.country}`}>
+                      <Link to={`${loc?.country?._id}`}>
                         <span className="a-light">Turkiye</span>
                       </Link>
                     </li>

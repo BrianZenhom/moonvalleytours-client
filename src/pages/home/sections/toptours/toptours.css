@@ -87,29 +87,40 @@
 .toptours_details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  text-wrap: balance;
+  color: var(--main-color);
 }
 .toptours_details h3 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
 }
 .toptours_details span {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
+  color: gray;
 }
 .toptours_details strong {
   margin-right: 5px;
+  font-size: 16px;
   font-weight: 900;
+  color: var(--main-color);
 }
 .toptours_tourprice {
   display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1px;
+  color: var(--main-color);
+}
+.price_tour {
+  display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
 }
 .toptours_tourprice h4 {
-  font-size: 28px;
-  font-weight: 900;
+  font-size: 21px;
+  font-weight: 700;
 }
 .toptours_description {
   position: absolute;
