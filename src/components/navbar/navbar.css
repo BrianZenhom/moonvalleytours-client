@@ -467,6 +467,16 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+.spinner {
+  width: 57px;
+}
+.logginginspinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 57px;
+}
 
 @media (width <= 766px) {
   .navbar {

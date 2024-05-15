@@ -3,6 +3,7 @@ import './navbar.css'
 import User from './../../assets/icons/User'
 import Cart from '../../assets/icons/Cart'
 import More from '../../assets/icons/More'
+import Spinner from '../../assets/icons/Spinner'
 import { useState, useRef, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
@@ -153,10 +154,11 @@ export default function Navbar() {
     dispatch({ type: 'LOGIN_START' })
     try {
       const res = await axios.post(
-        'http://localhost:1234/api/auth/login',
+        'http://localhost:1234/api/v1/auth/login',
         credentials
       )
-      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data.details })
+      console.log(res.data)
+      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
       navigate('/')
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
@@ -180,7 +182,7 @@ export default function Navbar() {
           </Link>
         </div>
         <ul className="navbar-links">
-          {/* <li
+          <li
             className={openCart ? 'cart active' : 'cart'}
             ref={dropdownCartRef}
           >
@@ -198,9 +200,12 @@ export default function Navbar() {
             >
               <span>Your cart is emty</span>
             </div>
-          </li> */}
+          </li>
+
           {loading ? (
-            <dialog>Loading</dialog>
+            <span className="logginginspinner">
+              <Spinner />
+            </span>
           ) : user ? (
             <li
               className={openUserMenu ? 'userMenu active' : 'userMenu'}
@@ -209,7 +214,7 @@ export default function Navbar() {
               <a onClick={handleOpenUserMenu} href="#">
                 <span className="loggedInUser">
                   <User />
-                  {user.name}
+                  {user.data?.user?.name}
                 </span>
               </a>
               <div
@@ -313,14 +318,14 @@ export default function Navbar() {
                     </div>
 
                     <div className="hr"></div>
-                    {/* <div className="login-methods">
+                    <div className="login-methods">
                       or login with
                       <div className="login-method-socials">
                         <h3>Facebook </h3>
                         <h3>Google </h3>
                         <h3>Apple </h3>
                       </div>
-                    </div> */}
+                    </div>
                     <div className="registerBtn">
                       Dont have an account?
                       <span>
@@ -332,7 +337,7 @@ export default function Navbar() {
               </div>
             </li>
           )}
-          {/* <li
+          <li
             className={
               openLanguage ? 'language-selector active' : 'language-selector'
             }
@@ -403,7 +408,7 @@ export default function Navbar() {
                 <small data-value="ARS">Argentine Peso</small>
               </div>
             </div>
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>
