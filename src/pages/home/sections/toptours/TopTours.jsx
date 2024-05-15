@@ -3,8 +3,11 @@ import Hooks from './../../../../hooks/useFetch'
 import './toptours.css'
 
 export default function TopTours() {
+  // const { data, loading, error } = Hooks.useFetch(
+  //   'http://16.171.171.154:1234/api/v1/tours'
+  // )
   const { data, loading, error } = Hooks.useFetch(
-    'https://moonvalleytours-api-1.onrender.com/api/v1/tours'
+    'http://localhost:1234/api/v1/tours'
   )
 
   return (

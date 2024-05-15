@@ -4,8 +4,11 @@ import Hooks from './../../../../hooks/useFetch'
 import DestCard from './../../../../components/destcard/DestCard'
 
 export default function MainDestinations({ type }) {
+  // const { data, loading, error } = Hooks.useFetch(
+  //   `http://16.171.171.154:1234/api/v1/cities`
+  // )
   const { data, loading, error } = Hooks.useFetch(
-    `https://moonvalleytours-api-1.onrender.com/api/v1/cities`
+    `http://localhost:1234/api/v1/cities`
   )
 
   return (

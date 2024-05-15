@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 export default function City() {
   const country = useParams()
   const { data, error, loading } = Hooks.useFetch(
-    `https://moonvalleytours-api-1.onrender.com/api/v1/cities/${country.city}`
+    `http://16.171.171.154:1234/api/v1/cities/${country.city}`
   )
 
   // We need to use the ID of the tour and the name of its CITY to send the DELETE METHOD.
@@ -25,7 +25,7 @@ export default function City() {
         )}
         <header className="city_intro container">
           <div className="city_title">
-            <Link to={'/' + data?.country}>
+            <Link to={'/' + data?.data?.country}>
               <small className="country_name">
                 {data?.data?.country?.country}
               </small>
@@ -141,6 +141,7 @@ export default function City() {
             : loading
             ? 'Loading'
             : data?.data?.tours?.map(item => {
+                console.log(item)
                 return (
                   <Link
                     key={item._id}
