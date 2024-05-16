@@ -477,7 +477,35 @@
   height: 100%;
   width: 57px;
 }
+.password_input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
 
+.password_input:focus-within {
+  outline: 1px solid var(--main-color);
+}
+.password_input input {
+  padding: 0;
+  border: none;
+}
+.password_input input:focus-within {
+  outline: none;
+  border: none;
+}
+.hideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (width <= 766px) {
   .navbar {
     display: none;

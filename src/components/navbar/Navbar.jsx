@@ -4,6 +4,8 @@ import User from './../../assets/icons/User'
 import Cart from '../../assets/icons/Cart'
 import More from '../../assets/icons/More'
 import Spinner from '../../assets/icons/Spinner'
+import SeePw from '../../assets/icons/SeePw'
+import HidePw from '../../assets/icons/HidePw'
 import { useState, useRef, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
@@ -18,6 +20,7 @@ export default function Navbar() {
   const [openLanguage, setOpenLanguage] = useState(false)
   const [openCurrency, setOpenCurrency] = useState(false)
   const [openUserMenu, setOpenUserMenu] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   const [scroll, setScroll] = useState(false)
 
@@ -33,6 +36,7 @@ export default function Navbar() {
   const dropdownLoginRef = useRef(null)
   const dropdownCartRef = useRef(null)
   const dropdownUserMenuRef = useRef(null)
+  const switchRef = useRef(null)
 
   const navigate = useNavigate()
 
@@ -137,6 +141,9 @@ export default function Navbar() {
     }
   }, [])
 
+  const handleHiddenPw = () => {
+    setVisible(!visible)
+  }
   const handleActive = e => {
     setActiveLanguage(e.target.innerText)
   }
@@ -157,7 +164,6 @@ export default function Navbar() {
         'http://localhost:1234/api/v1/auth/login',
         credentials
       )
-      console.log(res.data)
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
       navigate('/')
     } catch (err) {
@@ -297,12 +303,21 @@ export default function Navbar() {
                       placeholder="Email"
                       onChange={handleChange}
                     />
-                    <input
-                      type="password"
-                      id="password"
-                      placeholder="Password"
-                      onChange={handleChange}
-                    />
+                    <div className="password_input">
+                      <input
+                        type={visible ? 'text' : 'password'}
+                        id="password"
+                        placeholder="Password"
+                        onChange={handleChange}
+                      />
+                      <div
+                        ref={switchRef}
+                        className="hideshow"
+                        onClick={handleHiddenPw}
+                      >
+                        {visible ? <SeePw /> : <HidePw />}
+                      </div>
+                    </div>
                     <div className="remember-me">
                       <small>Remember me</small>
                       <input type="checkbox" />
