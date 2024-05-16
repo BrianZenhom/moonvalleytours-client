@@ -45,7 +45,7 @@ export default function Tour() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `https://moonvalleytours-api-1.onrender.com/api/v1/tours/${location.slug}`
+    `http://localhost:1234/api/v1/tours/${location.slug}`
   )
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]

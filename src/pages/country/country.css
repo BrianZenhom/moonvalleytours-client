@@ -56,5 +56,22 @@
   height: 100%;
   width: 100%;
   z-index: 0;
-  min-height: 35vh;
+}
+
+@media (width <= 500px) {
+  .country_intro {
+    min-height: 30vh;
+  }
+  .country_title h1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .country_details {
+    display: none;
+  }
+  .country_content {
+    padding-bottom: 5rem;
+  }
 }

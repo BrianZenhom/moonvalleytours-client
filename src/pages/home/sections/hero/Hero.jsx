@@ -8,9 +8,7 @@ import Hooks from '../../../../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
 export default function Hero() {
-  const { data } = Hooks.useFetch(
-    'https://moonvalleytours-api-1.onrender.com/api/v1/cities'
-  )
+  const { data } = Hooks.useFetch('http://localhost:1234/api/v1/cities')
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)

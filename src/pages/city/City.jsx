@@ -6,11 +6,10 @@ import { useParams } from 'react-router-dom'
 
 export default function City() {
   const country = useParams()
-  const { data, error, loading } = Hooks.useFetch(
-    `http://16.171.171.154:1234/api/v1/cities/${country.city}`
-  )
 
-  // We need to use the ID of the tour and the name of its CITY to send the DELETE METHOD.
+  const { data, error, loading } = Hooks.useFetch(
+    `http://localhost:1234/api/v1/cities/${country.city}`
+  )
 
   return (
     <section className="city">
@@ -141,7 +140,6 @@ export default function City() {
             : loading
             ? 'Loading'
             : data?.data?.tours?.map(item => {
-                console.log(item)
                 return (
                   <Link
                     key={item._id}
