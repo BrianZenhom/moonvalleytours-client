@@ -10,22 +10,16 @@ import Cart from '../../assets/icons/Cart'
 import SeePw from '../../assets/icons/SeePw'
 import HidePw from '../../assets/icons/HidePw'
 import LeftBack from '../../assets/icons/LeftBack'
+import Switch from '../../assets/icons/Switch'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../../assets/icons/Spinner'
-import SwitchOff from '../../assets/icons/SwitchOff'
-import SwitchOn from '../../assets/icons/SwitchOn'
 
 const NavbarMobile = () => {
   const [menu, setMenu] = useState(false)
   const [loginOpen, setLoginOpen] = useState(false)
   const [visible, setVisible] = useState(false)
-  const [remember, setRemember] = useState(false)
-
-  const handleRemember = () => {
-    setRemember(!remember)
-  }
 
   const handleHiddenPw = () => {
     setVisible(!visible)
@@ -124,8 +118,11 @@ const NavbarMobile = () => {
                     </div>
                   </div>
                 </div>
-                <div onClick={handleRemember} className="rememberme">
-                  Remember me {remember ? <SwitchOff /> : <SwitchOn />}
+                <div className="rememberme">
+                  <label htmlFor="checkMobile">
+                    <small>Remember me</small>
+                    <Switch id="checkMobile" />
+                  </label>
                 </div>
               </div>
               {loading ? (

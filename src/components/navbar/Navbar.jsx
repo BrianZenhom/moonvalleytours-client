@@ -4,12 +4,11 @@ import User from './../../assets/icons/User'
 import Cart from '../../assets/icons/Cart'
 import More from '../../assets/icons/More'
 import Spinner from '../../assets/icons/Spinner'
-import SeePw from '../../assets/icons/SeePw'
-import HidePw from '../../assets/icons/HidePw'
 import { useState, useRef, useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
+import LoginForm from '../loginform/LoginForm'
 
 export default function Navbar() {
   const [activeLanguage, setActiveLanguage] = useState('English')
@@ -29,6 +28,8 @@ export default function Navbar() {
     password: undefined,
   })
 
+  console.log(credentials)
+
   const { user, loading, error, dispatch } = useContext(AuthContext)
 
   const dropdownLanguageRef = useRef(null)
@@ -36,7 +37,6 @@ export default function Navbar() {
   const dropdownLoginRef = useRef(null)
   const dropdownCartRef = useRef(null)
   const dropdownUserMenuRef = useRef(null)
-  const switchRef = useRef(null)
 
   const navigate = useNavigate()
 
@@ -141,7 +141,8 @@ export default function Navbar() {
     }
   }, [])
 
-  const handleHiddenPw = () => {
+  const handleHiddenPw = e => {
+    e.stopPropagation()
     setVisible(!visible)
   }
   const handleActive = e => {
@@ -172,6 +173,7 @@ export default function Navbar() {
   }
 
   const handleLogout = () => {
+    setCredentials(undefined)
     navigate('/')
     dispatch({ type: 'LOGOUT' })
   }
@@ -265,91 +267,15 @@ export default function Navbar() {
               >
                 <User />
               </a>
-              <div
-                className={open ? 'dropdown-login visible' : 'dropdown-login'}
-              >
-                <div className="booking-tab">
-                  <h4>Bookings</h4>
-                  <span>
-                    Don&apos;t want to register? <br /> Check your booking
-                    without registering
-                  </span>
-                  <form className="booking-form">
-                    <input type="text" placeholder="Email" />
-                    <input type="text" placeholder="Booking reference" />
-                    <div className="reference">
-                      <small>Don&apos;t know your booking reference?</small>
-                    </div>
-                    <div className="bookingBtn">
-                      <button>Find my booking</button>
-                    </div>
-                  </form>
-                </div>
-                <div className="login-tab">
-                  {error && (
-                    <div className="error-message-wrapper">
-                      <span className="errormessage">{error.message}</span>
-                    </div>
-                  )}
-                  <h4>Account</h4>
-                  <span>
-                    Do you have an account? <br /> Log into your account
-                  </span>
-                  <form className="login-form">
-                    <input
-                      type="text"
-                      id="email"
-                      name="email"
-                      placeholder="Email"
-                      onChange={handleChange}
-                    />
-                    <div className="password_input">
-                      <input
-                        type={visible ? 'text' : 'password'}
-                        id="password"
-                        placeholder="Password"
-                        onChange={handleChange}
-                      />
-                      <div
-                        ref={switchRef}
-                        className="hideshow"
-                        onClick={handleHiddenPw}
-                      >
-                        {visible ? <SeePw /> : <HidePw />}
-                      </div>
-                    </div>
-                    <div className="remember-me">
-                      <small>Remember me</small>
-                      <input type="checkbox" />
-                    </div>
-                    <div className="loginBtn">
-                      <button
-                        disabled={loading}
-                        onClick={handleClick}
-                        className="lButton"
-                      >
-                        Login
-                      </button>
-                    </div>
-
-                    <div className="hr"></div>
-                    <div className="login-methods">
-                      or login with
-                      <div className="login-method-socials">
-                        <h3>Facebook </h3>
-                        <h3>Google </h3>
-                        <h3>Apple </h3>
-                      </div>
-                    </div>
-                    <div className="registerBtn">
-                      Dont have an account?
-                      <span>
-                        <a href="/register">Signup</a>
-                      </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <LoginForm
+                handleChange={handleChange}
+                open={open}
+                handleHiddenPw={handleHiddenPw}
+                visible={visible}
+                loading={loading}
+                error={error}
+                handleClick={handleClick}
+              />
             </li>
           )}
           <li

@@ -275,12 +275,10 @@
   display: flex;
   align-items: center;
   width: 100%;
+  user-select: none;
+  gap: 5px;
 }
-.remember-me input {
-  width: 15px;
-  height: 15px;
-  margin-left: 1rem;
-}
+
 .loginBtn {
   display: flex;
   justify-content: end;
@@ -506,6 +504,46 @@
   align-items: center;
   justify-content: center;
 }
+
+.iconsvgtwo {
+  width: 25px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+.checkboxcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbutton {
+  background-color: gray;
+  width: 25px;
+  height: 15px;
+  border-radius: 200px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.checkbutton::before {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  width: 11px;
+  height: 11px;
+  border-radius: 200px;
+  margin: 2.3px;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+input:checked + .checkbutton {
+  background-color: var(--main-color);
+}
+input:checked + .checkbutton::before {
+  transform: translateX(10px);
+}
+#check {
+  display: none;
+}
+
 @media (width <= 766px) {
   .navbar {
     display: none;

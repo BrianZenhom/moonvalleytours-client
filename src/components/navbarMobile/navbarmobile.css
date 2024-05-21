@@ -263,7 +263,6 @@
     gap: 5px;
 
     margin-top: 1rem;
-    font-size: 14px;
   }
   .switchsvg {
     display: flex;
@@ -295,5 +294,42 @@
   .socials {
     display: flex;
     justify-content: center;
+  }
+  .checkboxcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .checkbutton {
+    background-color: gray;
+    width: 25px;
+    height: 15px;
+    border-radius: 200px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .rememberme label {
+    display: flex;
+    gap: 5px;
+  }
+  .checkbutton::before {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 11px;
+    height: 11px;
+    border-radius: 200px;
+    margin: 2px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  input:checked + .checkbutton {
+    background-color: var(--main-color);
+  }
+  input:checked + .checkbutton::before {
+    transform: translateX(10px);
+  }
+  #checkMobile {
+    display: none;
   }
 }
