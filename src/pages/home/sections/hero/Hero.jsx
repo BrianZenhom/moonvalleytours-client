@@ -49,7 +49,7 @@ export default function Hero() {
           <div className="hero_title_header">
             {
               <h1>
-                Travel & Tour, <br />
+                Travel and tour, <br />
                 around the world.
               </h1>
             }
