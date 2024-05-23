@@ -158,7 +158,9 @@ const NavbarMobile = ({ toggleDialog }) => {
         </div>
       </aside>
       <nav className="navbarmobile">
-        <Logo type={menu ? 'logonav logonavLeft' : 'logonav'} />
+        <Link className={menu ? 'logonav logonavLeft' : 'logonav'} to="/">
+          <Logo />
+        </Link>
         <div className={menu ? 'button' : ' '}>
           <button onClick={handleOpen}>{menu ? <Close /> : <Menu />}</button>
         </div>

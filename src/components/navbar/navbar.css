@@ -64,9 +64,7 @@
   padding: 0.5rem 0;
   transition: all 0.2s ease-in-out;
 }
-.logonav:hover {
-  transform: scale(1.1);
-}
+
 /* language dropdown */
 
 .language-selector {

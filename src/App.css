@@ -43,8 +43,14 @@ dialog::backdrop {
     position: fixed;
     overflow: hidden;
   }
+
   dialog {
     padding: 2rem 0.2rem;
+  }
+  .registerForm_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   dialog::backdrop {
