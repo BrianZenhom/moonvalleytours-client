@@ -10,7 +10,7 @@ import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 import LoginForm from '../loginform/LoginForm'
 
-export default function Navbar() {
+export default function Navbar({ toggleDialog }) {
   const [activeLanguage, setActiveLanguage] = useState('English')
   const [activeCurrency, setActiveCurrency] = useState('US$')
 
@@ -27,8 +27,6 @@ export default function Navbar() {
     username: undefined,
     password: undefined,
   })
-
-  console.log(credentials)
 
   const { user, loading, error, dispatch } = useContext(AuthContext)
 
@@ -275,6 +273,7 @@ export default function Navbar() {
                 loading={loading}
                 error={error}
                 handleClick={handleClick}
+                toggleDialog={toggleDialog}
               />
             </li>
           )}

@@ -11,6 +11,7 @@ const LoginForm = ({
   visible,
   loading,
   error,
+  toggleDialog,
 }) => {
   return (
     <>
@@ -86,7 +87,9 @@ const LoginForm = ({
             </div>
             <div className="registerBtn">
               Dont have an account?
-              <span>Register</span>
+              <span className="registerWrd" onClick={toggleDialog}>
+                Register
+              </span>
             </div>
           </form>
         </div>
@@ -99,6 +102,7 @@ LoginForm.propTypes = {
   handleClick: PropTypes.func.isRequired,
   handleHiddenPw: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
+  toggleDialog: PropTypes.bool.isRequired,
   open: PropTypes.bool.isRequired,
   visible: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,

@@ -1,0 +1,68 @@
+.registrationForm_form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.checkboxes label {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: rgb(88, 88, 88);
+  cursor: pointer;
+}
+.register_content-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.fullw {
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: Montserrat;
+  background-color: rgb(243, 243, 243);
+}
+.halfw {
+  flex-grow: 1;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: Montserrat;
+  background-color: rgb(243, 243, 243);
+}
+
+.halfw:focus,
+.fullw:focus {
+  background-color: white;
+  outline-color: var(--main-color);
+  color: var(--main-color);
+}
+.registrationForm_form button {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: var(--dark-color);
+  font-size: 18px;
+  font-family: Montserrat;
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.registrationForm_form button:hover {
+  outline: 1px solid rgb(0, 0, 0);
+  background-color: var(--main-color);
+}

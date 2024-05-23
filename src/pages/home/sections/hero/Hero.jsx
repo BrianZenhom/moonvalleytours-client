@@ -89,7 +89,7 @@ export default function Hero() {
                 {data?.cities?.map(loc => {
                   return (
                     <li key={loc?._id} title={loc?.country}>
-                      <Link to={`${loc?.country}/${loc?._id}`}>
+                      <Link to={`${loc?.country?._id}/${loc?._id}`}>
                         <span className="a-heavy">{loc?.city}</span>
                       </Link>
                       <Link to={`${loc?.country?._id}`}>

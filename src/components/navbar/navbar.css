@@ -477,7 +477,7 @@
 }
 .password_input {
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 10px;
   border: 1px solid rgb(168, 168, 168);
   border-radius: 5px;
   font-size: 16px;
@@ -506,7 +506,7 @@
 }
 
 .iconsvgtwo {
-  width: 25px;
+  width: 20px;
   color: var(--main-color);
   cursor: pointer;
 }
@@ -542,6 +542,13 @@ input:checked + .checkbutton::before {
 }
 #check {
   display: none;
+}
+.registerWrd {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.registerWrd:hover {
+  color: var(--main-color);
 }
 
 @media (width <= 766px) {

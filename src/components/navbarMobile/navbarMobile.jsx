@@ -16,7 +16,7 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../../assets/icons/Spinner'
 
-const NavbarMobile = () => {
+const NavbarMobile = ({ toggleDialog }) => {
   const [menu, setMenu] = useState(false)
   const [loginOpen, setLoginOpen] = useState(false)
   const [visible, setVisible] = useState(false)
@@ -147,6 +147,12 @@ const NavbarMobile = () => {
             <div className="orlogin">
               <span>or login with</span>
               <div className="socials">Google Facebook Apple</div>
+            </div>
+            <div className="registerMobile">
+              <span>Dont have an account?</span>{' '}
+              <span className="registerMobile_Wrd" onClick={toggleDialog}>
+                Register here
+              </span>
             </div>
           </div>
         </div>

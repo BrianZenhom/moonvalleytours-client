@@ -2,3 +2,56 @@
   max-width: 1080px;
   margin: 0 auto;
 }
+
+dialog {
+  width: 700px;
+  position: fixed;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 100vh;
+  border: none;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+}
+dialog::backdrop {
+  backdrop-filter: blur(3px);
+}
+.registerForm_content {
+  display: flex;
+  flex-direction: column;
+}
+.registerForm_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.titleRegistration {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.iconsvgclose:hover {
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+@media (width <= 766px) {
+  .registerForm {
+    margin: 0 auto;
+    border-radius: 0;
+    position: fixed;
+    overflow: hidden;
+  }
+  dialog {
+    padding: 2rem 0.2rem;
+  }
+
+  dialog::backdrop {
+    background-color: white;
+  }
+  .registerForm small {
+    overflow: scroll;
+    font-size: 11px;
+  }
+}
