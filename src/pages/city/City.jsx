@@ -24,7 +24,7 @@ export default function City() {
         )}
         <header className="city_intro container">
           <div className="city_title">
-            <Link to={'/' + data?.data?.country}>
+            <Link to={'/' + data?.data?.country?._id}>
               <small className="country_name">
                 {data?.data?.country?.country}
               </small>

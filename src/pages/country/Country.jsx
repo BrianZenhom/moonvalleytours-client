@@ -59,11 +59,8 @@ export default function Country() {
               {data?.data?.cities?.map(dest => {
                 return (
                   <>
-                    <Link
-                      key={dest._id}
-                      to={`${location.pathname}/${dest.city}`}
-                    >
-                      <DestCard key={dest?._id} dest={dest} />
+                    <Link to={`${location.pathname}/${dest._id}`}>
+                      <DestCard dest={dest} />
                     </Link>
                   </>
                 )

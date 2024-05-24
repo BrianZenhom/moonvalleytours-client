@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import './maindestinations.css'
 import Hooks from './../../../../hooks/useFetch'
 import DestCard from './../../../../components/destcard/DestCard'
+import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
   // const { data, loading, error } = Hooks.useFetch(
@@ -23,7 +24,11 @@ export default function MainDestinations({ type }) {
             : loading
             ? 'Loading...'
             : data?.cities?.map(dest => (
-                <DestCard key={dest._id} dest={dest} />
+                <>
+                  <Link key={dest._id} to={`${dest.country._id}/${dest._id}`}>
+                    <DestCard key={dest._id} dest={dest} />
+                  </Link>
+                </>
               ))}
         </div>
       </article>
