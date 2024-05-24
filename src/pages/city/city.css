@@ -296,7 +296,7 @@
     min-height: 100%;
   }
   .city_title {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
   }
   .city_title h1 {
     font-size: 46px;
@@ -337,15 +337,15 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
   }
   .showCategories span {
     background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(204, 203, 203);
+    border-right: 1px solid rgb(204, 203, 203);
     color: rgb(145, 145, 145);
     flex-grow: 1;
-    padding: 1.2rem;
+    padding: 0.8rem;
     display: flex;
     justify-content: center;
     align-items: center;

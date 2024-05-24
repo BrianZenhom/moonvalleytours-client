@@ -77,6 +77,10 @@ export default function City() {
             <Filter />
             Filter
           </span>
+          <span>
+            <Filter />
+            Map
+          </span>
         </span>
         <aside
           className={
