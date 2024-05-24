@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import { useRef } from 'react'
 import './App.css'
 import Navbar from './components/navbar/Navbar'
 import NavbarMobile from './components/navbarMobile/navbarMobile'
@@ -8,7 +9,6 @@ import Country from './pages/country/Country'
 import Tour from './pages/tour/Tour'
 import City from './pages/city/City'
 import ScrollToTop from './hooks/scrollToTop'
-import { useRef } from 'react'
 import RegisterDialog from './components/registerdialog/RegisterDialog'
 
 const Layout = () => {
