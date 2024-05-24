@@ -9,8 +9,7 @@ import Tour from './pages/tour/Tour'
 import City from './pages/city/City'
 import ScrollToTop from './hooks/scrollToTop'
 import { useRef } from 'react'
-import CloseModal from './assets/icons/CloseModal'
-import RegisterForm from './components/registerform/RegisterForm'
+import RegisterDialog from './components/registerdialog/RegisterDialog'
 
 const Layout = () => {
   const dialogRef = useRef(null)
@@ -25,36 +24,9 @@ const Layout = () => {
       : dialogRef.current.showModal()
   }
 
-  const toggleCloseDialog = () => {
-    if (!dialogRef.current) {
-      return
-    }
-
-    dialogRef.current.close()
-  }
   return (
     <>
-      <dialog ref={dialogRef} className="registerForm">
-        <div className="registerForm_content">
-          <div className="registerForm_title">
-            <div className="titleRegistration">Create an account</div>
-            <div onClick={toggleCloseDialog}>
-              <CloseModal />
-            </div>
-          </div>
-          <RegisterForm />
-          <small>
-            Person responsible for the processing: MOONVALLEYTOURS, S.L.
-            (MoonValleyTours). Purpose:Provision of the services requested;
-            Sending commercial communications about MOONVALLEY products and
-            services, for which commercial profiles of our customers may be
-            drawn up; Rights: You have the right to access, rectify and delete
-            data, to limit its processing, to oppose its processing and to its
-            portability. Additional Information: You can consult additional
-            information on Data Protection in the General Terms and Conditions.
-          </small>
-        </div>
-      </dialog>
+      <RegisterDialog dialogRef={dialogRef} />
       <ScrollToTop />
       <NavbarMobile toggleDialog={toggleDialog} />
       <Navbar toggleDialog={toggleDialog} />
