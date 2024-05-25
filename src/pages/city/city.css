@@ -320,7 +320,6 @@
   .city_content-sidebar {
     opacity: 0;
     visibility: hidden;
-    position: relative;
   }
 
   .city_content-sidebar-shown {
@@ -355,7 +354,7 @@
     color: var(--text-color);
   }
   .filters {
-    position: absolute;
+    position: fixed;
     margin: 0 auto;
     top: 0;
     right: 0;
@@ -367,5 +366,6 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: 100vh;
   }
 }
