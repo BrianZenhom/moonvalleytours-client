@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import HidePw from '../../assets/icons/HidePw'
+import SeePw from '../../assets/icons/SeePw'
 
 const RegisterForm = ({
   handleHiddenPw,
@@ -65,6 +67,7 @@ const RegisterForm = ({
             className="halfw"
             onChange={handleChange}
           />
+
           <input
             name="name"
             type="text"
@@ -116,6 +119,7 @@ RegisterForm.propTypes = {
   setMenu: PropTypes.func.isRequired,
   setLoginOpen: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
+  handleHiddenPw: PropTypes.func.isRequired,
 }
 
 export default RegisterForm
