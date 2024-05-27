@@ -41,22 +41,7 @@
   font-family: Montserrat;
   background-color: rgb(243, 243, 243);
 }
-.halfw {
-  flex-grow: 1;
-  padding: 0.5rem 0.5rem;
-  border-radius: 5px;
-  border: 1px solid rgb(168, 168, 168);
-  font-size: 16px;
-  font-family: Montserrat;
-  background-color: rgb(243, 243, 243);
-}
 
-.halfw:focus,
-.fullw:focus {
-  background-color: white;
-  outline-color: var(--main-color);
-  color: var(--main-color);
-}
 .registrationForm_form button {
   padding: 1rem 2rem;
   border: none;
@@ -73,4 +58,51 @@
 .registrationForm_form button:hover {
   outline: 1px solid rgb(0, 0, 0);
   background-color: var(--main-color);
+}
+
+.password_input-reg {
+  padding: 10px;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.password_input-reg:focus-within {
+  outline: 1px solid var(--main-color);
+}
+.password_input-reg input {
+  padding: 0;
+  border: none;
+  font-family: Montserrat;
+  font-size: 16px;
+}
+.password_input-reg input:focus-within {
+  outline: none;
+  border: none;
+}
+.hideshow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.halfw {
+  flex-grow: 1;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid rgb(168, 168, 168);
+  font-size: 16px;
+  font-family: Montserrat;
+  background-color: rgb(243, 243, 243);
+}
+
+.halfw:focus,
+.fullw:focus {
+  background-color: white;
+  outline-color: var(--main-color);
+  color: var(--main-color);
 }

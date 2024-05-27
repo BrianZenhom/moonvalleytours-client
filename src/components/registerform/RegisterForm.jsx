@@ -7,14 +7,20 @@ import { useNavigate } from 'react-router-dom'
 import HidePw from '../../assets/icons/HidePw'
 import SeePw from '../../assets/icons/SeePw'
 
-const RegisterForm = ({
-  handleHiddenPw,
-  visible,
-  setMenu,
-  setLoginOpen,
-  toggleCloseDialog,
-}) => {
+const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
   const [body, setBody] = useState({})
+  const [visible, setVisible] = useState(false)
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
+
+  const handleConfirmPasswordVisible = e => {
+    e.stopPropagation()
+    setConfirmPasswordVisible(!confirmPasswordVisible)
+  }
+
+  const handleHiddenPw = e => {
+    e.stopPropagation()
+    setVisible(!visible)
+  }
 
   const { dispatch } = useContext(AuthContext)
 
@@ -53,21 +59,29 @@ const RegisterForm = ({
             className="fullw"
             onChange={handleChange}
           />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            className="halfw"
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="passwordConfirm"
-            placeholder="Repeat your password"
-            className="halfw"
-            onChange={handleChange}
-          />
 
+          <div className=" halfw password_input-reg">
+            <input
+              type={visible ? 'text' : 'password'}
+              id="password"
+              placeholder="Password"
+              onChange={handleChange}
+            />
+            <div className="hideshow" onClick={handleHiddenPw}>
+              {visible ? <SeePw /> : <HidePw />}
+            </div>
+          </div>
+          <div className=" halfw password_input-reg">
+            <input
+              type={confirmPasswordVisible ? 'text' : 'password'}
+              id="confirmPassword"
+              placeholder="Confirm password"
+              onChange={handleChange}
+            />
+            <div className="hideshow" onClick={handleConfirmPasswordVisible}>
+              {confirmPasswordVisible ? <SeePw /> : <HidePw />}
+            </div>
+          </div>
           <input
             name="name"
             type="text"
