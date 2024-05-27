@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import Logo from '../../assets/logos/Logo'
 import './navbar.css'
 import User from './../../assets/icons/User'
@@ -353,4 +354,8 @@ export default function Navbar({ toggleDialog }) {
       </div>
     </nav>
   )
+}
+
+Navbar.propTypes = {
+  toggleDialog: PropTypes.bool.isRequired,
 }

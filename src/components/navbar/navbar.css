@@ -34,7 +34,7 @@
   fill: gray;
 }
 .navbar-links li:hover a {
-  background-color: #050b14d2;
+  background-color: var(--main-color);
 }
 .navbar-links li.active a {
   background-color: white;
