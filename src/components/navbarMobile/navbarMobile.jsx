@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './navbarmobile.css'
 import { useContext, useState } from 'react'
 import { ReservationsIcon } from '../../assets/icons/Reservations'
@@ -16,24 +17,17 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import Spinner from '../../assets/icons/Spinner'
 
-const NavbarMobile = ({ toggleDialog }) => {
-  const [menu, setMenu] = useState(false)
-  const [loginOpen, setLoginOpen] = useState(false)
-  const [visible, setVisible] = useState(false)
-
-  const handleHiddenPw = () => {
-    setVisible(!visible)
-  }
-
-  const handleLoginOpen = () => {
-    setLoginOpen(!loginOpen)
-  }
-
-  const handleOpen = () => {
-    setMenu(!menu)
-    setLoginOpen(false)
-  }
-
+const NavbarMobile = ({
+  setMenu,
+  handleLoginOpen,
+  handleOpen,
+  setLoginOpen,
+  loginOpen,
+  menu,
+  handleHiddenPw,
+  visible,
+  toggleDialog,
+}) => {
   const navigate = useNavigate()
 
   const [credentials, setCredentials] = useState({
@@ -216,6 +210,18 @@ const NavbarMobile = ({ toggleDialog }) => {
       </nav>
     </>
   )
+}
+
+NavbarMobile.propTypes = {
+  toggleDialog: PropTypes.bool.isRequired,
+  setMenu: PropTypes.func.isRequired,
+  handleLoginOpen: PropTypes.func.isRequired,
+  handleOpen: PropTypes.func.isRequired,
+  setLoginOpen: PropTypes.func.isRequired,
+  loginOpen: PropTypes.bool.isRequired,
+  menu: PropTypes.bool.isRequired,
+  handleHiddenPw: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
 }
 
 export default NavbarMobile
