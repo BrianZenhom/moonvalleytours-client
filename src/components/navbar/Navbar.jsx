@@ -194,6 +194,7 @@ export default function Navbar({ toggleDialog }) {
             ref={dropdownCartRef}
           >
             <a
+              className="navbar-link"
               onClick={handleOpenCart}
               href="#"
               aria-label="check your products in the cart and proceed to checkout"
@@ -218,7 +219,7 @@ export default function Navbar({ toggleDialog }) {
               className={openUserMenu ? 'userMenu active' : 'userMenu'}
               ref={dropdownUserMenuRef}
             >
-              <a onClick={handleOpenUserMenu} href="#">
+              <a className="navbar-link" onClick={handleOpenUserMenu} href="#">
                 <span className="loggedInUser">
                   <User />
                   {user.data?.user?.name}
@@ -260,6 +261,7 @@ export default function Navbar({ toggleDialog }) {
               ref={dropdownLoginRef}
             >
               <a
+                className="navbar-link"
                 onClick={handleOpen}
                 aria-label="log in here with your email or username information"
                 href="#"
@@ -285,6 +287,7 @@ export default function Navbar({ toggleDialog }) {
             ref={dropdownLanguageRef}
           >
             <a
+              className="navbar-link"
               onClick={handleOpenLanguage}
               aria-label="Select the language for the page, English, Spanish or Turkish"
               href="#"
@@ -310,6 +313,7 @@ export default function Navbar({ toggleDialog }) {
             ref={dropdownCurrencyRef}
           >
             <a
+              className="navbar-link"
               onClick={handleOpenCurrency}
               aria-label="Select currency Euros, US Dollars or Argentine Pesos"
               href="#curr"

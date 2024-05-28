@@ -46,7 +46,7 @@
 .navbar-links li.active .iconsvg {
   fill: var(--dark-color);
 }
-.navbar-links a {
+.navbar-link {
   color: white;
   display: flex;
   align-items: center;
@@ -547,6 +547,15 @@ input:checked + .checkbutton::before {
 }
 .registerWrd:hover {
   color: var(--main-color);
+}
+.loginForm_alternatives {
+  width: 100%;
+  max-width: 23.75rem;
+}
+.loginForm_socials {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
 }
 
 @media (width <= 766px) {

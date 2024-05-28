@@ -2,6 +2,8 @@ import HidePw from '../../assets/icons/HidePw'
 import SeePw from '../../assets/icons/SeePw'
 import PropTypes from 'prop-types'
 import Switch from '../../assets/icons/Switch'
+import { Apple, Facebook, Google } from '../../assets/icons/SocialsRegistration'
+import SocialRegister from '../socialRegister/socialRegister'
 
 const LoginForm = ({
   open,
@@ -77,12 +79,12 @@ const LoginForm = ({
             </div>
 
             <div className="hr"></div>
-            <div className="login-methods">
-              or login with
-              <div className="login-method-socials">
-                <h3>Facebook </h3>
-                <h3>Google </h3>
-                <h3>Apple </h3>
+            <div className="loginForm_alternatives">
+              <span>or login with</span>
+              <div className="loginForm_socials">
+                <SocialRegister icon={<Facebook />} social="Facebook" />
+                <SocialRegister icon={<Google />} social="Google" />
+                <SocialRegister icon={<Apple />} social="Apple" />
               </div>
             </div>
             <div className="registerBtn">
