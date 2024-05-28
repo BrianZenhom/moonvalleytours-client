@@ -1,0 +1,51 @@
+.SocialButton {
+  padding-top: 9px;
+  padding-bottom: 8px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  background-color: #fff;
+  flex: 1 1 0px;
+  cursor: pointer;
+}
+.SocialButton-icon {
+  left: 10px;
+}
+.SocialButton:not(:first-child) {
+  margin-left: 8px;
+}
+.SocialButton .SocialButton-text {
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+}
+.SocialButton:hover.Facebook {
+  background-color: #1877f2;
+  color: white;
+}
+
+.SocialButton:hover.Apple {
+  background-color: var(--dark-color);
+  color: white;
+}
+.SocialButton:hover .SocialButton-text {
+  opacity: 0;
+}
+
+.SocialButton:hover .SocialButton-icon {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  transition: left 0.4s;
+  color: white;
+}
+.iconsvg {
+  display: flex;
+}
+.SocialButton:hover.Google .iconsvg {
+  background-color: transparent;
+  color: black;
+}

@@ -104,9 +104,16 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
             onChange={handleChange}
           />
           <input
+            type="text"
+            name="nationality"
+            placeholder="Select your city"
+            className="halfw"
+            onChange={handleChange}
+          />
+          <input
             name="phone"
             type="phone"
-            placeholder="Mobile number"
+            placeholder="+34 Phone"
             className="fullw"
             onChange={handleChange}
           />
