@@ -69,6 +69,7 @@
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  user-select: none;
 }
 
 .password_input-reg:focus-within {
@@ -78,7 +79,9 @@
   padding: 0;
   border: none;
   font-family: Montserrat;
+  background-color: rgb(243, 243, 243);
   font-size: 16px;
+  user-select: none;
 }
 .password_input-reg input:focus-within {
   outline: none;
@@ -105,4 +108,9 @@
   background-color: white;
   outline-color: var(--main-color);
   color: var(--main-color);
+}
+.registerForm_socials {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
 }
