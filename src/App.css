@@ -19,6 +19,8 @@ dialog::backdrop {
 .registerForm_content {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .registerForm_title {
   display: flex;
@@ -34,6 +36,9 @@ dialog::backdrop {
 .iconsvgclose:hover {
   color: var(--main-color);
   cursor: pointer;
+}
+.registerForm_alternatives {
+  max-width: 23.75rem;
 }
 
 @media (width <= 766px) {
