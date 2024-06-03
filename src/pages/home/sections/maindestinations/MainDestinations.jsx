@@ -5,9 +5,6 @@ import DestCard from './../../../../components/destcard/DestCard'
 import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
-  // const { data, loading, error } = Hooks.useFetch(
-  //   `http://16.171.171.154:1234/api/v1/cities`
-  // )
   const { data, loading, error } = Hooks.useFetch(
     `http://localhost:1234/api/v1/cities`
   )
@@ -23,12 +20,15 @@ export default function MainDestinations({ type }) {
             ? 'Something Went Wrong!'
             : loading
             ? 'Loading...'
-            : data?.cities?.map(dest => (
-                <>
-                  <Link key={dest._id} to={`${dest.country._id}/${dest._id}`}>
+            : data?.data?.doc?.map(dest => (
+                <div key={dest._id}>
+                  <Link
+                    to={`${dest.country.country}/${dest.city}`}
+                    state={{ dest: dest._id }}
+                  >
                     <DestCard key={dest._id} dest={dest} />
                   </Link>
-                </>
+                </div>
               ))}
         </div>
       </article>
