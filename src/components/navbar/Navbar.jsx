@@ -196,7 +196,7 @@ export default function Navbar({ toggleDialog }) {
             <a
               className="navbar-link"
               onClick={handleOpenCart}
-              href="#"
+              href="javascript:;"
               aria-label="check your products in the cart and proceed to checkout"
             >
               <Cart />
@@ -219,12 +219,12 @@ export default function Navbar({ toggleDialog }) {
               className={openUserMenu ? 'userMenu active' : 'userMenu'}
               ref={dropdownUserMenuRef}
             >
-              <a className="navbar-link" onClick={handleOpenUserMenu} href="#">
+              <span className="navbar-link" onClick={handleOpenUserMenu}>
                 <span className="loggedInUser">
                   <User />
                   {user.data?.user?.name}
                 </span>
-              </a>
+              </span>
               <div
                 className={
                   openUserMenu
@@ -264,7 +264,7 @@ export default function Navbar({ toggleDialog }) {
                 className="navbar-link"
                 onClick={handleOpen}
                 aria-label="log in here with your email or username information"
-                href="#"
+                href="javascript:;"
               >
                 <User />
               </a>
@@ -290,7 +290,7 @@ export default function Navbar({ toggleDialog }) {
               className="navbar-link"
               onClick={handleOpenLanguage}
               aria-label="Select the language for the page, English, Spanish or Turkish"
-              href="#"
+              href="javascript:;"
             >
               {activeLanguage}
               <More />
@@ -316,7 +316,7 @@ export default function Navbar({ toggleDialog }) {
               className="navbar-link"
               onClick={handleOpenCurrency}
               aria-label="Select currency Euros, US Dollars or Argentine Pesos"
-              href="#curr"
+              href="javascript:;"
             >
               {activeCurrency} <More />
             </a>
