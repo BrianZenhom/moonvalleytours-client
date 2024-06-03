@@ -74,7 +74,10 @@ export default function City() {
         )}
         <header className="city_intro container">
           <div className="city_title">
-            <Link to={'/' + country}>
+            <Link
+              to={'/' + country}
+              state={{ country: destination?.data?.country?._id }}
+            >
               <small className="country_name">{country}</small>
             </Link>
             <h1>{city}</h1>

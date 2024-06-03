@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import './destcard.css'
 
 export default function DestCard({ dest }) {
+  console.log(dest)
   return (
     <>
       <div className="list_card-item">

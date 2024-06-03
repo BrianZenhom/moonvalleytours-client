@@ -7,7 +7,7 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/countries${location.pathname}`
+    `http://localhost:1234/api/v1/countries/${location.state.country}`
   )
 
   return (
@@ -57,12 +57,16 @@ export default function Country() {
             </header>
             <div className="maindestinations_grid">
               {data?.data?.cities?.map(dest => {
+                console.log(dest)
                 return (
-                  <>
-                    <Link to={`${location.pathname}/${dest._id}`}>
+                  <div key={dest._id}>
+                    <Link
+                      to={`${location.pathname}/${dest.city}`}
+                      state={{ dest: dest._id }}
+                    >
                       <DestCard dest={dest} />
                     </Link>
-                  </>
+                  </div>
                 )
               })}
             </div>
