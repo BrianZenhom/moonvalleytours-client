@@ -1,5 +1,21 @@
 .card {
   height: 100px;
-  background-color: black;
   width: 100%;
+}
+
+.skeleton {
+  position: absolute;
+  width: 346px;
+  opacity: 0.7;
+  background-color: rgb(207, 207, 207);
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }

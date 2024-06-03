@@ -31,7 +31,6 @@
   max-height: 230px;
 }
 .maindestinations_card {
-  background-color: var(--dark-color);
   border-radius: 5px;
   overflow: hidden;
   height: 100%;

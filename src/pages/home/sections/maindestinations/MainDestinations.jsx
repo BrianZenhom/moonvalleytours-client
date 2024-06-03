@@ -9,6 +9,8 @@ export default function MainDestinations({ type }) {
     `http://localhost:1234/api/v1/cities`
   )
 
+  console.log(loading)
+
   return (
     <section className="maindestinations">
       <article className="maindestinations_content container">
@@ -18,8 +20,6 @@ export default function MainDestinations({ type }) {
         <div className="maindestinations_grid">
           {error
             ? 'Something Went Wrong!'
-            : loading
-            ? 'Loading...'
             : data?.data?.doc?.map(dest => (
                 <div key={dest._id}>
                   <Link

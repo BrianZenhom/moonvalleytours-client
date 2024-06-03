@@ -5,8 +5,11 @@ export default function DestCard({ dest }) {
   return (
     <>
       <div className="list_card-item">
+        <div className="maindestinations_card skeleton"></div>
+      </div>
+      <div className="list_card-item">
         <div className="maindestinations_card">
-          <img src={dest?.cityThumbnail} alt="" />
+          <img src={dest?.cityThumbnail} loading="lazy" alt="" />
           <div className="maindestination_title">
             <h3>{dest?.city}</h3>
           </div>
