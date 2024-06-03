@@ -219,12 +219,16 @@ export default function Navbar({ toggleDialog }) {
               className={openUserMenu ? 'userMenu active' : 'userMenu'}
               ref={dropdownUserMenuRef}
             >
-              <span className="navbar-link" onClick={handleOpenUserMenu}>
+              <a
+                className="navbar-link"
+                onClick={handleOpenUserMenu}
+                href="javascript:;"
+              >
                 <span className="loggedInUser">
                   <User />
                   {user.data?.user?.name}
                 </span>
-              </span>
+              </a>
               <div
                 className={
                   openUserMenu
