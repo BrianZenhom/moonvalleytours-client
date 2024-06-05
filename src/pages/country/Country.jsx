@@ -57,11 +57,10 @@ export default function Country() {
             </header>
             <div className="maindestinations_grid">
               {data?.data?.cities?.map(dest => {
-                console.log(dest)
                 return (
                   <div key={dest._id}>
                     <Link
-                      to={`${location.pathname}/${dest.city}`}
+                      to={`${location.pathname}/${dest.city.toLowerCase()}`}
                       state={{ dest: dest._id }}
                     >
                       <DestCard dest={dest} />
