@@ -141,6 +141,7 @@
   padding-bottom: 1.5625rem;
   transform: translateY(-300px);
   scale: 0;
+  z-index: 10;
   transition: 0.1s ease-in-out;
 }
 .hero_search_suggestions span:hover {
