@@ -129,10 +129,10 @@
 
 .top_left,
 .bottom_left {
-  width: 60%;
+  min-width: 60%;
 }
 
 .top_right,
 .bottom_right {
-  width: 40%;
+  min-width: 40%;
 }
