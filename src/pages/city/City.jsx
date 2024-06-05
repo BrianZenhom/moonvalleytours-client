@@ -1,15 +1,15 @@
 import './city.css'
 import { Link } from 'react-router-dom'
 import CityCards from '../../components/citycards/CityCards'
-// import Hooks from '../../hooks/useFetch'
+import Hooks from '../../hooks/useFetch'
 import { useParams, useLocation } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Filter from '../../assets/icons/Filter'
 import Sort from '../../assets/icons/Sort'
 
 export default function City() {
   const [showCategories, setShowCategories] = useState(false)
-  const { country, city } = useParams()
+  const { country } = useParams()
   const location = useLocation()
   const id = location?.state?.dest
 
@@ -17,36 +17,9 @@ export default function City() {
     setShowCategories(!showCategories)
   }
 
-  const [destination, setDestination] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    if (!id) {
-      setError('No destination ID provided')
-      setLoading(false)
-      return
-    }
-
-    const fetchDestination = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:1234/api/v1/cities/${id}`
-        )
-        if (!response.ok) {
-          throw new Error('Failed to fetch destination')
-        }
-        const data = await response.json()
-        setDestination(data)
-      } catch (err) {
-        setError(err.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchDestination()
-  }, [id])
+  const { data, loading, error } = Hooks.useFetch(
+    `http://localhost:1234/api/v1/cities/${id}`
+  )
 
   const CategoryItems = [
     'Nature',
@@ -66,37 +39,35 @@ export default function City() {
         ) : loading ? (
           ' loading'
         ) : (
-          <img
-            src={destination?.data?.cityCover}
-            alt=""
-            className="header-Img"
-          />
+          <img src={data?.data?.cityCover} alt="" className="header-Img" />
         )}
         <header className="city_intro container">
           <div className="city_title">
             <Link
               to={'/' + country}
-              state={{ country: destination?.data?.country?._id }}
+              state={{ country: data?.data?.country?._id }}
             >
-              <small className="country_name">{country}</small>
+              <small className="country_name">
+                {data?.data?.country?.country}
+              </small>
             </Link>
-            <h1>{city}</h1>
+            <h1>{data?.data?.city}</h1>
           </div>
           <div className="city_details">
             <div className="reviews">
-              <h2>{destination?.data?.tours?.length}</h2>
+              <h2>{data?.data?.tours?.length}</h2>
               <span>tours</span>
             </div>
             <div className="reviews">
-              <h2>{destination?.data?.travellers}</h2>
+              <h2>{data?.data?.travellers}</h2>
               <span>travellers have enjoyed tours here</span>
             </div>
             <div className="reviews">
-              <h2>{destination?.data?.ratingsQuantity}</h2>
+              <h2>{data?.data?.ratingsQuantity}</h2>
               <span>real reviews</span>
             </div>
             <div className="reviews">
-              <h2>{destination?.data?.ratingsAverage}</h2>
+              <h2>{data?.data?.ratingsAverage}</h2>
               <span>This is how they rate us</span>
             </div>
           </div>
@@ -185,11 +156,14 @@ export default function City() {
             ? 'Something went wrong!'
             : loading
             ? 'Loading'
-            : destination?.data?.tours?.map(item => {
+            : data?.data?.tours?.map(item => {
                 return (
                   <Link
                     key={item._id}
-                    to={`/${item.country}/${item.city}/${item._id}`}
+                    to={`/${item.country.toLowerCase()}/${item.city.toLowerCase()}/${
+                      item.slug
+                    }`}
+                    state={{ id: item._id }}
                   >
                     <CityCards item={item} />
                   </Link>
