@@ -160,7 +160,7 @@ export default function City() {
                 return (
                   <Link
                     key={item._id}
-                    to={`/${item.country.toLowerCase()}/${item.city.toLowerCase()}/${
+                    to={`/${item.country?.toLowerCase()}/${item.city?.toLowerCase()}/${
                       item.slug
                     }`}
                     state={{ id: item._id }}
