@@ -2,35 +2,33 @@ import PropTypes from 'prop-types'
 import './destcard.css'
 
 export default function DestCard({ dest }) {
-  console.log(dest)
   return (
     <>
-      <div className="list_card-item">
-        <div className="maindestinations_card skeleton"></div>
-      </div>
-      <div className="list_card-item">
-        <div className="maindestinations_card">
-          <img src={dest?.cityThumbnail} loading="lazy" alt="" />
-          <div className="maindestination_title">
-            <h3>{dest?.city}</h3>
-          </div>
-          <div className="maindestination_hover">
-            <div className="maindestination_details">
-              <div className="left">
-                <div className="detail">
-                  <h3>{dest?.tours?.length}</h3>
-                  <span>Tours</span>
-                </div>
-                <hr />
-                <div className="detail">
-                  <h3>{dest?.travellers}</h3>
-                  <span>Travellers</span>
-                </div>
+      <div className="card">
+        <div className="front face">
+          <img src={dest?.cityThumbnail} />
+          <b>{dest?.city}</b>
+        </div>
+        <div className="back face">
+          <div className="desc">
+            <div className="top">
+              <div className="top_left">
+                <span>travellers</span>
+                <strong>134.403</strong>
               </div>
-              <hr />
-              <div className="detail">
-                <h3>{dest?.ratingsAverage} / 5</h3>
+              <div className="top_right">
+                <span>tours</span>
+                <strong>129</strong>
+              </div>
+            </div>
+            <div className="bottom">
+              <div className="bottom_left">
+                <span>opinions</span>
+                <strong>1.341</strong>
+              </div>
+              <div className="bottom_right">
                 <span>rating</span>
+                <strong>4.39/5</strong>
               </div>
             </div>
           </div>
