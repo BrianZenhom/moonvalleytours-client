@@ -1,5 +1,6 @@
 .maindestinations {
   min-height: auto;
+  padding-bottom: 22px;
 }
 .maindestinations_content {
   height: auto;
@@ -15,20 +16,17 @@
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 2rem;
-  padding-bottom: 10rem;
-  gap: 10rem 1rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
 }
 .maindestinations_grid > * {
   flex: 0 0 32%;
 }
 .list_card-item {
-  flex-basis: 30%;
   flex-grow: 1;
-  max-width: 350px;
 }
 .list_card-item {
-  min-width: 140px;
-  max-height: 230px;
+  display: flex;
 }
 .maindestinations_card {
   border-radius: 5px;
