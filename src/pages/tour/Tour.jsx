@@ -2,7 +2,7 @@ import React from 'react'
 import img1 from './../../assets/images/image(3).webp'
 import img2 from './../../assets/images/image(4).webp'
 import img3 from './../../assets/images/image(1).webp'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './tour.css'
 import {
   DurationIcon,
@@ -36,7 +36,7 @@ const images = [
 ]
 
 export default function Tour() {
-  const location = useParams()
+  const state = useLocation()
   const [selected, setSelected] = React.useState()
 
   let footer = <p></p>
@@ -45,7 +45,7 @@ export default function Tour() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/tours/${location.slug}`
+    `http://localhost:1234/api/v1/tours/${state.state.id}`
   )
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
