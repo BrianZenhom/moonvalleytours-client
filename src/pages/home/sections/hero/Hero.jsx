@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom'
 export default function Hero() {
   const { data } = Hooks.useFetch('http://localhost:1234/api/v1/cities')
 
+  console.log(data?.data?.doc)
+
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
 
@@ -86,13 +88,19 @@ export default function Hero() {
                 <h1>Popular destinations</h1>
               </div>
               <ul className="hero_search_list">
-                {data?.cities?.map(loc => {
+                {data?.data?.doc?.map(loc => {
                   return (
                     <li key={loc?._id} title={loc?.country}>
-                      <Link to={`${loc?.country?._id}/${loc?._id}`}>
+                      <Link
+                        to={`${loc?.country?.country.toLowerCase()}/${loc?.city.toLowerCase()}`}
+                        state={{ dest: loc?._id }}
+                      >
                         <span className="a-heavy">{loc?.city}</span>
                       </Link>
-                      <Link to={`${loc?.country?._id}`}>
+                      <Link
+                        to={`${loc?.country?.country.toLowerCase()}`}
+                        state={{ country: loc?.country?._id }}
+                      >
                         <span className="a-light">Turkiye</span>
                       </Link>
                     </li>
