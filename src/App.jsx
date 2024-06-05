@@ -10,6 +10,7 @@ import Tour from './pages/tour/Tour'
 import City from './pages/city/City'
 import ScrollToTop from './hooks/scrollToTop'
 import RegisterDialog from './components/registerdialog/RegisterDialog'
+import Account from './pages/account/Account'
 
 const Layout = () => {
   const [menu, setMenu] = useState(false)
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: '/:country/:city/:slug',
         element: <Tour />,
+      },
+      {
+        path: '/me',
+        element: <Account />,
       },
     ],
   },
