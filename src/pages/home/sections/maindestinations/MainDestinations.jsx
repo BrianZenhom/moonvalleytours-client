@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/cities`
+    `http://localhost:1234/api/v1/cities?featured=true`
   )
-
-  console.log(loading)
 
   return (
     <section className="maindestinations">
@@ -23,7 +21,7 @@ export default function MainDestinations({ type }) {
             : data?.data?.doc?.map(dest => (
                 <div key={dest._id}>
                   <Link
-                    to={`${dest.country.country}/${dest.city}`}
+                    to={`${dest.country.country.toLowerCase()}/${dest.city.toLowerCase()}`}
                     state={{ dest: dest._id }}
                   >
                     <DestCard key={dest._id} dest={dest} />
