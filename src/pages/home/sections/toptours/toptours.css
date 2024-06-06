@@ -12,7 +12,7 @@
 }
 .toptours_header {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding-top: 2rem;
   width: 100%;
@@ -31,23 +31,20 @@
   min-height: 360px;
 }
 .toptours_card {
-  background-color: white;
+  background-color: var(--dark-color);
+
   flex: 1;
   height: 360px;
   border-radius: 5px;
   overflow: hidden;
   color: white;
   position: relative;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
+
   cursor: pointer;
 }
-.toptours_card:hover {
-  background-color: var(--dark-color);
-}
+
 .toptours_card:hover img {
-  opacity: 0;
+  transform: translateY(360px);
 }
 .toptours_card img {
   width: 100%;
@@ -57,9 +54,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
+  transform: translateY(0px);
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .toptours_card_details {
@@ -71,9 +67,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  transition-delay: 0s;
 }
 .toptours_details-previous.bg {
   background-color: white;
@@ -81,7 +74,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
-  transition: 0.2s;
+  transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .toptours_details {
   display: flex;
@@ -124,24 +117,21 @@
 .toptours_description {
   position: absolute;
   color: white;
-  transform: translateY(200px);
+  transform: translateY(-400px);
   padding: 20px;
-  opacity: 0;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
+  transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .opacity {
   opacity: 0.5;
 }
 .toptours_card:hover .toptours_description {
-  transform: translateY(-170px);
+  transform: translateY(-250px);
   opacity: 1;
 }
 .toptours_card:hover .toptours_details-previous {
-  opacity: 0;
-  translate: translateY(-100px);
+  transform: translateY(70px);
 }
+
 .toptours_description h3 {
   font-size: 18px;
   font-weight: 900;
