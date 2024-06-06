@@ -129,7 +129,7 @@
   opacity: 1;
 }
 .toptours_card:hover .toptours_details-previous {
-  transform: translateY(70px);
+  transform: translateY(100px);
 }
 
 .toptours_description h3 {
