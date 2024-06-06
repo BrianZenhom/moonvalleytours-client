@@ -23,7 +23,7 @@
 .card {
   position: relative;
   margin: 0 auto;
-  background-color: var(--main-color);
+  background-color: var(--dark-color);
   border-radius: 5px;
   box-shadow: var(--shadow-elevation-medium);
   cursor: pointer;
