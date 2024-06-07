@@ -50,6 +50,8 @@ export default function Tour() {
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
+  console.log(state.state)
+
   return (
     <>
       {error ? (
@@ -62,14 +64,20 @@ export default function Tour() {
             <header className="tour-header container">
               <div className="tour-tags">
                 <div className="tour-details">
-                  <Link to={`/${data?.country}`}>
+                  <Link
+                    to={`/${data?.data?.city?.country?.country.toLowerCase()}`}
+                    state={{ country: state.state.country }}
+                  >
                     <div className="tour-tags">
-                      <small>{data?.data?.country}</small>
+                      <small>{data?.data?.city?.country?.country}</small>
                     </div>
                   </Link>
-                  <Link to={`/${data?.country}/${data?.city}`}>
+                  <Link
+                    to={`/${data?.data?.city?.country?.country.toLowerCase()}/${data?.data?.city?.city.toLowerCase()}`}
+                    state={{ dest: state.state.city }}
+                  >
                     <div className="tour-tags">
-                      <small>{data?.data?.city}</small>
+                      <small>{data?.data?.city?.city}</small>
                     </div>
                   </Link>
                 </div>
