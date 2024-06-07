@@ -160,10 +160,14 @@ export default function City() {
                 return (
                   <Link
                     key={item._id}
-                    to={`/${item.country?.toLowerCase()}/${item.city?.toLowerCase()}/${
+                    to={`/${data?.data?.country?.country.toLowerCase()}/${data?.data?.city?.toLowerCase()}/${
                       item.slug
                     }`}
-                    state={{ id: item._id }}
+                    state={{
+                      id: item._id,
+                      country: item.country,
+                      city: item.city,
+                    }}
                   >
                     <CityCards item={item} />
                   </Link>
