@@ -9,7 +9,7 @@ export default function Home() {
         <Hero />
         <MainDestinations type="Preferred Destinations" />
         <div className="showmore_button">
-          <button>Other destinations</button>
+          <button>See more</button>
         </div>
         <TopTours />
       </main>
