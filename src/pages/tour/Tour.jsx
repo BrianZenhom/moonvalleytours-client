@@ -87,14 +87,14 @@ export default function Tour() {
               </div>
               <div className="tour-info">
                 <div className="tour-title">
-                  <h1>{data?.data?.title}</h1>
+                  <strong>{data?.data?.title}</strong>
                   <span>
                     <strong>{data?.data?.ratingsAverage}/5</strong>{' '}
                     {data?.data?.ratingsQuantity} reviews
                   </span>
                 </div>
                 <div className="tour-price">
-                  <h1>&euro; {data?.data?.price}</h1>
+                  <strong>&euro; {data?.data?.price}</strong>
                   <button>check availability</button>
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function Tour() {
                   <small>0 out of 0 reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
-                  <h1>{data?.ratingsAverage}/5 *****</h1>
+                  <strong>{data?.ratingsAverage}/5 *****</strong>
                   <span>
                     {data?.ratingsQuantity} reviews | {data?.data?.travellers}{' '}
                     travellers
@@ -278,7 +278,7 @@ export default function Tour() {
                 <div className="tour-singlereview">
                   <header className="tourreview-header">
                     <div className="reviewrate">
-                      <h1>*****</h1>
+                      <strong>*****</strong>
                       <span>25/10/2023</span>
                     </div>
                     <div className="reviewuser">
