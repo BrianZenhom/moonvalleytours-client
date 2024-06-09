@@ -51,7 +51,7 @@ export default function City() {
                 {data?.data?.country?.country}
               </small>
             </Link>
-            <h1>{data?.data?.city}</h1>
+            <strong>{data?.data?.city}</strong>
           </div>
           <div className="city_details">
             <div className="reviews">
