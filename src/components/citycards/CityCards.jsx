@@ -7,7 +7,7 @@ export default function CityCards({ item }) {
     <>
       <div className="city_card">
         <div className="city_card-wrapper">
-          <img src={img} alt="" />
+          <img src={img} alt="city image" />
           <div className="city_card-content">
             <div className="city_card-title">
               <h3>{item.title}</h3>
