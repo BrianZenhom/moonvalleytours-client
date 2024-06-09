@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="footer_moonvalley_grid container">
         <div className="footer_block">
           <div className="footer_section_title">
-            <h1>MoonValleyTours</h1>
+            <strong>MoonValleyTours</strong>
           </div>
           <div className="about">
             <ul>
@@ -38,7 +38,7 @@ export default function Footer() {
 
         <div className="footer_block">
           <div className="footer_section_title">
-            <h1>Location</h1>
+            <strong>Location</strong>
           </div>
           <span>
             Halil Rifat Pasa Mah. <br /> Perpa Ticaret Merk. <br />
@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="footer_block">
           <div className="footer_section_title">
-            <h1>Newsletter</h1>
+            <strong>Newsletter</strong>
             <span>
               Get notified with our latest <strong>offers</strong> and{' '}
               <strong>discounts</strong>
@@ -67,14 +67,14 @@ export default function Footer() {
 
         <div className="footer_block">
           <div className="footer_section_title">
-            <h1>Reviews</h1>
+            <strong>Reviews</strong>
           </div>
           <span>Clients opinion about us</span>
         </div>
 
         <div className="footer_block">
           <div className="footer_section_title">
-            <h1>Payment Methods</h1>
+            <strong>Payment Methods</strong>
           </div>
           <ul className="payment flex">
             <Visa />
@@ -92,7 +92,7 @@ export default function Footer() {
 
         <div className="footer_block socials">
           <div className="footer_section_title">
-            <h1>Follow Us</h1>
+            <strong>Follow Us</strong>
           </div>
           <ul>
             <li>
@@ -165,7 +165,7 @@ export default function Footer() {
           <AccordeonItem value="3" trigger="Latest offers">
             <div className="footer_block">
               <div className="footer_section_title">
-                <h1>Newsletter</h1>
+                <strong>Newsletter</strong>
                 <span>
                   Get notified with our latest <strong>offers</strong> and{' '}
                   <strong>discounts</strong>
@@ -185,7 +185,7 @@ export default function Footer() {
 
           <div className="footer_block">
             <div className="opinions">
-              <h1>TBD</h1>
+              <strong>TBD</strong>
               <span>MoonValley&apos;s Opinions</span>
             </div>
           </div>
