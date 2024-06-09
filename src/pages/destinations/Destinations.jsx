@@ -3,7 +3,7 @@ export default function Destinations() {
     <section>
       <div className="mapbox_map">Map goes here</div>
       <article>
-        <h1>MoonValleyTours Destinations</h1>
+        <str>MoonValleyTours Destinations</str>
         <span>
           <strong>+3000</strong>destinations
         </span>
@@ -15,5 +15,5 @@ export default function Destinations() {
         </span>
       </article>
     </section>
-  );
+  )
 }
