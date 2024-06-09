@@ -47,12 +47,10 @@ export default function Hero() {
       <article className="hero_content">
         <header className="hero_header container">
           <div className="hero_title_header">
-            {
-              <h1>
-                Travel and tour, <br />
-                around the world.
-              </h1>
-            }
+            <h1>
+              Travel and tour, <br />
+              around the world.
+            </h1>
             <p>
               Allow us to make your <strong>dream trip</strong>, perfect.
             </p>
@@ -83,7 +81,7 @@ export default function Hero() {
               ref={searchSuggestionsRef}
             >
               <div className="hero_search_suggestion_title">
-                <h1>Popular destinations</h1>
+                <strong>Popular destinations</strong>
               </div>
               <ul className="hero_search_list">
                 {data?.data?.doc?.map(loc => {
