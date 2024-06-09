@@ -21,13 +21,13 @@ export default function Country() {
         />
         <header className="country_intro container">
           <div className="country_title">
-            <h1>
+            <strong>
               {error
                 ? 'Something went wrong!'
                 : loading
                 ? ''
                 : data?.data?.country}
-            </h1>
+            </strong>
           </div>
           <div className="country_details">
             <div className="destinations">
