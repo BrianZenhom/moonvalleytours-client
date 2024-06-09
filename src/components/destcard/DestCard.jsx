@@ -6,7 +6,7 @@ export default function DestCard({ dest }) {
     <>
       <div className="card">
         <div className="front face">
-          <img src={dest?.cityThumbnail} />
+          <img src={dest?.cityThumbnail} alt="city thumbnail" />
           <b>{dest?.city}</b>
         </div>
         <div className="back face">
