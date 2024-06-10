@@ -9,7 +9,7 @@
   height: 50vh;
 }
 .hero_content {
-  background: linear-gradient(rgba(0, 0, 0, 0) 68%, #00000069),
+  background: linear-gradient(rgba(0, 0, 0, 0.048) 48%, #00000069),
     url(https://res.cloudinary.com/drtykwq1x/image/upload/q_100/v1717899583/Header-moonvalley_svkenl.webp);
   background-position: center;
   background-repeat: no-repeat;
