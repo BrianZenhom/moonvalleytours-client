@@ -29,7 +29,7 @@
   color: var(--main-color);
   background-color: white;
 }
-.tour-tags{
+.tour-tags {
   display: flex;
   align-items: center;
 }
@@ -39,14 +39,26 @@
 }
 .tour-tags small {
   padding: 0.5rem 1rem;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.055);
   border-radius: 5px;
   font-weight: 500;
 }
 .tour-title {
+  display: flex;
+  flex-direction: column;
   padding-top: 0.5rem;
 }
-.tour-title h1 {
+.tour-title b {
+  color: black;
+  font-weight: 800;
+}
+.tour-title span {
+  display: flex;
+  color: rgba(0, 0, 0, 0.651);
+
+  gap: 1rem;
+}
+.tour-title strong {
   font-size: clamp(2rem, 5vw, 2.5rem);
 }
 .tour-info {
@@ -59,6 +71,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
+}
+
+.tour-price strong {
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 .tour-desc-price-details-cancelation h2 {
   font-size: 2rem;
@@ -350,13 +366,15 @@
   text-wrap: balance;
 }
 
-#daypicker .rdp-day_selected, .rdp-day_selected:focus-visible, .rdp-day_selected:hover {
+#daypicker .rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
   background-color: var(--dark-color);
 }
-#daypicker button:hover{
+#daypicker button:hover {
   color: var(--dark-color);
 }
-#daypicker .rdp-button[disabled]{
+#daypicker .rdp-button[disabled] {
   cursor: not-allowed;
   text-decoration: line-through;
 }
