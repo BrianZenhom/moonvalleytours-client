@@ -50,8 +50,6 @@ export default function Tour() {
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
-  console.log(state.state)
-
   return (
     <>
       {error ? (
@@ -89,13 +87,12 @@ export default function Tour() {
                 <div className="tour-title">
                   <strong>{data?.data?.title}</strong>
                   <span>
-                    <strong>{data?.data?.ratingsAverage}/5</strong>{' '}
+                    <b>{data?.data?.ratingsAverage}/5</b>
                     {data?.data?.ratingsQuantity} reviews
                   </span>
                 </div>
                 <div className="tour-price">
-                  <strong>&euro; {data?.data?.price}</strong>
-                  <button>check availability</button>
+                  <strong>&euro; {data?.data?.price.toFixed(2)}</strong>
                 </div>
               </div>
             </header>
