@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 // import img from '../../assets/images/image(1).webp';
 
-export default function TourCard({ tour, country }) {
+export default function TourCard({ tour }) {
+  const city = tour.city.city.toLowerCase()
+  const country = tour.city.country.country.toLowerCase()
   return (
     <div className="toptours_card-item">
-      <Link to={`/${country}/${tour.city}/${tour._id}`}>
+      <Link
+        to={`/${country}/${city}/${tour.slug}`}
+        state={{ id: tour._id, country: country, city: tour.city }}
+      >
         <div className="toptours_card">
           <img src={tour.tourThumbnail} alt={tour.title} />
           <footer className="toptours_card_details">
