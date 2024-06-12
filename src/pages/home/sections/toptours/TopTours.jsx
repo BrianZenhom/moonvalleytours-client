@@ -3,9 +3,6 @@ import Hooks from './../../../../hooks/useFetch'
 import './toptours.css'
 
 export default function TopTours() {
-  // const { data, loading, error } = Hooks.useFetch(
-  //   'http://16.171.171.154:1234/api/v1/tours'
-  // )
   const { data, loading, error } = Hooks.useFetch(
     'http://localhost:1234/api/v1/tours'
   )
@@ -24,11 +21,7 @@ export default function TopTours() {
             : data?.data?.doc?.map(tour => {
                 return (
                   <>
-                    <TourCard
-                      key={tour._id}
-                      tour={tour}
-                      country={tour.country}
-                    />
+                    <TourCard key={tour._id} tour={tour} />
                   </>
                 )
               })}
