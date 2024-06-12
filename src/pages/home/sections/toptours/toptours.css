@@ -88,13 +88,13 @@
   font-weight: 900;
 }
 .toptours_details span {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: rgb(85, 85, 85);
+  color: rgba(0, 0, 0, 0.562);
 }
 .toptours_details strong {
   margin-right: 5px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 900;
   color: var(--dark-color);
 }
