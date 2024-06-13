@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 // import img from '../../assets/images/image(1).webp';
 
 export default function TourCard({ tour }) {
-  console.log('test')
   const city = tour.city.city.toLowerCase()
   const country = tour.city.country.country.toLowerCase()
   return (
