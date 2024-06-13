@@ -25,8 +25,6 @@ export default function Slider({ images }) {
     })
   }
 
-  console.log('test')
-
   return (
     <div className="slider_images">
       <div
