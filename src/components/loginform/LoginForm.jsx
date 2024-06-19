@@ -52,6 +52,7 @@ const LoginForm = ({
               name="email"
               placeholder="Email"
               onChange={handleChange}
+              required
             />
             <div className="password_input">
               <input
@@ -59,6 +60,7 @@ const LoginForm = ({
                 id="password"
                 placeholder="Password"
                 onChange={handleChange}
+                required
               />
               <div className="hideshow" onClick={handleHiddenPw}>
                 {visible ? <SeePw /> : <HidePw />}
