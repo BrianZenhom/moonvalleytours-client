@@ -263,6 +263,7 @@
   width: 100%;
   padding: 10px;
 }
+
 .login-form input:focus {
   outline: none;
   outline: 1px solid var(--main-color);
@@ -473,9 +474,9 @@
   height: 100%;
   width: 57px;
 }
+
 .password_input {
   width: 100%;
-  padding: 10px;
   border: 1px solid rgb(168, 168, 168);
   border-radius: 5px;
   font-size: 16px;
@@ -490,7 +491,7 @@
   outline: 1px solid var(--main-color);
 }
 .password_input input {
-  padding: 0;
+  padding: 10px;
   border: none;
 }
 .password_input input:focus-within {
@@ -501,6 +502,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 10px;
 }
 
 .iconsvgtwo {
