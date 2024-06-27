@@ -1,0 +1,30 @@
+.accordeon_tab {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.082);
+  }
+  .accordeon_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .accordeon_container {
+    overflow-y: hidden;
+    transition: all 0.2s ease-in;
+    height: 0px;
+  }
+  .accordeon_content {
+    padding: 0.5rem 1.5rem;
+  }
+  .open {
+    height: 100%;
+  }
+  .closed {
+    transition: 0.2s ease;
+    transform: rotate(0deg);
+  }
+  .icon {
+    transition: 0.2s ease;
+    transform: rotate(-180deg);
+  }
