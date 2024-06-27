@@ -1,3 +1,4 @@
+import './accordeon.css'
 import { createContext, useRef } from 'react'
 import { useContext } from 'react'
 import { useEffect } from 'react'
