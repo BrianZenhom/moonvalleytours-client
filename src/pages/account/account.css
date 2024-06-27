@@ -1,4 +1,172 @@
-.account {
-  min-height: 100vh;
-  margin-top: 3rem;
+#root {
+  height: 100dvh;
 }
+
+.my_account{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.account {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+.account__sidebar{
+  background-color: #fffbfb;
+  box-shadow: var(--perfect-shadow);
+  max-width: 350px;
+  padding: 3rem;
+  
+  flex: 1;
+}
+.account__sidebar ul{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.account__sidebar a{
+  color: black;
+}
+.account__sidebar--user{
+  display: flex;
+  flex-direction: column;
+  line-height: .9;
+}
+.account__sidebar--user span{
+  font-size: 24px;
+}
+.account__sidebar--user strong{
+  font-size: 32px;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+.account__sidebar--user a{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+hr{
+  opacity: .1;
+}
+.account__sidebar--user small{
+  font-size: 12px;
+}
+.account__sidebar--user a:hover small{
+  color: var(--main-color);
+}
+.account__sidebar--user a:hover .svgicon{
+  color: var(--main-color);
+}
+.account__sidebar--items a{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.account__sidebar--items:hover span{
+  font-weight: 600;
+  
+}
+
+.account__sidebar--items .svgiconticket{
+  transform: rotate(30deg);
+  width: 20px;
+  color: black;
+}
+
+.svgiconitem{
+  width: 20px;
+  color: black;
+}
+
+.svgicon{
+  width: 15px;
+  color: gray;
+}
+
+.account__content{
+  flex-grow: 1;
+  padding: 3rem;
+  max-width: 1080px;
+  border-radius: 8px;
+}
+.account__content ul li{
+  margin-bottom: 1rem;
+  box-shadow: var(--perfect-shadow);
+  border-radius: 8px;
+  background-color: white;
+
+}
+.account__content h2{
+  font-weight: 700;
+}
+.account__user--info{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--perfect-shadow);
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 8px;
+}
+.account__image--wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.account_image{
+  border: 2px solid var(--main-color);
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account_image img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.mini_icon{
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  outline: 1px solid var(--main-color);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account__user--details{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.account__user--details .name{
+  display: flex;
+  gap: .3rem;
+}
+.svgiconupload{
+  width: 15px;
+}
+.iconsvgphoto{
+  width: 60px;
+  opacity: .2;
+}
+
