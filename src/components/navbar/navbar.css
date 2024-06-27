@@ -85,7 +85,7 @@
   border-end-start-radius: 5px;
   padding: 3rem;
   right: 0;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   transition: all 0.1s ease-in-out;
   min-width: 18.75rem;
 }
@@ -123,7 +123,7 @@
   border-end-start-radius: 5px;
   padding: 3rem;
   right: 0;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   transition-property: opacity;
   transition: 0.2s ease-out;
 }
@@ -186,7 +186,7 @@
   color: var(--dark-color);
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   transition-property: opacity;
   transition: 0.2s ease-out;
   padding: 2rem;
@@ -210,7 +210,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+}
+.userbuttons a{
+  padding: 10px 0;
+}
+.userbuttons a:hover span{
+  font-weight: 700;
 }
 
 /* Login dropdown */
@@ -229,7 +234,7 @@
   color: var(--dark-color);
   border-end-end-radius: 5px;
   border-end-start-radius: 5px;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   transition-property: opacity;
   transition: 0.2s ease-out;
 }
@@ -365,7 +370,7 @@
   border-end-start-radius: 5px;
   padding: 3rem;
   right: 0;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   transition: 0.1s ease-in;
   min-width: 18.75rem;
 }
