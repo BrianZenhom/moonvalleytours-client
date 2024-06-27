@@ -1,0 +1,161 @@
+:root {
+  --background-color: rgb(243, 243, 243);
+  --accent-color: rgb(1, 151, 238);
+  --valid: rgb(1, 151, 238);
+  --invalid: rgb(193, 41, 46);
+  --focus: #004e7a;
+  --blur: rgb(132, 117, 119);
+  --hover: rgb(1, 22, 56);
+  --warning: rgb(255, 255, 199);
+
+  --padding: 0.675rem;
+  --border-size: 2px;
+
+  --base: hsl(var(--tint, 214) 80% 27% / calc(var(--alpha, 4) * 1%));
+  /**
+    * Use relative syntax to get to: hsl(221 25% 22% / 40%)
+  */
+  --shade: hsl(from var(--base) calc(h + 8) 25 calc(l - 5));
+  --perfect-shadow: 0 0 0 1px var(--base), 0 1px 1px -0.5px var(--shade),
+    0 3px 3px -1.5px var(--shade), 0 6px 6px -3px var(--shade),
+    0 12px 12px -6px var(--base), 0 24px 24px -12px var(--base);
+}
+.form{
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form__group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 48%;
+}
+.form__group input{
+  width: 100%;
+}
+.form__group label{
+  pointer-events: none;
+}
+
+::placeholder {
+  color: transparent;
+}
+
+.form__group:has(:invalid) input {
+  outline: 1.5px solid var(--invalid);
+}
+
+.form__group:has(:invalid) label {
+  top: -20px;
+  left: 0px;
+  font-size: 12px;
+  color: var(--invalid);
+}
+
+.form__group:has(:invalid:not(:focus)) {
+  animation: shake 0.8s;
+}
+
+.form__group:has(:focus) input {
+  outline: 1.5px solid var(--focus);
+  background-color: white;
+}
+
+.form__group:focus input {
+  outline-offset: 5px;
+}
+
+.form__group:has(:valid) input {
+  outline: 1.5px solid var(--valid);
+}
+
+.form__group:has(:valid) label {
+  top: -20px;
+  left: 0px;
+  font-size: 12px;
+  color: var(--accent-color);
+}
+
+.form__group:has(:placeholder-shown) input {
+  outline: 1.5px solid var(--blur);
+}
+.form__group:has(:placeholder-shown:not(:focus)) {
+  animation: none;
+}
+
+.form__group label {
+  position: absolute;
+  font-size: 12px;
+  color: #727272;
+  cursor: text;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  user-select: none;
+}
+
+.form__group:has(:placeholder-shown) label {
+  font-size: 16px;
+}
+
+.form__group:has(:focus) label {
+  top: -20px;
+  left: 0px;
+  font-size: 12px;
+}
+
+.form__group:has(:placeholder-shown:not(:focus)) label {
+  top: 13px;
+  left: 10px;
+}
+
+.form__input {
+  outline: none;
+  border: none;
+  padding: calc(var(--padding) * 1.25) 1rem;
+  outline: 1.5px solid var(--accent-color);
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: Onest;
+}
+
+.form__group select{
+  padding: 1rem;
+  border: none;
+  outline: 1.5px solid var(--accent-color);
+  border-radius: 8px;
+  width: 100%;
+}
+.form__group select:focus {
+  border: none;
+  outline: 1px solid var(--accent-color);
+}
+
+
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-1%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(1%);
+  }
+}
