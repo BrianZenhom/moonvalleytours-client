@@ -102,7 +102,7 @@
 .city_card {
   background-color: white;
   padding: 1rem;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   border-radius: 5px;
   position: relative;
   margin-bottom: 1rem;
@@ -223,7 +223,7 @@
   outline: none;
   border-radius: 2px;
   background-color: var(--secondary-color);
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
 }
 
 .range-slider .slider::-webkit-slider-thumb {
@@ -245,7 +245,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   cursor: pointer;
 }
 .range-slider .slider-thumb::before {
@@ -275,7 +275,7 @@
   line-height: 35px;
   color: #fff;
   border-radius: 3px;
-  box-shadow: var(--shadow-elevation-medium),
+  box-shadow: var(--perfect-shadow),
     inset 0px 1px 2px var(--main-color);
 }
 
@@ -361,7 +361,7 @@
     background-color: rgb(255, 255, 255);
     width: 100vw;
     padding: 1rem;
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: var(--perfect-shadow);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
