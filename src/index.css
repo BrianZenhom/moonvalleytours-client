@@ -17,22 +17,14 @@
   font-smooth: always;
   -webkit-text-size-adjust: 100%;
 
-  --shadow-color: 0deg 0% 0%;
-  --shadow-elevation-low: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.2),
-    0.4px 0.8px 0.9px -1.8px hsl(var(--shadow-color) / 0.16),
-    1.2px 2.4px 2.6px -3.6px hsl(var(--shadow-color) / 0.12);
-  --shadow-elevation-medium: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.22),
-    0.7px 1.4px 1.5px -1.2px hsl(var(--shadow-color) / 0.18),
-    2.2px 4.3px 4.6px -2.4px hsl(var(--shadow-color) / 0.15),
-    5.9px 11.8px 12.6px -3.6px hsl(var(--shadow-color) / 0.11);
-  --shadow-elevation-high: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.2),
-    1.2px 2.4px 2.6px -0.5px hsl(var(--shadow-color) / 0.18),
-    2.4px 4.8px 5.1px -1px hsl(var(--shadow-color) / 0.17),
-    4.5px 9.1px 9.7px -1.6px hsl(var(--shadow-color) / 0.15),
-    8.2px 16.3px 17.4px -2.1px hsl(var(--shadow-color) / 0.14),
-    13.8px 27.7px 29.5px -2.6px hsl(var(--shadow-color) / 0.12),
-    22.2px 44.4px 47.3px -3.1px hsl(var(--shadow-color) / 0.11),
-    33.8px 67.5px 71.9px -3.6px hsl(var(--shadow-color) / 0.09);
+  --base: hsl(var(--tint, 214) 80% 27% / calc(var(--alpha, 4) * 1%));
+  /**
+    * Use relative syntax to get to: hsl(221 25% 22% / 40%)
+  */
+  --shade: hsl(from var(--base) calc(h + 8) 25 calc(l - 5));
+  --perfect-shadow: 0 0 0 1px var(--base), 0 1px 1px -0.5px var(--shade),
+    0 3px 3px -1.5px var(--shade), 0 6px 6px -3px var(--shade),
+    0 12px 12px -6px var(--base), 0 24px 24px -12px var(--base);
 }
 *::-webkit-scrollbar {
   width: 5px;
