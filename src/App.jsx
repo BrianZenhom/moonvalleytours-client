@@ -88,11 +88,11 @@ const router = createBrowserRouter([
         path: '/:country/:city/:slug',
         element: <Tour />,
       },
-      {
-        path: '/me',
-        element: <Account />,
-      },
     ],
+  },
+  {
+    path: '/customers/my-account',
+    element: <Account />,
   },
 ])
 
