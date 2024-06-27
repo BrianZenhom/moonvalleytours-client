@@ -239,15 +239,21 @@ export default function Navbar({ toggleDialog }) {
                 <div className="userMenu-content">
                   <div className="userMenu-header">
                     <div className="userbuttons">
-                      <div className="bookings">
-                        <span>Bookings</span>
-                      </div>
-                      <div className="favorites">
-                        <span>Favourites</span>
-                      </div>
-                      <div className="myaccount">
-                        <span>My account</span>
-                      </div>
+                      <a href="/customers/bookings">
+                        <div className="bookings">
+                          <span>Bookings</span>
+                        </div>
+                      </a>
+                      <a href="/customers/favorites">
+                        <div className="favorites">
+                          <span>Favourites</span>
+                        </div>
+                      </a>
+                      <a href="/customers/my-account">
+                        <div className="myaccount">
+                          <span>My account</span>
+                        </div>
+                      </a>
                     </div>
                   </div>
                   <hr />
