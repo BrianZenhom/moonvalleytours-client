@@ -132,7 +132,7 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
-  box-shadow: var(--shadow-elevation-medium);
+  box-shadow: var(--perfect-shadow);
   top: 40px;
   opacity: 0;
   visibility: hidden;
