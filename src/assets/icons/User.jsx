@@ -1,7 +1,7 @@
-const User = () => {
+const User = ({ type }) => {
   return (
     <svg
-      className="iconsvg"
+      className={type}
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       viewBox="0 0 24 24"
@@ -14,7 +14,7 @@ const User = () => {
         />
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default User;
+export default User
