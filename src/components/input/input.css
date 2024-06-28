@@ -126,18 +126,7 @@
   font-family: Onest;
 }
 
-.form__group select{
-  padding: 1rem;
-  border: none;
-  outline: 1.5px solid var(--accent-color);
-  border-radius: 8px;
-  width: 100%;
-}
-.form__group select:focus {
-  border: none;
-  outline: 1px solid var(--accent-color);
-}
-
+/* Special select input, MIGHT CREATE AS COMPONENT */
 
 
 @keyframes shake {
