@@ -43,10 +43,17 @@ export const AccordeonItem = ({ children, value, trigger, ...props }) => {
         </div>
       </header>
       <div
-        className="accordeon_container"
+        className={
+          open ? 'accordeon_container overflowshown' : 'accordeon_container'
+        }
         style={{ height: open ? ref.current?.offsetHeight || 0 : 0 }}
       >
-        <div className="accordeon_content" ref={ref}>
+        <div
+          className={
+            open ? 'accordeon_content overflowshown' : 'accordeon_content'
+          }
+          ref={ref}
+        >
           {children}
         </div>
       </div>
