@@ -16,11 +16,19 @@
   }
   .accordeon_content {
     padding: 0.5rem 1.5rem;
+    opacity: 0;
   }
   .open {
     height: 100%;
+    overflow: visible;
+    transition: .2s ease;
   }
-
+  .overflowshown{
+    overflow: visible;
+    height: 100%;
+    opacity: 1;
+    transition: all .3s ease;
+  }
   .closed {
     transition: 0.2s ease;
     transform: rotate(0deg);
