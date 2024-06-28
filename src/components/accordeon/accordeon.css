@@ -10,7 +10,7 @@
     cursor: pointer;
   }
   .accordeon_container {
-    overflow-y: hidden;
+    overflow: hidden;
     transition: all 0.2s ease-in;
     height: 0px;
   }
@@ -20,6 +20,7 @@
   .open {
     height: 100%;
   }
+
   .closed {
     transition: 0.2s ease;
     transform: rotate(0deg);
