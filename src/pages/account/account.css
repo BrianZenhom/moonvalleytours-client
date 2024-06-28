@@ -92,12 +92,12 @@ hr{
   max-width: 1080px;
   border-radius: 8px;
 }
-.account__content ul li{
-  margin-bottom: 1rem;
+
+.accordeon_tab{
   box-shadow: var(--perfect-shadow);
+  margin-bottom: 1rem;
   border-radius: 8px;
   background-color: white;
-
 }
 .account__content h2{
   font-weight: 700;
