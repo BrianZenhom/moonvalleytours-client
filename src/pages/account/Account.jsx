@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from 'react'
 import './account.css'
+import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import AccountSidebar from '../../components/accountSidebar/accountSidebar'
@@ -9,6 +9,7 @@ import User from '../../assets/icons/User'
 import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
 import PhoneValidator from '../../components/phoneValidator/PhonaValidator'
+import { Select } from '../../components/select/Select'
 
 const Account = () => {
   const { user } = useContext(AuthContext)
@@ -44,6 +45,19 @@ const Account = () => {
       setFormData({ ...formData, [name]: value })
     }
   }
+
+  const options = [
+    { label: '1', value: 1 },
+    { label: '2', value: 2 },
+    { label: '3', value: 3 },
+    { label: '4', value: 4 },
+    { label: '5', value: 5 },
+    { label: '6', value: 6 },
+    { label: '7', value: 7 },
+    { label: '8', value: 8 },
+    { label: '9', value: 9 },
+    { label: '10', value: 10 },
+  ]
 
   return (
     <div className="my_account">
@@ -144,7 +158,9 @@ const Account = () => {
                     <label htmlFor={field.name}>{field.title}</label>
                   </div>
                 ))}
-                <div className="form__group"></div>
+                <div className="form__group">
+                  <Select options={options} />
+                </div>
                 <div className="form__group">
                   <PhoneValidator />
                 </div>
