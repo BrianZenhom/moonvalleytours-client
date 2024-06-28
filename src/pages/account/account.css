@@ -19,7 +19,6 @@
   box-shadow: var(--perfect-shadow);
   max-width: 350px;
   padding: 3rem;
-  
   flex: 1;
 }
 .account__sidebar ul{
