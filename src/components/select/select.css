@@ -67,3 +67,7 @@
 .select__options.show{
     display: block;
 }
+.select__option{
+    padding: .25em .5em;
+    cursor: pointer;
+}
