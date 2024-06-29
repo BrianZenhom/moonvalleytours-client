@@ -59,6 +59,10 @@ const Account = () => {
     { label: '10', value: 10 },
   ]
 
+  const [value, setValue] = useState()
+
+  console.log(value)
+
   return (
     <div className="my_account">
       <Navbar />
@@ -159,7 +163,11 @@ const Account = () => {
                   </div>
                 ))}
                 <div className="form__group">
-                  <Select options={options} />
+                  <Select
+                    options={options}
+                    value={value}
+                    onChange={o => setValue(o)}
+                  />
                 </div>
                 <div className="form__group">
                   <PhoneValidator />
