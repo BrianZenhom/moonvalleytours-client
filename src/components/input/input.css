@@ -126,9 +126,6 @@
   font-family: Onest;
 }
 
-/* Special select input, MIGHT CREATE AS COMPONENT */
-
-
 @keyframes shake {
   0%,
   100% {
