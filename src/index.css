@@ -26,14 +26,7 @@
     0 3px 3px -1.5px var(--shade), 0 6px 6px -3px var(--shade),
     0 12px 12px -6px var(--base), 0 24px 24px -12px var(--base);
 }
-*::-webkit-scrollbar {
-  width: 5px;
-  background-color: white;
-}
-*::-webkit-scrollbar-thumb {
-  background: var(--dark-color);
-  width: 2px;
-}
+
 @font-face {
   font-family: 'Montserrat';
   src: url(./assets/fonts/onest-latin-200-normal.woff2) format('woff2');
