@@ -10,6 +10,7 @@ import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
 import PhoneValidator from '../../components/phoneValidator/PhonaValidator'
 import { Select } from '../../components/select/Select'
+import axios from 'axios'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
@@ -111,6 +112,21 @@ const Account = () => {
     } else {
       setFormData({ ...formData, [name]: value })
     }
+  }
+
+  const submitForm = async e => {
+    e.preventDefault()
+    console.log(formData)
+    const { name, surname, phone, instagram, country, email } = formData
+    const res = await axios.post('/api/v1/views/submit-user-data', {
+      name,
+      surname,
+      phone,
+      instagram,
+      country,
+      email,
+    })
+    console.log(res)
   }
 
   return (
@@ -220,18 +236,21 @@ const Account = () => {
                 ))}
                 <div className="form__group birth">
                   <Select
+                    title="Day"
                     options={options}
                     value={value}
                     onChange={o => setValue(o)}
                     classtype="day"
                   />
                   <Select
+                    title="Month"
                     options={monthOptions}
                     value={monthValue}
                     onChange={o => setMonthValue(o)}
                     classtype="month"
                   />
                   <Select
+                    title="Year"
                     options={yearOptions}
                     value={yearValue}
                     onChange={o => setYearValue(o)}
@@ -247,7 +266,14 @@ const Account = () => {
                     the best tips for my trips
                   </span>
                 </div>
-                <button>Save changes</button>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    submitForm(e)
+                  }}
+                >
+                  Save changes
+                </button>
               </form>
             </AccordeonItem>
             <AccordeonItem value="Item 2" trigger="Billing Information">
