@@ -249,14 +249,7 @@ const Account = () => {
                     the best tips for my trips
                   </span>
                 </div>
-                <button
-                  onClick={e => {
-                    e.preventDefault()
-                    submitForm(e)
-                  }}
-                >
-                  Save changes
-                </button>
+                <button>Save changes</button>
               </form>
             </AccordeonItem>
             <AccordeonItem value="Item 2" trigger="Billing Information">
