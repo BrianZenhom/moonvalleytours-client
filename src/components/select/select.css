@@ -9,6 +9,9 @@
     padding: calc(var(--padding) * 1.25) 1rem;
     border-radius: 8px;
     outline: none;
+    cursor: pointer;
+    background-color: var(--background-color);
+    user-select: none;
 }
 
 .select__value{
@@ -56,21 +59,45 @@
     background-color: white;
     z-index: 99999;
     box-shadow: var(--perfect-shadow);
+    animation: vanish .2s;
+}
+.select__options::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #777777e0;
 }
 .select__options.show{
     display: block;
+    animation: appear .2s;
 }
 .select__option{
     padding: calc(var(--padding) * 1.25) 1rem;
     cursor: pointer;
 }
-.select__option.highlighted{
-    background-color: var(--hover);
-    color: white;
-}
+
 .select__option.selected{
     background-color: var(--secondary-color);
+}
+.select__option.highlighted{
+    background-color: var(--accent-color);
     color: white;
 }
 
+@keyframes appear {
+    from{
+        height: 0px;
+    }
+    to {
+        height: 300px;
+    }
+}
 
+@keyframes vanish {
+    from {
+        display: block;
+        height: 300px;
+    }
+    to{
+        display: none;
+        height: 0px;
+    }
+}
