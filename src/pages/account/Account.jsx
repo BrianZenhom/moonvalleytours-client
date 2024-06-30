@@ -11,9 +11,76 @@ import Input from '../../components/input/Input'
 import PhoneValidator from '../../components/phoneValidator/PhonaValidator'
 import { Select } from '../../components/select/Select'
 
+const options = Array.from({ length: 31 }, (_, i) => ({
+  label: i + 1,
+  value: i + 1,
+}))
+
+const monthOptions = [
+  {
+    label: 'January',
+    value: 'January',
+  },
+  {
+    label: 'February',
+    value: 'February',
+  },
+  {
+    label: 'March',
+    value: 'March',
+  },
+  {
+    label: 'April',
+    value: 'April',
+  },
+  {
+    label: 'May',
+    value: 'May',
+  },
+  {
+    label: 'June',
+    value: 'June',
+  },
+  {
+    label: 'July',
+    value: 'July',
+  },
+  {
+    label: 'August',
+    value: 'August',
+  },
+  {
+    label: 'September',
+    value: 'September',
+  },
+  {
+    label: 'October',
+    value: 'October',
+  },
+  {
+    label: 'November',
+    value: 'November',
+  },
+  {
+    label: 'December',
+    value: 'December',
+  },
+]
+// organize in decending order years
+
+const yearOptions = Array.from({ length: 100 }, (_, i) => ({
+  label: i + 1925,
+  value: i + 1925,
+}))
+
+yearOptions.sort((a, b) => b.value - a.value)
+
 const Account = () => {
   const { user } = useContext(AuthContext)
   const navigate = useNavigate()
+  const [value, setValue] = useState(options[0])
+  const [monthValue, setMonthValue] = useState(monthOptions[0])
+  const [yearValue, setYearValue] = useState(yearOptions[0])
 
   const [formData, setFormData] = useState({
     name: user?.data?.user?.name || '',
@@ -45,23 +112,6 @@ const Account = () => {
       setFormData({ ...formData, [name]: value })
     }
   }
-
-  const options = [
-    { label: '1', value: 1 },
-    { label: '2', value: 2 },
-    { label: '3', value: 3 },
-    { label: '4', value: 4 },
-    { label: '5', value: 5 },
-    { label: '6', value: 6 },
-    { label: '7', value: 7 },
-    { label: '8', value: 8 },
-    { label: '9', value: 9 },
-    { label: '10', value: 10 },
-  ]
-
-  const [value, setValue] = useState()
-
-  console.log(value)
 
   return (
     <div className="my_account">
@@ -130,6 +180,12 @@ const Account = () => {
                     title: 'Enter your Instagram username',
                   },
                   {
+                    name: 'city',
+                    pattern: '[a-zA-Z -]{2,}',
+                    placeholder: 'City',
+                    title: 'City',
+                  },
+                  {
                     name: 'country',
                     pattern: '[a-zA-Z -]{2,}',
                     placeholder: 'Country',
@@ -162,15 +218,25 @@ const Account = () => {
                     <label htmlFor={field.name}>{field.title}</label>
                   </div>
                 ))}
-                <div className="form__group">
+                <div className="form__group birth">
                   <Select
                     options={options}
                     value={value}
                     onChange={o => setValue(o)}
+                    classtype="day"
                   />
-                </div>
-                <div className="form__group">
-                  <PhoneValidator />
+                  <Select
+                    options={monthOptions}
+                    value={monthValue}
+                    onChange={o => setMonthValue(o)}
+                    classtype="month"
+                  />
+                  <Select
+                    options={yearOptions}
+                    value={yearValue}
+                    onChange={o => setYearValue(o)}
+                    classtype="year"
+                  />
                 </div>
                 <div className="form__group">
                   <span>Change password</span>
