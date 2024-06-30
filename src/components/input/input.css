@@ -126,6 +126,21 @@
   font-family: Onest;
 }
 
+.birth{
+  gap: 1rem;
+}
+.day{
+  width: 26% !important;
+  min-width: 26% !important;
+  max-width: 26% !important;
+}
+
+.year{
+  width: 26% !important;
+  min-width: 26% !important;
+  max-width: 26% !important;
+}
+
 @keyframes shake {
   0%,
   100% {
