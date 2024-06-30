@@ -1,35 +1,59 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './select.css'
 import PropTypes from 'prop-types'
 
-export function Select({ value, onChange, options }) {
+export function Select({ value, onChange, options, classtype }) {
   const [open, setOpen] = useState(false)
+  const [highlightedIndex, setHighlightedIndex] = useState(0)
+
+  function clearOptions() {
+    onChange(undefined)
+  }
 
   function selectOption(option) {
-    console.log(option)
-    onChange(option)
+    if (option !== value) onChange(option)
   }
+
+  function isOptionSelected(option) {
+    return option === value
+  }
+
+  useEffect(() => {
+    if (open) setHighlightedIndex(0)
+  }, [open])
+
   return (
     <div
-      onBlur={() => setOpen(false)}
+      // onBlur={() => setOpen(false)}
       onClick={() => setOpen(prev => !prev)}
       tabIndex={0}
-      className="select__container"
+      className={`select__container ${classtype}`}
     >
-      <span className="select__value">{value?.value}</span>
-      <button className="select__clearbtn">&times;</button>
+      <span className="select__value">{value?.label}</span>
+      <button
+        onClick={e => {
+          e.stopPropagation()
+          clearOptions()
+        }}
+        className="select__clearbtn"
+      >
+        &times;
+      </button>
       <div className="select__divider"></div>
       <div className="select__caret"></div>
-      <ul className={open ? 'select__options show' : 'select__options'}>
-        {options.map(option => (
+      <ul className={`select__options ${open ? 'show' : ''}`}>
+        {options.map((option, index) => (
           <li
             onClick={e => {
               e.stopPropagation()
               selectOption(option)
               setOpen(false)
             }}
+            onMouseEnter={() => setHighlightedIndex(index)}
             key={option.label}
-            className="select__option"
+            className={`select__option ${
+              isOptionSelected(option) ? 'selected' : ''
+            } ${index === highlightedIndex ? 'highlighted' : ''}`}
           >
             {option.label}
           </li>
@@ -48,4 +72,5 @@ Select.propTypes = {
       value: PropTypes.string,
     })
   ),
+  classtype: PropTypes.string,
 }
