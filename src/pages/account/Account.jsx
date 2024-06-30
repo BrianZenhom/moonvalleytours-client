@@ -8,7 +8,6 @@ import Upload from '../../assets/icons/Upload'
 import User from '../../assets/icons/User'
 import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
-import PhoneValidator from '../../components/phoneValidator/PhonaValidator'
 import { Select } from '../../components/select/Select'
 import axios from 'axios'
 
@@ -112,21 +111,6 @@ const Account = () => {
     } else {
       setFormData({ ...formData, [name]: value })
     }
-  }
-
-  const submitForm = async e => {
-    e.preventDefault()
-    console.log(formData)
-    const { name, surname, phone, instagram, country, email } = formData
-    const res = await axios.post('/api/v1/views/submit-user-data', {
-      name,
-      surname,
-      phone,
-      instagram,
-      country,
-      email,
-    })
-    console.log(res)
   }
 
   return (
