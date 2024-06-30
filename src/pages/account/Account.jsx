@@ -9,7 +9,6 @@ import User from '../../assets/icons/User'
 import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
 import { Select } from '../../components/select/Select'
-import axios from 'axios'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
