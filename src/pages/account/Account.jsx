@@ -9,6 +9,7 @@ import User from '../../assets/icons/User'
 import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
 import { Select } from '../../components/select/Select'
+import axios from 'axios'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
@@ -75,19 +76,19 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => ({
 yearOptions.sort((a, b) => b.value - a.value)
 
 const Account = () => {
-  const { user } = useContext(AuthContext)
+  const { user, dispatch } = useContext(AuthContext)
   const navigate = useNavigate()
   const [value, setValue] = useState(options[0])
   const [monthValue, setMonthValue] = useState(monthOptions[0])
   const [yearValue, setYearValue] = useState(yearOptions[0])
 
   const [formData, setFormData] = useState({
-    name: user?.data?.user?.name || '',
-    surname: user?.data?.user?.surname || '',
-    phone: user?.data?.user?.phone || '',
+    name: user?.name || '',
+    surname: user?.surname || '',
+    phone: user?.phone || '',
     instagram: '',
-    country: user?.data?.user?.nationality || '',
-    email: user?.data?.user?.email || '',
+    country: user?.nationality || '',
+    email: user?.email || '',
   })
 
   useEffect(() => {
@@ -112,6 +113,25 @@ const Account = () => {
     }
   }
 
+  // create a post request to the server
+  const handleSubmit = async e => {
+    e.preventDefault()
+    try {
+      const res = await axios.patch(
+        'http://localhost:1234/api/v1/users/updateMe',
+        formData,
+        {
+          withCredentials: true,
+        }
+      )
+      if (res.data.status === 'success') {
+        dispatch({ type: 'UPDATE_USER', payload: res.data.data.user })
+      }
+    } catch (err) {
+      console.log('error', err.response.data.message)
+    }
+  }
+
   return (
     <div className="my_account">
       <Navbar />
@@ -122,11 +142,8 @@ const Account = () => {
           <div className="account__user--info">
             <div className="account__image--wrapper">
               <div className="account_image">
-                {user?.data?.user?.photo ? (
-                  <img
-                    src={user?.data?.user?.photo}
-                    alt={`photo of ${user?.data?.user?.name}`}
-                  />
+                {user?.photo ? (
+                  <img src={user?.photo} alt={`photo of ${user?.name}`} />
                 ) : (
                   <User type="iconsvgphoto" />
                 )}
@@ -134,7 +151,7 @@ const Account = () => {
                   <Upload />
                 </div>
               </div>
-              {user?.data?.user?.photo ? (
+              {user?.photo ? (
                 <small>change photo</small>
               ) : (
                 <small>upload photo</small>
@@ -142,11 +159,11 @@ const Account = () => {
             </div>
             <div className="account__user--details">
               <div className="name">
-                <span>{user?.data?.user?.name}</span>
-                <span>{user?.data?.user?.surname}</span>
+                <span>{user?.name}</span>
+                <span>{user?.surname}</span>
               </div>
-              <div className="phone">{user?.data?.user?.phone}</div>
-              <div className="email">{user?.data?.user?.email}</div>
+              <div className="phone">{user?.phone}</div>
+              <div className="email">{user?.email}</div>
             </div>
           </div>
           <Accordeon>
@@ -249,7 +266,7 @@ const Account = () => {
                     the best tips for my trips
                   </span>
                 </div>
-                <button>Save changes</button>
+                <button onClick={handleSubmit}>Save changes</button>
               </form>
             </AccordeonItem>
             <AccordeonItem value="Item 2" trigger="Billing Information">
