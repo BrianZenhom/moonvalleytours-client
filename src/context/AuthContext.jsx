@@ -35,6 +35,11 @@ const AuthReducer = (state, action) => {
         loading: false,
         error: null,
       }
+    case 'UPDATE_USER':
+      return {
+        ...state,
+        user: action.payload,
+      }
     default:
       return state
   }
@@ -50,7 +55,7 @@ export const AuthContextProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
-        user: state.user,
+        user: state?.user?.user,
         loading: state.loading,
         error: state.error,
         dispatch,
