@@ -162,7 +162,10 @@ export default function Navbar({ toggleDialog }) {
     try {
       const res = await axios.post(
         'http://localhost:1234/api/v1/auth/login',
-        credentials
+        credentials,
+        {
+          withCredentials: true,
+        }
       )
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
       navigate('/')
@@ -226,7 +229,7 @@ export default function Navbar({ toggleDialog }) {
               >
                 <span className="loggedInUser">
                   <User />
-                  {user.data?.user?.name}
+                  {user?.name}
                 </span>
               </a>
               <div
@@ -371,5 +374,5 @@ export default function Navbar({ toggleDialog }) {
 }
 
 Navbar.propTypes = {
-  toggleDialog: PropTypes.bool.isRequired,
+  toggleDialog: PropTypes.func.isRequired,
 }
