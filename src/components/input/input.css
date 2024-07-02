@@ -42,7 +42,7 @@
   pointer-events: none;
 }
 
-::placeholder {
+.form__group ::placeholder {
   color: transparent;
 }
 
