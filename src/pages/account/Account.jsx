@@ -76,7 +76,7 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => ({
 yearOptions.sort((a, b) => b.value - a.value)
 
 const Account = () => {
-  const { user, dispatch } = useContext(AuthContext)
+  const { user, token, dispatch } = useContext(AuthContext)
   const navigate = useNavigate()
   const [value, setValue] = useState(options[0])
   const [monthValue, setMonthValue] = useState(monthOptions[0])
@@ -87,7 +87,8 @@ const Account = () => {
     surname: user?.surname || '',
     phone: user?.phone || '',
     instagram: '',
-    country: user?.nationality || '',
+    country: user?.country || '',
+    city: user?.city || '',
     email: user?.email || '',
   })
 
@@ -122,13 +123,18 @@ const Account = () => {
         formData,
         {
           withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       )
-      if (res.data.status === 'success') {
-        dispatch({ type: 'UPDATE_USER', payload: res.data.data.user })
-      }
+      // Update the user and token in the context
+      dispatch({
+        type: 'UPDATE_USER',
+        payload: { user: res.data.user, token: res.data.token },
+      })
     } catch (err) {
-      console.log('error', err.response.data.message)
+      console.log('error', err.response)
     }
   }
 
