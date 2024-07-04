@@ -36,12 +36,14 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
         'http://localhost:1234/api/v1/auth/register',
         body
       )
+      console.log(res)
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
       toggleCloseDialog()
       setMenu(false)
       setLoginOpen(false)
       navigate('/')
     } catch (err) {
+      console.log(err)
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
   }
@@ -64,6 +66,7 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
             <input
               type={visible ? 'text' : 'password'}
               id="password"
+              name="password"
               placeholder="Password"
               onChange={handleChange}
             />
@@ -74,7 +77,8 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
           <div className=" halfw password_input-reg">
             <input
               type={confirmPasswordVisible ? 'text' : 'password'}
-              id="confirmPassword"
+              id="passwordConfirm"
+              name="passwordConfirm"
               placeholder="Confirm password"
               onChange={handleChange}
             />
@@ -98,14 +102,14 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
           />
           <input
             type="text"
-            name="nationality"
+            name="country"
             placeholder="Select your country"
             className="halfw"
             onChange={handleChange}
           />
           <input
             type="text"
-            name="nationality"
+            name="city"
             placeholder="Select your city"
             className="halfw"
             onChange={handleChange}
