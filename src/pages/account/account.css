@@ -168,4 +168,38 @@ hr{
   width: 60px;
   opacity: .2;
 }
+.btn__password{
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  height: 0px;
+  font-family: inherit;
+  font-size: 16px;
+  transition: .2s ease;
+}
+.btn__password:hover{
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.btn__save{
+  min-height: 50px;
+  min-width: 200px;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  background-color: var(--dark-color);
+  color: white;
+  font-weight: 700;
+  transition: .2s ease;
+  cursor: pointer;
+}
+.btn__save:hover{
+  outline: 1px solid var(--dark-color);
+  background-color: transparent;
+  color: var(--dark-color);
+}
 
