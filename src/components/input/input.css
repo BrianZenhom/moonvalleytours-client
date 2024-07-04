@@ -34,6 +34,7 @@
   margin-bottom: 1rem;
   position: relative;
   width: 48%;
+  height: 48px;
 }
 .form__group input{
   width: 100%;
@@ -78,7 +79,10 @@
   top: -20px;
   left: 0px;
   font-size: 12px;
-  color: var(--accent-color);
+}
+
+.form__group label{
+  color: gray;
 }
 
 .form__group:has(:placeholder-shown) input {
