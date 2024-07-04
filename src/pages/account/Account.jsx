@@ -1,5 +1,5 @@
 import './account.css'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import AccountSidebar from '../../components/accountSidebar/accountSidebar'
@@ -10,6 +10,7 @@ import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
 import { Select } from '../../components/select/Select'
 import axios from 'axios'
+import CloseModal from '../../assets/icons/CloseModal'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
@@ -81,6 +82,17 @@ const Account = () => {
   const [value, setValue] = useState(options[0])
   const [monthValue, setMonthValue] = useState(monthOptions[0])
   const [yearValue, setYearValue] = useState(yearOptions[0])
+  const dialogRef = useRef(null)
+
+  const toggleDialog = () => {
+    if (!dialogRef.current) {
+      return
+    }
+
+    dialogRef.current.hasAttribute('open')
+      ? dialogRef.current.close()
+      : dialogRef.current.showModal()
+  }
 
   const [formData, setFormData] = useState({
     name: user?.name || '',
@@ -137,10 +149,23 @@ const Account = () => {
       console.log('error', err.response)
     }
   }
+  const toggleCloseDialog = () => {
+    if (!dialogRef.current) {
+      return
+    }
+
+    dialogRef.current.close()
+  }
 
   return (
     <div className="my_account">
-      <Navbar />
+      <Navbar type="wider" />
+      <dialog ref={dialogRef} className="account__dialog">
+        hi
+        <div onClick={toggleCloseDialog}>
+          <CloseModal />
+        </div>
+      </dialog>
       <section className="account">
         <AccountSidebar />
         <article className="account__content">
@@ -264,7 +289,9 @@ const Account = () => {
                   />
                 </div>
                 <div className="form__group">
-                  <span>Change password</span>
+                  <button onClick={toggleDialog} className="btn__password">
+                    Edit password
+                  </button>
                 </div>
                 <div className="form__group">
                   <span>
@@ -272,7 +299,9 @@ const Account = () => {
                     the best tips for my trips
                   </span>
                 </div>
-                <button onClick={handleSubmit}>Save changes</button>
+                <button className="btn btn__save" onClick={handleSubmit}>
+                  Save changes
+                </button>
               </form>
             </AccordeonItem>
             <AccordeonItem value="Item 2" trigger="Billing Information">
