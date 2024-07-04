@@ -11,7 +11,7 @@ import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 import LoginForm from '../loginform/LoginForm'
 
-export default function Navbar({ toggleDialog }) {
+export default function Navbar({ toggleDialog, type }) {
   const [activeLanguage, setActiveLanguage] = useState('English')
   const [activeCurrency, setActiveCurrency] = useState('US$')
 
@@ -182,7 +182,7 @@ export default function Navbar({ toggleDialog }) {
 
   return (
     <nav className={scroll ? 'navbar' : 'navbar  visible'}>
-      <div className="navbar-content container">
+      <div className={`navbar-content container ${type}`}>
         <div className="logo">
           <Link
             aria-label="Click this logo to go to the top of the website"
