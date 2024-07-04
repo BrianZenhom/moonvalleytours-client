@@ -311,7 +311,7 @@
   width: 100%;
 }
 .logoutBtn button {
-  padding: 7px 42px;
+  padding: 1rem 2rem;
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
@@ -445,10 +445,8 @@
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.2rem;
   font-weight: 600;
-  padding-right: 1rem;
-  padding-left: 1rem;
   cursor: pointer;
 }
 .loggedInUser:hover {
@@ -563,6 +561,9 @@ input:checked + .checkbutton::before {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+}
+.wider{
+  max-width: 1430px;
 }
 
 @media (width <= 766px) {
