@@ -203,3 +203,54 @@ hr{
   color: var(--dark-color);
 }
 
+.dialog__content{
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+.dialog__content-body{
+  width: 600px;
+  background-color: white;
+  box-shadow: var(--perfect-shadow);
+  border-radius: 8px;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+
+}
+.dialog__header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.dialog__title{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.dialog__title strong{
+  font-size: 24px;
+}
+.button-dialog{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.cta__buttons{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  gap: 1rem;
+}
+.discard__changes{
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
