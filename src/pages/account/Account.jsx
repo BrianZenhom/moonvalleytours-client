@@ -157,13 +157,117 @@ const Account = () => {
     dialogRef.current.close()
   }
 
+  const formFields = [
+    {
+      name: 'name',
+      pattern: '[a-zA-Z]{3,}',
+      placeholder: 'name',
+      title: 'Name',
+    },
+    {
+      name: 'surname',
+      pattern: '[a-zA-Z]{3,}',
+      placeholder: 'surname',
+      title: 'Surname',
+    },
+    {
+      name: 'phone',
+      pattern: '[0-9]{3,}',
+      placeholder: 'phone',
+      title: 'Phone',
+      type: 'phone',
+    },
+    {
+      name: 'instagram',
+      pattern: '[a-zA-Z0-9._-]{2,}',
+      placeholder: 'Instagram',
+      title: 'Enter your Instagram username',
+    },
+    {
+      name: 'city',
+      pattern: '[a-zA-Z -]{2,}',
+      placeholder: 'City',
+      title: 'City',
+    },
+    {
+      name: 'country',
+      pattern: '[a-zA-Z -]{2,}',
+      placeholder: 'Country',
+      title: 'Country',
+    },
+    {
+      name: 'email',
+      pattern: '[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-z]{2,}',
+      placeholder: 'Email',
+      title: 'Email',
+      type: 'email',
+    },
+  ]
+
   return (
     <div className="my_account">
       <Navbar type="wider" />
       <dialog ref={dialogRef} className="account__dialog">
-        hi
-        <div onClick={toggleCloseDialog}>
-          <CloseModal />
+        <div className="dialog__content">
+          <div className="dialog__content-body">
+            <div className="dialog__header">
+              <div className="dialog__title">
+                <strong>Edit password</strong>
+                <small>Choose a new password</small>
+              </div>
+              <div onClick={toggleCloseDialog} className="button-dialog">
+                <CloseModal />
+              </div>
+            </div>
+            <form className="form">
+              <div className="form__group edit__password">
+                <Input
+                  title="Current password"
+                  name="currentPassword"
+                  type="text"
+                  className="form__input"
+                  placeholder="Current password"
+                  required
+                />
+                <label htmlFor="currentPassword">Current password</label>
+              </div>
+              <div className="form__group edit__password">
+                <Input
+                  title="New password"
+                  name="newPassword"
+                  type="text"
+                  className="form__input"
+                  placeholder="New password"
+                  required
+                />
+                <label htmlFor="newPassword">New password</label>
+              </div>
+              <div className="form__group edit__password">
+                <Input
+                  title="Repeat new password"
+                  name="repeatNewPassword"
+                  type="text"
+                  className="form__input"
+                  placeholder="Repeat new password"
+                  required
+                />
+                <label htmlFor="repeatNewPassword">Repeat new password</label>
+              </div>
+              <div className="cta__buttons">
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    toggleCloseDialog()
+                  }}
+                  className="btn discard__changes"
+                >
+                  Discard changes
+                </button>
+                <button className="btn btn__save">Save changes</button>
+              </div>
+            </form>
+          </div>
         </div>
       </dialog>
       <section className="account">
@@ -200,52 +304,7 @@ const Account = () => {
           <Accordeon>
             <AccordeonItem value="Item 1" trigger="My Personal Information">
               <form className="form">
-                {[
-                  {
-                    name: 'name',
-                    pattern: '[a-zA-Z]{3,}',
-                    placeholder: 'name',
-                    title: 'Name',
-                  },
-                  {
-                    name: 'surname',
-                    pattern: '[a-zA-Z]{3,}',
-                    placeholder: 'surname',
-                    title: 'Surname',
-                  },
-                  {
-                    name: 'phone',
-                    pattern: '[0-9]{3,}',
-                    placeholder: 'phone',
-                    title: 'Phone',
-                    type: 'phone',
-                  },
-                  {
-                    name: 'instagram',
-                    pattern: '[a-zA-Z0-9._-]{2,}',
-                    placeholder: 'Instagram',
-                    title: 'Enter your Instagram username',
-                  },
-                  {
-                    name: 'city',
-                    pattern: '[a-zA-Z -]{2,}',
-                    placeholder: 'City',
-                    title: 'City',
-                  },
-                  {
-                    name: 'country',
-                    pattern: '[a-zA-Z -]{2,}',
-                    placeholder: 'Country',
-                    title: 'Country',
-                  },
-                  {
-                    name: 'email',
-                    pattern: '[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-z]{2,}',
-                    placeholder: 'Email',
-                    title: 'Email',
-                    type: 'email',
-                  },
-                ].map(field => (
+                {formFields.map(field => (
                   <div className="form__group" key={field.name}>
                     <Input
                       title={field.title}
