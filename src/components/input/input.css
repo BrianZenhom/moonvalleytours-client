@@ -145,6 +145,10 @@
   max-width: 26% !important;
 }
 
+.edit__password{
+  width: 100%;
+}
+
 @keyframes shake {
   0%,
   100% {
