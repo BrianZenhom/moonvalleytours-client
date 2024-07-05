@@ -36,20 +36,18 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
         'http://localhost:1234/api/v1/auth/register',
         body
       )
-      console.log(res)
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
       toggleCloseDialog()
       setMenu(false)
       setLoginOpen(false)
       navigate('/')
     } catch (err) {
-      console.log(err)
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
   }
 
   return (
-    <>
+    <div className="registerForm__wrapper">
       <form onSubmit={handleRegistration} className="registrationForm_form">
         <div className="register_content-inputs">
           <input
@@ -135,7 +133,7 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
 
         <button>Confirm registration</button>
       </form>
-    </>
+    </div>
   )
 }
 
