@@ -5,7 +5,7 @@ import DestCard from './../../../../components/destcard/DestCard'
 import { Link } from 'react-router-dom'
 
 export default function MainDestinations({ type }) {
-  const { data, loading, error } = Hooks.useFetch(
+  const { data, error } = Hooks.useFetch(
     `http://localhost:1234/api/v1/cities?featured=true`
   )
 
