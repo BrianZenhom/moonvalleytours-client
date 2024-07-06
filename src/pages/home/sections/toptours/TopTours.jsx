@@ -11,7 +11,7 @@ export default function TopTours() {
     <section className="toptours">
       <article className="toptours_content container">
         <div className="toptours_header">
-          <h2>Prominent tours</h2>
+          <h2>Top tours</h2>
         </div>
         <div className="toptours_grid">
           {error
