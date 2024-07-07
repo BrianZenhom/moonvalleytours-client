@@ -98,10 +98,16 @@ const Account = () => {
     name: user?.name || '',
     surname: user?.surname || '',
     phone: user?.phone || '',
-    instagram: '',
+    instagram: user?.instagram || '',
     country: user?.country || '',
     city: user?.city || '',
     email: user?.email || '',
+  })
+
+  const [passwordData, setPasswordData] = useState({
+    passwordCurrent: '',
+    password: '',
+    passwordConfirm: '',
   })
 
   useEffect(() => {
@@ -114,6 +120,13 @@ const Account = () => {
     const { name, value } = event.target
     setFormData({ ...formData, [name]: value })
   }
+
+  const handlePasswordChange = event => {
+    const { name, value } = event.target
+    setPasswordData({ ...passwordData, [name]: value })
+  }
+
+  console.log(passwordData)
 
   // Handle prefix addition for Instagram field
   const handleInstagramChange = event => {
@@ -135,9 +148,6 @@ const Account = () => {
         formData,
         {
           withCredentials: true,
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
         }
       )
       // Update the user and token in the context
@@ -149,6 +159,31 @@ const Account = () => {
       console.log('error', err.response)
     }
   }
+
+  const handleSubmitPassword = async () => {
+    try {
+      const res = await axios.patch(
+        'http://localhost:1234/api/v1/auth/updateMyPassword',
+        passwordData,
+        {
+          withCredentials: true,
+        }
+      )
+      // Update the user and token in the context
+      dispatch({
+        type: 'UPDATE_USER',
+        payload: { user: res.data.user, token: res.data.token },
+      })
+      toggleCloseDialog()
+      alert(
+        'Password changed successfully, please login again using your new password'
+      )
+      dispatch({ type: 'LOGOUT' })
+    } catch (err) {
+      console.log('error', err.response)
+    }
+  }
+
   const toggleCloseDialog = () => {
     if (!dialogRef.current) {
       return
@@ -179,7 +214,7 @@ const Account = () => {
     },
     {
       name: 'instagram',
-      pattern: '[a-zA-Z0-9._-]{2,}',
+      pattern: '[a-zA-Z0-9._-]+@',
       placeholder: 'Instagram',
       title: 'Enter your Instagram username',
     },
@@ -223,10 +258,11 @@ const Account = () => {
               <div className="form__group edit__password">
                 <Input
                   title="Current password"
-                  name="currentPassword"
+                  name="passwordCurrent"
                   type="text"
                   className="form__input"
                   placeholder="Current password"
+                  onChange={handlePasswordChange}
                   required
                 />
                 <label htmlFor="currentPassword">Current password</label>
@@ -234,10 +270,11 @@ const Account = () => {
               <div className="form__group edit__password">
                 <Input
                   title="New password"
-                  name="newPassword"
+                  name="password"
                   type="text"
                   className="form__input"
                   placeholder="New password"
+                  onChange={handlePasswordChange}
                   required
                 />
                 <label htmlFor="newPassword">New password</label>
@@ -245,10 +282,11 @@ const Account = () => {
               <div className="form__group edit__password">
                 <Input
                   title="Repeat new password"
-                  name="repeatNewPassword"
+                  name="passwordConfirm"
                   type="text"
                   className="form__input"
                   placeholder="Repeat new password"
+                  onChange={handlePasswordChange}
                   required
                 />
                 <label htmlFor="repeatNewPassword">Repeat new password</label>
@@ -264,7 +302,16 @@ const Account = () => {
                 >
                   Discard changes
                 </button>
-                <button className="btn btn__save">Save changes</button>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleSubmitPassword()
+                  }}
+                  className="btn btn__save"
+                >
+                  Confirm password
+                </button>
               </div>
             </form>
           </div>
@@ -302,7 +349,11 @@ const Account = () => {
             </div>
           </div>
           <Accordeon>
-            <AccordeonItem value="Item 1" trigger="My Personal Information">
+            <AccordeonItem
+              type="myaccount_accordeon"
+              value="Item 1"
+              trigger="My Personal Information"
+            >
               <form className="form">
                 {formFields.map(field => (
                   <div className="form__group" key={field.name}>
@@ -348,7 +399,13 @@ const Account = () => {
                   />
                 </div>
                 <div className="form__group">
-                  <button onClick={toggleDialog} className="btn__password">
+                  <button
+                    onClick={e => {
+                      e.preventDefault()
+                      toggleDialog()
+                    }}
+                    className="btn__password"
+                  >
                     Edit password
                   </button>
                 </div>
@@ -359,11 +416,15 @@ const Account = () => {
                   </span>
                 </div>
                 <button className="btn btn__save" onClick={handleSubmit}>
-                  Save changes
+                  Confirm changes
                 </button>
               </form>
             </AccordeonItem>
-            <AccordeonItem value="Item 2" trigger="Billing Information">
+            <AccordeonItem
+              type="myaccount_accordeon"
+              value="Item 2"
+              trigger="Billing Information"
+            >
               <strong>This is the form</strong>
             </AccordeonItem>
           </Accordeon>
