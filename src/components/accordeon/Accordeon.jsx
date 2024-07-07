@@ -24,14 +24,14 @@ export const Accordeon = ({ children, value, onChange, ...props }) => {
   )
 }
 
-export const AccordeonItem = ({ children, value, trigger, ...props }) => {
+export const AccordeonItem = ({ children, value, trigger, type, ...props }) => {
   const { selected, setSelected } = useContext(AccordeonContext)
   const open = selected === value
 
   const ref = useRef(null)
 
   return (
-    <li className="accordeon_tab" {...props}>
+    <li className={`accordeon_tab ${type}`} {...props}>
       <header
         className="accordeon_header"
         role="button"
