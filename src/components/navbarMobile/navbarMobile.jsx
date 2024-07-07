@@ -162,7 +162,7 @@ const NavbarMobile = ({
           <nav className="mobilenav">
             <ul>
               {user ? (
-                <Link to="/me">
+                <Link to="/customers/my-account">
                   <li>
                     <span>{user.data?.user?.name}</span>
                     <span>
