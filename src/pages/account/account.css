@@ -93,7 +93,7 @@ hr{
   border-radius: 8px;
 }
 
-.accordeon_tab{
+.accordeon_tab.myaccount_accordeon{
   box-shadow: var(--perfect-shadow);
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -184,9 +184,8 @@ hr{
 }
 
 .btn__save{
-  min-height: 50px;
-  min-width: 200px;
   font-family: inherit;
+  padding: 1rem 2rem;
   font-size: 16px;
   border-radius: 8px;
   border: none;
