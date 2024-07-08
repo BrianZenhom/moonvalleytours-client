@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import AccountSidebar from '../../components/accountSidebar/accountSidebar'
+import { Toaster, toast } from 'sonner'
 import Navbar from '../../components/navbar/Navbar'
 import Upload from '../../assets/icons/Upload'
 import User from '../../assets/icons/User'
@@ -11,6 +12,8 @@ import Input from '../../components/input/Input'
 import { Select } from '../../components/select/Select'
 import axios from 'axios'
 import CloseModal from '../../assets/icons/CloseModal'
+import Error from '../../assets/icons/Error'
+import Success from '../../assets/icons/Success'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
@@ -77,7 +80,7 @@ const yearOptions = Array.from({ length: 100 }, (_, i) => ({
 yearOptions.sort((a, b) => b.value - a.value)
 
 const Account = () => {
-  const { user, token, dispatch } = useContext(AuthContext)
+  const { user, dispatch } = useContext(AuthContext)
   const navigate = useNavigate()
   const [value, setValue] = useState(options[0])
   const [monthValue, setMonthValue] = useState(monthOptions[0])
@@ -126,8 +129,6 @@ const Account = () => {
     setPasswordData({ ...passwordData, [name]: value })
   }
 
-  console.log(passwordData)
-
   // Handle prefix addition for Instagram field
   const handleInstagramChange = event => {
     const { name, value } = event.target
@@ -155,10 +156,21 @@ const Account = () => {
         type: 'UPDATE_USER',
         payload: { user: res.data.user, token: res.data.token },
       })
+      toast.promise(promise, {
+        loading: 'Updating profile...',
+        success: 'Profile updated successfully',
+        error: 'Something went wrong, please try again',
+      })
     } catch (err) {
-      console.log('error', err.response)
+      toggleCloseDialog()
+      toast.error(err.response.data.message)
     }
   }
+
+  const promise = () =>
+    new Promise(resolve =>
+      setTimeout(() => resolve({ name: user?.name }), 3000)
+    )
 
   const handleSubmitPassword = async () => {
     try {
@@ -175,12 +187,14 @@ const Account = () => {
         payload: { user: res.data.user, token: res.data.token },
       })
       toggleCloseDialog()
-      alert(
-        'Password changed successfully, please login again using your new password'
-      )
-      dispatch({ type: 'LOGOUT' })
+      toast.promise(promise, {
+        loading: 'Changing password...',
+        success: 'Password changed successfully',
+        error: 'Something went wrong, please try again',
+      })
     } catch (err) {
-      console.log('error', err.response)
+      toggleCloseDialog()
+      toast.error(err.response.data.message)
     }
   }
 
@@ -429,6 +443,20 @@ const Account = () => {
             </AccordeonItem>
           </Accordeon>
         </article>
+        <Toaster
+          toastOptions={{
+            classNames: {
+              error: 'error-bg',
+              success: 'success-bg',
+              warning: 'warning-bg',
+              info: 'info-bg',
+            },
+          }}
+          icons={{
+            error: <Error />,
+            success: <Success />,
+          }}
+        />
       </section>
     </div>
   )
