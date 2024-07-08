@@ -375,4 +375,5 @@ export default function Navbar({ toggleDialog, type }) {
 
 Navbar.propTypes = {
   toggleDialog: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
 }
