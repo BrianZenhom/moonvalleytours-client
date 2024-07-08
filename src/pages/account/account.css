@@ -252,4 +252,14 @@ hr{
   padding: 1rem 2rem;
   cursor: pointer;
 }
-
+.toaster{
+  border-radius: 8px;
+}
+.error-bg{
+  background-color: crimson;
+  color: white;
+}
+.success-bg{
+  background-color: var(--main-color);
+  color: white;
+}
