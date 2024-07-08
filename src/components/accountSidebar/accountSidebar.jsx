@@ -11,7 +11,7 @@ const AccountSidebar = () => {
       <ul>
         <li className="account__sidebar--user">
           <span>Hi</span>
-          <strong>{user?.data?.user?.name}</strong>
+          <strong>{user?.name}</strong>
           <a href="/customers/my-account">
             <Finger />
             <small>My account</small>
