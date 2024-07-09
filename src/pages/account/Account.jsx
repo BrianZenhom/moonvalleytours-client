@@ -85,6 +85,20 @@ const Account = () => {
   const [value, setValue] = useState(options[0])
   const [monthValue, setMonthValue] = useState(monthOptions[0])
   const [yearValue, setYearValue] = useState(yearOptions[0])
+  const [formData, setFormData] = useState({
+    name: user?.name || '',
+    surname: user?.surname || '',
+    phone: user?.phone || '',
+    instagram: user?.instagram || '',
+    country: user?.country || '',
+    city: user?.city || '',
+    email: user?.email || '',
+  })
+  const [passwordData, setPasswordData] = useState({
+    passwordCurrent: '',
+    password: '',
+    passwordConfirm: '',
+  })
   const dialogRef = useRef(null)
 
   const toggleDialog = () => {
@@ -96,22 +110,6 @@ const Account = () => {
       ? dialogRef.current.close()
       : dialogRef.current.showModal()
   }
-
-  const [formData, setFormData] = useState({
-    name: user?.name || '',
-    surname: user?.surname || '',
-    phone: user?.phone || '',
-    instagram: user?.instagram || '',
-    country: user?.country || '',
-    city: user?.city || '',
-    email: user?.email || '',
-  })
-
-  const [passwordData, setPasswordData] = useState({
-    passwordCurrent: '',
-    password: '',
-    passwordConfirm: '',
-  })
 
   useEffect(() => {
     if (!user) {
@@ -163,13 +161,14 @@ const Account = () => {
       })
     } catch (err) {
       toggleCloseDialog()
+
       toast.error(err.response.data.message)
     }
   }
 
   const promise = () =>
     new Promise(resolve =>
-      setTimeout(() => resolve({ name: user?.name }), 3000)
+      setTimeout(() => resolve({ name: user?.name }), 1000)
     )
 
   const handleSubmitPassword = async () => {
@@ -186,6 +185,13 @@ const Account = () => {
         type: 'UPDATE_USER',
         payload: { user: res.data.user, token: res.data.token },
       })
+
+      setPasswordData({
+        passwordCurrent: '',
+        password: '',
+        passwordConfirm: '',
+      })
+
       toggleCloseDialog()
       toast.promise(promise, {
         loading: 'Changing password...',
@@ -193,6 +199,11 @@ const Account = () => {
         error: 'Something went wrong, please try again',
       })
     } catch (err) {
+      setPasswordData({
+        passwordCurrent: '',
+        password: '',
+        passwordConfirm: '',
+      })
       toggleCloseDialog()
       toast.error(err.response.data.message)
     }
@@ -276,6 +287,7 @@ const Account = () => {
                   type="text"
                   className="form__input"
                   placeholder="Current password"
+                  value={passwordData.passwordCurrent}
                   onChange={handlePasswordChange}
                   required
                 />
@@ -287,6 +299,7 @@ const Account = () => {
                   name="password"
                   type="text"
                   className="form__input"
+                  value={passwordData.password}
                   placeholder="New password"
                   onChange={handlePasswordChange}
                   required
@@ -299,6 +312,7 @@ const Account = () => {
                   name="passwordConfirm"
                   type="text"
                   className="form__input"
+                  value={passwordData.passwordConfirm}
                   placeholder="Repeat new password"
                   onChange={handlePasswordChange}
                   required
