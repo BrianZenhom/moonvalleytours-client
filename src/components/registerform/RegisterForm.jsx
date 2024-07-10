@@ -3,9 +3,12 @@ import './registerForm.css'
 import axios from 'axios'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import HidePw from '../../assets/icons/HidePw'
 import SeePw from '../../assets/icons/SeePw'
+import { toast, Toaster } from 'sonner'
+import Error from '../../assets/icons/Error'
+import Success from '../../assets/icons/Success'
 
 const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
   const [body, setBody] = useState({})
@@ -24,11 +27,15 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
 
   const { dispatch } = useContext(AuthContext)
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const handleChange = e => {
     setBody({ ...body, [e.target.name]: e.target.value })
   }
+
+  const promise = () =>
+    new Promise(resolve => setTimeout(() => resolve(), 1000))
+
   const handleRegistration = async e => {
     e.preventDefault()
     try {
@@ -40,7 +47,11 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
       toggleCloseDialog()
       setMenu(false)
       setLoginOpen(false)
-      navigate('/')
+      toast.promise(promise, {
+        loading: 'Creating your account...',
+        success: 'Account created successfully',
+        error: 'Something went wrong, please try again',
+      })
     } catch (err) {
       dispatch({ type: 'LOGIN_FAILURE', payload: err.response.data })
     }
@@ -133,6 +144,20 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
 
         <button>Confirm registration</button>
       </form>
+      <Toaster
+        toastOptions={{
+          classNames: {
+            error: 'error-bg',
+            success: 'success-bg',
+            warning: 'warning-bg',
+            info: 'info-bg',
+          },
+        }}
+        icons={{
+          error: <Error />,
+          success: <Success />,
+        }}
+      />
     </div>
   )
 }
