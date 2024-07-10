@@ -355,7 +355,7 @@ const Account = () => {
                 {user?.photo ? (
                   <img src={user?.photo} alt={`photo of ${user?.name}`} />
                 ) : (
-                  <User type="iconsvgphoto" />
+                  <img src="/default.jpg" alt="Photo of user" />
                 )}
                 <div className="mini_icon">
                   <Upload />
