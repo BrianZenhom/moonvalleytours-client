@@ -92,7 +92,9 @@ const Account = () => {
     country: user?.country || '',
     city: user?.city || '',
     email: user?.email || '',
+    photo: user?.photo || '',
   })
+
   const [passwordData, setPasswordData] = useState({
     passwordCurrent: '',
     password: '',
@@ -113,12 +115,52 @@ const Account = () => {
   useEffect(() => {
     if (!user) {
       navigate('/')
+    } else {
+      setFormData({
+        name: user?.name || '',
+        surname: user?.surname || '',
+        phone: user?.phone || '',
+        instagram: user?.instagram || '',
+        country: user?.country || '',
+        city: user?.city || '',
+        email: user?.email || '',
+        photo: user?.photo || '',
+      })
     }
   }, [user, navigate])
 
   const handleChange = event => {
     const { name, value } = event.target
     setFormData({ ...formData, [name]: value })
+  }
+
+  const handleFileChange = async event => {
+    const file = event.target.files[0]
+    const formData = new FormData()
+    formData.append('photo', file)
+
+    try {
+      const res = await axios.patch(
+        'http://localhost:1234/api/v1/users/updateMe',
+        formData,
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      )
+
+      // Update the user and token in the context
+      dispatch({
+        type: 'UPDATE_USER',
+        payload: { user: res.data.user, token: res.data.token },
+      })
+
+      toast.success('Profile photo updated successfully')
+    } catch (err) {
+      toast.error(err.response.data.message)
+    }
   }
 
   const handlePasswordChange = event => {
@@ -146,6 +188,9 @@ const Account = () => {
         formData,
         {
           withCredentials: true,
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
         }
       )
       // Update the user and token in the context
@@ -352,7 +397,10 @@ const Account = () => {
             <div className="account__image--wrapper">
               <div className="account_image">
                 {user?.photo ? (
-                  <img src={user?.photo} alt={`photo of ${user?.name}`} />
+                  <img
+                    src={`http://localhost:1234/public/img/users/${user?.photo}`}
+                    alt={`photo of ${user?.name}`}
+                  />
                 ) : (
                   <img src="/default.jpg" alt="Photo of user" />
                 )}
@@ -360,11 +408,21 @@ const Account = () => {
                   <Upload />
                 </div>
               </div>
-              {user?.photo ? (
-                <small>change photo</small>
-              ) : (
-                <small>upload photo</small>
-              )}
+              <input
+                className="form__upload"
+                type="file"
+                accept="image/*"
+                name="photo"
+                id="photo"
+                onChange={handleFileChange}
+              />
+              <label htmlFor="photo">
+                {user?.photo ? (
+                  <small>change photo</small>
+                ) : (
+                  <small>upload photo</small>
+                )}
+              </label>
             </div>
             <div className="account__user--details">
               <div className="name">
