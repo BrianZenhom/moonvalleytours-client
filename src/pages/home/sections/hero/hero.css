@@ -6,7 +6,6 @@
 
 .hero {
   min-height: 600px;
-  height: 50vh;
 }
 .hero_content {
   background: linear-gradient(rgba(0, 0, 0, 0.048) 48%, #00000069),
@@ -19,16 +18,17 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
   color: white;
+  height: 100%;
 }
 .hero_header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   gap: 3rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 .hero_header p {
   font-size: clamp(13px, 4vw, 18px);
