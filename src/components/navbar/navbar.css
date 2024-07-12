@@ -1,5 +1,5 @@
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   background: var(--dark-color);
   backdrop-filter: blur(10px);
@@ -211,10 +211,10 @@
   flex-direction: column;
   justify-content: center;
 }
-.userbuttons a{
+.userbuttons a {
   padding: 10px 0;
 }
-.userbuttons a:hover span{
+.userbuttons a:hover span {
   font-weight: 700;
 }
 
@@ -562,7 +562,7 @@ input:checked + .checkbutton::before {
   justify-content: space-between;
   margin-top: 5px;
 }
-.wider{
+.wider {
   max-width: 1430px;
 }
 
