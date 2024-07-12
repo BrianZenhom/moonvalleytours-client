@@ -81,6 +81,7 @@
 .city_content-cards {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .city_content {
   padding-top: 1rem;
@@ -275,8 +276,7 @@
   line-height: 35px;
   color: #fff;
   border-radius: 3px;
-  box-shadow: var(--perfect-shadow),
-    inset 0px 1px 2px var(--main-color);
+  box-shadow: var(--perfect-shadow), inset 0px 1px 2px var(--main-color);
 }
 
 .free {
