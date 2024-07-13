@@ -164,7 +164,7 @@ const NavbarMobile = ({
               {user ? (
                 <Link to="/customers/my-account">
                   <li>
-                    <span>{user.data?.user?.name}</span>
+                    <span>{user?.name}</span>
                     <span>
                       <User />
                     </span>
