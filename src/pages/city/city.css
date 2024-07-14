@@ -67,7 +67,7 @@
 .tags small {
   z-index: 9999;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 5px 22px;
   color: black;
 }
@@ -94,7 +94,7 @@
   min-width: 220px;
   height: max-content;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -104,7 +104,7 @@
   background-color: white;
   padding: 1rem;
   box-shadow: var(--perfect-shadow);
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
   margin-bottom: 1rem;
 }
@@ -116,7 +116,7 @@
   width: 30%;
   height: 150px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .city_card-content {
   display: flex;
@@ -155,7 +155,7 @@
 .city_card-tag small {
   padding: 0.2rem 0.5rem;
   background-color: var(--warning-color);
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -182,7 +182,7 @@
   color: var(--dark-color);
   background-color: white;
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .category_list-item {
   display: flex;
@@ -362,7 +362,7 @@
     width: 100vw;
     padding: 1rem;
     box-shadow: var(--perfect-shadow);
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 30px;
