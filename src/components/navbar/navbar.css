@@ -81,8 +81,8 @@
   gap: 2rem;
   background-color: white;
   color: var(--dark-color);
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   padding: 3rem;
   right: 0;
   box-shadow: var(--perfect-shadow);
@@ -119,8 +119,8 @@
   gap: 2rem;
   background-color: white;
   color: var(--dark-color);
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   padding: 3rem;
   right: 0;
   box-shadow: var(--perfect-shadow);
@@ -184,8 +184,8 @@
   visibility: hidden;
   min-width: 300px;
   color: var(--dark-color);
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   box-shadow: var(--perfect-shadow);
   transition-property: opacity;
   transition: 0.2s ease-out;
@@ -232,8 +232,8 @@
   visibility: hidden;
   min-width: 800px;
   color: var(--dark-color);
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   box-shadow: var(--perfect-shadow);
   transition-property: opacity;
   transition: 0.2s ease-out;
@@ -260,7 +260,7 @@
   margin-top: 3rem;
 }
 .login-form input {
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   border: 1px solid rgb(168, 168, 168);
   font-size: 16px;
@@ -294,7 +294,7 @@
   font-weight: 700;
   font-size: 18px;
   border: 1px solid rgb(212, 212, 212);
-  border-radius: 5px;
+  border-radius: 8px;
   background: none;
   background-color: var(--dark-color);
   color: white;
@@ -317,7 +317,7 @@
   font-size: 18px;
   width: 100%;
   border: 1px solid rgb(212, 212, 212);
-  border-radius: 5px;
+  border-radius: 8px;
   background: none;
   background-color: var(--dark-color);
   color: white;
@@ -366,8 +366,8 @@
   gap: 2rem;
   background-color: white;
   color: var(--dark-color);
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   padding: 3rem;
   right: 0;
   box-shadow: var(--perfect-shadow);
@@ -385,8 +385,8 @@
   width: 50%;
   padding: 2rem;
   background-color: #fff;
-  border-end-end-radius: 5px;
-  border-end-start-radius: 5px;
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
   border-right: 1px dashed var(--main-color);
 }
 .booking-tab h4 {
@@ -402,7 +402,7 @@
   margin-top: 3rem;
 }
 .booking-form input {
-  border-radius: 5px;
+  border-radius: 8px;
   border: none;
   border: 1px solid rgb(168, 168, 168);
   font-size: 16px;
@@ -429,7 +429,7 @@
   font-weight: 700;
   font-size: 18px;
   border: 1px solid rgb(212, 212, 212);
-  border-radius: 5px;
+  border-radius: 8px;
   background: none;
   background-color: var(--dark-color);
   color: white;
@@ -450,7 +450,7 @@
   cursor: pointer;
 }
 .loggedInUser:hover {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .errormessage {
   width: 100%;
@@ -481,7 +481,7 @@
 .password_input {
   width: 100%;
   border: 1px solid rgb(168, 168, 168);
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   width: 100%;
   display: flex;
@@ -522,7 +522,7 @@
   background-color: gray;
   width: 25px;
   height: 15px;
-  border-radius: 200px;
+  border-radius: 800px;
   cursor: pointer;
   position: relative;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -533,7 +533,7 @@
   background-color: #fff;
   width: 11px;
   height: 11px;
-  border-radius: 200px;
+  border-radius: 800px;
   margin: 2.3px;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
