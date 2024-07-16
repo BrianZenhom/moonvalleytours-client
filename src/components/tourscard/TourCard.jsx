@@ -12,14 +12,17 @@ export default function TourCard({ tour }) {
         state={{ id: tour._id, country: country, city: tour.city }}
       >
         <div className="toptours_card">
-          <img src={tour.tourThumbnail} alt={tour.title} />
+          <img
+            src={`http://localhost:1234/public/img/tours/${tour.tourThumbnail}`}
+            alt={tour.title}
+          />
           <footer className="toptours_card_details">
             <div className="toptours_details-previous bg">
               <div className="toptours_details">
                 <h4>{tour.title}</h4>
                 <span>
-                  <strong>{tour.reviewsRating} 4.74/5</strong>
-                  {tour.reviewsQuantity}1,426 reviews
+                  <strong>{tour.ratingsAverage}/5</strong>
+                  {tour.ratingsQuantity} reviews
                 </span>
               </div>
               <div className="toptours_tourprice">
