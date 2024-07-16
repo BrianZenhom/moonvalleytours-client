@@ -14,21 +14,27 @@ export default function DestCard({ dest }) {
             <div className="top">
               <div className="top_left">
                 <span>travellers</span>
-                <strong>134.403</strong>
+                <strong>
+                  {dest?.travellers === 0 ? '-' : dest?.travellers}
+                </strong>
               </div>
               <div className="top_right">
                 <span>tours</span>
-                <strong>129</strong>
+                <strong>
+                  {dest?.tours.length === 0 ? '-' : dest?.tours.length}
+                </strong>
               </div>
             </div>
             <div className="bottom">
               <div className="bottom_left">
                 <span>opinions</span>
-                <strong>1.341</strong>
+                <strong>
+                  {dest?.ratingsQuantity === 0 ? '-' : dest?.ratingsQuantity}
+                </strong>
               </div>
               <div className="bottom_right">
                 <span>rating</span>
-                <strong>4.39/5</strong>
+                <strong>{dest?.ratingsAverage}/5</strong>
               </div>
             </div>
           </div>
