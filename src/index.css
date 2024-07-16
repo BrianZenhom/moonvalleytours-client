@@ -149,7 +149,7 @@ body {
 }
 .a-heavy {
   display: block;
-  color: black;
+  color: var(--dark-color);
   font-weight: 750;
   padding: 0 1.25rem 0 1.875rem;
   display: block;
@@ -160,10 +160,10 @@ body {
   font-size: 1.2rem;
 }
 .a-light {
-  line-height: 140%;
+  line-height: 20px;
   font-weight: 600;
   color: var(--main-color);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   padding: 0 1.25rem 0 1.875rem;
   display: block;
 }
