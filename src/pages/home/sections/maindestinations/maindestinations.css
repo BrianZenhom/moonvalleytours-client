@@ -44,7 +44,7 @@
   text-shadow: black 1px 1px 3px;
 }
 .maindestination_title h3 {
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Onest', sans-serif;
   font-weight: 800;
   font-size: clamp(1rem, 2vw, 1.9rem);
   position: absolute;
@@ -100,7 +100,7 @@
 .maindestination_details h3 {
   font-size: clamp(1rem, 2vw, 1.9rem);
   font-weight: 800;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Onest', sans-serif;
 }
 .left {
   flex: 1 1 60%;
