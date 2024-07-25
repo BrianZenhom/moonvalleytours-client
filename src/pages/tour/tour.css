@@ -17,7 +17,7 @@
   align-items: center;
 }
 .tour-share button {
-  font-family: montserrat;
+  font-family: Onest;
   font-size: 1rem;
   background: none;
   border: none;
@@ -88,7 +88,7 @@
   border: none;
   background-color: var(--dark-color);
   color: white;
-  font-family: montserrat;
+  font-family: Onest;
   font-size: 1.2rem;
   cursor: pointer;
 }
