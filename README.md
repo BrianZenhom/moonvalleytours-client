@@ -57,24 +57,24 @@ moonvalleytours-client is a project that utilizes react, stripe and mongoDB. Bui
 │   ├── App.jsx
 │   ├── assets
 │   │   ├── fonts
-│   │   │   ├── Montserrat-Black.woff2
-│   │   │   ├── Montserrat-Black.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-Bold.woff2
-│   │   │   ├── Montserrat-Bold.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-ExtraBold.woff2
-│   │   │   ├── Montserrat-ExtraBold.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-ExtraLight.woff2
-│   │   │   ├── Montserrat-ExtraLight.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-Italic.woff2
-│   │   │   ├── Montserrat-Italic.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-Light.woff2
-│   │   │   ├── Montserrat-Light.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-Medium.woff2
-│   │   │   ├── Montserrat-Medium.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-Regular.woff2
-│   │   │   ├── Montserrat-Regular.woff2:Zone.Identifier
-│   │   │   ├── Montserrat-SemiBold.woff2
-│   │   │   └── Montserrat-SemiBold.woff2:Zone.Identifier
+│   │   │   ├── Onest-Black.woff2
+│   │   │   ├── Onest-Black.woff2:Zone.Identifier
+│   │   │   ├── Onest-Bold.woff2
+│   │   │   ├── Onest-Bold.woff2:Zone.Identifier
+│   │   │   ├── Onest-ExtraBold.woff2
+│   │   │   ├── Onest-ExtraBold.woff2:Zone.Identifier
+│   │   │   ├── Onest-ExtraLight.woff2
+│   │   │   ├── Onest-ExtraLight.woff2:Zone.Identifier
+│   │   │   ├── Onest-Italic.woff2
+│   │   │   ├── Onest-Italic.woff2:Zone.Identifier
+│   │   │   ├── Onest-Light.woff2
+│   │   │   ├── Onest-Light.woff2:Zone.Identifier
+│   │   │   ├── Onest-Medium.woff2
+│   │   │   ├── Onest-Medium.woff2:Zone.Identifier
+│   │   │   ├── Onest-Regular.woff2
+│   │   │   ├── Onest-Regular.woff2:Zone.Identifier
+│   │   │   ├── Onest-SemiBold.woff2
+│   │   │   └── Onest-SemiBold.woff2:Zone.Identifier
 │   │   ├── icons
 │   │   │   ├── Accommodation.jsx
 │   │   │   ├── Cart.jsx
