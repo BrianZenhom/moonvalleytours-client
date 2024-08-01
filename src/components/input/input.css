@@ -124,7 +124,7 @@
   padding: calc(var(--padding) * 1.25) 1rem;
   outline: 1.5px solid var(--accent-color);
   background-color: var(--background-color);
-  border-radius: 8px: 8px;
+  border-radius: 8px;
   overflow: hidden;
   font-size: 16px;
   font-family: Onest;
