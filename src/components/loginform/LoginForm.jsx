@@ -1,4 +1,4 @@
-import HidePw from '../../assets/icons/HidePw'
+import { HidePw } from '../../assets/icons/AllIcons'
 import SeePw from '../../assets/icons/SeePw'
 import PropTypes from 'prop-types'
 import Switch from '../../assets/icons/Switch'
