@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import img1 from './../../assets/images/image(3).webp'
 import img2 from './../../assets/images/image(4).webp'
 import img3 from './../../assets/images/image(1).webp'
@@ -19,8 +19,7 @@ import Hooks from '../../hooks/useFetch'
 import { format } from 'date-fns'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
-import { AuthContext } from '../../context/AuthContext'
-import { Calendar, DownCaret } from '../../assets/icons/AllIcons'
+import { Calendar, DownCaret, ShareIcon } from '../../assets/icons/AllIcons'
 
 const images = [
   {
@@ -41,8 +40,6 @@ export default function Tour() {
   const state = useLocation()
   const [selected, setSelected] = React.useState()
   const [calendarOpen, setCalendarOpen] = React.useState(true)
-
-  const { user } = useContext(AuthContext)
 
   let footer = <p></p>
   if (selected) {
@@ -102,7 +99,10 @@ export default function Tour() {
                     &euro; {data?.data?.price.toFixed(2)}
                   </span>
                   <div className="share-button">
-                    <button>share</button>
+                    <button>
+                      <ShareIcon />
+                      share
+                    </button>
                   </div>
                 </div>
               </div>
@@ -278,7 +278,7 @@ export default function Tour() {
                       </div>
                     )}
 
-                    {user ? <button className="bookbutton">Book</button> : ''}
+                    <button className="bookbutton">Book</button>
                   </form>
                 </div>
               </div>

@@ -29,7 +29,7 @@
 .tour-tags small {
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.055);
-  border-radius: 8px: 5px;
+  border-radius: 8px;
   font-weight: 500;
 }
 .tour-title {
@@ -82,9 +82,9 @@
 .tour-price button {
   background-color: transparent;
   font-weight: 600;
-  border-radius: 8px: 8px;
+  border-radius: 8px;
   border: none;
-  padding: .5rem 2rem;
+  padding: .5rem 1rem;
   font-family: Onest;
   transition: .2s ease;
   cursor: pointer;
@@ -167,7 +167,7 @@
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  border-radius: 8px: 8px;
+  border-radius:  8px;
   margin-bottom: 2rem;
   transition: .2s ease;
   cursor: pointer;
@@ -302,7 +302,7 @@
 .tour-reviewnumbers {
   background-color: white;
   padding: 1rem 2rem;
-  border-radius: 8px: 5px;
+  border-radius:  5px;
 }
 .tour-reviewnumbers h1 {
   font-weight: 800;
@@ -311,7 +311,7 @@
 }
 .tour-singlereview {
   background-color: white;
-  border-radius: 8px: 5px;
+  border-radius: 5px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -340,7 +340,7 @@
   color: white;
   min-height: 50px;
   min-width: 50px;
-  border-radius: 8px: 50%;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,7 +354,7 @@
 }
 .stickybox {
   background-color: white;
-  border-radius: 8px: 8px;
+  border-radius: 8px;
   max-width: 350px;
   flex-grow: 1;
   position: sticky;
@@ -365,7 +365,7 @@
 .bookbutton{
   width: 100%;
   padding: 1rem;
-  border-radius: 8px: 8px;
+  border-radius: 8px;
   border: none;
   outline: none;
   font-size: 16px;
@@ -412,6 +412,16 @@
   text-wrap: balance;
 }
 
+.share-button button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+.share-button span {
+  display: flex;
+  align-items: center;
+}
 /* form */
 
 .tour-calendar{
