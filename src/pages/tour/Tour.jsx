@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import img1 from './../../assets/images/image(3).webp'
 import img2 from './../../assets/images/image(4).webp'
 import img3 from './../../assets/images/image(1).webp'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import './tour.css'
 import {
   DurationIcon,
-  IncluidedIcon,
+  IncludedIcon,
   LanguageIcon,
-  NotIncluidedIcon,
+  NotIncludedIcon,
   PetIcon,
   ProviderIcon,
   VoucherIcon,
@@ -19,6 +19,8 @@ import Hooks from '../../hooks/useFetch'
 import { format } from 'date-fns'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
+import { AuthContext } from '../../context/AuthContext'
+import { Calendar, DownCaret } from '../../assets/icons/AllIcons'
 
 const images = [
   {
@@ -38,6 +40,9 @@ const images = [
 export default function Tour() {
   const state = useLocation()
   const [selected, setSelected] = React.useState()
+  const [calendarOpen, setCalendarOpen] = React.useState(true)
+
+  const { user } = useContext(AuthContext)
 
   let footer = <p></p>
   if (selected) {
@@ -50,6 +55,10 @@ export default function Tour() {
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
+  function handleCalendarOpen() {
+    setCalendarOpen(!calendarOpen)
+  }
+
   return (
     <>
       {error ? (
@@ -60,7 +69,7 @@ export default function Tour() {
         <section className="tour">
           <article className="tour-container">
             <header className="tour-header container">
-              <div className="tour-tags">
+              {/* <div className="tour-tags">
                 <div className="tour-details">
                   <Link
                     to={`/${data?.data?.city?.country?.country.toLowerCase()}`}
@@ -79,10 +88,7 @@ export default function Tour() {
                     </div>
                   </Link>
                 </div>
-                <div className="tour-share">
-                  <button>share</button>
-                </div>
-              </div>
+              </div> */}
               <div className="tour-info">
                 <div className="tour-title">
                   <strong>{data?.data?.title}</strong>
@@ -92,7 +98,12 @@ export default function Tour() {
                   </span>
                 </div>
                 <div className="tour-price">
-                  <strong>&euro; {data?.data?.price.toFixed(2)}</strong>
+                  <span className="tour-price-text" aria-label="price">
+                    &euro; {data?.data?.price.toFixed(2)}
+                  </span>
+                  <div className="share-button">
+                    <button>share</button>
+                  </div>
                 </div>
               </div>
             </header>
@@ -147,7 +158,7 @@ export default function Tour() {
                 </div>
                 <div className="hrblack"></div>
                 <div className="tour-more-info">
-                  <h2>More Info</h2>
+                  <h2>Details</h2>
 
                   <div className="more-info">
                     <strong>
@@ -168,8 +179,8 @@ export default function Tour() {
                   </div>
                   <div className="more-info">
                     <strong>
-                      <IncluidedIcon />
-                      Incluided
+                      <IncludedIcon />
+                      Included
                     </strong>
                     <ul>
                       {data?.data?.included?.map(li => (
@@ -179,8 +190,8 @@ export default function Tour() {
                   </div>
                   <div className="more-info">
                     <strong>
-                      <NotIncluidedIcon />
-                      Not Incluided
+                      <NotIncludedIcon />
+                      Not Included
                     </strong>
                     <ul>
                       {data?.data?.notIncluded?.map(li => (
@@ -225,7 +236,7 @@ export default function Tour() {
                 </div>
                 <div className="hrblack"></div>
                 <div className="tour-cancellation">
-                  <h2>Cancellation</h2>
+                  <h2>Cancellations</h2>
                   {data?.cancellation ? (
                     <span>
                       Free cancellation <b> 72 hours </b> before the tour
@@ -238,22 +249,41 @@ export default function Tour() {
                   )}
                 </div>
               </div>
-              <div className="contentBox">
+              <div className="content-box">
                 <div className="stickybox">
-                  <form action="">
-                    <p>{footer}</p>
-                    <DayPicker
-                      id="daypicker"
-                      mode="single"
-                      selected={selected}
-                      onSelect={setSelected}
-                      disabled={disabledDays}
-                    />
+                  <form className="tour-calendar">
+                    {calendarOpen ? (
+                      <DayPicker
+                        id="daypicker"
+                        mode="single"
+                        selected={selected}
+                        onSelect={setSelected}
+                        disabled={disabledDays}
+                        onDayClick={() => handleCalendarOpen()}
+                      />
+                    ) : (
+                      <div
+                        onClick={handleCalendarOpen}
+                        className="tour-calendar-selector"
+                      >
+                        <span className="tour-calendar-selector-span1">
+                          <Calendar />
+                        </span>
+                        <span>
+                          <p>{footer}</p>
+                        </span>
+                        <span className="tour-calendar-selector-downcaret">
+                          <DownCaret />
+                        </span>
+                      </div>
+                    )}
+
+                    {user ? <button className="bookbutton">Book</button> : ''}
                   </form>
                 </div>
               </div>
             </div>
-            <div className="tourscustomer-reviews">
+            <div className="tours-customer-reviews">
               <div className="hrblacklast container"></div>
               <div className="tour-review container">
                 <div className="tour-customerreview">
