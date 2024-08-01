@@ -16,19 +16,8 @@
   gap: 1rem;
   align-items: center;
 }
-.tour-share button {
-  font-family: Onest;
-  font-size: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.2rem 1rem;
-  border-radius: 5px;
-}
-.tour-share button:hover {
-  color: var(--main-color);
-  background-color: white;
-}
+
+
 .tour-tags {
   display: flex;
   align-items: center;
@@ -40,13 +29,12 @@
 .tour-tags small {
   padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.055);
-  border-radius: 5px;
+  border-radius: 8px: 5px;
   font-weight: 500;
 }
 .tour-title {
   display: flex;
   flex-direction: column;
-  padding-top: 0.5rem;
 }
 .tour-title b {
   color: black;
@@ -65,7 +53,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
 }
+
+.tour-image_slider{
+  user-select: none;
+}
+
 .tour-price {
   display: flex;
   flex-direction: column;
@@ -73,8 +68,10 @@
   align-items: end;
 }
 
-.tour-price strong {
+.tour-price-text {
   font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--main-color);
+  font-weight: 700;
 }
 .tour-desc-price-details-cancelation h2 {
   font-size: 2rem;
@@ -83,17 +80,20 @@
 }
 
 .tour-price button {
-  padding: 10px 32px;
-  border-radius: 5px;
+  background-color: transparent;
+  font-weight: 600;
+  border-radius: 8px: 8px;
   border: none;
-  background-color: var(--dark-color);
-  color: white;
+  padding: .5rem 2rem;
   font-family: Onest;
-  font-size: 1.2rem;
+  transition: .2s ease;
   cursor: pointer;
+  font-size: 16px;
 }
 .tour-price button:hover {
   background-color: var(--main-color);
+  outline: 1px solid var(--dark-color);
+  color: white;
 }
 .slider_wrapper {
   max-width: 1080px;
@@ -159,7 +159,37 @@
   justify-content: space-between;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  gap: 1.5rem;
 }
+
+.tour-calendar-selector{
+  background-color: rgb(233, 227, 227);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 8px: 8px;
+  margin-bottom: 2rem;
+  transition: .2s ease;
+  cursor: pointer;
+}
+.tour-calendar-selector-span1{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.tour-calendar-selector-downcaret{
+  display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.tour-calendar-selector:hover{
+  background-color: var(--main-color);
+  color: white;
+}
+.tour-calendar-selector p{
+  margin-bottom: 0;
+}
+
 .tour-desc-price-details-cancelation {
   width: 65%;
   height: 100%;
@@ -203,15 +233,12 @@
   width: 100px;
 }
 .exact-price span {
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
 }
 .exact-price small {
+  font-size: 12px;
   height: 30px;
 }
 .tour-more-info {
@@ -228,7 +255,6 @@
   gap: 1rem;
   background-image: url(/dashmine.png);
   background-repeat: repeat-x;
-  background-position: top;
 }
 .more-info span {
   white-space: nowrap;
@@ -276,7 +302,7 @@
 .tour-reviewnumbers {
   background-color: white;
   padding: 1rem 2rem;
-  border-radius: 5px;
+  border-radius: 8px: 5px;
 }
 .tour-reviewnumbers h1 {
   font-weight: 800;
@@ -285,7 +311,7 @@
 }
 .tour-singlereview {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 8px: 5px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -314,25 +340,45 @@
   color: white;
   min-height: 50px;
   min-width: 50px;
-  border-radius: 50%;
+  border-radius: 8px: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Date picker */
-.contentBox {
+.content-box {
   position: relative;
   z-index: 0;
+  flex-grow: 1;
 }
 .stickybox {
   background-color: white;
-  border-radius: 5px;
-  min-width: 350px;
-  min-height: 200px;
+  border-radius: 8px: 8px;
+  max-width: 350px;
+  flex-grow: 1;
   position: sticky;
   top: 100px;
   padding: 1rem;
+  box-shadow: var(--perfect-shadow);
+}
+.bookbutton{
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: var(--dark-color);
+  color: white;
+  font-weight: 700;
+  transition: .2s ease;
+  cursor: pointer;
+}
+.bookbutton:hover{  
+  background-color: var(--main-color);
+  outline: 1px solid var(--dark-color);
 }
 
 .more-info strong {
@@ -366,13 +412,25 @@
   text-wrap: balance;
 }
 
+/* form */
+
+.tour-calendar{
+  padding: 1rem;
+}
+
+.rdp{
+  margin: 0 !important;
+  padding-bottom: 2rem;
+}
+
 #daypicker .rdp-day_selected,
 .rdp-day_selected:focus-visible,
 .rdp-day_selected:hover {
   background-color: var(--dark-color);
+  font-weight: 600;
 }
 #daypicker button:hover {
-  color: var(--dark-color);
+  color: var(--main-color);
 }
 #daypicker .rdp-button[disabled] {
   cursor: not-allowed;
