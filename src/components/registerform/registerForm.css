@@ -35,7 +35,7 @@
   flex-grow: 1;
   width: 100%;
   padding: 0.5rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 8px: 8px;
   border: 1px solid rgb(168, 168, 168);
   font-size: 16px;
   font-family: Onest;
@@ -49,7 +49,7 @@
   font-size: 18px;
   font-family: Onest;
   color: white;
-  border-radius: 8px;
+  border-radius: 8px: 8px;
   margin-top: 1rem;
   margin-bottom: 4rem;
   cursor: pointer;
@@ -63,7 +63,7 @@
 .password_input-reg {
   padding: 10px;
   border: 1px solid rgb(168, 168, 168);
-  border-radius: 8px;
+  border-radius: 8px: 8px;
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@
 .halfw {
   flex-grow: 1;
   padding: 0.5rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 8px: 8px;
   border: 1px solid rgb(168, 168, 168);
   font-size: 16px;
   font-family: Onest;
