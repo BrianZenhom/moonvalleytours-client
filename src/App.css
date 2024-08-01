@@ -48,7 +48,7 @@ dialog::backdrop {
 @media (width <= 766px) {
   .registerForm {
     margin: 0 auto;
-    border-radius: 0;
+    border-radius: 8px: 0;
     position: fixed;
     overflow: hidden;
   }
