@@ -7,7 +7,7 @@
     align-items: center;
     gap: .5em;
     padding: calc(var(--padding) * 1.25) 1rem;
-    border-radius: 8px;
+    border-radius: 8px: 8px;
     outline: none;
     cursor: pointer;
     background-color: var(--background-color);
@@ -61,7 +61,7 @@
     max-height: 15em;
     overflow-y: auto;
     border: 1px solid var(--accent-color);
-    border-radius: 8px;
+    border-radius: 8px: 8px;
     width: 100%;
     left: 0;
     top: calc(100% + .25em);
@@ -71,7 +71,7 @@
     animation: vanish .2s;
 }
 .select__options::-webkit-scrollbar-thumb {
-    border-radius: 8px;
+    border-radius: 8px: 8px;
     background-color: #777777e0;
 }
 .select__options.show{
