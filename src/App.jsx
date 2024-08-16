@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { useRef, useState } from 'react'
 import './App.css'
-import Navbar from './components/navbar/Navbar'
+// import Navbar from './components/navbar/Navbar'
 import NavbarMobile from './components/navbarMobile/navbarMobile'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
@@ -11,6 +11,8 @@ import City from './pages/city/City'
 import ScrollToTop from './hooks/scrollToTop'
 import RegisterDialog from './components/registerdialog/RegisterDialog'
 import Account from './pages/account/Account'
+import LoginPage from './pages/login/LoginPage'
+import { NewNavbar } from './components/newnavbar/NewNavbar'
 
 const Layout = () => {
   const [menu, setMenu] = useState(false)
@@ -60,7 +62,8 @@ const Layout = () => {
         setLoginOpen={setLoginOpen}
         visible={visible}
       />
-      <Navbar toggleDialog={toggleDialog} />
+      {/* <Navbar toggleDialog={toggleDialog} /> */}
+      <NewNavbar toggleDialog={toggleDialog} />
       <Outlet />
       <Footer />
     </>
@@ -93,6 +96,10 @@ const router = createBrowserRouter([
   {
     path: '/customers/my-account',
     element: <Account />,
+  },
+  {
+    path: '/customers/login',
+    element: <LoginPage />,
   },
 ])
 
