@@ -1,0 +1,41 @@
+.newnavbar_content {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 9999999999;
+}
+
+.newnavbar_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1080px;
+}
+
+.logo {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.help {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.navlogo {
+    width: 110px;
+    fill: white;
+    display: flex;
+    align-items: center;
+}
+
+@media (width <=766px) {
+    .newnavbar_content {
+        display: none;
+    }
+}
