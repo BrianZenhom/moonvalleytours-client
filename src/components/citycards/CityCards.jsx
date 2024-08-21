@@ -39,7 +39,7 @@ export default function CityCards({ item }) {
             </small>
           </div>
           <div className="city_card-price">
-            <h3>&euro; {item.price}</h3>
+            &euro;<h3> {item.price}</h3>
           </div>
         </div>
       </div>
