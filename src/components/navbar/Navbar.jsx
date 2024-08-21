@@ -228,7 +228,7 @@ export default function Navbar({ toggleDialog, type }) {
                 href="javascript:;"
               >
                 <span className="loggedInUser">
-                  <User />
+                  <User type="iconsvg" />
                   {user?.name}
                 </span>
               </a>
