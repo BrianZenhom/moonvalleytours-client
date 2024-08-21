@@ -1,7 +1,7 @@
-const Cart = () => {
+const Cart = ({ activeIcon }) => {
   return (
     <svg
-      className="iconsvg"
+      className={`iconsvgnav ${activeIcon ? 'active' : ''}`}
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       viewBox="0 0 24 24"
