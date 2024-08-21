@@ -1,6 +1,7 @@
 .country_header {
   position: relative;
 }
+
 .header-Img {
   object-fit: cover;
   object-position: center;
@@ -9,6 +10,7 @@
   left: 0;
   z-index: -10;
 }
+
 .country_header img {
   height: 100%;
   width: 100%;
@@ -19,38 +21,46 @@
 .country_intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 35vh;
+  justify-content: center;
+  min-height: 30vh;
 }
 
 .country_title {
-  font-size: 80px;
+  font-size: 84px;
   color: white;
   margin-top: 5rem;
   padding-bottom: 2rem;
   text-shadow: rgba(0, 0, 0, 0.541) 2px 2px 10px;
 }
+
+.country_details-wrapper {
+  background-color: var(--main-color);
+}
+
 .country_details {
   display: flex;
   justify-content: space-between;
   color: white;
-  padding-bottom: 1rem;
+  padding: .5rem;
   z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
 }
+
 .country_details h2 {
-  font-weight: 800;
-  font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 18px;
 }
+
 .country_content {
   min-height: 100%;
   padding-bottom: 2rem;
 }
+
 .country_blackoverlay {
-  background-image: linear-gradient(
-    to top,
-    rgb(0 0 0 / 50%) 1%,
-    transparent 40%
-  );
+  background-image: linear-gradient(to top,
+      rgb(0 0 0 / 50%) 1%,
+      transparent 40%);
   content: '';
   position: absolute;
   height: 100%;
@@ -58,19 +68,34 @@
   z-index: 0;
 }
 
-@media (width <= 500px) {
+.destinations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.destinations span {
+  font-size: 18px;
+  opacity: .6;
+}
+
+@media (width <=500px) {
   .country_intro {
     min-height: 30vh;
   }
+
   .country_title h1 {
     font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .country_details {
     display: none;
   }
+
   .country_content {
     padding-bottom: 5rem;
   }
