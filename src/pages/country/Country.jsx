@@ -29,26 +29,28 @@ export default function Country() {
                 : data?.data?.country}
             </strong>
           </div>
-          <div className="country_details">
-            <div className="destinations">
-              <h2>{loading ? '' : data?.data?.cities?.length}</h2>
-              <span>destinations</span>
-            </div>
-
-            <div className="destinations">
-              <h2>{data?.data?.travellers}</h2>
-              <span>travellers have enjoyed tours here</span>
-            </div>
-            <div className="destinations">
-              <h2>
-                {data.ratingsAverage}
-                {data?.data?.ratingsAverage}/5
-              </h2>
-              <span>{data?.data?.ratingsQuantity} reviews</span>
-            </div>
-          </div>
         </header>
       </article>
+      <div className="country_details-wrapper">
+        <div className="country_details">
+          <div className="destinations">
+            <h2>{loading ? '' : data?.data?.cities?.length}</h2>
+            <span>destinations</span>
+          </div>
+
+          <div className="destinations">
+            <h2>{data?.data?.travellers}</h2>
+            <span>travellers</span>
+          </div>
+          <div className="destinations">
+            <h2>
+              {data.ratingsAverage}
+              {data?.data?.ratingsAverage}/5
+            </h2>
+            <span>{data?.data?.ratingsQuantity} reviews</span>
+          </div>
+        </div>
+      </div>
       <div className="country_content container">
         <section className="maindestinations">
           <article className="maindestinations_content container">
