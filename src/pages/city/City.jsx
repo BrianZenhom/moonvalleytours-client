@@ -47,32 +47,34 @@ export default function City() {
               to={'/' + country}
               state={{ country: data?.data?.country?._id }}
             >
-              <small className="country_name">
+              <span className="country_name">
                 {data?.data?.country?.country}
-              </small>
+              </span>
             </Link>
             <strong>{data?.data?.city}</strong>
           </div>
-          <div className="city_details">
-            <div className="reviews">
-              <h2>{data?.data?.tours?.length}</h2>
-              <span>tours</span>
-            </div>
-            <div className="reviews">
-              <h2>{data?.data?.travellers}</h2>
-              <span>travellers have enjoyed tours here</span>
-            </div>
-            <div className="reviews">
-              <h2>{data?.data?.ratingsQuantity}</h2>
-              <span>real reviews</span>
-            </div>
-            <div className="reviews">
-              <h2>{data?.data?.ratingsAverage}</h2>
-              <span>This is how they rate us</span>
-            </div>
-          </div>
         </header>
       </article>
+      <div className="city_stats">
+        <div className="city_details">
+          <div className="reviews">
+            <h2>{data?.data?.tours?.length}</h2>
+            <span>Tours</span>
+          </div>
+          <div className="reviews">
+            <h2>{data?.data?.travellers}</h2>
+            <span>Travellers</span>
+          </div>
+          <div className="reviews">
+            <h2>{data?.data?.ratingsQuantity}</h2>
+            <span>Reviews</span>
+          </div>
+          <div className="reviews">
+            <h2>{data?.data?.ratingsAverage} / 5</h2>
+            <span>Rate</span>
+          </div>
+        </div>
+      </div>
       <article className="city_content container">
         <span className="showCategories">
           <span>
