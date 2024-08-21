@@ -1,0 +1,36 @@
+.currency_selector {
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+    width: 400px;
+}
+
+.currency_selector span {
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.currency_selector span:hover {
+    color: var(--main-color);
+}
+
+.currency_selector span:hover small {
+    color: var(--dark-color) 86;
+}
+
+.currency_selector small {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--dark-color);
+    display: inline-block;
+    width: max-content;
+}
