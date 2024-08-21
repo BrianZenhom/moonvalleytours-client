@@ -7,8 +7,9 @@
 .hero {
   min-height: 600px;
 }
+
 .hero_content {
-  background: linear-gradient(rgba(0, 0, 0, 0.048) 48%, #00000069),
+  background: linear-gradient(rgba(0, 0, 0, 0.276) 48%, #00000069),
     url(https://res.cloudinary.com/drtykwq1x/image/upload/q_100/v1717899583/Header-moonvalley_svkenl.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -21,24 +22,28 @@
   color: white;
   height: 100%;
 }
+
 .hero_header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
+
 .hero_header p {
   font-size: clamp(13px, 4vw, 18px);
 }
+
 .hero_title_header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding-bottom: 2rem;
 }
+
 .hero_content h1 {
   line-height: 1;
   font-size: clamp(2rem, 5vw, 4rem);
@@ -47,6 +52,7 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
 }
+
 .search_hero_wrapper {
   position: relative;
   width: 100%;
@@ -55,6 +61,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .hero_search {
   display: flex;
   justify-content: center;
@@ -73,20 +80,20 @@
   inset: -1px;
   z-index: -1;
   border-radius: 8px;
-  background: conic-gradient(
-    from var(--gradient-angle),
-    var(--main-color),
-    var(--secondary-color),
-    #ffffff,
-    var(--secondary-color),
-    var(--main-color)
-  );
+  background: conic-gradient(from var(--gradient-angle),
+      var(--main-color),
+      var(--secondary-color),
+      #ffffff,
+      var(--secondary-color),
+      var(--main-color));
   animation: rotation 10s linear infinite;
   backdrop-filter: blur(5rem);
 }
+
 .hero_search::after {
   filter: blur(1.5rem);
 }
+
 .hero_search input {
   width: 100%;
   border-radius: 8px;
@@ -98,9 +105,11 @@
   padding: 10px 10px;
   color: var(--dark-color);
 }
+
 .hero_search input::placeholder {
   color: var(--dark-color);
 }
+
 .hero_search input:focus {
   outline: none;
   color: var(--dark-color);
@@ -118,6 +127,7 @@
   transition: 0.2s ease;
   cursor: pointer;
 }
+
 .hero_search button:hover {
   background-color: transparent;
   color: var(--dark-color);
@@ -146,15 +156,18 @@
   z-index: 10;
   transition: 0.1s ease-in-out;
 }
+
 .hero_search_suggestions span:hover {
   color: var(--main-color);
 }
+
 .suggestions_visible {
   transform: translateY(0);
   scale: 1;
   opacity: 1;
   visibility: visible;
 }
+
 .hero_search_suggestions ul {
   display: flex;
   flex-flow: row wrap;
@@ -165,6 +178,7 @@
   padding-bottom: 1.25rem;
   color: var(--dark-color);
 }
+
 .hero_search_suggestions li {
   padding-bottom: 1.1875rem;
   width: 165px;
@@ -177,23 +191,28 @@
   color: var(--dark-color);
   padding: 30px 20px;
 }
+
 .hero_search_suggestion_title h1 {
   font-size: 24px;
 }
+
 .hero_search_list {
   padding-bottom: 0.625rem;
   padding-top: 0.625rem;
 }
+
 .hero_search_city {
   font-weight: 900;
   font-size: 18px;
 }
+
 .showmore_button_suggestion {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
 }
+
 .showmore_button_suggestion button {
   font-family: inherit;
   font-weight: 700;
@@ -207,14 +226,17 @@
   transition: 0.2s ease;
   cursor: pointer;
 }
+
 .showmore_button_suggestion button:hover {
   background-color: transparent;
   border: 1px solid var(--dark-color);
   color: var(--dark-color);
 }
+
 .benefits_content {
   width: 100%;
 }
+
 .benefits {
   width: 100%;
   display: flex;
@@ -224,6 +246,7 @@
   font-size: clamp(13.375px, 2vw, 16px);
   text-align: center;
 }
+
 .benefits span {
   display: flex;
   align-items: center;
@@ -235,14 +258,17 @@
   .hero_search_suggestions {
     width: 100%;
   }
+
   .hero_search_list {
     width: 70%;
   }
+
   .benefits {
     display: flex;
     flex-wrap: wrap;
     padding: 0 2rem;
   }
+
   .benefits span {
     display: flex;
     justify-content: start;
@@ -255,15 +281,17 @@
   0% {
     --gradient-angle: 0deg;
   }
+
   100% {
     --gradient-angle: 360deg;
   }
 }
 
-@media (width <= 500px) {
+@media (width <=500px) {
   .hero_search input {
     padding: 10px 5px;
   }
+
   .hero_search button {
     width: 130px;
     font-weight: 600;

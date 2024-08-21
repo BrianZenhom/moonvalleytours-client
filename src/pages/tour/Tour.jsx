@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import img1 from './../../assets/images/image(3).webp'
 import img2 from './../../assets/images/image(4).webp'
 import img3 from './../../assets/images/image(1).webp'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './tour.css'
 import {
   DurationIcon,
@@ -20,6 +20,7 @@ import { format } from 'date-fns'
 import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
 import { Calendar, DownCaret, ShareIcon } from '../../assets/icons/AllIcons'
+import { AuthContext } from './../../context/AuthContext'
 
 const images = [
   {
@@ -40,6 +41,7 @@ export default function Tour() {
   const state = useLocation()
   const [selected, setSelected] = React.useState()
   const [calendarOpen, setCalendarOpen] = React.useState(true)
+  const { user } = useContext(AuthContext)
 
   let footer = <p></p>
   if (selected) {
@@ -278,7 +280,18 @@ export default function Tour() {
                       </div>
                     )}
 
-                    <button className="bookbutton">Book</button>
+                    <Link
+                      className="bookbutton"
+                      id="book-tour"
+                      state={{ idstate: state.state.id }}
+                      to={
+                        user
+                          ? '/customers/booktour/state.state.idstate.state.id'
+                          : '/customers/login'
+                      }
+                    >
+                      Book
+                    </Link>
                   </form>
                 </div>
               </div>
