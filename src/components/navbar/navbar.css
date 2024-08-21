@@ -1,15 +1,15 @@
 .navbar {
   position: fixed;
   top: 0;
-  background: var(--dark-color);
+  background-color: rgb(255, 255, 255);
   backdrop-filter: blur(10px);
-  align-items: stretch;
-  color: white;
   width: 100%;
   z-index: 100;
   transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   translate: 0 -80px;
+  box-shadow: var(--perfect-shadow);
 }
+
 .navbar.visible {
   translate: 0;
 }
@@ -21,33 +21,48 @@
   width: auto;
   gap: 2rem;
 }
+
 .navbar-content ul {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
 }
-.iconsvg {
-  fill: white;
-}
+
 .iconsvgCurrency {
   fill: gray;
 }
-.navbar-links li:hover a {
+
+.navbar-links li:hover .navbar-link {
   background-color: var(--main-color);
-}
-.navbar-links li.active a {
-  background-color: white;
-  color: var(--dark-color);
-}
-.navbar-links li.active .iconsvgmore {
-  fill: var(--dark-color);
-}
-.navbar-links li.active .iconsvg {
-  fill: var(--dark-color);
-}
-.navbar-link {
   color: white;
+}
+
+
+.navbar-links li.active .navbar-link {
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.navbar-links li.active .iconsvgmore {
+  fill: white;
+}
+
+.navbar-links li.active .iconsvgnav {
+  color: white;
+}
+
+.navbar-links li:hover .iconsvgnav {
+  color: white;
+}
+
+.navbar-links li:hover .iconsvgmore {
+  fill: white;
+}
+
+
+.navbar-link {
+  color: var(--main-color);
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -56,11 +71,14 @@
 }
 
 .iconsvgmore {
-  fill: white;
+  fill: var(--main-color);
 }
+
+
+
 .logonav {
   width: 100px;
-  fill: white;
+  fill: var(--main-color);
   padding: 0.5rem 0;
   transition: all 0.2s ease-in-out;
 }
@@ -75,7 +93,7 @@
   position: absolute;
   opacity: 0;
   visibility: hidden;
-  translate: 0 -10px;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -89,31 +107,37 @@
   transition: all 0.1s ease-in-out;
   min-width: 18.75rem;
 }
+
 .language-visible {
   translate: 0;
   opacity: 1;
   visibility: visible;
 }
+
 .dropdown-content-language span {
   font-weight: 500;
   cursor: pointer;
 }
+
 .dropdown-content-language span:hover {
   color: var(--main-color);
 }
+
 .language-selector a {
   display: flex;
   align-items: center;
   justify-content: start;
 }
+
 /* Currency dropdown */
 .currency-selector {
   position: relative;
 }
+
 .dropdown-content-currency {
   position: absolute;
   opacity: 0;
-  translate: 0 -10px;
+
   visibility: hidden;
   display: flex;
   gap: 2rem;
@@ -127,11 +151,13 @@
   transition-property: opacity;
   transition: 0.2s ease-out;
 }
+
 .visible-currency {
   translate: 0;
   opacity: 1;
   visibility: visible;
 }
+
 .dropdown-content-currency span {
   font-weight: 800;
   cursor: pointer;
@@ -140,9 +166,11 @@
   align-items: center;
   gap: 1rem;
 }
+
 .dropdown-content-currency span:hover small {
   color: var(--dark-color) 86;
 }
+
 .dropdown-content-currency small {
   font-weight: 400;
   font-size: 0.8rem;
@@ -150,6 +178,7 @@
   display: inline-block;
   width: max-content;
 }
+
 .usd,
 .euro,
 .argpeso {
@@ -159,26 +188,31 @@
   align-items: center;
   gap: 1rem;
 }
+
 .usd:hover small {
   opacity: 0.5;
 }
+
 .euro:hover small {
   opacity: 0.5;
   cursor: pointer;
 }
+
 .argpeso:hover small {
   opacity: 0.5;
   cursor: pointer;
 }
+
 /* User Menu dropdown */
 .userMenu {
   position: relative;
 }
+
 .dropdown-userMenu {
   position: absolute;
   display: flex;
   background-color: white;
-  translate: 0 -10px;
+
   right: 0;
   opacity: 0;
   visibility: hidden;
@@ -191,6 +225,7 @@
   transition: 0.2s ease-out;
   padding: 2rem;
 }
+
 .userMenu-content {
   display: flex;
   flex-direction: column;
@@ -198,12 +233,14 @@
   width: 100%;
   justify-content: space-between;
 }
+
 .userMenu-header {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
 }
+
 .userbuttons {
   height: 100%;
   width: 100%;
@@ -211,9 +248,11 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .userbuttons a {
   padding: 10px 0;
 }
+
 .userbuttons a:hover span {
   font-weight: 700;
 }
@@ -222,11 +261,12 @@
 .login {
   position: relative;
 }
+
 .dropdown-login {
   position: absolute;
   display: flex;
   background-color: white;
-  translate: 0 -10px;
+
   right: 0;
   opacity: 0;
   visibility: hidden;
@@ -238,19 +278,23 @@
   transition-property: opacity;
   transition: 0.2s ease-out;
 }
+
 .visible {
   translate: 0;
   opacity: 1;
   visibility: visible;
 }
+
 .login-tab {
   width: 50%;
   padding: 2rem;
 }
+
 .login-tab h4 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -259,6 +303,7 @@
   gap: 1.3rem;
   margin-top: 3rem;
 }
+
 .login-form input {
   border-radius: 8px;
   border: none;
@@ -288,6 +333,7 @@
   justify-content: end;
   width: 100%;
 }
+
 .loginBtn button {
   padding: 7px 42px;
   font-family: inherit;
@@ -301,15 +347,18 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
+
 .loginBtn button:hover {
   background-color: var(--main-color);
   border: 1px solid var(--dark-color);
 }
+
 .logoutBtn {
   display: flex;
   justify-content: start;
   width: 100%;
 }
+
 .logoutBtn button {
   padding: 1rem 2rem;
   font-family: inherit;
@@ -324,18 +373,22 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
+
 .logoutBtn button:hover {
   background-color: var(--main-color);
   border: 1px solid var(--dark-color);
 }
+
 .hr {
   width: 100%;
   height: 1px;
   background-image: linear-gradient(to right, transparent, var(--dark-color));
 }
+
 .login-methods {
   width: 100%;
 }
+
 .login-method-socials {
   display: flex;
   justify-content: space-between;
@@ -343,9 +396,11 @@
   width: 100%;
   cursor: pointer;
 }
+
 .login-method-socials h3:hover {
   color: var(--main-color);
 }
+
 .registerBtn {
   width: 100%;
   display: flex;
@@ -355,12 +410,13 @@
 .cart {
   position: relative;
 }
+
 .dropdown-cart {
   position: absolute;
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  translate: 0 -10px;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -374,6 +430,7 @@
   transition: 0.1s ease-in;
   min-width: 18.75rem;
 }
+
 .visible-cart {
   translate: 0;
   opacity: 1;
@@ -389,10 +446,12 @@
   border-end-start-radius: 8px;
   border-right: 1px dashed var(--main-color);
 }
+
 .booking-tab h4 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
+
 .booking-form {
   display: flex;
   flex-direction: column;
@@ -401,6 +460,7 @@
   gap: 1.3rem;
   margin-top: 3rem;
 }
+
 .booking-form input {
   border-radius: 8px;
   border: none;
@@ -410,19 +470,23 @@
   width: 100%;
   padding: 10px;
 }
+
 .booking-form input:focus {
   outline: none;
   outline: 1px solid var(--main-color);
   border: 1px solid var(--main-color);
 }
+
 .reference {
   width: 100%;
 }
+
 .bookingBtn {
   display: flex;
   justify-content: end;
   width: 100%;
 }
+
 .bookingBtn button {
   padding: 7px 42px;
   font-family: inherit;
@@ -436,6 +500,7 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
+
 .bookingBtn button:hover {
   background-color: var(--main-color);
   border: 1px solid var(--dark-color);
@@ -449,9 +514,11 @@
   font-weight: 600;
   cursor: pointer;
 }
+
 .loggedInUser:hover {
   border-radius: 8px;
 }
+
 .errormessage {
   width: 100%;
   height: 100%;
@@ -459,6 +526,7 @@
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 .error-message-wrapper {
   width: 100%;
   padding: 20px 10px;
@@ -467,9 +535,11 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+
 .spinner {
   width: 57px;
 }
+
 .logginginspinner {
   display: flex;
   justify-content: center;
@@ -493,14 +563,17 @@
 .password_input:focus-within {
   outline: 1px solid var(--main-color);
 }
+
 .password_input input {
   padding: 10px;
   border: none;
 }
+
 .password_input input:focus-within {
   outline: none;
   border: none;
 }
+
 .hideshow {
   display: flex;
   align-items: center;
@@ -513,66 +586,77 @@
   color: var(--main-color);
   cursor: pointer;
 }
+
 .checkboxcontainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .checkbutton {
   background-color: gray;
   width: 25px;
-  height: 15px;
+  height: 14px;
   border-radius: 800px;
   cursor: pointer;
   position: relative;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 .checkbutton::before {
   position: absolute;
   content: '';
   background-color: #fff;
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border-radius: 800px;
-  margin: 2.3px;
+  margin: 2px;
   transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-input:checked + .checkbutton {
+
+input:checked+.checkbutton {
   background-color: var(--main-color);
 }
-input:checked + .checkbutton::before {
-  transform: translateX(10px);
+
+input:checked+.checkbutton::before {
+  transform: translateX(11px);
 }
+
 #check {
   display: none;
 }
+
 .registerWrd {
   margin-left: 5px;
   cursor: pointer;
 }
+
 .registerWrd:hover {
   color: var(--main-color);
 }
+
 .loginForm_alternatives {
   width: 100%;
   max-width: 23.75rem;
 }
+
 .loginForm_socials {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
 }
+
 .wider {
   max-width: 1430px;
 }
 
-@media (width <= 766px) {
+@media (width <=766px) {
   .navbar {
     display: none;
   }
 }
 
-@media (width <= 1024px) {
+@media (width <=1024px) {
   .dropdown-login {
     min-width: 780px;
   }
