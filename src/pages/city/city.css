@@ -11,6 +11,7 @@
   left: 0;
   z-index: -10;
 }
+
 .city_header img {
   height: 100%;
   width: 100%;
@@ -22,8 +23,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 35vh;
+  min-height: 30vh;
 }
+
 .city_title {
   padding-top: 8rem;
   padding-bottom: 2rem;
@@ -33,36 +35,57 @@
 }
 
 .city_title strong {
-  font-size: 80px;
+  font-size: 84px;
   color: white;
   text-shadow: rgba(0, 0, 0, 0.541) 2px 2px 10px;
 }
+
+.city_stats {
+  background-color: var(--main-color);
+}
+
+.city_stats .reviews {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .city_details {
   display: flex;
   justify-content: space-between;
   color: white;
-  padding-bottom: 1rem;
+  padding: .5rem;
   z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
 }
+
 .city_details h2 {
-  font-weight: 800;
-  font-size: 2.5rem;
+  font-weight: 600;
+  font-size: 18px;
 }
+
+.city_details span {
+  font-size: 18px;
+  opacity: .6;
+}
+
 .city_content {
   padding-bottom: 2rem;
 }
+
 .city_blackoverlay {
-  background-image: linear-gradient(
-    to top,
-    rgb(0 0 0 / 50%) 1%,
-    transparent 40%
-  );
+  background-image: linear-gradient(to top,
+      rgb(0 0 0 / 50%) 1%,
+      transparent 40%);
   content: '';
   position: absolute;
   height: 100%;
   width: 100%;
   z-index: -1;
 }
+
 .tags small {
   z-index: 9999;
   background-color: white;
@@ -70,24 +93,29 @@
   padding: 5px 22px;
   color: black;
 }
+
 .tags {
   z-index: 9999;
 }
+
 .city_content-desc {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .city_content-cards {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .city_content {
   padding-top: 1rem;
   display: flex;
   justify-content: start;
   gap: 2rem;
 }
+
 .city_content-sidebar {
   padding: 2rem;
   min-width: 250px;
@@ -107,33 +135,40 @@
   position: relative;
   margin-bottom: 1rem;
 }
+
 .city_card-wrapper {
   display: flex;
   gap: 1rem;
 }
+
 .city_card img {
   width: 30%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
 }
+
 .city_card-content {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .city_card-details {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   padding-top: 0.5rem;
 }
+
 .city_card-title h3 {
   color: var(--dark-color);
 }
+
 .city_card-title strong {
   color: var(--dark-color);
 }
+
 .city_card-desc {
   height: 70px;
   overflow: hidden;
@@ -141,16 +176,19 @@
   color: var(--dark-color);
   text-wrap: pretty;
 }
+
 .city_card-quality-tags {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
 }
+
 .city_card-tag {
   display: flex;
   gap: 1rem;
 }
+
 .city_card-tag small {
   padding: 0.2rem 0.5rem;
   background-color: var(--warning-color);
@@ -159,34 +197,37 @@
   align-items: center;
   gap: 5px;
 }
+
 .city_card-price {
-  background-image: linear-gradient(
-    30deg,
-    var(--dark-color),
-    var(--main-color)
-  );
+  background-color: var(--main-color);
   color: white;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  border-start-start-radius: 200px;
-  border-start-end-radius: 0px;
-  border-end-start-radius: 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  padding: .5rem 1rem;
 }
+
 .country_name {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--dark-color);
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--main-color);
   background-color: white;
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 8px;
+  transition: .2s ease-in-out;
 }
+
+.country_name:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
 .category_list-item {
   display: flex;
   gap: 5px;
 }
+
 .category_list-item label {
   display: flex;
   align-items: center;
@@ -194,6 +235,7 @@
   cursor: pointer;
   user-select: none;
 }
+
 .features_list-item label {
   display: flex;
   align-items: center;
@@ -201,12 +243,15 @@
   cursor: pointer;
   user-select: none;
 }
+
 .category h4 {
   margin-bottom: 0.5rem;
 }
+
 .features h4 {
   margin-bottom: 0.5rem;
 }
+
 .price h4 {
   margin-bottom: 0.5rem;
 }
@@ -216,6 +261,7 @@
   position: relative;
   display: flex;
 }
+
 .range-slider .slider {
   appearance: none;
   width: 100%;
@@ -235,6 +281,7 @@
   z-index: 3;
   position: relative;
 }
+
 .range-slider .slider-thumb {
   position: absolute;
   width: 1.2em;
@@ -248,6 +295,7 @@
   box-shadow: var(--perfect-shadow);
   cursor: pointer;
 }
+
 .range-slider .slider-thumb::before {
   content: '';
   position: absolute;
@@ -260,9 +308,11 @@
   border-radius: 100%;
   transition: 0.3s;
 }
+
 .range-slider:hover .slider-thumb::before {
   background-color: var(--main-color);
 }
+
 .range-slider .tooltip {
   position: absolute;
   width: 2.8em;
@@ -282,42 +332,51 @@
   color: var(--main-color);
   font-weight: 700;
 }
+
 .non {
   color: var(--secondary-color);
   font-weight: 700;
 }
+
 .showCategories {
   display: none;
 }
 
-.filters{
-  display: flex;flex-direction: column;
+.filters {
+  display: flex;
+  flex-direction: column;
   gap: 2.5rem;
   border-radius: 8px;
 }
 
-@media (width <= 766px) {
+@media (width <=766px) {
   .city_intro {
     min-height: 100%;
   }
+
   .city_title {
     padding: 4rem 1rem;
   }
+
   .city_title h1 {
     font-size: 46px;
     color: white;
   }
+
   .city_details {
     display: none;
     visibility: hidden;
   }
+
   .city_blackoverlay {
     height: 100%;
   }
+
   .city_content {
     flex-direction: column;
     gap: 0;
   }
+
   .city_content-sidebar {
     width: 100%;
   }
@@ -344,6 +403,7 @@
     font-size: 16px;
     font-weight: 600;
   }
+
   .showCategories span {
     background-color: rgb(255, 255, 255);
     border-right: 1px solid rgb(204, 203, 203);
@@ -355,9 +415,11 @@
     align-items: center;
     gap: 5px;
   }
+
   .iconsvgsort {
     color: var(--text-color);
   }
+
   .filters {
     position: fixed;
     margin: 0 auto;
