@@ -1,0 +1,6 @@
+.cartdropdown_content {
+    padding: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
