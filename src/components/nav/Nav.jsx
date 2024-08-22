@@ -51,7 +51,6 @@ export function Nav() {
         setHovering(null)
         setPopoverWidth(null)
         setPopoverHeight(null)
-        setActiveLink(null)
         setPopoverLeft(null)
         setActiveLink(null)
       }}

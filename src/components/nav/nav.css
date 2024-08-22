@@ -33,7 +33,7 @@
     min-width: 200px;
     border-radius: 8px;
     box-shadow: var(--perfect-shadow);
-    transition: all 200ms ease-in-out;
+    transition: all .2s ease-in-out;
     will-change: transform;
     z-index: 9999999999;
 
@@ -42,25 +42,25 @@
 .opacity {
     opacity: 1;
     visibility: visible;
-    transition: all 200ms ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .opacity_cero {
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: all 200ms ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .absolute {
     position: absolute;
-    transition: all 200ms ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .transitionAll {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
+    transition-duration: .2s;
 }
 
 .transform_cero {
@@ -96,7 +96,7 @@
 }
 
 .active {
-    color: rgba(255, 255, 255, 0.628);
+    color: rgba(255, 255, 255, 0.493);
 }
 
 @media (width <=766px) {

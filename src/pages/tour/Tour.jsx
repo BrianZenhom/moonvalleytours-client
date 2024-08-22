@@ -101,9 +101,9 @@ export default function Tour() {
                     &euro; {data?.data?.price.toFixed(2)}
                   </span>
                   <div className="share-button">
-                    <button>
+                    <button className="share-button-icon">
                       <ShareIcon />
-                      share
+                      <span>share</span>
                     </button>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function Tour() {
                       state={{ idstate: state.state.id }}
                       to={
                         user
-                          ? '/customers/booktour/state.state.idstate.state.id'
+                          ? `/customers/booktour/${state.state.id}`
                           : '/customers/login'
                       }
                     >

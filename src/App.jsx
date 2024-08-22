@@ -13,6 +13,7 @@ import RegisterDialog from './components/registerdialog/RegisterDialog'
 import Account from './pages/account/Account'
 import LoginPage from './pages/login/LoginPage'
 import { NewNavbar } from './components/newnavbar/NewNavbar'
+import BookTour from './pages/booktour/BookTour'
 
 const Layout = () => {
   const [menu, setMenu] = useState(false)
@@ -100,6 +101,10 @@ const router = createBrowserRouter([
   {
     path: '/customers/login',
     element: <LoginPage />,
+  },
+  {
+    path: '/customers/booktour/:id',
+    element: <BookTour />,
   },
 ])
 
