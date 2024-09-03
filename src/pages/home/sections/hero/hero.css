@@ -192,7 +192,7 @@
   padding: 30px 20px;
 }
 
-.hero_search_suggestion_title h1 {
+.hero_search_suggestion_title strong {
   font-size: 24px;
 }
 
@@ -211,26 +211,6 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 1rem;
-}
-
-.showmore_button_suggestion button {
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 13px;
-  height: 50px;
-  border: 2px solid transparent;
-  background-color: var(--dark-color);
-  color: white;
-  border-radius: 8px;
-  width: 200px;
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-
-.showmore_button_suggestion button:hover {
-  background-color: transparent;
-  border: 1px solid var(--dark-color);
-  color: var(--dark-color);
 }
 
 .benefits_content {

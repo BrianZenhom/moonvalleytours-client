@@ -6,6 +6,7 @@ import Accommodation from '../../../../assets/icons/Accommodation'
 import Flights from '../../../../assets/icons/Flights'
 import Hooks from '../../../../hooks/useFetch'
 import { Link } from 'react-router-dom'
+import Button from '../../../../components/button/Button'
 
 export default function Hero() {
   const { data } = Hooks.useFetch('http://localhost:1234/api/v1/cities')
@@ -104,7 +105,7 @@ export default function Hero() {
                 })}
               </ul>
               <div className="showmore_button_suggestion">
-                <button>Show all destinations</button>
+                <Button name="Show all destinations" />
               </div>
             </div>
           </div>
