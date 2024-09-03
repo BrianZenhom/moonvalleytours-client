@@ -144,6 +144,7 @@ export default function Navbar({ toggleDialog, type }) {
     e.stopPropagation()
     setVisible(!visible)
   }
+
   const handleActive = e => {
     setActiveLanguage(e.target.innerText)
   }

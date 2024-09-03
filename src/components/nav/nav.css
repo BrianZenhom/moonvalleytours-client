@@ -1,3 +1,61 @@
+.navbg {
+    background-color: black;
+    height: 80px;
+}
+
+.newnavbar_content {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 9999999999;
+    translate: 0 -80px;
+    background-color: transparent;
+    transition: .2s ease-in-out;
+}
+
+.activate {
+    translate: 0;
+}
+
+.bg {
+    background-color: white;
+    box-shadow: var(--perfect-shadow);
+}
+
+.bg .nav_link {
+    color: var(--main-color);
+}
+
+.bg .nav_link:hover {
+    opacity: .6;
+}
+
+.bg .navlogo {
+    fill: var(--main-color);
+}
+
+.bg .help_text {
+    color: var(--main-color);
+}
+
+.bg .help:hover {
+    border-color: var(--main-color);
+}
+
+.bg .navicon {
+    color: var(--main-color);
+}
+
+.nav_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1080px;
+}
+
 .new_nav-links {
     display: flex;
     justify-content: center;
@@ -20,13 +78,25 @@
     transition: .2s ease-in-out;
 }
 
+
 .nav_link a:hover {
     color: var(--opaque-color);
 }
 
+.new_nav-links.colored_links a {
+    color: var(--main-color);
+}
+
+.logo {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+
+
 .dropdown_nav {
     position: absolute;
-    top: 4.5rem;
+    top: 5rem;
     margin-left: -6rem;
     background-color: white;
     overflow: hidden;
@@ -38,6 +108,8 @@
     z-index: 9999999999;
 
 }
+
+
 
 .opacity {
     opacity: 1;
@@ -76,27 +148,61 @@
 }
 
 /* help */
-
 .help {
     font-size: 17px;
+    display: flex;
+    align-items: center;
     color: white;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: .5rem 1.5rem;
+    transition: .2s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0);
+    position: relative;
+}
+
+.help .navicon {
+    position: absolute;
+    translate: 65px 0;
+    transition: .2s ease-in-out;
+
+}
+
+.help:hover {
+    border: 1px solid rgba(255, 255, 255, 0.466);
+}
+
+.help:hover .navicon {
+    position: absolute;
+    translate: -5px 0;
 }
 
 .help span {
-    padding: .5rem 1.5rem;
-    border-radius: 8px;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-    font-weight: 700;
+    opacity: 0;
+    transform: translateX(20px);
+    transition-property: display opacity;
+    transition: ease-in-out;
+    transition-duration: .2s;
+    transition-behavior: allow-discrete;
+    padding-left: 25px;
 }
 
-.help span:hover {
-    background-color: var(--main-color);
-    color: var(--opaque-color);
+.help:hover span {
+    opacity: 1;
+    transform: translateX(0);
+
+    @starting-style {
+        transform: translateX(20px);
+    }
 }
 
 .active {
-    color: rgba(255, 255, 255, 0.493);
+    color: var(--opaque-color);
+}
+
+.bg .active {
+    color: var(--opaque-color);
 }
 
 @media (width <=766px) {

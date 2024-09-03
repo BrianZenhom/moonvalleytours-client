@@ -15,6 +15,7 @@
   0% {
     background-color: hsl(200, 20%, 70%);
   }
+
   100% {
     background-color: hsl(200, 20%, 95%);
   }
@@ -32,6 +33,7 @@
   height: 300px;
   min-width: 300px;
 }
+
 .face {
   position: absolute;
   bottom: 0;
@@ -42,9 +44,11 @@
   justify-content: center;
   align-items: center;
 }
+
 .face.back {
   padding: 30px;
 }
+
 .face.back .desc {
   background-color: white;
   background-clip: text;
@@ -56,10 +60,12 @@
   flex-direction: column;
   gap: 2rem;
 }
+
 .face.front {
   overflow: hidden;
   transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
+
 .face.front img {
   object-fit: cover;
   height: 100%;
@@ -67,6 +73,7 @@
   position: absolute;
   z-index: 9;
 }
+
 .face.front b {
   margin: 0;
   padding: 0;
@@ -85,42 +92,51 @@
 .card:hover .face.front b {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
+
 .face.front {
   border-radius: 8px;
 }
+
 .top {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
+
 .top strong {
   font-size: 26px;
   font-weight: 900;
 }
+
 .top span {
   color: white;
   font-weight: 700;
   font-size: 14px;
 }
+
 .top_left,
 .top_right {
   display: flex;
   flex-direction: column;
 }
+
 .bottom {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 }
+
 .bottom strong {
   font-size: 26px;
   font-weight: 900;
 }
+
 .bottom span {
   color: white;
   font-weight: 700;
   font-size: 14px;
 }
+
 .bottom_left,
 .bottom_right {
   display: flex;
@@ -135,4 +151,14 @@
 .top_right,
 .bottom_right {
   min-width: 40%;
+}
+
+.skeletonerror {
+  background: rgb(165, 165, 165);
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
 }

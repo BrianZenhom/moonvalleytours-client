@@ -3,6 +3,7 @@ import './user.css'
 import { forwardRef } from 'react'
 import { Apple, Facebook, Google } from '../../assets/icons/SocialsRegistration'
 import SocialRegister from '../socialRegister/socialRegister'
+import Button from './../button/Button'
 
 export const User = forwardRef((props, ref, toggleDialog) => {
   return (
@@ -42,7 +43,7 @@ export const User = forwardRef((props, ref, toggleDialog) => {
           <Switch id="check" />
         </div>
         <div className="button_container">
-          <button className="user_login-btn">Log in</button>
+          <Button name="Log in" />
           <small>forgot password?</small>
         </div>
         <div className="hr"></div>

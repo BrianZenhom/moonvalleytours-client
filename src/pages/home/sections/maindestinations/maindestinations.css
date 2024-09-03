@@ -2,10 +2,12 @@
   min-height: auto;
   padding-bottom: 22px;
 }
+
 .maindestinations_content {
   height: auto;
   padding-top: 4rem;
 }
+
 .maindestinations_header {
   display: flex;
   justify-content: start;
@@ -19,15 +21,19 @@
   padding-bottom: 2rem;
   gap: 1rem;
 }
-.maindestinations_grid > * {
+
+.maindestinations_grid>* {
   flex: 0 0 32%;
 }
+
 .list_card-item {
   flex-grow: 1;
 }
+
 .list_card-item {
   display: flex;
 }
+
 .maindestinations_card {
   border-radius: 8px;
   overflow: hidden;
@@ -39,10 +45,12 @@
   transition: 0.5s ease;
   cursor: pointer;
 }
+
 .maindestination_title {
   padding: 20px;
   text-shadow: black 1px 1px 3px;
 }
+
 .maindestination_title h3 {
   font-family: 'Onest', sans-serif;
   font-weight: 800;
@@ -51,7 +59,7 @@
   top: 10px;
 }
 
-.maindestinations_card > img {
+.maindestinations_card>img {
   position: absolute;
   top: 0;
   left: 0;
@@ -68,14 +76,17 @@
   opacity: 0.8;
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 .maindestination_details hr {
   opacity: 0;
   transition: 3s ease-in;
   animation-delay: 9000ms;
 }
+
 .maindestinations_card:hover .maindestination_details hr {
   opacity: 1;
 }
+
 .maindestinations_card:hover h3 {
   top: 330px;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
@@ -88,6 +99,7 @@
   transform: translatey(-100px);
   opacity: 0;
 }
+
 .detail {
   display: flex;
   gap: 1rem;
@@ -102,6 +114,7 @@
   font-weight: 800;
   font-family: 'Onest', sans-serif;
 }
+
 .left {
   flex: 1 1 60%;
 }
@@ -122,29 +135,12 @@
   padding-top: 3rem;
 }
 
-.showmore_button button {
-  background-color: var(--dark-color);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 18px;
-  height: 50px;
-  border: 2px solid transparent;
-  color: #fff;
-  border-radius: 8px;
-  width: 200px;
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-.showmore_button button:hover {
-  background-color: transparent;
-  border: 1px solid var(--dark-color);
-  color: var(--dark-color);
-}
 @media (width < 500px) {
   .maindestinations_content {
     padding-left: 10px;
     padding-right: 10px;
   }
+
   .maindestinations_grid {
     display: flex;
     flex-wrap: wrap;
@@ -153,10 +149,12 @@
     padding-bottom: 2rem;
     gap: 1rem 1rem;
   }
-  .maindestinations_grid > * {
+
+  .maindestinations_grid>* {
     flex: 0 0 42%;
   }
 }
+
 @media (width > 1000px) {
   .maindestinations_card {
     height: 375px;

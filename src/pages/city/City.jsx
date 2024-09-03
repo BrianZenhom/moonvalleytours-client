@@ -159,6 +159,7 @@ export default function City() {
             : loading
             ? 'Loading'
             : data?.data?.tours?.map(item => {
+                console.log(item.id)
                 return (
                   <Link
                     key={item._id}

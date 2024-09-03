@@ -5,13 +5,14 @@
   backdrop-filter: blur(10px);
   width: 100%;
   z-index: 100;
-  transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   translate: 0 -80px;
+  transition: all .2s ease-in-out;
   box-shadow: var(--perfect-shadow);
 }
 
 .navbar.visible {
   translate: 0;
+  transition: .2s ease-in-out;
 }
 
 .navbar-content {

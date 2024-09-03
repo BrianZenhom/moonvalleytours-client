@@ -20,7 +20,7 @@
     flex-basis: 0;
 }
 
-.help {
+.help_wrapper {
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;

@@ -12,6 +12,7 @@ import {
 } from './../../assets/icons/PaymentMethods'
 import { Facebook, Instagram } from './../../assets/icons/Socials'
 import { Accordeon, AccordeonItem } from '../accordeon/Accordeon'
+import Button from './../button/Button'
 
 export default function Footer() {
   return (
@@ -58,7 +59,7 @@ export default function Footer() {
           </div>
           <form>
             <input type="text" placeholder="Your email address" />
-            <button>SUBSCRIBE</button>
+            <Button name="Subscribe"></Button>
             <small>
               by clicking suscribe you&apos;re accepting our terms & conditions
             </small>
@@ -174,7 +175,7 @@ export default function Footer() {
               </div>
               <form>
                 <input type="text" placeholder="Your email address" />
-                <button>SUBSCRIBE</button>
+                <Button name="SUBSCRIBE" />
                 <small>
                   by clicking suscribe you&apos;re accepting our terms &
                   conditions

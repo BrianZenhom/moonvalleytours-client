@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .footer_moonvalley_grid {
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +15,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
 .footer_block {
   display: flex;
   flex-direction: column;
@@ -23,10 +25,12 @@
   flex-shrink: 0;
   flex-basis: 0;
 }
+
 .footer_section_title h1 {
   font-size: 18px;
   margin-bottom: 14px;
 }
+
 .footers_footer {
   width: 100%;
   display: flex;
@@ -44,50 +48,62 @@
   color: rgb(143, 143, 143);
   font-size: 13.725px;
 }
+
 .footers_footer ul a {
   color: rgb(143, 143, 143);
   font-weight: 350;
   font-size: 13.725px;
 }
+
 .footers_footer li {
   list-style: initial;
 }
+
 .footer_wrapper {
   height: 100%;
 }
+
 .footer_logo {
   width: 80px;
   fill: white;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .flex {
   gap: 10px;
 }
+
 .about ul a {
   color: #738282;
   font-weight: 300;
 }
+
 .about ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .about ul li {
   font-weight: 300;
 }
+
 .about ul a:hover {
   color: white;
 }
+
 .footer_block span {
   line-height: 1.5;
 }
+
 .footer_block form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 10px;
 }
+
 .footer_block input {
   width: 80%;
   height: 30px;
@@ -98,24 +114,12 @@
   border: none;
   outline: none;
 }
+
 .footer_block input:focus {
   outline: 2px solid var(--main-color);
   border-radius: 6px;
 }
-.footer_block button {
-  height: 30px;
-  width: 50%;
-  font-family: inherit;
-  background: none;
-  border: none;
-  background-color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.footer_block button:hover {
-  background-color: var(--main-color);
-  color: white;
-}
+
 .iconcard {
   width: 50px;
 }
@@ -126,22 +130,27 @@
   border-radius: 8px;
   transition: all 0.1s ease-in-out;
 }
+
 .socials a:hover {
   background-color: var(--main-color);
 }
+
 .socials a {
   display: flex;
 }
+
 .socials ul {
   display: flex;
   gap: 30px;
 }
+
 .footer_moonvalley_grid_mobile {
   visibility: hidden;
   opacity: 0;
   display: none;
   height: 0px;
 }
+
 .footers_footer_mobile {
   opacity: 0;
   visibility: hidden;
@@ -149,13 +158,14 @@
   display: none;
 }
 
-@media (width <= 766px) {
+@media (width <=766px) {
   .footer_moonvalley_grid {
     visibility: hidden;
     display: none;
     opacity: 0;
     height: 0px;
   }
+
   .footer_block_mobile {
     display: flex;
     flex-direction: column;
@@ -163,18 +173,22 @@
     align-items: center;
     padding: 1rem;
   }
+
   .footer_block {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
   .footer_logo {
     display: flex;
     width: 120px;
   }
+
   .footers_footer {
     visibility: hidden;
     height: 0px;
   }
+
   .footers_footer_mobile {
     display: flex;
     flex-direction: column;
@@ -197,6 +211,7 @@
     font-size: 12px;
     color: rgb(146, 146, 146);
   }
+
   .footer_block_mobile {
     border-bottom: 1px solid rgba(255, 255, 255, 0.082);
   }
@@ -209,13 +224,16 @@
     color: #acacac;
     height: 100%;
   }
+
   .terms {
     display: flex;
     gap: 2rem;
   }
+
   .accordeon_tab {
     border-bottom: 1px solid rgba(255, 255, 255, 0.082);
   }
+
   .accordeon_header {
     display: flex;
     justify-content: space-between;
@@ -223,43 +241,53 @@
     padding: 1rem 1.5rem;
     font-size: 18px;
   }
+
   .accordeon_container {
     overflow-y: hidden;
     transition: all 0.2s ease-in;
     height: 0px;
   }
+
   .accordeon_content {
     padding: 0.5rem 1.5rem;
   }
+
   .open {
     height: 100%;
   }
+
   .closed {
     transition: 0.2s ease;
     transform: rotate(0deg);
   }
+
   .icon {
     transition: 0.2s ease;
     transform: rotate(-180deg);
   }
+
   .footer_block_socials {
     display: flex;
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
   .socialIcon {
     width: 35px;
     color: var(--main-color);
   }
+
   .socialIcon:hover {
     color: var(--opaque-color);
   }
+
   .payment ul {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .footer_block .about {
     font-size: 18px;
   }

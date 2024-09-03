@@ -8,6 +8,8 @@ import { User } from '../user/User'
 import { SlideWrapper } from '../slidewrapper/SlideWrapper'
 import clsx from 'clsx'
 import { CartDropdown } from '../cartdropdown/CartDropdown'
+import Logo from '../../assets/logos/Logo'
+import { QuestionIcon } from '../../assets/icons/AllIcons'
 
 export function Nav() {
   const [hovering, setHovering] = useState(null)
@@ -18,6 +20,9 @@ export function Nav() {
   const [activeLanguage, setActiveLanguage] = useState('English')
   const [activeCurrency, setActiveCurrency] = useState('Currency')
   const [activeLink, setActiveLink] = useState(null)
+  const [scroll, setScroll] = useState(false)
+
+  const [navScrolled, setNavScrolled] = useState(null)
 
   const refs = useRef([])
 
@@ -36,6 +41,39 @@ export function Nav() {
   }
 
   useEffect(() => {
+    let scrolled = 0
+    const handleNavScrolled = () => {
+      const { scrollTop } = document.documentElement
+      if (scrollTop > scrolled) {
+        setNavScrolled(true)
+      } else if (scrollTop === scrolled) {
+        setNavScrolled(false)
+      }
+    }
+    window.addEventListener('scroll', handleNavScrolled)
+    return () => {
+      window.removeEventListener('scroll', handleNavScrolled)
+    }
+  }, [])
+
+  useEffect(() => {
+    let lastScrollTop = 0
+    const handleScroll = () => {
+      const { scrollTop } = document.documentElement
+      if (scrollTop > lastScrollTop) {
+        setScroll(true)
+      } else if (scrollTop < lastScrollTop) {
+        setScroll(false)
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  useEffect(() => {
     if (hovering !== null) {
       const menuElement = refs.current[hovering]
       if (menuElement) {
@@ -46,77 +84,94 @@ export function Nav() {
   }, [hovering])
 
   return (
-    <nav
-      onMouseLeave={() => {
-        setHovering(null)
-        setPopoverWidth(null)
-        setPopoverHeight(null)
-        setPopoverLeft(null)
-        setActiveLink(null)
-      }}
-      className="new_nav-links"
+    <div
+      className={`newnavbar_content ${scroll ? '' : 'activate'} ${
+        navScrolled ? 'bg' : ''
+      }`}
     >
-      <a
-        onMouseEnter={event => onMouseEnter(0, event.currentTarget)}
-        className={clsx('nav_link', activeLink === 0 && 'active')}
-        href="#"
-      >
-        {activeLanguage}
-      </a>
-      <a
-        onMouseEnter={event => onMouseEnter(1, event.currentTarget)}
-        className={clsx('nav_link', activeLink === 1 && 'active')}
-        href="#"
-      >
-        {activeCurrency}
-      </a>
-      <a
-        onMouseEnter={event => onMouseEnter(2, event.currentTarget)}
-        className={clsx('nav_link', activeLink === 2 && 'active')}
-        href="#"
-      >
-        <UserIcon activeIcon={activeLink === 2} />
-      </a>
-      <a
-        onMouseEnter={event => onMouseEnter(3, event.currentTarget)}
-        className={clsx('nav_link', activeLink === 3 && 'active')}
-        href="#"
-      >
-        <Cart activeIcon={activeLink === 3} />
-      </a>
+      <nav className={scroll ? 'nav_wrapper active' : 'nav_wrapper'}>
+        <div className="logo">
+          <Logo type="navlogo" />
+        </div>
+        <div
+          onMouseLeave={() => {
+            setHovering(null)
+            setPopoverWidth(null)
+            setPopoverHeight(null)
+            setPopoverLeft(null)
+            setActiveLink(null)
+          }}
+          className={`new_nav-links ${scroll ? 'colored_links' : ''}`}
+        >
+          <a
+            onMouseEnter={event => onMouseEnter(0, event.currentTarget)}
+            className={clsx('nav_link', activeLink === 0 && 'active')}
+            href="#"
+          >
+            {activeLanguage}
+          </a>
+          <a
+            onMouseEnter={event => onMouseEnter(1, event.currentTarget)}
+            className={clsx('nav_link', activeLink === 1 && 'active')}
+            href="#"
+          >
+            {activeCurrency}
+          </a>
+          <a
+            onMouseEnter={event => onMouseEnter(2, event.currentTarget)}
+            className={clsx('nav_link', activeLink === 2 && 'active')}
+            href="#"
+          >
+            <UserIcon activeIcon={activeLink === 2} />
+          </a>
+          <a
+            onMouseEnter={event => onMouseEnter(3, event.currentTarget)}
+            className={clsx('nav_link', activeLink === 3 && 'active')}
+            href="#"
+          >
+            <Cart activeIcon={activeLink === 3} />
+          </a>
+          <div
+            style={{
+              left: popoverLeft || undefined,
+              height: popoverHeight || undefined,
+              width: popoverWidth || undefined,
+            }}
+            className={clsx(
+              'dropdown_nav',
+              hovering !== null ? 'transitionAll' : 'opacity_cero'
+            )}
+            id="overlay-content"
+          >
+            <SlideWrapper index={0} hovering={hovering}>
+              <LanguageSelector
+                ref={element => (refs.current[0] = element)}
+                handleActive={handleActive}
+              />
+            </SlideWrapper>
+            <SlideWrapper index={1} hovering={hovering}>
+              <Currency
+                ref={element => (refs.current[1] = element)}
+                handleActiveCurr={handleActiveCurr}
+              />
+            </SlideWrapper>
 
-      <div
-        style={{
-          left: popoverLeft || undefined,
-          height: popoverHeight || undefined,
-          width: popoverWidth || undefined,
-        }}
-        className={clsx(
-          'dropdown_nav',
-          hovering !== null ? 'transitionAll' : 'opacity_cero'
-        )}
-      >
-        <SlideWrapper index={0} hovering={hovering}>
-          <LanguageSelector
-            ref={element => (refs.current[0] = element)}
-            handleActive={handleActive}
-          />
-        </SlideWrapper>
-        <SlideWrapper index={1} hovering={hovering}>
-          <Currency
-            ref={element => (refs.current[1] = element)}
-            handleActiveCurr={handleActiveCurr}
-          />
-        </SlideWrapper>
+            <SlideWrapper index={2} hovering={hovering}>
+              <User ref={element => (refs.current[2] = element)} />
+            </SlideWrapper>
 
-        <SlideWrapper index={2} hovering={hovering}>
-          <User ref={element => (refs.current[2] = element)} />
-        </SlideWrapper>
-
-        <SlideWrapper index={3} hovering={hovering}>
-          <CartDropdown ref={element => (refs.current[3] = element)} />
-        </SlideWrapper>
-      </div>
-    </nav>
+            <SlideWrapper index={3} hovering={hovering}>
+              <CartDropdown ref={element => (refs.current[3] = element)} />
+            </SlideWrapper>
+          </div>
+        </div>
+        <div className="help_wrapper">
+          <div className="help">
+            <QuestionIcon />
+            <span className="help_text">Help</span>
+          </div>
+        </div>
+      </nav>
+    </div>
   )
 }
