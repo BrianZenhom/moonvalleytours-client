@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: end;
 }
+
 .checkboxes {
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@
   padding-bottom: 1rem;
   width: 100%;
 }
+
 .checkboxes label {
   display: flex;
   gap: 10px;
@@ -21,20 +23,23 @@
   align-items: center;
   justify-content: start;
 }
+
 .checkboxes input {
   width: 20px;
   height: 20px;
 }
+
 .register_content-inputs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
+
 .fullw {
   flex-grow: 1;
   width: 100%;
-  padding: 0.5rem 0.5rem;
+  padding: .5rem .9rem;
   border-radius: 8px;
   border: 1px solid rgb(168, 168, 168);
   font-size: 16px;
@@ -55,6 +60,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .registrationForm_form button:hover {
   outline: 1px solid rgb(0, 0, 0);
   background-color: var(--main-color);
@@ -75,6 +81,7 @@
 .password_input-reg:focus-within {
   outline: 1px solid var(--main-color);
 }
+
 .password_input-reg input {
   padding: 0;
   border: none;
@@ -83,10 +90,12 @@
   font-size: 16px;
   user-select: none;
 }
+
 .password_input-reg input:focus-within {
   outline: none;
   border: none;
 }
+
 .hideshow {
   display: flex;
   align-items: center;
@@ -109,6 +118,7 @@
   outline-color: var(--main-color);
   color: var(--main-color);
 }
+
 .registerForm_socials {
   display: flex;
   justify-content: space-between;
