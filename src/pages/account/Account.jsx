@@ -4,7 +4,6 @@ import { AuthContext } from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import AccountSidebar from '../../components/accountSidebar/accountSidebar'
 import { Toaster, toast } from 'sonner'
-import Navbar from '../../components/navbar/Navbar'
 import Upload from '../../assets/icons/Upload'
 import { Accordeon, AccordeonItem } from '../../components/accordeon/Accordeon'
 import Input from '../../components/input/Input'
@@ -13,6 +12,7 @@ import axios from 'axios'
 import CloseModal from '../../assets/icons/CloseModal'
 import Error from '../../assets/icons/Error'
 import Success from '../../assets/icons/Success'
+import { NewNavbar } from '../../components/newnavbar/NewNavbar'
 
 const options = Array.from({ length: 31 }, (_, i) => ({
   label: i + 1,
@@ -310,7 +310,7 @@ const Account = () => {
 
   return (
     <div className="my_account">
-      <Navbar type="wider" />
+      <NewNavbar type="wider" />
       <dialog ref={dialogRef} className="account__dialog">
         <div className="dialog__content">
           <div className="dialog__content-body">
