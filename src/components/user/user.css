@@ -60,3 +60,38 @@
 .booking h3 {
     margin-bottom: 20px;
 }
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+    gap: 5px;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--dark-color));
+}
+
+.login-methods {
+    width: 100%;
+}
+
+.login-method-socials {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.login-method-socials h3:hover {
+    color: var(--main-color);
+}
+
+.registerBtn {
+    width: 100%;
+    display: flex;
+}
