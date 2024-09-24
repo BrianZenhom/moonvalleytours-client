@@ -1,7 +1,7 @@
-const User = ({ activeIcon }) => {
+const User = () => {
   return (
     <svg
-      className={`iconsvgnav ${activeIcon ? 'active' : ''}`}
+      className="iconsvgnav"
       xmlns="http://www.w3.org/2000/svg"
       width="25"
       viewBox="0 0 24 24"
