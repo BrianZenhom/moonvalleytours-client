@@ -3,9 +3,11 @@ import './user.css'
 import { forwardRef } from 'react'
 import { Apple, Facebook, Google } from '../../assets/icons/SocialsRegistration'
 import SocialRegister from '../socialRegister/socialRegister'
-import Button from './../button/Button'
+import Input from '../input/Input'
 
-export const User = forwardRef((props, ref, toggleDialog) => {
+export const User = forwardRef((props, ref) => {
+  const { handleClick, handleChange, toggleDialog, loading } = props
+
   return (
     <div ref={ref} id="shift-tab-2" className="user_nav">
       <form className="form user_form" action="">
@@ -17,24 +19,28 @@ export const User = forwardRef((props, ref, toggleDialog) => {
           </span>
         </div>
         <div className="form__group user_width">
-          <input
+          <Input
+            autoComplete="off"
             required
             type="email"
             id="email"
             name="email"
             placeholder="Email"
-            className="fullw"
+            className="form__input fullw"
+            onChange={handleChange}
           />
           <label htmlFor="">Email</label>
         </div>
         <div className="form__group user_width">
-          <input
+          <Input
+            autoComplete="off"
             required
             type="password"
             id="password"
             name="password"
             placeholder="Password"
-            className="fullw"
+            className="form__input fullw"
+            onChange={handleChange}
           />
           <label htmlFor="">Password</label>
         </div>
@@ -42,8 +48,10 @@ export const User = forwardRef((props, ref, toggleDialog) => {
           <small>Remember me</small>
           <Switch id="check" />
         </div>
-        <div className="button_container">
-          <Button name="Log in" />
+        <div className="login__container">
+          <button className="loginBtn" disabled={loading} onClick={handleClick}>
+            Login
+          </button>
           <small>forgot password?</small>
         </div>
         <div className="hr"></div>
