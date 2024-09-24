@@ -371,6 +371,15 @@ input:checked+.checkbutton::before {
     transition: .01s ease-in;
 }
 
+.nav_bridge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 34px;
+    top: 65px;
+    width: 100%;
+}
+
 @media (width <=766px) {
     .new_nav-links {
         display: none;

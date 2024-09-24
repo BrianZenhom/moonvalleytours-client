@@ -162,6 +162,7 @@ export function Nav() {
           }}
           className={`new_nav-links ${scroll ? 'colored_links' : ''}`}
         >
+          <Bridge />
           <span
             onMouseEnter={event => onMouseEnter(1, event.currentTarget)}
             className={clsx('nav_link', activeLink === 1 && 'active')}
@@ -249,3 +250,5 @@ export function Nav() {
     </div>
   )
 }
+
+const Bridge = () => <div className="nav_bridge"></div>
