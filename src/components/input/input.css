@@ -20,12 +20,13 @@
     0 3px 3px -1.5px var(--shade), 0 6px 6px -3px var(--shade),
     0 12px 12px -6px var(--base), 0 24px 24px -12px var(--base);
 }
-.form{
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+.form {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .form__group {
@@ -36,10 +37,12 @@
   width: 48%;
   height: 48px;
 }
-.form__group input{
+
+.form__group input {
   width: 100%;
 }
-.form__group label{
+
+.form__group label {
   pointer-events: none;
 }
 
@@ -81,13 +84,14 @@
   font-size: 12px;
 }
 
-.form__group label{
+.form__group label {
   color: gray;
 }
 
 .form__group:has(:placeholder-shown) input {
   outline: 1.5px solid var(--blur);
 }
+
 .form__group:has(:placeholder-shown:not(:focus)) {
   animation: none;
 }
@@ -115,7 +119,7 @@
 
 .form__group:has(:placeholder-shown:not(:focus)) label {
   top: 13px;
-  left: 10px;
+  left: 14.4px;
 }
 
 .form__input {
@@ -130,36 +134,40 @@
   font-family: Onest;
 }
 
-.birth{
+.birth {
   gap: 1rem;
 }
-.day{
+
+.day {
   width: 26% !important;
   min-width: 26% !important;
   max-width: 26% !important;
 }
 
-.year{
+.year {
   width: 26% !important;
   min-width: 26% !important;
   max-width: 26% !important;
 }
 
-.edit__password{
+.edit__password {
   width: 100%;
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   20%,
   40%,
   60%,
   80% {
     transform: translateX(-1%);
   }
+
   10%,
   30%,
   50%,
