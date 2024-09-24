@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Switch from '../../assets/icons/Switch'
 import { Apple, Facebook, Google } from '../../assets/icons/SocialsRegistration'
 import SocialRegister from '../socialRegister/socialRegister'
+import Input from '../input/Input'
 
 const LoginForm = ({
   open,
@@ -46,7 +47,7 @@ const LoginForm = ({
             Do you have an account? <br /> Log into your account
           </span>
           <form className="login-form">
-            <input
+            <Input
               type="text"
               id="email"
               name="email"
@@ -55,7 +56,7 @@ const LoginForm = ({
               required
             />
             <div className="password_input">
-              <input
+              <Input
                 type={visible ? 'text' : 'password'}
                 id="password"
                 placeholder="Password"
