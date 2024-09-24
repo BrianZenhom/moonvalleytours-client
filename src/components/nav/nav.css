@@ -1,8 +1,3 @@
-.navbg {
-    background-color: black;
-    height: 80px;
-}
-
 .newnavbar_content {
     position: fixed;
     top: 0;
@@ -13,7 +8,7 @@
     z-index: 9999999999;
     translate: 0 -80px;
     background-color: transparent;
-    transition: .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .activate {
@@ -21,7 +16,7 @@
 }
 
 .bg {
-    background-color: white;
+    background-color: white !important;
     box-shadow: var(--perfect-shadow);
 }
 
@@ -29,15 +24,14 @@
     color: var(--main-color);
 }
 
-.bg .nav_link:hover {
-    opacity: .6;
-}
+
 
 .bg .navlogo {
+    transition: all .2s ease-in-out;
     fill: var(--main-color);
 }
 
-.bg .help_text {
+cd .bg .help_text {
     color: var(--main-color);
 }
 
@@ -72,18 +66,23 @@
     padding: .5rem 1rem;
     display: flex;
     align-items: center;
+    gap: 5px;
     justify-content: center;
     cursor: default;
     font-weight: 600;
-    transition: .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    user-select: none;
 }
 
-
-.nav_link a:hover {
-    color: var(--opaque-color);
+.nav_link span {
+    font-weight: 600;
 }
 
-.new_nav-links.colored_links a {
+.nav_link span:hover {
+    color: vspanr(--opaque-color);
+}
+
+.new_nav-links.colored_links span {
     color: var(--main-color);
 }
 
@@ -92,24 +91,19 @@
     flex-basis: 0;
 }
 
-
-
 .dropdown_nav {
     position: absolute;
-    top: 5rem;
+    top: 6rem;
     margin-left: -6rem;
     background-color: white;
     overflow: hidden;
     min-width: 200px;
     border-radius: 8px;
-    box-shadow: var(--perfect-shadow);
     transition: all .2s ease-in-out;
     will-change: transform;
     z-index: 9999999999;
 
 }
-
-
 
 .opacity {
     opacity: 1;
@@ -121,7 +115,6 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-    transition: all .2s ease-in-out;
 }
 
 .absolute {
@@ -132,7 +125,7 @@
 .transitionAll {
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: .2s;
+    transition-duration: .2s ease-in-out;
 }
 
 .transform_cero {
@@ -166,7 +159,6 @@
     position: absolute;
     translate: 65px 0;
     transition: .2s ease-in-out;
-
 }
 
 .help:hover {
@@ -182,7 +174,6 @@
     opacity: 0;
     transform: translateX(20px);
     transition-property: display opacity;
-    transition: ease-in-out;
     transition-duration: .2s;
     transition-behavior: allow-discrete;
     padding-left: 25px;
@@ -203,6 +194,181 @@
 
 .bg .active {
     color: var(--opaque-color);
+}
+
+.withBg {
+    background-color: var(--main-color);
+}
+
+.withBg .nav_link a:hover {
+    color: white;
+}
+
+.loginForm_socials {
+    display: flex;
+    padding-top: 1rem;
+}
+
+/* Currency dropdown */
+.currency-selector {
+    position: relative;
+}
+
+.dropdown-content-currency {
+    position: absolute;
+    opacity: 0;
+
+    visibility: hidden;
+    display: flex;
+    gap: 2rem;
+    background-color: white;
+    color: var(--dark-color);
+    border-end-end-radius: 8px;
+    border-end-start-radius: 8px;
+    padding: 3rem;
+    right: 0;
+    box-shadow: var(--perfect-shadow);
+    transition-property: opacity;
+    transition: 0.2s ease-out;
+}
+
+.visible-currency {
+    translate: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content-currency span {
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dropdown-content-currency span:hover small {
+    color: var(--dark-color) 86;
+}
+
+.dropdown-content-currency small {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--dark-color);
+    display: inline-block;
+    width: max-content;
+}
+
+.usd,
+.euro,
+.argpeso {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.usd:hover small {
+    opacity: 0.5;
+}
+
+.euro:hover small {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.argpeso:hover small {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.loginBtn {
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    padding: .7rem 2rem;
+    font-family: inherit;
+    font-size: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.loginBtn:focus {
+    outline: 1px solid var(--main-color);
+}
+
+.loginBtn:hover {
+    background-color: var(--main-color);
+    outline-color: var(--dark-color);
+}
+
+.checkboxcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbutton {
+    background-color: gray;
+    width: 25px;
+    height: 14px;
+    border-radius: 800px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.checkbutton::before {
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 800px;
+    margin: 2px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+input:checked+.checkbutton {
+    background-color: var(--main-color);
+}
+
+input:checked+.checkbutton::before {
+    transform: translateX(11px);
+}
+
+#check {
+    display: none;
+}
+
+.custom_nub {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    height: 1rem;
+    width: 1rem;
+    transform: translateX(-85%) translateY(-50%) rotate(45deg);
+    transition: all .2s ease-in-out;
+    transform-origin: bottom;
+    border-top-left-radius: .25rem;
+    border: 1px solid rgba(255, 255, 255, 0.523);
+    background-color: white;
+    clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
+    opacity: 1;
+}
+
+.nonub {
+    opacity: 0;
+    height: 0px;
+    transition: .01s ease-in;
 }
 
 @media (width <=766px) {
