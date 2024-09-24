@@ -51,6 +51,8 @@ export default function Tour() {
     `http://localhost:1234/api/v1/tours/${state.state.id}`
   )
 
+  console.log(state.state.id)
+
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
   function handleCalendarOpen() {
