@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-// import img from '../../assets/images/image(1).webp';
 
 export default function TourCard({ tour }) {
   const city = tour.city.city.toLowerCase()
@@ -37,7 +36,7 @@ export default function TourCard({ tour }) {
                 <h3>{tour.title}</h3>
                 <div className="toptours_description_details">
                   <div className="rating-tours">
-                    <strong>{tour.reviewsRating}Hard</strong>
+                    <strong>{tour.ratingsAverage}/5</strong>
                     <span className="toptours_description_rating">
                       <div className="stars">
                         <strong>***</strong>
@@ -47,6 +46,7 @@ export default function TourCard({ tour }) {
                       {tour.reviewsQuantity} Difficulty
                     </span>
                   </div>
+                  <p>{tour.shortDesc}</p>
                 </div>
               </div>
             </div>
