@@ -37,8 +37,8 @@ export default function TourBookingComponent({ tourId }) {
   }
 
   return (
-    <button onClick={bookTour} disabled={loading}>
-      Book Tour
+    <button onClick={bookTour} disabled={loading} className="main_button">
+      Book
     </button>
   )
 }
