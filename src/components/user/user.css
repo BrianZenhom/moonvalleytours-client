@@ -94,4 +94,5 @@
 .registerBtn {
     width: 100%;
     display: flex;
+    gap: 5px;
 }
