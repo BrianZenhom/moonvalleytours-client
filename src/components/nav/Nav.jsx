@@ -14,7 +14,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 
-export function Nav() {
+export function Nav({ toggleDialog }) {
   const [hovering, setHovering] = useState(null)
   const [popoverLeft, setPopoverLeft] = useState(null)
   const [popoverHeight, setPopoverHeight] = useState(null)
@@ -231,6 +231,7 @@ export function Nav() {
                   loading={loading}
                   handleClick={handleClick}
                   handleChange={handleChange}
+                  toggleDialog={toggleDialog}
                   ref={element => (refs.current[3] = element)}
                 />
               )}

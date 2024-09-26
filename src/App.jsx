@@ -62,7 +62,7 @@ const Layout = () => {
         setLoginOpen={setLoginOpen}
         visible={visible}
       />
-      <Nav />
+      <Nav toggleDialog={toggleDialog} />
       <Outlet />
       <Footer />
     </>
