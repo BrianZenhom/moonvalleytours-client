@@ -50,7 +50,7 @@ export default function Footer() {
 
         <div className="footer_block">
           <div className="footer_section_title">
-            <strong>Newsletter</strong>
+            <strong>Newsletter</strong> <br />
             <span>
               Get notified with our latest <strong>offers</strong> and{' '}
               <strong>discounts</strong>
