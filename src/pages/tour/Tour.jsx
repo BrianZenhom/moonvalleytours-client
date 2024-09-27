@@ -57,7 +57,7 @@ export default function Tour() {
     setCalendarOpen(!calendarOpen)
   }
 
-  console.log(data)
+  console.log(data.data.reviews.length)
 
   return (
     <>
@@ -293,7 +293,7 @@ export default function Tour() {
                   <span>
                     These are genuine reviews written by our customers.
                   </span>
-                  <small>0 out of 0 reviews</small>
+                  <small>0 out of {data.data.reviews.length} reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
                   <strong>{data?.data?.ratingsAverage}/5</strong>
@@ -312,14 +312,16 @@ export default function Tour() {
 
                   return (
                     <div key={review.id} className="tour-singlereview">
-                      <header className="tourreview-header">
+                      <div className="tourreview-header">
                         <div className="reviewrate">
                           <strong>*****</strong>
                           <span>{formattedDate}</span>
                         </div>
                         <div className="reviewuser">
                           <div className="review-username">
-                            <div className="review-profile">B</div>
+                            <div className="review-profile">
+                              {review.user.name.charAt(0).toUpperCase()}
+                            </div>
                             <div className="review-name">
                               <span>
                                 {review.user.name.charAt(0).toUpperCase() +
@@ -332,7 +334,7 @@ export default function Tour() {
                             <p>{review.review}</p>
                           </div>
                         </div>
-                      </header>
+                      </div>
                     </div>
                   )
                 })}

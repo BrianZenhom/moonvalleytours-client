@@ -363,6 +363,7 @@
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 .tourreview-header {
@@ -373,6 +374,7 @@
 .reviewrate {
   display: flex;
   flex-direction: column;
+  min-width: 100px;
 }
 
 .usersreview p {
