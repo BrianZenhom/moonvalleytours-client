@@ -51,13 +51,13 @@ export default function Tour() {
     `http://localhost:1234/api/v1/tours/${state.state.id}`
   )
 
-  console.log(state.state.id)
-
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]
 
   function handleCalendarOpen() {
     setCalendarOpen(!calendarOpen)
   }
+
+  console.log(data)
 
   return (
     <>
@@ -296,37 +296,46 @@ export default function Tour() {
                   <small>0 out of 0 reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
-                  <strong>{data?.ratingsAverage}/5 *****</strong>
+                  <strong>{data?.data?.ratingsAverage}/5</strong>
+                  <br />
                   <span>
-                    {data?.ratingsQuantity} reviews | {data?.data?.travellers}{' '}
-                    travellers
+                    {data?.data?.ratingsQuantity} reviews |
+                    {data?.data?.travellers} travellers
                   </span>
                 </div>
               </div>
               <div className="tour-reviews-customers container">
-                <div className="tour-singlereview">
-                  <header className="tourreview-header">
-                    <div className="reviewrate">
-                      <strong>*****</strong>
-                      <span>25/10/2023</span>
-                    </div>
-                    <div className="reviewuser">
-                      <div className="review-username">
-                        <div className="review-profile">B</div>
-                        <div className="review-name">
-                          <span>Brian</span> <small>Argentina</small>
+                {data?.data?.reviews.map(review => {
+                  const isoString = review.createdAt
+                  const date = new Date(isoString)
+                  const formattedDate = date.toISOString().split('T')[0]
+
+                  return (
+                    <div key={review.id} className="tour-singlereview">
+                      <header className="tourreview-header">
+                        <div className="reviewrate">
+                          <strong>*****</strong>
+                          <span>{formattedDate}</span>
                         </div>
-                      </div>
-                      <div className="usersreview">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing
-                          elit. Harum magnam reprehenderit, ratione suscipit eum
-                          nulla ea aperiam ipsum corporis minima.
-                        </p>
-                      </div>
+                        <div className="reviewuser">
+                          <div className="review-username">
+                            <div className="review-profile">B</div>
+                            <div className="review-name">
+                              <span>
+                                {review.user.name.charAt(0).toUpperCase() +
+                                  review.user.name.slice(1)}
+                              </span>
+                              <small>Argentina</small>
+                            </div>
+                          </div>
+                          <div className="usersreview">
+                            <p>{review.review}</p>
+                          </div>
+                        </div>
+                      </header>
                     </div>
-                  </header>
-                </div>
+                  )
+                })}
               </div>
             </div>
           </article>
