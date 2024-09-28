@@ -44,7 +44,11 @@ export default function Tour() {
 
   let footer = <p></p>
   if (selected) {
-    footer = <p>{format(selected, 'EEEE, dd MMMM yyyy')}.</p>
+    footer = (
+      <span className="formated-date">
+        {format(selected, 'EEEE, dd MMMM yyyy')}.
+      </span>
+    )
   }
 
   const { data, loading, error } = Hooks.useFetch(
@@ -270,9 +274,7 @@ export default function Tour() {
                         <span className="tour-calendar-selector-span1">
                           <Calendar />
                         </span>
-                        <span>
-                          <p>{footer}</p>
-                        </span>
+                        {footer}
                         <span className="tour-calendar-selector-downcaret">
                           <DownCaret />
                         </span>
@@ -297,7 +299,7 @@ export default function Tour() {
                   <strong>{data?.data?.ratingsAverage}/5</strong>
                   <br />
                   <span>
-                    {data?.data?.ratingsQuantity} reviews |
+                    {data?.data?.ratingsQuantity} reviews |{' '}
                     {data?.data?.travellers} travellers
                   </span>
                 </div>

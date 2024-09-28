@@ -509,6 +509,10 @@
   transform: translateX(120%);
 }
 
+.formated-date {
+  font-size: 16px;
+  text-wrap: nowrap;
+}
 
 
 
