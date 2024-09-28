@@ -57,8 +57,6 @@ export default function Tour() {
     setCalendarOpen(!calendarOpen)
   }
 
-  console.log(data.data.reviews.length)
-
   return (
     <>
       {error ? (
@@ -293,7 +291,7 @@ export default function Tour() {
                   <span>
                     These are genuine reviews written by our customers.
                   </span>
-                  <small>0 out of {data.data.reviews.length} reviews</small>
+                  <small>0 out of {data?.data?.reviews?.length} reviews</small>
                 </div>
                 <div className="tour-reviewnumbers">
                   <strong>{data?.data?.ratingsAverage}/5</strong>
@@ -305,7 +303,7 @@ export default function Tour() {
                 </div>
               </div>
               <div className="tour-reviews-customers container">
-                {data?.data?.reviews.map(review => {
+                {data?.data?.reviews?.map(review => {
                   const isoString = review.createdAt
                   const date = new Date(isoString)
                   const formattedDate = date.toISOString().split('T')[0]
