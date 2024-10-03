@@ -1,4 +1,4 @@
-const User = () => {
+const UserIcon = () => {
   return (
     <svg
       className="iconsvgnav"
@@ -17,4 +17,4 @@ const User = () => {
   )
 }
 
-export default User
+export default UserIcon

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react'
 import './nav.css'
 import { LanguageSelector } from '../language/LanguageSelector'
-import UserIcon from '../../assets/icons/User'
+import UserIcon from '../../assets/icons/UserIcon'
 import Cart from '../../assets/icons/Cart'
 import { Currency } from '../currency/Currency'
 import { User } from '../user/User'
@@ -60,7 +60,7 @@ export function Nav({ toggleDialog }) {
     dispatch({ type: 'LOGIN_START' })
     try {
       const res = await axios.post(
-        'http://localhost:1234/api/v1/auth/login',
+        'http://13.60.246.237:1234/api/v1/auth/login',
         credentials,
         {
           withCredentials: true,
@@ -182,7 +182,7 @@ export function Nav({ toggleDialog }) {
             className={clsx('nav_link', activeLink === 3 && 'active')}
             href="#"
           >
-            <UserIcon activeIcon={activeLink === 3} />{' '}
+            <UserIcon activeIcon={activeLink === 3} />
             {user ? <span>{user.name}</span> : ''}
           </span>
           <span

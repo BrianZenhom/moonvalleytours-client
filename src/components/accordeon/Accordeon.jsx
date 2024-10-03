@@ -13,7 +13,7 @@ export const Accordeon = ({ children, value, onChange, ...props }) => {
 
   useEffect(() => {
     onChange?.(selected)
-  }, [selected])
+  }, [selected, onChange])
 
   return (
     <ul {...props}>

@@ -62,7 +62,7 @@ const Logo = ({ type }) => {
       />
       <ellipse className="cls-1" cx="647.68" cy="281.32" rx="9.57" ry="9.66" />
     </svg>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo
