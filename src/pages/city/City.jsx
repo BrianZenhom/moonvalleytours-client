@@ -18,7 +18,7 @@ export default function City() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://13.60.246.237:1234/api/v1/cities/${id}`
+    `http://localhost:1234/api/v1/cities/${id}`
   )
 
   const CategoryItems = [
