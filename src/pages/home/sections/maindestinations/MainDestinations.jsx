@@ -7,7 +7,7 @@ import { Warning } from '../../../../assets/icons/AllIcons'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://13.60.246.237:1234/api/v1/cities?featured=true`
+    `http://localhost:1234/api/v1/cities?featured=true`
   )
 
   return (
