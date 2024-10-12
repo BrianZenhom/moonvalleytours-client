@@ -60,7 +60,7 @@ export function Nav({ toggleDialog }) {
     dispatch({ type: 'LOGIN_START' })
     try {
       const res = await axios.post(
-        'http://13.60.246.237:1234/api/v1/auth/login',
+        'http://localhost:1234/api/v1/auth/login',
         credentials,
         {
           withCredentials: true,

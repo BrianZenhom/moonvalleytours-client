@@ -62,9 +62,9 @@ export const AccordeonItem = ({ children, value, trigger, type, ...props }) => {
 }
 
 Accordeon.propTypes = {
-  children: PropTypes.object.isRequired,
-  value: PropTypes.object.isRequired,
-  onChange: PropTypes.bool.isRequired,
+  children: PropTypes.array,
+  value: PropTypes.object,
+  onChange: PropTypes.bool,
 }
 AccordeonItem.propTypes = {
   children: PropTypes.object.isRequired,
