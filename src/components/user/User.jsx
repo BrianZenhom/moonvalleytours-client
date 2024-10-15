@@ -24,7 +24,6 @@ export const User = forwardRef((props, ref) => {
             autoComplete="off"
             required
             type="email"
-            id="email"
             name="email"
             placeholder="Email"
             className="form__input fullw"
@@ -37,7 +36,6 @@ export const User = forwardRef((props, ref) => {
             autoComplete="off"
             required
             type="password"
-            id="password"
             name="password"
             placeholder="Password"
             className="form__input fullw"

@@ -7,7 +7,7 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/countries/${location.state.country}`
+    `http://localhost:1234/api/v1/countries/${location?.state?.country}`
   )
 
   return (
@@ -15,8 +15,8 @@ export default function Country() {
       <article className="country_header">
         <div className="country_blackoverlay"></div>
         <img
-          src={data?.data?.countryCover}
-          alt={data?.data?.country}
+          src={data.data.countryCover}
+          alt={data.data.country}
           className="header-Img"
         />
         <header className="country_intro container">
@@ -26,7 +26,7 @@ export default function Country() {
                 ? 'Something went wrong!'
                 : loading
                 ? ''
-                : data?.data?.country}
+                : data.data.country}
             </strong>
           </div>
         </header>
@@ -34,20 +34,20 @@ export default function Country() {
       <div className="country_details-wrapper">
         <div className="country_details">
           <div className="destinations">
-            <h2>{loading ? '' : data?.data?.cities?.length}</h2>
+            <h2>{loading ? '' : data.data.cities.length}</h2>
             <span>destinations</span>
           </div>
 
           <div className="destinations">
-            <h2>{data?.data?.travellers}</h2>
+            <h2>{data.data.travellers}</h2>
             <span>travellers</span>
           </div>
           <div className="destinations">
             <h2>
               {data.ratingsAverage}
-              {data?.data?.ratingsAverage}/5
+              {data.data.ratingsAverage}/5
             </h2>
-            <span>{data?.data?.ratingsQuantity} reviews</span>
+            <span>{data.data.ratingsQuantity} reviews</span>
           </div>
         </div>
       </div>
@@ -55,10 +55,10 @@ export default function Country() {
         <section className="maindestinations">
           <article className="maindestinations_content container">
             <header className="maindestinations_header">
-              <h2>Main destinations in {data?.data?.country}</h2>
+              <h2>Main destinations in {data.data.country}</h2>
             </header>
             <div className="maindestinations_grid">
-              {data?.data?.cities?.map(dest => {
+              {data.data.cities.map(dest => {
                 return (
                   <div key={dest._id}>
                     <Link
