@@ -23,7 +23,7 @@ export default function TourBookingComponent({ tourId }) {
 
     try {
       const session = await axios.post(
-        `http://localhost:1234/api/v1/bookings/checkout-session/${tourId}`,
+        `http://13.60.105.136/api/v1/bookings/checkout-session/${tourId}`,
         {}, // Empty data object since you're sending no body content
         {
           withCredentials: true,

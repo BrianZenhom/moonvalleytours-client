@@ -7,7 +7,7 @@ export default function Country() {
   const location = useLocation()
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://localhost:1234/api/v1/countries/${location?.state?.country}`
+    `http://13.60.105.136/api/v1/countries/${location?.state?.country}`
   )
 
   return (
