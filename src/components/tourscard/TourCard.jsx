@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 export default function TourCard({ tour }) {
-  const city = tour.city.city.toLowerCase()
-  const country = tour.city.country.country.toLowerCase()
+  const city = tour?.city?.city?.toLowerCase()
+  const country = tour?.city?.country?.country?.toLowerCase()
   return (
     <div className="toptours_card-item">
       <Link
