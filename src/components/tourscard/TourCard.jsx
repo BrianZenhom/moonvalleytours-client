@@ -8,45 +8,45 @@ export default function TourCard({ tour }) {
     <div className="toptours_card-item">
       <Link
         to={`/${country}/${city}/${tour.slug}`}
-        state={{ id: tour._id, country: country, city: tour.city }}
+        state={{ id: tour?._id, country: country, city: tour?.city }}
       >
         <div className="toptours_card">
           <img
-            src={`https://api.moonvalleytours.lat/public/img/tours/${tour.tourThumbnail}`}
-            alt={tour.title}
+            src={`https://api.moonvalleytours.lat/public/img/tours/${tour?.tourThumbnail}`}
+            alt={tour?.title}
           />
           <footer className="toptours_card_details">
             <div className="toptours_details-previous bg">
               <div className="toptours_details">
-                <h4>{tour.title}</h4>
+                <h4>{tour?.title}</h4>
                 <span>
-                  <strong>{tour.ratingsAverage}/5</strong>
-                  {tour.ratingsQuantity} reviews
+                  <strong>{tour?.ratingsAverage}/5</strong>
+                  {tour?.ratingsQuantity} reviews
                 </span>
               </div>
               <div className="toptours_tourprice">
                 <div className="price_tour">
                   <span>&euro;</span>
-                  <h4> {tour.price}</h4>
+                  <h4> {tour?.price}</h4>
                 </div>
               </div>
             </div>
             <div className="toptours_description">
               <div className="toptours_description_title">
-                <h3>{tour.title}</h3>
+                <h3>{tour?.title}</h3>
                 <div className="toptours_description_details">
                   <div className="rating-tours">
-                    <strong>{tour.ratingsAverage}/5</strong>
+                    <strong>{tour?.ratingsAverage}/5</strong>
                     <span className="toptours_description_rating">
                       <div className="stars">
                         <strong>***</strong>
                         <strong className="opacity">*</strong>
                         <strong>*</strong>
                       </div>
-                      {tour.reviewsQuantity} Difficulty
+                      {tour?.reviewsQuantity} Difficulty
                     </span>
                   </div>
-                  <p>{tour.shortDesc}</p>
+                  <p>{tour?.shortDesc}</p>
                 </div>
               </div>
             </div>
