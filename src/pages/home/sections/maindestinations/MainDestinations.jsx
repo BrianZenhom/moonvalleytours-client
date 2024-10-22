@@ -46,7 +46,7 @@ export default function MainDestinations({ type }) {
             data?.data?.doc?.map(dest => (
               <div key={dest._id}>
                 <Link
-                  to={`${dest.country.country.toLowerCase()}/${dest.city.toLowerCase()}`}
+                  to={`${dest?.country?.country?.toLowerCase()}/${dest?.city?.toLowerCase()}`}
                   state={{ dest: dest._id }}
                 >
                   <DestCard key={dest._id} dest={dest} />
