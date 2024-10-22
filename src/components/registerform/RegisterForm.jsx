@@ -40,7 +40,7 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
     e.preventDefault()
     try {
       const res = await axios.post(
-        'http://13.60.105.136/api/v1/auth/register',
+        'http://api.moonvalleytours.lat/api/v1/auth/register',
         body
       )
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })
