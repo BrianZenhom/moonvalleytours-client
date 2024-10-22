@@ -2,18 +2,29 @@
   display: none;
   visibility: hidden;
 }
+
 .login_mobile {
   display: none;
   visibility: hidden;
 }
 
-@media (width <= 766px) {
+@media (width <=766px) {
   .logonav {
     z-index: 99999;
+    display: flex;
+    align-items: center;
   }
 
   .logonavLeft {
     transform: translateX(-140%);
+  }
+
+  .mobile {
+    width: 100px;
+    color: white;
+    fill: white;
+    display: flex;
+    align-items: center;
   }
 
   .iconsvg {
@@ -30,6 +41,7 @@
     color: white;
     padding: 0.5rem 1.5rem;
     z-index: 90;
+    height: 80px;
   }
 
   .navbarmobile {
@@ -124,10 +136,12 @@
   .dropdown-dark {
     background-color: var(--main-color);
   }
+
   .login_mobile {
     display: block;
     visibility: hidden;
   }
+
   .header_wrapper-nav {
     height: 78.42px;
     padding: 0.5rem 1.5rem;
@@ -137,11 +151,13 @@
     background-color: var(--dark-color);
     color: white;
   }
+
   .header_wrapper-nav button {
     border: none;
     background: none;
     display: flex;
   }
+
   .login_mobile-fullscreen {
     position: fixed;
     z-index: 99999999;
@@ -153,19 +169,23 @@
     height: 100vh;
     width: 100vw;
   }
+
   .login_visible {
     visibility: visible;
     opacity: 1;
   }
+
   .login_content-container {
     padding: 2rem 1.5rem;
   }
+
   .login_mobile-form {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
   }
+
   .login_mobile-form input {
     padding: 10px;
     border: 1px solid #cccccc;
@@ -198,11 +218,13 @@
     transition: 0.2s ease;
     cursor: pointer;
   }
+
   .login_mobile-form button:hover {
     background-color: transparent;
     color: var(--dark-color);
     border: 1px solid var(--dark-color);
   }
+
   .errormessage {
     width: 100%;
     height: 100%;
@@ -210,6 +232,7 @@
     font-size: 1.2rem;
     font-weight: 600;
   }
+
   .error-message-wrapper {
     width: 100%;
     padding: 20px 10px;
@@ -218,6 +241,7 @@
     margin-bottom: 1rem;
     text-align: center;
   }
+
   .password_input {
     width: 100%;
     padding: 10px;
@@ -235,13 +259,16 @@
   .password_input:focus-within {
     outline: 1px solid var(--main-color);
   }
+
   .password_input input {
     padding: 0;
     border: none;
   }
+
   .password_input input:focus-within {
     outline: none;
   }
+
   .iconsvgtwo {
     color: var(--main-color);
   }
@@ -251,11 +278,13 @@
     align-items: center;
     justify-content: center;
   }
+
   .form_inputs {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
+
   .rememberme {
     display: flex;
     align-items: center;
@@ -263,12 +292,14 @@
 
     margin-top: 1rem;
   }
+
   .switchsvg {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--main-color);
   }
+
   .forgot_password {
     width: 100%;
     display: flex;
@@ -280,6 +311,7 @@
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.322);
   }
+
   .orlogin {
     display: flex;
     flex-direction: column;
@@ -290,15 +322,18 @@
     width: 100%;
     color: var(--opaque-color);
   }
+
   .socials {
     display: flex;
     justify-content: center;
   }
+
   .checkboxcontainer {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .checkbutton {
     background-color: gray;
     width: 25px;
@@ -308,10 +343,12 @@
     position: relative;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+
   .rememberme label {
     display: flex;
     gap: 5px;
   }
+
   .checkbutton::before {
     position: absolute;
     content: '';
@@ -322,15 +359,19 @@
     margin: 2px;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  input:checked + .checkbutton {
+
+  input:checked+.checkbutton {
     background-color: var(--main-color);
   }
-  input:checked + .checkbutton::before {
+
+  input:checked+.checkbutton::before {
     transform: translateX(10px);
   }
+
   #checkMobile {
     display: none;
   }
+
   .registerMobile {
     width: 100%;
     display: flex;
@@ -338,6 +379,7 @@
     margin-top: 3rem;
     gap: 5px;
   }
+
   .registerMobile_Wrd {
     color: var(--main-color);
   }

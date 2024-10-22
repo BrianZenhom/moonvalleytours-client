@@ -153,7 +153,7 @@ const NavbarMobile = ({
       </aside>
       <nav className="navbarmobile">
         <Link className={menu ? 'logonav logonavLeft' : 'logonav'} to="/">
-          <Logo />
+          <Logo type="mobile" />
         </Link>
         <div className={menu ? 'button' : ' '}>
           <button onClick={handleOpen}>{menu ? <Close /> : <Menu />}</button>
