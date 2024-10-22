@@ -13,6 +13,8 @@ export default function Hero() {
     'https://api.moonvalleytours.lat/api/v1/cities'
   )
 
+  const [search, setSearch] = useState('')
+
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
 
@@ -45,6 +47,18 @@ export default function Hero() {
     setOpenSuggestion(true)
   }
 
+  const handleChange = e => {
+    const value = e.target.value
+    setSearch(value)
+    console.log(search)
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    const data = new FormData(e.target.current)
+    console.log(data)
+  }
+
   return (
     <section className="hero">
       <article className="hero_content">
@@ -59,7 +73,7 @@ export default function Hero() {
             </p>
           </div>
           <div className="search_hero_wrapper">
-            <div className="hero_search">
+            <form className="hero_search" onSubmit={handleSubmit}>
               <input
                 className="search_bar_input"
                 placeholder="Where are you travelling to?"
@@ -68,13 +82,16 @@ export default function Hero() {
                 onClick={handleSearchClick}
                 ref={searchSuggestionsRef}
                 onFocus={handleOpenSuggestion}
+                onChange={handleChange}
+                value={search}
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false"
+                name="search"
               />
               <button aria-label="submit search">Search</button>
-            </div>
+            </form>
             <div
               className={
                 openSuggestion
