@@ -7,7 +7,7 @@ import { Warning } from '../../../../assets/icons/AllIcons'
 
 export default function MainDestinations({ type }) {
   const { data, loading, error } = Hooks.useFetch(
-    `http://api.moonvalleytours.lat/api/v1/cities?featured=true`
+    `https://api.moonvalleytours.lat/api/v1/cities?featured=true`
   )
 
   return (

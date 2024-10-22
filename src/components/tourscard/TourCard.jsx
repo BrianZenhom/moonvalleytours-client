@@ -12,7 +12,7 @@ export default function TourCard({ tour }) {
       >
         <div className="toptours_card">
           <img
-            src={`http://api.moonvalleytours.lat/public/img/tours/${tour.tourThumbnail}`}
+            src={`https://api.moonvalleytours.lat/public/img/tours/${tour.tourThumbnail}`}
             alt={tour.title}
           />
           <footer className="toptours_card_details">

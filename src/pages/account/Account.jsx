@@ -141,7 +141,7 @@ const Account = () => {
 
     try {
       const res = await axios.patch(
-        'http://api.moonvalleytours.lat/api/v1/users/updateMe',
+        'https://api.moonvalleytours.lat/api/v1/users/updateMe',
         formData,
         {
           withCredentials: true,
@@ -184,7 +184,7 @@ const Account = () => {
     e.preventDefault()
     try {
       const res = await axios.patch(
-        'http://api.moonvalleytours.lat/api/v1/users/updateMe',
+        'https://api.moonvalleytours.lat/api/v1/users/updateMe',
         formData,
         {
           withCredentials: true,
@@ -218,7 +218,7 @@ const Account = () => {
   const handleSubmitPassword = async () => {
     try {
       const res = await axios.patch(
-        'http://api.moonvalleytours.lat/api/v1/auth/updateMyPassword',
+        'https://api.moonvalleytours.lat/api/v1/auth/updateMyPassword',
         passwordData,
         {
           withCredentials: true,
@@ -398,7 +398,7 @@ const Account = () => {
               <div className="account_image">
                 {user?.photo ? (
                   <img
-                    src={`http://api.moonvalleytours.lat/public/img/users/${user?.photo}`}
+                    src={`https://api.moonvalleytours.lat/public/img/users/${user?.photo}`}
                     alt={`photo of ${user?.name}`}
                   />
                 ) : (

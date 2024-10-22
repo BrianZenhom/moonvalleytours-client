@@ -52,7 +52,7 @@ export default function Tour() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://api.moonvalleytours.lat/api/v1/tours/${state.state.id}`
+    `https://api.moonvalleytours.lat/api/v1/tours/${state.state.id}`
   )
 
   const disabledDays = [{ from: new Date(), to: new Date(1994, 4, 1) }]

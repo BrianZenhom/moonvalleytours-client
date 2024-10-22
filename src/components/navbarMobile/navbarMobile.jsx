@@ -46,7 +46,7 @@ const NavbarMobile = ({
     dispatch({ type: 'LOGIN_START' })
     try {
       const res = await axios.post(
-        'http://api.moonvalleytours.lat/api/v1/auth/login',
+        'https://api.moonvalleytours.lat/api/v1/auth/login',
         credentials
       )
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data })

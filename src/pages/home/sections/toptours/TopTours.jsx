@@ -4,7 +4,7 @@ import './toptours.css'
 
 export default function TopTours() {
   const { data, loading, error } = Hooks.useFetch(
-    'http://api.moonvalleytours.lat/api/v1/tours'
+    'https://api.moonvalleytours.lat/api/v1/tours'
   )
 
   return (

@@ -10,7 +10,7 @@ import Button from '../../../../components/button/Button'
 
 export default function Hero() {
   const { data } = Hooks.useFetch(
-    'http://api.moonvalleytours.lat/api/v1/cities'
+    'https://api.moonvalleytours.lat/api/v1/cities'
   )
 
   const searchSuggestionsRef = useRef(null)

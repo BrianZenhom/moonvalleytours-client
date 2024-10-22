@@ -23,7 +23,7 @@ export default function TourBookingComponent({ tourId }) {
 
     try {
       const session = await axios.post(
-        `http://api.moonvalleytours.lat/api/v1/bookings/checkout-session/${tourId}`,
+        `https://api.moonvalleytours.lat/api/v1/bookings/checkout-session/${tourId}`,
         {}, // Empty data object since you're sending no body content
         {
           withCredentials: true,

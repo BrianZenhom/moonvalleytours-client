@@ -18,7 +18,7 @@ export default function City() {
   }
 
   const { data, loading, error } = Hooks.useFetch(
-    `http://api.moonvalleytours.lat/api/v1/cities/${id}`
+    `https://api.moonvalleytours.lat/api/v1/cities/${id}`
   )
 
   const CategoryItems = [
