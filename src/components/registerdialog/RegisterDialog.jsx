@@ -19,7 +19,9 @@ const RegisterDialog = ({ setLoginOpen, setMenu, dialogRef }) => {
         <div className="registerForm_content">
           <div className="registerForm_wrapper">
             <div className="registerForm_title">
-              <div className="titleRegistration">Create an account</div>
+              <div className="titleRegistration">
+                <h3>Create an account</h3>
+              </div>
               <div onClick={toggleCloseDialog}>
                 <CloseModal />
               </div>

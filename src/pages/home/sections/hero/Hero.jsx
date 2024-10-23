@@ -13,8 +13,6 @@ export default function Hero() {
     'https://api.moonvalleytours.lat/api/v1/cities'
   )
 
-  const [search, setSearch] = useState('')
-
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
 
@@ -47,16 +45,11 @@ export default function Hero() {
     setOpenSuggestion(true)
   }
 
-  const handleChange = e => {
-    const value = e.target.value
-    setSearch(value)
-    console.log(search)
-  }
-
   const handleSubmit = e => {
     e.preventDefault()
-    const data = new FormData(e.target.current)
-    console.log(data)
+    const fields = new FormData(e.target)
+    const search = fields.get('search')
+    console.log(search)
   }
 
   return (
@@ -82,8 +75,6 @@ export default function Hero() {
                 onClick={handleSearchClick}
                 ref={searchSuggestionsRef}
                 onFocus={handleOpenSuggestion}
-                onChange={handleChange}
-                value={search}
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"

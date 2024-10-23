@@ -100,17 +100,12 @@ const NavbarMobile = ({
                     placeholder="Email"
                     onChange={handleChange}
                   />
-                  <div className="password_input">
-                    <input
-                      type={visible ? 'text' : 'password'}
-                      id="password"
-                      placeholder="Password"
-                      onChange={handleChange}
-                    />
-                    <div className="hideshow" onClick={handleHiddenPw}>
-                      {visible ? <SeePw /> : <HidePw />}
-                    </div>
-                  </div>
+                  <input
+                    type={visible ? 'text' : 'password'}
+                    id="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="rememberme">
                   <label htmlFor="checkMobile">

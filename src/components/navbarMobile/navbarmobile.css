@@ -16,7 +16,7 @@
   }
 
   .logonavLeft {
-    transform: translateX(-140%);
+    transform: translateX(-125%);
   }
 
   .mobile {
@@ -61,7 +61,7 @@
   }
 
   .button {
-    transform: translate(90px, 7px);
+    transform: translate(75px, 7px);
     z-index: 99999;
     bottom: 0;
   }

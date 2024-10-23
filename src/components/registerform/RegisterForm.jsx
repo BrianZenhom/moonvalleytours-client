@@ -71,30 +71,22 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
             onChange={handleChange}
           />
 
-          <div className=" halfw password_input-reg">
-            <input
-              type={visible ? 'text' : 'password'}
-              id="password"
-              name="password"
-              placeholder="Password"
-              onChange={handleChange}
-            />
-            <div className="hideshow" onClick={handleHiddenPw}>
-              {visible ? <SeePw /> : <HidePw />}
-            </div>
-          </div>
-          <div className=" halfw password_input-reg">
-            <input
-              type={confirmPasswordVisible ? 'text' : 'password'}
-              id="passwordConfirm"
-              name="passwordConfirm"
-              placeholder="Confirm password"
-              onChange={handleChange}
-            />
-            <div className="hideshow" onClick={handleConfirmPasswordVisible}>
-              {confirmPasswordVisible ? <SeePw /> : <HidePw />}
-            </div>
-          </div>
+          <input
+            type={visible ? 'text' : 'password'}
+            id="password"
+            name="password"
+            placeholder="Password"
+            className="fullw"
+            onChange={handleChange}
+          />
+          <input
+            type={confirmPasswordVisible ? 'text' : 'password'}
+            id="passwordConfirm"
+            name="passwordConfirm"
+            placeholder="Confirm password"
+            className="fullw"
+            onChange={handleChange}
+          />
           <input
             name="name"
             type="text"

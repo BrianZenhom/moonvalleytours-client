@@ -56,9 +56,10 @@
   color: white;
   border-radius: 8px;
   margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .registrationForm_form button:hover {
@@ -123,4 +124,18 @@
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+}
+
+.registerForm_content small {
+  display: none;
+}
+
+@media (width < 766px) {
+  .titleRegistration {
+    font-size: 14px;
+  }
+
+  .register_content-inputs {
+    gap: 10px;
+  }
 }
