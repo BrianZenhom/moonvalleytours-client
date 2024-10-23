@@ -133,38 +133,3 @@
   align-items: center;
   padding-top: 3rem;
 }
-
-
-
-@media (width < 500px) {
-  .maindestinations_content {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .maindestinations_grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 1rem 1rem;
-  }
-
-  .maindestinations_grid>* {
-    flex: 0 0 42%;
-  }
-}
-
-@media (width < 766px) {
-  .maindestinations .maindestinations_content {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (width > 1000px) {
-  .maindestinations_card {
-    height: 375px;
-  }
-}
