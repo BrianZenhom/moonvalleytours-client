@@ -158,9 +158,3 @@
   flex-direction: column;
   color: white;
 }
-
-@media (width < 766px) {
-  .card {
-    width: 360px;
-  }
-}
