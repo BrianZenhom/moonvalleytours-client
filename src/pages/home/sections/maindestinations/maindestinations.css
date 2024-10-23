@@ -134,7 +134,9 @@
   padding-top: 3rem;
 }
 
-/* @media (width < 500px) {
+
+
+@media (width < 500px) {
   .maindestinations_content {
     padding-left: 10px;
     padding-right: 10px;
@@ -154,8 +156,15 @@
   }
 }
 
+@media (width < 766px) {
+  .maindestinations .maindestinations_content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 @media (width > 1000px) {
   .maindestinations_card {
     height: 375px;
   }
-} */
+}
