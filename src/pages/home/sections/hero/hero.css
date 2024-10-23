@@ -4,10 +4,6 @@
   inherits: false;
 }
 
-.hero {
-  min-height: 600px;
-}
-
 .hero_content {
   background: linear-gradient(rgba(0, 0, 0, 0.276) 48%, #00000069),
     url(https://res.cloudinary.com/drtykwq1x/image/upload/q_100/v1717899583/Header-moonvalley_svkenl.webp);
@@ -275,6 +271,33 @@
   .hero_search button {
     width: 130px;
     font-weight: 600;
+  }
+}
+
+@media (width <=766px) {
+  .search_hero_wrapper {
+    width: 105%;
+  }
+
+  .benefits span {
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .benefits span .iconsvg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

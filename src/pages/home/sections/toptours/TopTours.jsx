@@ -1,3 +1,4 @@
+import { Warning } from '../../../../assets/icons/AllIcons'
 import TourCard from '../../../../components/tourscard/TourCard'
 import Hooks from './../../../../hooks/useFetch'
 import './toptours.css'
@@ -14,17 +15,42 @@ export default function TopTours() {
           <h2>Top tours</h2>
         </div>
         <div className="toptours_grid">
-          {error
-            ? 'something went wrong!'
-            : loading
-            ? 'Loading...'
-            : data?.data?.doc?.map(tour => {
-                return (
-                  <>
-                    <TourCard key={tour._id} tour={tour} />
-                  </>
-                )
-              })}
+          {loading ? (
+            <>
+              <div className="toptours_card-item skeleton"></div>
+              <div className="toptours_card-item skeleton"></div>
+              <div className="toptours_card-item skeleton"></div>
+            </>
+          ) : error ? (
+            <>
+              <div className="toptours_card-item skeletonerror">
+                <Warning />
+                <br />
+                Something went wrong!
+              </div>
+              <div className="toptours_card-item skeletonerror">
+                <Warning />
+                <br />
+                Something went wrong!
+                <br />
+              </div>
+              <div className="toptours_card-item skeletonerror">
+                <Warning />
+                <br />
+                Something went wrong!
+              </div>
+            </>
+          ) : loading ? (
+            'Loading...'
+          ) : (
+            data?.data?.doc?.map(tour => {
+              return (
+                <>
+                  <TourCard key={tour._id} tour={tour} />
+                </>
+              )
+            })
+          )}
         </div>
       </article>
     </section>
