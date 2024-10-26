@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { CartDropdown } from '../cartdropdown/CartDropdown'
 import Logo from '../../assets/logos/Logo'
 import { QuestionIcon } from '../../assets/icons/AllIcons'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios'
 
@@ -150,7 +150,9 @@ export function Nav({ toggleDialog }) {
       ></div>
       <nav className={scroll ? 'nav_wrapper active' : 'nav_wrapper'}>
         <div className="logo">
-          <Logo type="navlogo" />
+          <Link to="/">
+            <Logo type="navlogo" />
+          </Link>
         </div>
         <div
           onMouseLeave={() => {

@@ -24,7 +24,9 @@
     color: var(--main-color);
 }
 
-
+.navlogo {
+    cursor: pointer;
+}
 
 .bg .navlogo {
     transition: all .2s ease-in-out;
