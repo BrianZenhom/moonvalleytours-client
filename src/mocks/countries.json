@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "data": {
+    "countries": [
+      {
+        "_id": "67161d9e892e96767c2a1666",
+        "country": "Argentina",
+        "continents": ["South America"],
+        "cities": ["67162091892e96767c2a1684"],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "countryCover": "Turkiye-cover.jpg",
+        "countryThumbnail": "Turkiye-Istanbul-thumbnail.jpg",
+        "createdAt": "2024-10-21T09:23:42.395Z",
+        "updatedAt": "2024-10-21T09:36:17.300Z",
+        "__v": 0
+      },
+      {
+        "_id": "658d40b245d0d45086c59ed4",
+        "country": "Egypt",
+        "continents": ["Asia", "Africa"],
+        "cities": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "createdAt": "2023-12-28T09:32:34.985Z",
+        "updatedAt": "2024-10-21T09:24:46.794Z",
+        "__v": 0
+      }
+    ]
+  }
+}

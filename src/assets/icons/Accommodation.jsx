@@ -1,9 +1,9 @@
 export default function Accommodation() {
   return (
     <svg
-      className="iconsvg"
+      className="svgiconacc"
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
+      height="30"
       viewBox="0 0 24 24"
     >
       <g fill="none">
@@ -14,5 +14,5 @@ export default function Accommodation() {
         />
       </g>
     </svg>
-  );
+  )
 }

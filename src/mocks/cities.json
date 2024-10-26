@@ -1,0 +1,120 @@
+{
+  "status": "success",
+  "count": 8,
+  "data": {
+    "doc": [
+      {
+        "_id": "66601d8f3469e73382f267de",
+        "city": "Pamukkale",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "cairo-cover.jpg",
+        "cityThumbnail": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,w_1017/v1717575024/Pamukkalehd_rzstlm.webp",
+        "featured": false,
+        "createdAt": "2024-06-05T08:10:55.029Z",
+        "updatedAt": "2024-06-05T08:10:55.029Z"
+      },
+      {
+        "_id": "666019cb4b7c5eec2c1c2cd1",
+        "city": "Ephesus",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "cairo-cover.jpg",
+        "cityThumbnail": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,h_1581,q_61/v1717573929/pexels-merve-nur-turker-55953592-19050721_g9cnz7.jpg",
+        "featured": false,
+        "createdAt": "2024-06-05T07:54:51.305Z",
+        "updatedAt": "2024-06-05T07:54:51.305Z"
+      },
+      {
+        "_id": "66374de0c89f9514fd6f5f6a",
+        "city": "Cappadocia",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "https://res.cloudinary.com/drtykwq1x/image/upload/v1714900378/jicxlwxk39yukoo7uyjg.webp",
+        "cityThumbnail": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,q_59,w_606/v1714900418/ajcppdtpcofverrldr6y.webp",
+        "featured": true,
+        "createdAt": "2024-05-05T09:14:08.132Z",
+        "updatedAt": "2024-05-05T09:14:08.132Z"
+      },
+      {
+        "_id": "6635e435cf939726d0c2ceec",
+        "city": "Marmaris",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "cairo-cover.jpg",
+        "cityThumbnail": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,q_61,w_606/v1714900917/yild32zc7ciqbfxstkx3.webp",
+        "featured": true,
+        "createdAt": "2024-05-04T07:31:01.968Z",
+        "updatedAt": "2024-05-04T07:31:01.968Z"
+      },
+      {
+        "_id": "6635e430cf939726d0c2cee7",
+        "city": "Bodrum",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "cairo-cover.jpg",
+        "cityThumbnail": "https://images.pexels.com/photos/16871641/pexels-photo-16871641/free-photo-of-narrow-alley-on-sea-shore-in-bodrum.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "featured": true,
+        "createdAt": "2024-05-04T07:30:56.175Z",
+        "updatedAt": "2024-05-04T07:30:56.175Z"
+      },
+      {
+        "_id": "6635e42acf939726d0c2cee2",
+        "city": "Antalya",
+        "country": null,
+        "tours": ["6669427db611e16423e38cdc"],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,q_59,w_1434/v1714905219/qwkzxssondfxu0nd8xeu.webp",
+        "cityThumbnail": "https://images.pexels.com/photos/7560123/pexels-photo-7560123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "featured": true,
+        "createdAt": "2024-05-04T07:30:50.504Z",
+        "updatedAt": "2024-06-12T06:38:53.759Z"
+      },
+      {
+        "_id": "6635e3fccf939726d0c2cedb",
+        "city": "Fethiye",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "cairo-cover.jpg",
+        "cityThumbnail": "https://images.pexels.com/photos/18422801/pexels-photo-18422801/free-photo-of-aerial-view-of-the-butterfly-valley-fethiye-mugla-turkey.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "featured": true,
+        "createdAt": "2024-05-04T07:30:04.398Z",
+        "updatedAt": "2024-05-04T07:30:04.398Z"
+      },
+      {
+        "_id": "6634c0b0e58b3a51c929a5ec",
+        "city": "Istanbul",
+        "country": null,
+        "tours": [],
+        "ratingsAverage": 5,
+        "ratingsQuantity": 0,
+        "travellers": 0,
+        "cityCover": "https://res.cloudinary.com/drtykwq1x/image/upload/v1714897741/swgwdyz436t0abq6wl7e.jpg",
+        "cityThumbnail": "https://res.cloudinary.com/drtykwq1x/image/upload/c_scale,q_59,w_606/v1714899935/m4kdjjdktpnfvcnua8zk.jpg",
+        "featured": true,
+        "createdAt": "2024-05-03T10:47:12.482Z",
+        "updatedAt": "2024-05-03T12:26:34.911Z"
+      }
+    ]
+  }
+}

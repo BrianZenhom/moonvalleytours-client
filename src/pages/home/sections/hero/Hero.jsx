@@ -4,14 +4,14 @@ import CustomerSupport from '../../../../assets/icons/CustomerSupport'
 import HiddenFees from '../../../../assets/icons/HiddenFees'
 import Accommodation from '../../../../assets/icons/Accommodation'
 import Flights from '../../../../assets/icons/Flights'
-import Hooks from '../../../../hooks/useFetch'
-import { Link } from 'react-router-dom'
+// import Hooks from '../../../../hooks/useFetch'
+// import { Link } from 'react-router-dom'
 import Button from '../../../../components/button/Button'
+import data from '../../../../mocks/cities.json'
 
 export default function Hero() {
-  const { data } = Hooks.useFetch(
-    'https://api.moonvalleytours.lat/api/v1/cities'
-  )
+  const cities = data.data.doc
+  const hasCities = cities?.length > 0
 
   const searchSuggestionsRef = useRef(null)
   const [openSuggestion, setOpenSuggestion] = useState(false)
@@ -95,7 +95,7 @@ export default function Hero() {
                 <strong>Popular destinations</strong>
               </div>
               <ul className="hero_search_list">
-                {data?.data?.doc?.map(loc => {
+                {/* {data?.data?.doc?.map(loc => {
                   return (
                     <li key={loc?._id} title={loc?.country}>
                       <Link
@@ -112,7 +112,15 @@ export default function Hero() {
                       </Link>
                     </li>
                   )
-                })}
+                })} */}
+                {hasCities
+                  ? cities?.map(city => (
+                      <li key={city.id}>
+                        <small>Turkey</small>
+                        <h3>{city.city}</h3>
+                      </li>
+                    ))
+                  : ''}
               </ul>
               <div className="showmore_button_suggestion">
                 <Button name="Show all destinations" />
@@ -122,22 +130,22 @@ export default function Hero() {
         </header>
         <aside className="benefits_content container">
           <div className="benefits">
-            <span>
+            <div className="heroicons">
               <CustomerSupport />
-              Distinctive Support
-            </span>
-            <span>
+              <span>Distinctive Support</span>
+            </div>
+            <div className="heroicons">
               <HiddenFees />
-              No Hidden Fees
-            </span>
-            <span>
+              <span>No Hidden Fees</span>
+            </div>
+            <div className="heroicons">
               <Accommodation />
-              Best Accommodations
-            </span>
-            <span>
+              <span>Best Accommodations</span>
+            </div>
+            <div className="heroicons">
               <Flights />
-              Handpicked Flights
-            </span>
+              <span>Handpicked Flights</span>
+            </div>
           </div>
         </aside>
       </article>

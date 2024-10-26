@@ -4,27 +4,23 @@ import axios from 'axios'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 // import { useNavigate } from 'react-router-dom'
-import { HidePw } from '../../assets/icons/AllIcons'
-import SeePw from '../../assets/icons/SeePw'
+
 import { toast, Toaster } from 'sonner'
 import Error from '../../assets/icons/Error'
 import Success from '../../assets/icons/Success'
+import CountriesForm from '../../mocks/CountriesForm.json'
 
 const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
+  const countriesForForm = CountriesForm
+  const hasCountries = countriesForForm?.length > 0
+
+  const sortedCountries = [...countriesForForm].sort((a, b) =>
+    a.name.common.localeCompare(b.name.common)
+  )
+
+  console.log(hasCountries)
+
   const [body, setBody] = useState({})
-  const [visible, setVisible] = useState(false)
-  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false)
-
-  const handleConfirmPasswordVisible = e => {
-    e.stopPropagation()
-    setConfirmPasswordVisible(!confirmPasswordVisible)
-  }
-
-  const handleHiddenPw = e => {
-    e.stopPropagation()
-    setVisible(!visible)
-  }
-
   const { dispatch } = useContext(AuthContext)
 
   // const navigate = useNavigate()
@@ -72,7 +68,6 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
           />
 
           <input
-            type={visible ? 'text' : 'password'}
             id="password"
             name="password"
             placeholder="Password"
@@ -80,7 +75,6 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
             onChange={handleChange}
           />
           <input
-            type={confirmPasswordVisible ? 'text' : 'password'}
             id="passwordConfirm"
             name="passwordConfirm"
             placeholder="Confirm password"
@@ -101,20 +95,29 @@ const RegisterForm = ({ setMenu, setLoginOpen, toggleCloseDialog }) => {
             className="halfw"
             onChange={handleChange}
           />
-          <input
-            type="text"
-            name="country"
-            placeholder="Select your country"
-            className="halfw"
+          <select onChange={handleChange} className="halfw" name="" id="">
+            <option value="Country" selected disabled>
+              Country
+            </option>
+            {hasCountries
+              ? sortedCountries?.map(country => (
+                  <option key={country.name.common}>
+                    {country.name.common}
+                  </option>
+                ))
+              : ''}
+          </select>
+          <select
+            disabled
             onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="city"
-            placeholder="Select your city"
             className="halfw"
-            onChange={handleChange}
-          />
+            name=""
+            id=""
+          >
+            <option value="City" selected disabled>
+              City
+            </option>
+          </select>
           <input
             name="phone"
             type="phone"

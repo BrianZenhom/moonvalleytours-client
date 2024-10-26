@@ -10,8 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .toptours_header {
@@ -214,6 +212,13 @@
   .toptours_card-item {
     flex-basis: 360px;
     min-height: 360px;
+  }
+}
+
+@media (width < 766px) {
+  .toptours_content {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 

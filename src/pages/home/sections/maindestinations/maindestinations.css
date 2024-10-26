@@ -6,8 +6,6 @@
 .maindestinations_content {
   height: auto;
   padding-top: 4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .maindestinations_header {
@@ -134,4 +132,11 @@
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
+}
+
+@media (width <=766px) {
+  .maindestinations_content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

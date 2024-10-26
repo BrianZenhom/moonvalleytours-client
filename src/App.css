@@ -25,7 +25,7 @@ dialog::backdrop {
 .registerForm_content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
   width: 600px;
 }

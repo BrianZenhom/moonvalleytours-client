@@ -214,20 +214,18 @@
 }
 
 .benefits {
-  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
-  gap: 3rem;
   font-size: clamp(13.375px, 2vw, 16px);
-  text-align: center;
 }
 
-.benefits span {
+.heroicons {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 @media (width < 470px) {
@@ -241,7 +239,8 @@
 
   .benefits {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     padding: 0 2rem;
   }
 
@@ -279,26 +278,13 @@
     width: 105%;
   }
 
-  .benefits span {
-    text-wrap: nowrap;
+  .heroicons {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .benefits span .iconsvg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .benefits {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+
 }
 
 @media (width < 1200px) {
