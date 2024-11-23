@@ -193,11 +193,13 @@ const Account = () => {
           },
         }
       )
+
       // Update the user and token in the context
       dispatch({
         type: 'UPDATE_USER',
         payload: { user: res.data.user, token: res.data.token },
       })
+
       toast.promise(promise, {
         loading: 'Updating profile...',
         success: 'Profile updated successfully',
@@ -205,7 +207,6 @@ const Account = () => {
       })
     } catch (err) {
       toggleCloseDialog()
-
       toast.error(err.response.data.message)
     }
   }

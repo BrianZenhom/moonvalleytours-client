@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react'
 import './hero.css'
-import CustomerSupport from '../../../../assets/icons/CustomerSupport'
-import HiddenFees from '../../../../assets/icons/HiddenFees'
-import Accommodation from '../../../../assets/icons/Accommodation'
-import Flights from '../../../../assets/icons/Flights'
+import {
+  Flights,
+  CustomerSupport,
+  Accommodation,
+  HiddenFees,
+} from './../../../../assets/icons/BenefitsIcons'
 import Hooks from '../../../../hooks/useFetch'
 import { Link } from 'react-router-dom'
 import Button from '../../../../components/button/Button'
